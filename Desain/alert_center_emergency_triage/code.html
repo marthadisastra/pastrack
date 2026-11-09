@@ -1,0 +1,702 @@
+<!DOCTYPE html><html lang="en"><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-fixed-variant":"#3c475a","surface-variant":"#e0e3e5","primary":"#004ac6","outline-variant":"#c3c6d7","secondary-fixed-dim":"#93ccff","background":"#f7f9fb","on-error":"#ffffff","surface-container-highest":"#e0e3e5","on-secondary-fixed":"#001d31","surface-container-low":"#f2f4f6","surface-container-high":"#e6e8ea","surface-container-lowest":"#ffffff","on-error-container":"#93000a","on-secondary":"#ffffff","on-primary-container":"#eeefff","tertiary-fixed":"#d8e3fb","error":"#ba1a1a","on-tertiary-container":"#ecf1ff","inverse-on-surface":"#eff1f3","inverse-surface":"#2d3133","on-secondary-fixed-variant":"#004b73","on-background":"#191c1e","surface":"#f7f9fb","on-tertiary":"#ffffff","primary-fixed-dim":"#b4c5ff","primary-container":"#2563eb","tertiary":"#4b566a","tertiary-fixed-dim":"#bcc7de","primary-fixed":"#dbe1ff","on-surface-variant":"#434655","surface-container":"#eceef0","secondary":"#006398","on-primary-fixed":"#00174b","secondary-fixed":"#cce5ff","inverse-primary":"#b4c5ff","error-container":"#ffdad6","on-tertiary-fixed":"#111c2d","outline":"#737686","secondary-container":"#5bb8fe","surface-bright":"#f7f9fb","surface-tint":"#0053db","tertiary-container":"#636e83","surface-dim":"#d8dadc","on-primary":"#ffffff","on-primary-fixed-variant":"#003ea8","on-secondary-container":"#00476e","on-surface":"#191c1e"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-lg":"1rem","space-md":"0.75rem","space-xl":"1.5rem","margin-mobile":"0.75rem",margin:"1.5rem",gutter:"1rem","space-xs":"0.25rem","space-sm":"0.5rem","gutter-dense":"0.5rem"},fontFamily:{"headline-md":["Inter"],"title-sm":["Inter"],"headline-lg-mobile":["Inter"],display:["Inter"],"body-md":["Inter"],"data-tabular":["Inter"],"body-sm":["Inter"],"label-md":["Inter"],"telemetry-metric":["Inter"],"headline-lg":["Inter"],"label-xs":["Inter"]},fontSize:{"headline-md":["18px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-sm":["15px",{lineHeight:"20px",letterSpacing:"-0.005em",fontWeight:"600"}],"headline-lg-mobile":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],display:["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"data-tabular":["13px",{lineHeight:"18px",letterSpacing:"-0.005em",fontWeight:"500"}],"body-sm":["13px",{lineHeight:"18px",fontWeight:"400"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"telemetry-metric":["22px",{lineHeight:"26px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"label-xs":["11px",{lineHeight:"14px",letterSpacing:"0.03em",fontWeight:"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between shadow-lg ring-1 ring-outline/20"><div class="flex flex-col h-full overflow-hidden"><div class="h-14 px-space-md flex items-center gap-space-sm bg-inverse-surface border-b border-outline/20"><div class="w-7 h-7 bg-primary flex items-center justify-center rounded"><span class="material-symbols-outlined text-on-primary text-[18px]">radar</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-title-sm text-title-sm text-inverse-on-surface tracking-tight leading-none font-bold">PasTrack</span><span class="px-1.5 py-0.5 bg-primary-fixed text-on-primary-fixed font-label-xs text-label-xs rounded font-bold">PRO</span></div><span class="font-label-xs text-label-xs text-outline-variant uppercase tracking-wider leading-none mt-0.5">Fleet Intelligence</span></div></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm space-y-space-md"><nav data-active-classes="bg-primary text-on-primary font-bold shadow-sm"><div class="px-space-xs pb-space-xs"><span class="font-label-xs text-label-xs text-outline-variant font-semibold tracking-wider uppercase">Overview</span></div><div class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="fleet-dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="">Fleet Dashboard</span></a></div><div class="px-space-xs pt-space-sm pb-space-xs"><span class="font-label-xs text-label-xs text-outline-variant font-semibold tracking-wider uppercase">Fleet Management</span></div><div class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="vehicles" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="">Vehicles</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="live-tracking" href="#"><span class="material-symbols-outlined text-[18px]">explore</span><span class="">Live Tracking</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="trip-history" href="#"><span class="material-symbols-outlined text-[18px]">route</span><span class="">Trip History</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="geofences" href="#"><span class="material-symbols-outlined text-[18px]">polyline</span><span class="">Geofences</span></a></div><div class="px-space-xs pt-space-sm pb-space-xs"><span class="font-label-xs text-label-xs text-outline-variant font-semibold tracking-wider uppercase">Fuel Intelligence</span></div><div class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="fuel-monitoring" href="#"><span class="material-symbols-outlined text-[18px]">local_gas_station</span><span class="">Fuel Monitoring</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="fuel-analytics" href="#"><span class="material-symbols-outlined text-[18px]">query_stats</span><span class="">Fuel Analytics</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="fuel-events" href="#"><span class="material-symbols-outlined text-[18px]">warning_amber</span><span class="">Fuel Events</span></a></div><div class="px-space-xs pt-space-sm pb-space-xs"><span class="font-label-xs text-label-xs text-outline-variant font-semibold tracking-wider uppercase">Device &amp; Data Health</span></div><div class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="gps-quality" href="#"><span class="material-symbols-outlined text-[18px]">satellite_alt</span><span class="">GPS Quality</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="device-connectivity" href="#"><span class="material-symbols-outlined text-[18px]">wifi_tethering</span><span class="">Device Connectivity</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="data-activity" href="#"><span class="material-symbols-outlined text-[18px]">sync_alt</span><span class="">Data Activity</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="raw-protocol-logs" href="#"><span class="material-symbols-outlined text-[18px]">terminal</span><span class="">Raw Protocol Logs</span></a></div><div class="px-space-xs pt-space-sm pb-space-xs"><span class="font-label-xs text-label-xs text-outline-variant font-semibold tracking-wider uppercase">Monitoring &amp; Reports</span></div><div class="space-y-0.5"><a aria-current="page" class="flex items-center justify-between px-space-sm py-1.5 rounded bg-primary text-on-primary font-bold shadow transition-colors font-body-sm text-body-sm" data-path="alert-center" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">notifications_active</span><span class="px-1.5 py-0.2 bg-on-primary text-primary font-label-xs text-label-xs rounded font-bold">Alert Center</span></div><span class="px-1.5 py-0.2 bg-error text-on-error font-label-xs text-label-xs rounded font-bold">5</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="reports" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">lab_profile</span><span class="">Reports &amp; Fleet Audit</span></div><span class="px-1.5 py-0.2 bg-secondary-fixed text-on-secondary-fixed font-label-xs text-label-xs rounded font-bold">NEW</span></a></div><div class="px-space-xs pt-space-sm pb-space-xs"><span class="font-label-xs text-label-xs text-outline-variant font-semibold tracking-wider uppercase">Settings &amp; Configuration</span></div><div class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="device-management" href="#"><span class="material-symbols-outlined text-[18px]">devices</span><span class="">Device Management</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="sensor-management" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span class="">Sensor Management</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-outline-variant hover:bg-surface-container-highest/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="user-management" href="#"><span class="material-symbols-outlined text-[18px]">manage_accounts</span><span class="">User Management</span></a></div></nav></div><div class="p-space-sm m-space-sm bg-surface-container-highest/20 rounded ring-1 ring-outline/30"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary-container"></span><span class="font-label-xs text-label-xs text-inverse-on-surface font-semibold tracking-wide">HARDWARE TELEMETRY</span></div><div class="mt-1 font-label-xs text-label-xs text-outline-variant">Queclink GV30CEU / BLE CFS300B Integrated</div><div class="mt-1 flex items-center justify-between font-label-xs text-label-xs text-secondary-fixed-dim"><span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[12px]">memory</span> CAN2.0</span><span class="font-data-tabular text-data-tabular font-medium">v3.14.8</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin"><div class="flex items-center gap-space-md flex-1 max-w-2xl"><div class="relative flex items-center"><button class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low text-on-surface rounded font-body-sm text-body-sm hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[16px] text-secondary">departure_board</span><span class="font-medium">Semua Armada</span><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><div class="relative flex-1"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-space-md py-1 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded placeholder-outline focus:outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Cari plat nomor / nama driver / kode alert..." type="search"></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low rounded"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-label-xs text-label-xs text-on-surface font-semibold tracking-wide">LIVE NOC SYNC:</span><span class="font-data-tabular text-data-tabular text-secondary font-medium">14:38:05 WIB</span></div><button class="relative p-1.5 text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-label-xs text-label-xs font-bold">3</span></button><div class="h-4 w-px bg-surface-container-high"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="relative"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary ring-1 ring-surface-container-lowest"></span></div><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm text-on-surface font-semibold leading-tight">Ahmad Fauzi</span><span class="font-label-xs text-label-xs text-on-surface-variant leading-tight">Dispatcher Lead</span></div></div></div></header><main class="w-full pt-14 bg-surface px-margin"><div class="flex flex-col w-full pb-12">
+<!-- Script to update shell active sidebar state -->
+<script>
+    (function() {
+      const activePath = 'alert-center';
+      const navLinks = document.querySelectorAll('aside nav a');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-path') === activePath) {
+          link.className = 'flex items-center justify-between px-space-sm py-1.5 rounded bg-primary-container text-on-primary font-bold shadow-sm transition-colors font-body-sm text-body-sm';
+          const badge = link.querySelector('span:last-child');
+          if (badge) {
+            badge.className = 'px-1.5 py-0.2 bg-on-primary text-primary font-label-xs text-label-xs rounded font-bold';
+          }
+        }
+      });
+    })();
+  </script>
+<!-- Breadcrumbs & Dispatch Live Status Header -->
+<section class="flex flex-col gap-space-sm pt-space-md mb-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<nav class="flex items-center gap-1.5 font-label-xs text-label-xs text-outline font-medium tracking-wide uppercase">
+<span class="hover:text-on-surface cursor-pointer transition-colors">PasTrack</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-on-surface cursor-pointer transition-colors">Monitoring &amp; Reports</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Incident Alert Center &amp; Emergency NOC Dispatch</span>
+</nav>
+<div class="flex items-center gap-space-xs bg-error-container text-on-error-container px-space-sm py-1 rounded shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-error"></span>
+</span>
+<span class="font-label-xs text-label-xs font-bold tracking-wider">NOC DISPATCH ENGINE v5.2 • AUTO-ESCALATION SIAGA</span>
+</div>
+</div>
+<!-- Title and Action Bar -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col max-w-3xl">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">crisis_alert</span>
+</div>
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Fleet Alert Center &amp; Triage Darurat</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Pusat komando insiden telematika 24/7: deteksi pencurian BBM (sudden drop), geofence breach, tamper sensor IoT, sabotase kabel, dan protokol eskalasi otomatis.
+            </p>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-surface-container text-on-surface rounded font-label-md text-label-md hover:bg-surface-container-high transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">tune</span>
+<span class="">Konfigurasi Aturan Eskalasi</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-surface-container text-on-surface rounded font-label-md text-label-md hover:bg-surface-container-high transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">file_download</span>
+<span class="">Unduh Rekap Insiden 24 Jam (PDF/Excel)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-primary text-on-primary rounded font-label-md text-label-md hover:bg-primary-container transition-colors shadow-md" type="button">
+<span class="material-symbols-outlined text-[18px]">add_alert</span>
+<span class="">+ Buat Tiket Manual / Lapor Insiden</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Top KPI Summary Cards (4 Columns) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-lg">
+<!-- Card 1: Alerta Kritis Terbuka -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 right-0 w-24 h-24 bg-error-container/30 rounded-bl-full pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider font-semibold">Alerta Kritis Terbuka</span>
+<span class="material-symbols-outlined text-error text-[20px]">warning</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display text-display text-error leading-none">5</span>
+<span class="font-title-sm text-title-sm text-on-surface-variant font-semibold">Kasus</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-snug">
+          3 Pencurian BBM Kritis, 1 Wire Cut, 1 Geofence Blackzone
+        </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-error text-on-error font-label-xs text-label-xs font-bold tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest animate-pulse"></span>
+          SLA RESPON &lt; 5 MENIT
+        </span>
+<span class="font-data-tabular text-data-tabular text-error font-semibold">Active Alarm</span>
+</div>
+</div>
+<!-- Card 2: Rata-Rata Waktu Respons (MTTR) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider font-semibold">Rata-Rata Waktu Respons (MTTR)</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">timer</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display text-display text-on-surface leading-none">3.4</span>
+<span class="font-title-sm text-title-sm text-on-surface-variant font-semibold">Menit</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-snug">
+          Target KPI NOC Dispatch: ≤ 8 Menit
+        </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-xs text-label-xs font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+          Optimal (-42% vs kemarin)
+        </span>
+<span class="font-data-tabular text-data-tabular text-on-surface-variant">Shift 1 Pagi</span>
+</div>
+</div>
+<!-- Card 3: Potensi Kerugian Dicegah -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider font-semibold">Potensi Kerugian Dicegah</span>
+<span class="material-symbols-outlined text-primary text-[20px]">shield_with_heart</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-telemetry-metric text-telemetry-metric text-primary leading-none">Rp 14.850.000</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-snug">
+          BBM Terselamatkan: 990 Liter Solar B35
+        </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-xs text-label-xs font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+          BAP Siap Tindak Lanjut
+        </span>
+<span class="font-data-tabular text-data-tabular text-on-surface-variant font-medium">3 Unit</span>
+</div>
+</div>
+<!-- Card 4: Konsistensi Sensor & Tamper -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider font-semibold">Konsistensi Sensor &amp; Tamper</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">sensors</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display text-display text-on-surface leading-none">99.4%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-snug">
+          1 Sensor Anomali (LLS Dip Fluktuasi) dari 142 Armada
+        </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-xs text-label-xs font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+          100% Firmware Valid
+        </span>
+<span class="font-data-tabular text-data-tabular text-outline">GV30CEU v3.14</span>
+</div>
+</div>
+</section>
+<!-- Interactive Alert Filter Bar -->
+<section class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm mb-space-lg flex flex-col gap-space-md">
+<!-- Filter Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+<span class="">Semua Alert</span>
+<span class="px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs">12</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-error text-on-error font-label-md text-label-md font-bold whitespace-nowrap shadow-sm transition-colors" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest animate-pulse"></span>
+<span class="">Kritis / Butuh Respon</span>
+<span class="px-1.5 py-0.2 bg-error-container text-on-error-container rounded font-label-xs text-label-xs font-bold">5</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-error">local_gas_station</span>
+<span class="">Pencurian &amp; Fluktuasi BBM</span>
+<span class="px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs">4</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">explore</span>
+<span class="">Geofence &amp; Rute</span>
+<span class="px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs">3</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">cable</span>
+<span class="">Sensor Tamper &amp; GPS</span>
+<span class="px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs">3</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">task_alt</span>
+<span class="">Terselesaikan Hari Ini</span>
+<span class="px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs">7</span>
+</button>
+</div>
+<!-- Secondary Filters & Search Bar -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-space-sm pt-space-xs">
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-space-md py-1.5 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-lg placeholder-outline focus:outline-none focus:bg-surface-container-lowest shadow-inner transition-colors" placeholder="Cari no tiket, plat nomor, lokasi, atau jenis insiden..." type="search">
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto justify-end">
+<div class="flex items-center gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Keparahan:</span>
+<select class="bg-surface-container-low text-on-surface font-body-sm text-body-sm py-1 px-space-sm rounded-lg focus:outline-none">
+<option>Semua Keparahan</option>
+<option selected="">Kritis P1</option>
+<option>Mayor P2</option>
+<option>Minor P3</option>
+</select>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Status:</span>
+<select class="bg-surface-container-low text-on-surface font-body-sm text-body-sm py-1 px-space-sm rounded-lg focus:outline-none">
+<option>Semua Status</option>
+<option selected="">Open / Investigasi</option>
+<option>Eskalasi Supir</option>
+<option>Selesai</option>
+</select>
+</div>
+<button class="p-1.5 bg-surface-container hover:bg-surface-container-high rounded text-on-surface-variant transition-colors" title="Refresh Feed" type="button">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Main Layout Split (7 Col Incident Feed / Triage Queue + 5 Col Real-Time Incident Deep-Dive Inspector) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-space-lg">
+<!-- LEFT COLUMN: Incident Triage Queue / Feed (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Antrean Insiden &amp; Triage Lapangan</span>
+<span class="font-data-tabular text-data-tabular text-error font-semibold bg-error-container px-2 py-0.5 rounded text-on-error-container">5 Butuh Tindakan</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline">Urutan: Prioritas Keparahan &amp; Waktu Terkini</span>
+</div>
+<!-- INCIDENT 1: #ALT-2024-8841 (SELECTED ACTIVE) -->
+<article class="bg-surface-container-lowest rounded-xl shadow-md p-space-md relative overflow-hidden transition-all duration-200">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<div class="flex items-start justify-between gap-space-sm pl-2">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-error text-on-error font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest animate-ping"></span>
+              KRITIS P1 - SUDDEN DRAIN / THEFT
+            </span>
+<span class="font-data-tabular text-data-tabular font-bold text-primary">#ALT-2024-8841</span>
+<span class="font-label-xs text-label-xs text-outline">11 menit yang lalu • 14:26 WIB</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-xs text-label-xs font-bold uppercase tracking-wider">ACTIVE FOCUS</span>
+</div>
+</div>
+<div class="mt-space-sm pl-2 grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div>
+<div class="flex items-center gap-1">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">B 9421 UEI</span>
+<span class="font-label-xs text-label-xs px-1.5 bg-surface-container text-on-surface-variant rounded">Wingbox</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hino 500 FL 260 • Driver: <strong class="text-on-surface">Hendra Kurniawan</strong></span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-error-container/60 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">pin_drop</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Lokasi Terdeteksi</span>
+<p class="font-body-sm text-body-sm text-on-surface font-medium truncate">Rest Area Tol Cipali KM 102A (Luar Geofence SPBU)</p>
+</div>
+</div>
+</div>
+<!-- Telemetry Breakdown Highlight Box -->
+<div class="mt-space-sm ml-2 bg-error-container/20 p-space-sm rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">oil_barrel</span>
+<div class="flex-1">
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+<strong class="text-error font-semibold">Penurunan drastis -38.5 Liter</strong> dalam tempo 7 menit saat mesin status <span class="bg-surface-container px-1 py-0.5 rounded text-on-surface font-data-tabular font-bold">IGNITION OFF</span>. Nilai sensor LLS anjlok dari 1,940 Hz (320 L) ke 1,510 Hz (281.5 L).
+            </p>
+</div>
+</div>
+<!-- Incident Action Bar -->
+<div class="mt-space-md ml-2 pt-space-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-xs text-label-xs text-outline">Protokol Status:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-xs text-label-xs font-semibold">Verifikasi Lapangan Sedang Berlangsung</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-md text-label-md flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">phone_in_talk</span>
+<span class="">Telepon Supir</span>
+</button>
+<button class="px-space-sm py-1 bg-error-container text-on-error-container hover:bg-error hover:text-on-error rounded font-label-md text-label-md flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">power_settings_new</span>
+<span class="">Matikan Mesin (Immobilizer)</span>
+</button>
+<button class="px-space-md py-1 bg-primary text-on-primary rounded font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors shadow-sm" type="button">
+              Triage Segera
+            </button>
+</div>
+</div>
+</article>
+<!-- INCIDENT 2: #ALT-2024-8839 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md hover:bg-surface-container-lowest/90 transition-all duration-200">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-error text-on-error font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+              KRITIS P1 - HARDWARE WIRE-CUT / TAMPER
+            </span>
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface">#ALT-2024-8839</span>
+<span class="font-label-xs text-label-xs text-outline">34 menit yang lalu • 14:04 WIB</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs font-semibold">Investigasi Mandor Lapangan</span>
+</div>
+<div class="mt-space-sm grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div>
+<div class="flex items-center gap-1">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">B 9812 SRA</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Isuzu Giga 285 Box</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Driver: Wahyu Hidayat</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Lokasi</span>
+<p class="font-body-sm text-body-sm text-on-surface truncate">Tol Purbaleunyi KM 88B</p>
+</div>
+</div>
+<div class="mt-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<p class="font-body-sm text-body-sm text-on-surface">
+            Sinyal RS-485 probe tangki terputus mendadak saat kecepatan 0 km/j. GPS tetap online via baterai cadangan internal (3.9V nominal).
+          </p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline">Eskalasi: Mandor Area Padalarang Diutus</span>
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-md text-label-md transition-colors" type="button">
+            Lihat Log Diagnostik Sensor
+          </button>
+</div>
+</article>
+<!-- INCIDENT 3: #ALT-2024-8835 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md hover:bg-surface-container-lowest/90 transition-all duration-200">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              MAYOR P2 - GEOFENCE BLACKZONE BREACH
+            </span>
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface">#ALT-2024-8835</span>
+<span class="font-label-xs text-label-xs text-outline">1 jam lalu • 13:30 WIB</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-label-xs text-label-xs font-semibold">Panggilan Radio Berlangsung</span>
+</div>
+<div class="mt-space-sm grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div>
+<div class="flex items-center gap-1">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">BK 8730 MT</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Mercs Axor 2528C (Tangki CPO)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Driver: Joko Susilo</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Lokasi</span>
+<p class="font-body-sm text-body-sm text-on-surface truncate">Zona Pantura By-pass (Area Rawan Bajing Loncat)</p>
+</div>
+</div>
+<div class="mt-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<p class="font-body-sm text-body-sm text-on-surface">
+            Armada memasuki restricted area tanpa surat jalan resmi konfirmasi NOC. Deviasi rute 4.2 KM dari koridor utama Trans-Jawa.
+          </p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline">Status Koridor: Off-Track Terdeteksi</span>
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-md text-label-md transition-colors" type="button">
+            Audit Koordinat Rute
+          </button>
+</div>
+</article>
+<!-- INCIDENT 4: #ALT-2024-8830 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md hover:bg-surface-container-lowest/90 transition-all duration-200">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              MAYOR P2 - UNVERIFIED REFUELING
+            </span>
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface">#ALT-2024-8830</span>
+<span class="font-label-xs text-label-xs text-outline">2 jam lalu • 12:15 WIB</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-xs text-label-xs font-semibold">SLA Verifikasi Overdue</span>
+</div>
+<div class="mt-space-sm grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div>
+<div class="flex items-center gap-1">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">B 9301 KLC</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Mitsubishi Fuso</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Driver: Bambang Irawan</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Lokasi</span>
+<p class="font-body-sm text-body-sm text-on-surface truncate">SPBU 34-4210 Cikande</p>
+</div>
+</div>
+<div class="mt-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<p class="font-body-sm text-body-sm text-on-surface">
+            Pengisian +120 Liter terdeteksi, namun struk fisik belum diverifikasi dalam SLA 30 menit. Audit foto odometer dan struk ditangguhkan.
+          </p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline">Klaim BBM: Menunggu Struk Kasir</span>
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-md text-label-md transition-colors" type="button">
+            Request Foto Struk WA
+          </button>
+</div>
+</article>
+<!-- INCIDENT 5: #ALT-2024-8822 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md hover:bg-surface-container-lowest/90 transition-all duration-200">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+              MINOR P3 - IDLE RUNNING OVERSTAY
+            </span>
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface">#ALT-2024-8822</span>
+<span class="font-label-xs text-label-xs text-outline">3 jam lalu • 11:20 WIB</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-xs text-label-xs font-medium">Dalam Batas Toleransi</span>
+</div>
+<div class="mt-space-sm grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div>
+<div class="flex items-center gap-1">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">D 7120 XY</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Isuzu Giga Cooler</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Driver: Danang Prasetyo</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Lokasi</span>
+<p class="font-body-sm text-body-sm text-on-surface truncate">Buffer Area Pelabuhan Merak</p>
+</div>
+</div>
+<div class="mt-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<p class="font-body-sm text-body-sm text-on-surface">
+            Mesin menyala diam selama 54 menit (BBM terbuang 4.2 L). Kompresor pendingin aktif menjaga kargo frozen food.
+          </p>
+</div>
+</article>
+</div>
+<!-- RIGHT COLUMN: Real-Time Incident Deep-Dive Inspector (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Card Container: Command Desk Inspector -->
+<section class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md sticky top-16">
+<!-- Inspector Header -->
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Command Desk: #ALT-2024-8841</span>
+</div>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="px-2 py-0.5 rounded bg-error text-on-error font-label-xs text-label-xs font-bold">P1 CRITICAL</span>
+<span class="font-label-xs text-label-xs text-outline font-data-tabular">INCIDENT AGE: 11m 42s</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Bisu Alarm Suara" type="button">
+<span class="material-symbols-outlined text-[18px]">volume_off</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Buka Layar Penuh" type="button">
+<span class="material-symbols-outlined text-[18px]">open_in_full</span>
+</button>
+</div>
+</div>
+<!-- GPS Mini-Map Snapshot Component -->
+<div class="relative rounded-xl overflow-hidden shadow-inner bg-surface-container-high">
+<!-- Static Map Simulation using dynamic placeholder map element -->
+<div class="w-full h-48 bg-cover bg-center rounded-xl" data-location="Tol Cipali KM 102, Subang, West Java" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPAfz2oynSNIbvbIVtvzfQAjEyHoL_9C_y5ayZ7tBD5QUhb4pKOft5v_luVFMc2PkpQQGjwgCZENdMwtI02zpN2EDqtaiNMyCbfCnbydko5fPiGltjQCFKHY5xrQky3jwcLOqJr5SBNE6X62gwlfubakvmbdQAdAWd6wLbSkL3uzwJDWGnV6Fq7AMpYdBmDPCjbdOdn2RHr1cKGZpdQ0TLWQltE98qGJrAR-Z8e2bt')"></div>
+<!-- Map Overlay HUD Elements -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 via-transparent to-surface-dim/20 pointer-events-none"></div>
+<!-- Vehicle Alert Pin Beacon Marker (Overlay) -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="relative flex items-center justify-center">
+<span class="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-error opacity-75"></span>
+<div class="w-7 h-7 rounded-full bg-error text-on-error flex items-center justify-center shadow-lg ring-2 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+</div>
+</div>
+<div class="mt-1 px-1.5 py-0.5 rounded bg-inverse-surface/90 text-inverse-on-surface font-label-xs text-label-xs font-bold tracking-tight shadow">
+              B 9421 UEI • 0 KM/H
+            </div>
+</div>
+<!-- Bottom Map Metadata Strip -->
+<div class="absolute bottom-2 left-2 right-2 flex items-center justify-between bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-1 rounded shadow-sm text-on-surface">
+<div class="flex items-center gap-1 font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[14px] text-error">gps_fixed</span>
+<span class="font-data-tabular">-6.52984, 107.72145</span>
+</div>
+<div class="flex items-center gap-2 font-label-xs text-label-xs text-on-surface-variant font-data-tabular">
+<span class="">HDOP: 0.8</span>
+<span class="">•</span>
+<span class="text-secondary font-semibold">19 SAT 3D FIX</span>
+</div>
+</div>
+</div>
+<!-- Forensic Telemetry Waveform Graph Card -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-error">trending_down</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Kurva Penurunan Sensor BBM (LLS Telemetry)</span>
+</div>
+<span class="font-label-xs text-label-xs text-error font-bold">-38.5 L (Dalam 7 Menit)</span>
+</div>
+<!-- Inline SVG Waveform: Fuel Drop Graph -->
+<div class="w-full h-24 bg-surface-container-lowest rounded-lg p-space-xs flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between text-outline font-data-tabular font-label-xs text-label-xs px-1">
+<span class="">320.0 L (14:19 WIB)</span>
+<span class="text-error font-bold">Sudden Drain Event</span>
+<span class="text-error">281.5 L (14:26 WIB)</span>
+</div>
+<!-- SVG Sparkline with Sudden Gradient Dip -->
+<svg class="w-full h-12 overflow-visible" preserveAspectRatio="none" viewBox="0 0 320 50">
+<defs>
+<linearGradient id="fuelDropGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ba1a1a" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#ba1a1a" stop-opacity="0.0"></stop>
+</linearGradient>
+</defs>
+<!-- Filled Area -->
+<path d="M 0,10 L 120,10 L 160,11 L 220,44 L 320,45 L 320,50 L 0,50 Z" fill="url(#fuelDropGrad)"></path>
+<!-- Main Line Curve -->
+<path d="M 0,10 L 120,10 L 160,11 L 220,44 L 320,45" fill="none" stroke="#ba1a1a" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Ignition Status Flag Line (Flat 0 speed) -->
+<line stroke="#737686" stroke-dasharray="3,3" stroke-width="1.5" x1="0" x2="320" y1="48" y2="48"></line>
+<!-- Anomaly Pinpoint Point -->
+<circle class="animate-ping" cx="220" cy="44" fill="#ba1a1a" r="3.5"></circle>
+<circle cx="220" cy="44" fill="#ba1a1a" r="3"></circle>
+</svg>
+<div class="flex items-center justify-between text-outline font-label-xs text-label-xs px-1">
+<span class="">Status Kontak: MATI (ACC OFF)</span>
+<span class="text-error font-semibold">Kecepatan: 0 KM/H (Diam)</span>
+<span class="">Kapasitas Tangki: 400 L</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-xs text-label-xs mt-0.5">
+<span class="">Sensor: Queclink CFS300B BLE Cap-Probe</span>
+<span class="font-data-tabular">Delta: -5.5 L / menit (Threshold: &gt;2.0 L/m)</span>
+</div>
+</div>
+<!-- Supir & Dispatcher Contact Card -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-sm">
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Profil Awak Armada &amp; Pengemudi</span>
+<div class="flex items-center gap-space-sm">
+<div class="relative w-11 h-11 shrink-0">
+<img class="w-11 h-11 rounded-full object-cover shadow" data-alt="Close-up professional headshot of a mature Indonesian male commercial truck logistics driver named Hendra Kurniawan wearing a navy transport uniform with high-visibility stitching in daylight with crisp soft lighting and high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgMRQ5QLWcox0C__xO_pOYjE8hGEs947QGY2-pAo4vpK-JaP7hNDGIdguzFVVeB7dqx7w9F3EQs7LGLomytlJrNyU9G7aonA0ot2GPegu4DJV6ivdhkzDSmNW-rJl-jZCgYxjL6-8sWYhrcryxaTgJav5Y6RCS3Z5RBvp-Oqp0BDJkShhVhOc7Za_n7Y-fdWqJkfnUMP13GlDd8trqcYsKBIq93JqaBRNME5132iMU">
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest" title="GPS Phone Online"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">Hendra Kurniawan</span>
+<span class="px-1.5 py-0.2 bg-surface-container-high text-on-surface font-label-xs text-label-xs rounded font-medium">SIM B2 Umum</span>
+</div>
+<p class="font-data-tabular text-data-tabular text-on-surface-variant font-medium">+62 812-8891-2301</p>
+<p class="font-label-xs text-label-xs text-outline">PO Wahana Mitra Logistik • Trayek Jakarta - Surabaya</p>
+</div>
+</div>
+<!-- Instant Communication Action Strip -->
+<div class="grid grid-cols-3 gap-space-xs mt-1">
+<button class="flex items-center justify-center gap-1 py-1.5 px-2 bg-surface-container-lowest hover:bg-surface-container text-on-surface rounded-lg font-label-xs text-label-xs font-semibold shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">chat</span>
+<span class="">WhatsApp</span>
+</button>
+<button class="flex items-center justify-center gap-1 py-1.5 px-2 bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-xs text-label-xs font-semibold shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span class="">Direct VoIP</span>
+</button>
+<button class="flex items-center justify-center gap-1 py-1.5 px-2 bg-surface-container-lowest hover:bg-surface-container text-on-surface rounded-lg font-label-xs text-label-xs font-semibold shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">sms</span>
+<span class="">SMS Ping</span>
+</button>
+</div>
+</div>
+<!-- Escalation Matrix & Safety Protocols Checklist -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Protokol Penanganan Bertingkat (SOP-802)</span>
+<div class="flex flex-col gap-1.5">
+<!-- Step 1 (Completed) -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">1. Push Notifikasi ke Mandor Depo Cipali</span>
+</div>
+<span class="font-data-tabular text-data-tabular text-outline font-label-xs">14:27 WIB (Auto)</span>
+</div>
+<!-- Step 2 (In Progress) -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-primary-fixed/30 ring-1 ring-primary/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] animate-spin">sync</span>
+<span class="font-body-sm text-body-sm text-on-surface font-bold">2. Kontak Verifikasi Driver via Seluler</span>
+</div>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-primary text-on-primary font-semibold">Sedang Dipanggil</span>
+</div>
+<!-- Step 3 (Pending Dispatcher Confirmation) -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[18px]">lock</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">3. Remote Engine Kill (Immobilizer)</span>
+</div>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-semibold">Siaga Tombol</span>
+</div>
+<!-- Step 4 (Ready) -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">description</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4. Terbitkan BAP Digital &amp; SP Asuransi</span>
+</div>
+<span class="font-data-tabular text-data-tabular text-outline font-label-xs">Draft Siap</span>
+</div>
+</div>
+</div>
+<!-- Dispatcher Primary Command Action Bar -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+<!-- Remote Kill Switch Button -->
+<button class="w-full py-2.5 px-space-sm bg-error text-on-error rounded-lg font-label-md text-label-md font-bold hover:bg-error-container hover:text-on-error-container flex items-center justify-center gap-1.5 shadow-md transition-colors" onclick="alert('PROTOKOL DARURAT: Mengirim perintah immobilizer CUT_CIRCUIT_CAN ke GV30CEU pada unit B 9421 UEI. Konfirmasi eksekusi?')" type="button">
+<span class="material-symbols-outlined text-[18px]">power_settings_new</span>
+<span class="">Kunci Kontak (Immobilizer)</span>
+</button>
+<!-- BAP Creation Button -->
+<button class="w-full py-2.5 px-space-sm bg-primary text-on-primary rounded-lg font-label-md text-label-md font-bold hover:bg-primary-container flex items-center justify-center gap-1.5 shadow-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+<span class="">Terbitkan Berita Acara (BAP)</span>
+</button>
+</div>
+<!-- False Alarm Flag -->
+<button class="w-full py-2 px-space-sm bg-surface-container hover:bg-surface-container-high text-on-surface-variant rounded-lg font-label-md text-label-md flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span class="">Tandai False Alarm / Terverifikasi Legal</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+<!-- Bottom Quick Operational Audit Strip -->
+<section class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm grid grid-cols-1 md:grid-cols-12 gap-space-md items-center">
+<!-- 7 Days Incident Trend Inline Sparkline -->
+<div class="md:col-span-4 flex items-center gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Tren Insiden 7 Hari Terakhir</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">18 Total Insiden</span>
+<span class="font-label-xs text-label-xs text-secondary font-semibold">(-32% Mingguan)</span>
+</div>
+</div>
+<!-- Mini Sparkline Bar Visualization -->
+<div class="flex-1 flex items-end gap-1.5 h-8 px-2 bg-surface-container-low rounded">
+<div class="w-full bg-outline-variant rounded-t" style="height: 45%" title="Senin: 4 Kasus"></div>
+<div class="w-full bg-outline-variant rounded-t" style="height: 60%" title="Selasa: 5 Kasus"></div>
+<div class="w-full bg-outline-variant rounded-t" style="height: 35%" title="Rabu: 3 Kasus"></div>
+<div class="w-full bg-outline-variant rounded-t" style="height: 80%" title="Kamis: 7 Kasus"></div>
+<div class="w-full bg-outline-variant rounded-t" style="height: 50%" title="Jumat: 4 Kasus"></div>
+<div class="w-full bg-outline-variant rounded-t" style="height: 30%" title="Sabtu: 2 Kasus"></div>
+<div class="w-full bg-error rounded-t" style="height: 65%" title="Hari Ini: 5 Kasus"></div>
+</div>
+</div>
+<!-- Active NOC Dispatcher Operators on Duty -->
+<div class="md:col-span-5 flex items-center justify-between md:justify-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">badge</span>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">NOC Dispatch On-Duty</span>
+<span class="font-body-sm text-body-sm text-on-surface font-bold">4 Dispatcher Aktif (Shift 1 Pagi/Siang)</span>
+</div>
+</div>
+<!-- Operator Avatar Stack -->
+<div class="flex -space-x-2 overflow-hidden">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-xs text-label-xs font-bold ring-2 ring-surface-container-lowest" title="Ahmad Fauzi (Lead)">AF</div>
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-xs text-label-xs font-bold ring-2 ring-surface-container-lowest" title="Rian Gunawan">RG</div>
+<div class="w-7 h-7 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-label-xs text-label-xs font-bold ring-2 ring-surface-container-lowest" title="Dewi Lestari">DL</div>
+<div class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-label-xs text-label-xs font-bold ring-2 ring-surface-container-lowest" title="Siti Rahma">SR</div>
+</div>
+</div>
+<!-- Telemetry Link & Telco Health Indicators -->
+<div class="md:col-span-3 flex items-center justify-end gap-space-md text-on-surface-variant font-label-xs text-label-xs">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[16px]">speed</span>
+<span class="">Gateway Latency: <strong class="text-on-surface font-data-tabular">0.9s</strong></span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="">Telco Failover: <strong class="text-secondary font-semibold">READY</strong></span>
+</div>
+</div>
+</section>
+</div></main></div>
+
+</body></html>

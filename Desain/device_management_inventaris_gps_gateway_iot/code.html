@@ -1,0 +1,993 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error":"#ba1a1a","secondary-fixed":"#cce5ff","tertiary":"#4b566a","tertiary-container":"#636e83","on-tertiary-fixed-variant":"#3c475a","on-error":"#ffffff","on-primary-container":"#eeefff","on-primary-fixed-variant":"#003ea8","surface-container":"#eceef0","on-surface-variant":"#434655","inverse-primary":"#b4c5ff","surface-container-highest":"#e0e3e5","tertiary-fixed":"#d8e3fb","outline-variant":"#c3c6d7","surface-container-high":"#e6e8ea","on-tertiary-container":"#ecf1ff","on-surface":"#191c1e","on-tertiary":"#ffffff","surface":"#f7f9fb","surface-container-lowest":"#ffffff","surface-dim":"#d8dadc","secondary-container":"#5bb8fe","on-primary-fixed":"#00174b","outline":"#737686","on-secondary-fixed":"#001d31","on-secondary-fixed-variant":"#004b73","background":"#f7f9fb","error-container":"#ffdad6","surface-bright":"#f7f9fb","tertiary-fixed-dim":"#bcc7de","primary":"#004ac6","inverse-on-surface":"#eff1f3","surface-container-low":"#f2f4f6","on-secondary":"#ffffff","surface-tint":"#0053db","on-error-container":"#93000a","primary-fixed-dim":"#b4c5ff","surface-variant":"#e0e3e5","primary-container":"#2563eb","secondary":"#006398","inverse-surface":"#2d3133","secondary-fixed-dim":"#93ccff","primary-fixed":"#dbe1ff","on-secondary-container":"#00476e","on-background":"#191c1e","on-tertiary-fixed":"#111c2d","on-primary":"#ffffff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter":"1rem","margin":"1.5rem","space-xl":"1.5rem","gutter-dense":"0.5rem","space-lg":"1rem","space-md":"0.75rem","space-sm":"0.5rem","margin-mobile":"0.75rem","space-xs":"0.25rem"},fontFamily:{"title-sm":["Inter"],"telemetry-metric":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"label-xs":["Inter"],"body-sm":["Inter"],"display":["Inter"],"data-tabular":["Inter"],"label-md":["Inter"],"headline-lg-mobile":["Inter"],"headline-lg":["Inter"]},fontSize:{"title-sm":["15px",{lineHeight:"20px",letterSpacing:"-0.005em",fontWeight:"600"}],"telemetry-metric":["22px",{lineHeight:"26px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-md":["18px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-xs":["11px",{lineHeight:"14px",letterSpacing:"0.03em",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"18px",fontWeight:"400"}],"display":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"data-tabular":["13px",{lineHeight:"18px",letterSpacing:"-0.005em",fontWeight:"500"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-lg-mobile":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-[#0b132b] text-slate-300 z-50 flex flex-col justify-between border-r border-[#1c294a] shadow-xl">
+  <div class="flex flex-col h-full overflow-hidden">
+    <!-- Logo & Header with High Contrast Dark Theme -->
+    <div class="h-14 px-space-md flex items-center gap-space-sm bg-[#080e21] border-b border-[#1c294a]">
+      <div class="w-7 h-7 bg-primary flex items-center justify-center rounded shadow-sm">
+        <span class="material-symbols-outlined text-white text-[18px]">radar</span>
+      </div>
+      <div class="flex flex-col">
+        <div class="flex items-center gap-space-xs">
+          <span class="font-title-sm text-title-sm text-white tracking-tight leading-none font-bold">PasTrack</span>
+          <span class="px-1.5 py-0.5 bg-blue-500/20 text-blue-300 border border-blue-400/30 font-label-xs text-label-xs rounded font-bold">PRO</span>
+        </div>
+        <span class="font-label-xs text-label-xs text-slate-400 uppercase tracking-wider leading-none mt-0.5">Fleet Intelligence</span>
+      </div>
+    </div>
+
+    <!-- Navigation List with Light Text and Dark Hover States -->
+    <div class="flex-1 overflow-y-auto px-space-sm py-space-sm space-y-space-md">
+      <nav>
+        <div class="px-space-xs pb-space-xs">
+          <span class="font-label-xs text-label-xs text-slate-400 font-semibold tracking-wider uppercase">Overview</span>
+        </div>
+        <div class="space-y-0.5">
+          <a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="fleet-dashboard" href="#">Fleet Dashboard</a>
+        </div>
+
+        <div class="px-space-xs pt-space-sm pb-space-xs">
+          <span class="font-label-xs text-label-xs text-slate-400 font-semibold tracking-wider uppercase">Fleet Management</span>
+        </div>
+        <div class="space-y-0.5">
+          <a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="vehicles" href="#">Vehicles</a>
+          <a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="live-tracking" href="#">Live Tracking</a>
+          <a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="trip-history" href="#">Trip History</a>
+          <a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="geofences" href="#">Geofences</a>
+        </div>
+
+        <div class="px-space-xs pt-space-sm pb-space-xs">
+          <span class="font-label-xs text-label-xs text-slate-400 font-semibold tracking-wider uppercase">Fuel Intelligence</span>
+        </div>
+        <div class="space-y-0.5">
+          <a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="fuel-monitoring" href="#">Fuel Monitoring</a>
+          <a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="fuel-analytics" href="#">Fuel Analytics</a>
+          <a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="fuel-events" href="#">Fuel Events</a>
+        </div>
+
+        <div class="px-space-xs pt-space-sm pb-space-xs">
+          <span class="font-label-xs text-label-xs text-slate-400 font-semibold tracking-wider uppercase">Device &amp; Data Health</span>
+        </div>
+        <div class="space-y-0.5">
+          <a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="gps-quality" href="#">GPS Quality</a>
+          <a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="device-connectivity" href="#">Device Connectivity</a>
+          <a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="data-activity" href="#">Data Activity</a>
+          <a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="raw-protocol-logs" href="#">Raw Protocol Logs</a>
+        </div>
+
+        <div class="px-space-xs pt-space-sm pb-space-xs">
+          <span class="font-label-xs text-label-xs text-slate-400 font-semibold tracking-wider uppercase">Monitoring &amp; Reports</span>
+        </div>
+        <div class="space-y-0.5">
+          <a class="flex items-center justify-between px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="alert-center" href="#">
+            <span class="">Alert Center</span>
+            <span class="px-1.5 py-0.5 bg-error text-white font-label-xs text-label-xs rounded font-bold">5</span>
+          </a>
+          <a class="flex items-center justify-between px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="reports" href="#">
+            <span class="">Reports &amp; Fleet Audit</span>
+            <span class="px-1.5 py-0.5 bg-blue-500/20 text-blue-300 border border-blue-400/30 font-label-xs text-label-xs rounded font-bold">NEW</span>
+          </a>
+        </div>
+
+        <div class="px-space-xs pt-space-sm pb-space-xs">
+          <span class="font-label-xs text-label-xs text-slate-400 font-semibold tracking-wider uppercase">Settings &amp; Configuration</span>
+        </div>
+        <div class="space-y-0.5">
+          <a aria-current="page" class="flex items-center px-space-sm py-1.5 rounded transition-colors bg-primary-container text-white font-bold shadow-sm shadow-blue-500/30" data-path="device-management" href="#">
+            Device Management
+          </a>
+          <a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="sensor-management" href="#">Sensor Management</a>
+          <a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-[#1a2647] hover:text-white transition-colors font-body-sm text-body-sm" data-path="user-management" href="#">User Management</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Bottom Hardware Telemetry Widget (High-contrast Dark) -->
+    <div class="p-space-sm m-space-sm bg-[#131d3b] border border-[#233560] rounded">
+      <div class="flex items-center gap-space-xs">
+        <span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+        <span class="font-label-xs text-label-xs text-white font-semibold tracking-wide">HARDWARE TELEMETRY</span>
+      </div>
+      <div class="mt-1 font-label-xs text-label-xs text-slate-300">Queclink GV30CEU / BLE CFS300B Integrated</div>
+      <div class="mt-1 flex items-center justify-between font-label-xs text-label-xs text-secondary-container">
+        <span class="flex items-center gap-0.5 font-medium"><span class="material-symbols-outlined text-[12px]">memory</span> CAN2.0</span>
+        <span class="font-data-tabular text-data-tabular text-slate-300 font-semibold">v3.14.8</span>
+      </div>
+    </div>
+  </div>
+</aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin"><div class="flex items-center gap-space-md flex-1 max-w-2xl"><div class="relative flex items-center"><button class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low text-on-surface rounded font-body-sm text-body-sm hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[16px] text-secondary">departure_board</span><span class="font-medium">Semua Armada</span><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><div class="relative flex-1"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-space-md py-1 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded placeholder-outline focus:outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Cari plat nomor / nama driver / IMEI / sensor ID..." type="search"></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low rounded"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-label-xs text-label-xs text-on-surface font-semibold tracking-wide">LIVE NOC SYNC:</span><span class="font-data-tabular text-data-tabular text-secondary font-medium">14:38:05 WIB</span></div><button class="relative p-1.5 text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-label-xs text-label-xs font-bold">3</span></button><div class="h-4 w-px bg-surface-container-high"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="relative"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary ring-1 ring-surface-container-lowest"></span></div><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm text-on-surface font-semibold leading-tight">Ahmad Fauzi</span><span class="font-label-xs text-label-xs text-on-surface-variant leading-tight">Dispatcher Lead NOC</span></div></div></div></header><main class="w-full pt-14 bg-surface px-margin"><div class="flex flex-col w-full space-y-space-lg pb-space-xl">
+<!-- Top Operational Context Header -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md pt-space-xs">
+<div class="flex flex-col space-y-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 bg-primary-fixed text-on-primary-fixed font-label-xs text-label-xs rounded font-bold uppercase tracking-wider">Asset Fleet Registry</span>
+<span class="text-outline text-label-xs font-label-xs">•</span>
+<span class="font-label-xs text-label-xs text-outline tracking-wider font-semibold">GATEWAY TELEMATIKA INDONESIA</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
+        Manajemen Perangkat GPS &amp; Gateway IoT (Device Management)
+      </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-4xl">
+        Kelola inventaris tracker GPS (Queclink GV300/GV30CEU, Teltonika FMC130), status IMEI, kartu SIM M2M Telkomsel/Indosat, binding armada, dan update Firmware OTA.
+      </p>
+</div>
+<!-- Global Actions -->
+<div class="flex items-center flex-wrap gap-space-xs">
+<button class="flex items-center gap-1.5 px-space-md py-1.5 bg-surface-container-lowest text-on-surface font-body-sm text-body-sm font-medium rounded shadow-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">upload_file</span>
+<span class="">Batch Upload (CSV/Excel)</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 bg-surface-container-lowest text-on-surface font-body-sm text-body-sm font-medium rounded shadow-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">terminal</span>
+<span class="">Kirim Command SMS/OTA</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 bg-primary-container text-on-primary font-body-sm text-body-sm font-semibold rounded shadow hover:bg-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span class="">+ Tambah Perangkat Baru</span>
+</button>
+</div>
+</div>
+<!-- KPI Metric Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 translate-x-3 -translate-y-2 text-surface-container-high opacity-40 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[80px]">developer_board</span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs uppercase font-semibold text-outline tracking-wider">Total Tracker GPS</span>
+<span class="px-1.5 py-0.5 bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs rounded font-bold">100% AUDIT</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface font-bold tracking-tight">168 Unit</span>
+<span class="font-label-xs text-label-xs text-secondary font-medium">92.8% Terpasang</span>
+</div>
+</div>
+<div class="mt-3 pt-2 bg-surface-container-low/60 -mx-space-md -mb-space-md px-space-md py-1.5 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          156 Terpasang Armada
+        </span>
+<span class="font-data-tabular text-data-tabular font-semibold text-on-surface">12 Workshop</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 translate-x-3 -translate-y-2 text-surface-container-high opacity-40 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[80px]">cell_tower</span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs uppercase font-semibold text-outline tracking-wider">Status Konektivitas</span>
+<span class="flex items-center gap-1 font-label-xs text-label-xs font-semibold px-1.5 py-0.5 bg-surface-container-high text-on-surface rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span> 96.4% Uptime
+          </span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface font-bold tracking-tight">162 Online</span>
+<span class="font-label-xs text-label-xs text-error font-medium">6 Degraded</span>
+</div>
+</div>
+<div class="mt-3 pt-2 bg-surface-container-low/60 -mx-space-md -mb-space-md px-space-md py-1.5 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Telemetry Heartbeat &lt;10s
+        </span>
+<span class="font-label-xs text-label-xs text-error font-semibold">6 Unit Perlu Cek</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 translate-x-3 -translate-y-2 text-surface-container-high opacity-40 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[80px]">sim_card</span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs uppercase font-semibold text-outline tracking-wider">SIM M2M Aktif</span>
+<span class="px-1.5 py-0.5 bg-primary-fixed text-on-primary-fixed font-label-xs text-label-xs rounded font-bold">ZERO EXPIRED</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface font-bold tracking-tight">168 SIM</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-medium">Telkomsel / Indosat</span>
+</div>
+</div>
+<div class="mt-3 pt-2 bg-surface-container-low/60 -mx-space-md -mb-space-md px-space-md py-1.5 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="">Rata-rata: <strong class="font-data-tabular text-data-tabular text-on-surface">48 MB/bln</strong></span>
+<span class="font-label-xs text-label-xs text-on-surface font-semibold">100% Kuota Aman</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 translate-x-3 -translate-y-2 text-surface-container-high opacity-40 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[80px]">system_update_alt</span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs uppercase font-semibold text-outline tracking-wider">Firmware Status</span>
+<span class="px-1.5 py-0.5 bg-error-container text-on-error-container font-label-xs text-label-xs rounded font-bold">14 OTA PENDING</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface font-bold tracking-tight">154 Up to Date</span>
+<span class="font-label-xs text-label-xs text-outline font-medium">v3.14.8 Target</span>
+</div>
+</div>
+<div class="mt-3 pt-2 bg-surface-container-low/60 -mx-space-md -mb-space-md px-space-md py-1.5 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[14px] text-error">notification_important</span>
+          14 Unit Versi Lama
+        </span>
+<button class="font-label-xs text-label-xs text-primary font-bold hover:underline" type="button">Push Update</button>
+</div>
+</div>
+</div>
+<!-- Filter & Control Toolbar -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-space-sm">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-sm items-center">
+<!-- Search Field -->
+<div class="lg:col-span-4 relative">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-space-md py-1.5 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded placeholder-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all" placeholder="Cari IMEI, Serial Number, Nomor SIM, atau Plat Nomor..." type="search">
+</div>
+<!-- Select: Device Model -->
+<div class="lg:col-span-2 relative">
+<select class="w-full px-space-sm py-1.5 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded appearance-none focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary cursor-pointer pr-7">
+<option>Semua Model Tracker</option>
+<option>Queclink GV30CEU (4G LTE)</option>
+<option>Teltonika FMC130</option>
+<option>Jimi JC400 Dual Dashcam</option>
+<option>Queclink GV300 (Legacy 2G)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">expand_more</span>
+</div>
+<!-- Select: Binding Status -->
+<div class="lg:col-span-2 relative">
+<select class="w-full px-space-sm py-1.5 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded appearance-none focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary cursor-pointer pr-7">
+<option>Semua Status Binding</option>
+<option>Terpasang di Armada (156)</option>
+<option>Siap Pasang / Workshop (12)</option>
+<option>Degraded / Cek Antena (4)</option>
+<option>RMA / Maintenance (2)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">expand_more</span>
+</div>
+<!-- Select: Carrier Operator -->
+<div class="lg:col-span-2 relative">
+<select class="w-full px-space-sm py-1.5 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded appearance-none focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary cursor-pointer pr-7">
+<option>Semua Operator M2M</option>
+<option>Telkomsel IoT Enterprise</option>
+<option>Indosat Ooredoo Business</option>
+<option>XL Smart IoT</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">expand_more</span>
+</div>
+<!-- Control Buttons -->
+<div class="lg:col-span-2 flex items-center justify-end gap-space-xs">
+<button class="flex-1 flex items-center justify-center gap-1 py-1.5 px-space-sm bg-surface-container-low hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm rounded transition-colors" title="Kustomisasi kolom &amp; filter mendalam" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">tune</span>
+<span class="hidden sm:inline">Filter Lanjut</span>
+</button>
+<button class="flex items-center justify-center p-1.5 bg-surface-container-low hover:bg-surface-container-high text-on-surface rounded transition-colors" title="Muat ulang telemetry device" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">refresh</span>
+</button>
+</div>
+</div>
+<!-- Active Filter Tags Strip -->
+<div class="flex items-center gap-space-xs pt-1 overflow-x-auto text-label-xs font-label-xs">
+<span class="text-outline uppercase font-semibold">Filter Aktif:</span>
+<span class="inline-flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded text-on-surface">
+        Kategori: GPS &amp; Gateway M2M
+        <span class="material-symbols-outlined text-[12px] cursor-pointer hover:text-error">close</span>
+</span>
+<span class="inline-flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded text-on-surface">
+        Status Sinyal: CSQ &gt; 0
+        <span class="material-symbols-outlined text-[12px] cursor-pointer hover:text-error">close</span>
+</span>
+<span class="text-secondary font-medium ml-auto cursor-pointer hover:underline">Reset Semua Filter</span>
+</div>
+</div>
+<!-- Interactive Master Table of Devices -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header Summary Bar -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between flex-wrap gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Daftar Telematics Gateway &amp; Tracker</span>
+<span class="px-2 py-0.5 bg-surface-container-highest text-on-surface font-label-xs text-label-xs rounded font-semibold">Menampilkan 6 dari 168 Unit</span>
+</div>
+<div class="flex items-center gap-space-md text-label-xs font-label-xs text-outline">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> 4G LTE Active</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary"></span> Standby</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-error"></span> Degraded Sinyal</span>
+</div>
+</div>
+<!-- The Scrollable Table Container -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label-xs text-label-xs uppercase tracking-wider">
+<th class="py-2.5 px-space-md w-12 text-center">
+<input class="rounded text-primary focus:ring-0 cursor-pointer" type="checkbox">
+</th>
+<th class="py-2.5 px-space-md">No &amp; Model Tracker</th>
+<th class="py-2.5 px-space-md">Identitas Hardware</th>
+<th class="py-2.5 px-space-md">Kartu SIM &amp; Operator M2M</th>
+<th class="py-2.5 px-space-md">Armada Terpasang</th>
+<th class="py-2.5 px-space-md">Status &amp; Protokol</th>
+<th class="py-2.5 px-space-md">Firmware &amp; Baterai</th>
+<th class="py-2.5 px-space-md text-right">Aksi Kontrol</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+<!-- Row 1: Queclink GV30CEU - Active High -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md text-center">
+<input class="rounded text-primary focus:ring-0 cursor-pointer" type="checkbox">
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold">
+<span class="material-symbols-outlined text-[18px]">satellite_alt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-bold leading-tight">Queclink GV30CEU</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="px-1 py-0.2 bg-secondary-fixed text-on-secondary-fixed-variant font-label-xs text-label-xs rounded font-semibold">4G LTE CAT1</span>
+<span class="text-outline font-label-xs text-label-xs">• CANbus</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface tracking-tight">864291048291024</span>
+<span class="font-label-xs text-label-xs text-outline font-mono">SN: QLK-2023-88219 • Rev D3</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-data-tabular text-data-tabular font-medium text-on-surface">+62 811-920-1092</span>
+<span class="px-1 py-0.2 bg-error-container text-on-error-container font-label-xs text-label-xs rounded font-bold">T-SEL</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 font-label-xs text-label-xs text-on-surface-variant">
+<span class="text-secondary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">signal_cellular_4_bar</span> CSQ 28/31
+                  </span>
+<span class="">•</span>
+<span class="">Sisa: <strong class="font-data-tabular text-data-tabular text-on-surface">120 MB</strong></span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 bg-surface-container-highest font-bold text-on-surface rounded font-data-tabular text-data-tabular">B 9421 UEI</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Hino 500 FL 260</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline mt-0.5">Depo Cakung Hub Jakarta</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 bg-secondary-fixed text-on-secondary-fixed-variant rounded font-label-xs text-label-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                    ONLINE
+                  </span>
+<span class="font-label-xs text-label-xs text-outline">1 dtk lalu</span>
+</div>
+<span class="font-label-xs text-label-xs text-tertiary font-mono mt-0.5">GV300CAN v2.0 (Hex: 0x4F)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-data-tabular text-data-tabular font-semibold text-on-surface">v3.14.8</span>
+<span class="px-1 py-0.2 bg-secondary-fixed text-on-secondary-fixed font-label-xs text-label-xs rounded font-bold">OK</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5 font-label-xs text-label-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[12px] text-secondary">battery_full</span>
+<span class="">Backup: <strong class="font-data-tabular text-data-tabular text-on-surface">98%</strong></span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Kirim Konfigurasi" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Remote Terminal" type="button">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Menu Opsi" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Queclink GV30CEU - Active Surabaya -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md text-center">
+<input class="rounded text-primary focus:ring-0 cursor-pointer" type="checkbox">
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold">
+<span class="material-symbols-outlined text-[18px]">satellite_alt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-bold leading-tight">Queclink GV30CEU</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="px-1 py-0.2 bg-secondary-fixed text-on-secondary-fixed-variant font-label-xs text-label-xs rounded font-semibold">4G LTE CAT1</span>
+<span class="text-outline font-label-xs text-label-xs">• CANbus</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface tracking-tight">864291048291088</span>
+<span class="font-label-xs text-label-xs text-outline font-mono">SN: QLK-2023-88241 • Rev D3</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-data-tabular text-data-tabular font-medium text-on-surface">+62 811-920-1093</span>
+<span class="px-1 py-0.2 bg-error-container text-on-error-container font-label-xs text-label-xs rounded font-bold">T-SEL</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 font-label-xs text-label-xs text-on-surface-variant">
+<span class="text-secondary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">signal_cellular_4_bar</span> CSQ 25/31
+                  </span>
+<span class="">•</span>
+<span class="">Sisa: <strong class="font-data-tabular text-data-tabular text-on-surface">104 MB</strong></span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 bg-surface-container-highest font-bold text-on-surface rounded font-data-tabular text-data-tabular">B 9811 KTX</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Fuso Fighter 62</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline mt-0.5">Depo Tanjung Perak</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 bg-secondary-fixed text-on-secondary-fixed-variant rounded font-label-xs text-label-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                    ONLINE
+                  </span>
+<span class="font-label-xs text-label-xs text-outline">3 dtk lalu</span>
+</div>
+<span class="font-label-xs text-label-xs text-tertiary font-mono mt-0.5">GV300CAN v2.0 (Hex: 0x4F)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-data-tabular text-data-tabular font-semibold text-on-surface">v3.14.8</span>
+<span class="px-1 py-0.2 bg-secondary-fixed text-on-secondary-fixed font-label-xs text-label-xs rounded font-bold">OK</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5 font-label-xs text-label-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[12px] text-secondary">battery_full</span>
+<span class="">Backup: <strong class="font-data-tabular text-data-tabular text-on-surface">95%</strong></span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Kirim Konfigurasi" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Remote Terminal" type="button">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Menu Opsi" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Teltonika FMC130 - Indosat IoT -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md text-center">
+<input class="rounded text-primary focus:ring-0 cursor-pointer" type="checkbox">
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold">
+<span class="material-symbols-outlined text-[18px]">router</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-bold leading-tight">Teltonika FMC130</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="px-1 py-0.2 bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs rounded font-semibold">4G LTE + 2G</span>
+<span class="text-outline font-label-xs text-label-xs">• BLE 4.0</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface tracking-tight">352910048123910</span>
+<span class="font-label-xs text-label-xs text-outline font-mono">SN: TEL-FMC-91024 • Rev HW04</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-data-tabular text-data-tabular font-medium text-on-surface">+62 815-882-9901</span>
+<span class="px-1 py-0.2 bg-secondary-fixed text-on-secondary-fixed font-label-xs text-label-xs rounded font-bold">INDOSAT</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 font-label-xs text-label-xs text-on-surface-variant">
+<span class="text-secondary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">signal_cellular_alt</span> CSQ 21/31
+                  </span>
+<span class="">•</span>
+<span class="">Sisa: <strong class="font-data-tabular text-data-tabular text-on-surface">88 MB</strong></span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 bg-surface-container-highest font-bold text-on-surface rounded font-data-tabular text-data-tabular">L 8842 UZ</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Isuzu Giga 26T</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline mt-0.5">Depo Tanjung Perak</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 bg-secondary-fixed text-on-secondary-fixed-variant rounded font-label-xs text-label-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    ONLINE
+                  </span>
+<span class="font-label-xs text-label-xs text-outline">5 dtk lalu</span>
+</div>
+<span class="font-label-xs text-label-xs text-tertiary font-mono mt-0.5">Code8 Extended (CRC-16)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-data-tabular text-data-tabular font-semibold text-on-surface">v1.04.12</span>
+<span class="px-1 py-0.2 bg-secondary-fixed text-on-secondary-fixed font-label-xs text-label-xs rounded font-bold">OK</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5 font-label-xs text-label-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[12px] text-secondary">battery_full</span>
+<span class="">Li-Po: <strong class="font-data-tabular text-data-tabular text-on-surface">91%</strong></span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Kirim Konfigurasi" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Remote Terminal" type="button">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Menu Opsi" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Jimi JC400 Dual Dashcam - Standby -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md text-center">
+<input class="rounded text-primary focus:ring-0 cursor-pointer" type="checkbox">
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold">
+<span class="material-symbols-outlined text-[18px]">videocam</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-bold leading-tight">Jimi JC400 Dual</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="px-1 py-0.2 bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs rounded font-semibold">AI DMS / ADAS</span>
+<span class="text-outline font-label-xs text-label-xs">• 4G Dual Cam</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface tracking-tight">869102049182301</span>
+<span class="font-label-xs text-label-xs text-outline font-mono">SN: JMI-JC400-0912 • Rev 2.1</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-data-tabular text-data-tabular font-medium text-on-surface">+62 811-920-1104</span>
+<span class="px-1 py-0.2 bg-error-container text-on-error-container font-label-xs text-label-xs rounded font-bold">T-SEL</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 font-label-xs text-label-xs text-on-surface-variant">
+<span class="text-outline font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">signal_cellular_alt_2_bar</span> CSQ 14/31
+                  </span>
+<span class="">•</span>
+<span class="">Sisa: <strong class="font-data-tabular text-data-tabular text-on-surface">512 MB</strong></span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 bg-surface-container-highest font-bold text-on-surface rounded font-data-tabular text-data-tabular">BK 9012 EA</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Colt Diesel FE74</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline mt-0.5">Depo Belawan Medan</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 bg-surface-container-high text-on-surface-variant rounded font-label-xs text-label-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                    STANDBY
+                  </span>
+<span class="font-label-xs text-label-xs text-outline">Ign. Off 12m lalu</span>
+</div>
+<span class="font-label-xs text-label-xs text-tertiary font-mono mt-0.5">Concox JT808 Stream</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-data-tabular text-data-tabular font-semibold text-on-surface">v2.01.0</span>
+<span class="px-1 py-0.2 bg-secondary-fixed text-on-secondary-fixed font-label-xs text-label-xs rounded font-bold">OK</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5 font-label-xs text-label-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[12px] text-tertiary">battery_5_bar</span>
+<span class="">Supercap: <strong class="font-data-tabular text-data-tabular text-on-surface">82%</strong></span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Kamera Live Preview" type="button">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Remote Terminal" type="button">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Menu Opsi" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Queclink GV30CEU - WARNING / Degraded -->
+<tr class="hover:bg-error-container/20 transition-colors group bg-error-container/10">
+<td class="py-space-sm px-space-md text-center">
+<input class="rounded text-primary focus:ring-0 cursor-pointer" type="checkbox">
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-error-container flex items-center justify-center text-on-error-container font-bold">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-bold leading-tight">Queclink GV30CEU</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="px-1 py-0.2 bg-error text-on-error font-label-xs text-label-xs rounded font-bold">ANTENNA FAULT</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface tracking-tight">864291048291105</span>
+<span class="font-label-xs text-label-xs text-outline font-mono">SN: QLK-2022-77109 • Rev C2</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-data-tabular text-data-tabular font-medium text-on-surface">+62 811-920-1115</span>
+<span class="px-1 py-0.2 bg-error-container text-on-error-container font-label-xs text-label-xs rounded font-bold">T-SEL</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 font-label-xs text-label-xs text-error font-semibold">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">signal_cellular_connected_no_internet_0_bar</span> CSQ 7 (Kritis)
+                  </span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 bg-surface-container-highest font-bold text-on-surface rounded font-data-tabular text-data-tabular">D 9205 AB</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Hino Profia 32T</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline mt-0.5">Depo Gedebage Bandung</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 bg-error text-on-error rounded font-label-xs text-label-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-error animate-ping"></span>
+                    WARNING
+                  </span>
+<span class="font-label-xs text-label-xs text-error font-medium">Degraded Link</span>
+</div>
+<span class="font-label-xs text-label-xs text-error mt-0.5">Packet Drop 42%</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-data-tabular text-data-tabular font-semibold text-error">v3.12.2</span>
+<span class="px-1 py-0.2 bg-error-container text-on-error-container font-label-xs text-label-xs rounded font-bold">OUTDATED</span>
+</div>
+<span class="font-label-xs text-label-xs text-primary font-medium mt-0.5">Queued FOTA v3.14.8</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-2 py-1 bg-error-container text-on-error-container font-label-xs text-label-xs rounded font-bold hover:bg-error hover:text-on-error transition-colors" title="Kirim Perintah Diagnostik Antena" type="button">
+                  Test CSQ
+                </button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Menu Opsi" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Queclink GV30CEU - Ready Stock Workshop -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md text-center">
+<input class="rounded text-primary focus:ring-0 cursor-pointer" type="checkbox">
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-outline font-bold">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-bold leading-tight">Queclink GV30CEU</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="px-1 py-0.2 bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs rounded font-semibold">Spare Part Unit</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface tracking-tight">864291048291199</span>
+<span class="font-label-xs text-label-xs text-outline font-mono">SN: QLK-2024-99001 • Rev D4</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-data-tabular text-data-tabular font-medium text-on-surface">+62 811-920-1199</span>
+<span class="px-1 py-0.2 bg-error-container text-on-error-container font-label-xs text-label-xs rounded font-bold">T-SEL</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline mt-0.5">Sim Card Pre-Activated</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs px-2 py-0.5 bg-surface-container text-outline rounded w-fit font-bold">
+                  [BELUM TERPASANG]
+                </span>
+<span class="font-label-xs text-label-xs text-on-surface-variant mt-0.5">Testbench Workshop Cakung</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs font-bold w-fit">
+                  READY STOCK
+                </span>
+<span class="font-label-xs text-label-xs text-outline mt-0.5">Bench Tested Passed</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-semibold text-on-surface">v3.14.8</span>
+<div class="flex items-center gap-1 mt-0.5 font-label-xs text-label-xs text-secondary">
+<span class="material-symbols-outlined text-[12px]">battery_charging_full</span>
+<span class="">Bench: 100%</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<button class="px-2 py-1 bg-primary text-on-primary font-label-xs text-label-xs rounded font-bold hover:bg-primary-container transition-colors" type="button">
+                Pasang ke Truk
+              </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between flex-wrap gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-space-sm">
+<span class="">Menampilkan <strong class="font-data-tabular text-data-tabular text-on-surface">1 - 6</strong> dari <strong class="font-data-tabular text-data-tabular text-on-surface">168</strong> Perangkat Terdaftar</span>
+<select class="bg-surface-container-lowest text-on-surface px-2 py-1 rounded text-label-xs font-label-xs focus:outline-none">
+<option>25 per halaman</option>
+<option>50 per halaman</option>
+<option>100 per halaman</option>
+</select>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high disabled:opacity-50" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="px-2.5 py-0.5 rounded bg-primary text-on-primary font-bold font-label-xs text-label-xs" type="button">1</button>
+<button class="px-2.5 py-0.5 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container-high font-label-xs text-label-xs" type="button">2</button>
+<button class="px-2.5 py-0.5 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container-high font-label-xs text-label-xs" type="button">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="px-2.5 py-0.5 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container-high font-label-xs text-label-xs" type="button">7</button>
+<button class="p-1 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Operations Grid (Split Panels) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Left: Firmware OTA Batch Queue Manager -->
+<div class="lg:col-span-6 bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">system_update_alt</span>
+</div>
+<div>
+<h2 class="font-title-sm text-title-sm text-on-surface font-bold">Pusat Distribusi Firmware OTA (FOTA Batch Queue)</h2>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Update otomatis via Queclink Binary Protocol (Encrypted AES-128)</p>
+</div>
+</div>
+<span class="px-2 py-0.5 bg-primary-fixed text-on-primary-fixed font-label-xs text-label-xs rounded font-bold">JOB #OTA-8902</span>
+</div>
+<!-- Target Version Release Metadata -->
+<div class="mt-space-sm p-space-sm bg-surface-container-low rounded-lg space-y-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface font-medium">Target Build: <strong class="text-primary font-data-tabular">v3.14.8-RELEASE-CAN2</strong></span>
+<span class="text-outline font-data-tabular text-label-xs font-label-xs">SHA256: 8e91a4f...3c99</span>
+</div>
+<!-- Progress Bar & Analytics -->
+<div>
+<div class="flex items-center justify-between font-label-xs text-label-xs mb-1">
+<span class="text-on-surface-variant">Progres Batch OTA: <strong>154 / 168 Unit Berhasil (91.6%)</strong></span>
+<span class="font-data-tabular text-data-tabular text-secondary font-bold">14 Unit Antrean</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full transition-all" style="width: 91.6%;"></div>
+<div class="bg-error h-full transition-all" style="width: 4.8%;"></div>
+<div class="bg-outline h-full transition-all" style="width: 3.6%;"></div>
+</div>
+<div class="flex items-center justify-between mt-1 font-label-xs text-label-xs text-outline">
+<span class="">91.6% Sukses</span>
+<span class="">10 Pengiriman Tertunda (Ignition Off)</span>
+<span class="text-error font-medium">4 Gagal/CSQ Rendah</span>
+</div>
+</div>
+</div>
+<!-- Real-time Queue Mini List -->
+<div class="mt-space-sm space-y-1.5">
+<div class="text-label-xs font-label-xs font-semibold text-outline uppercase">Antrean Aktif Saat Ini:</div>
+<div class="flex items-center justify-between p-2 bg-surface-container rounded text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary animate-spin">sync</span>
+<span class="font-data-tabular text-data-tabular font-bold">864291048291105</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">(D 9205 AB)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-xs text-label-xs text-outline">Paket 38/120</span>
+<span class="px-1.5 py-0.2 bg-secondary-fixed text-on-secondary-fixed-variant rounded font-label-xs text-label-xs font-bold">STREAMING</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 bg-surface-container rounded text-body-sm font-body-sm opacity-75">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span>
+<span class="font-data-tabular text-data-tabular font-bold">864291048291240</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">(B 9912 UQ)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-xs text-label-xs text-outline">Menunggu Ignition On</span>
+<span class="px-1.5 py-0.2 bg-surface-container-high text-on-surface-variant rounded font-label-xs text-label-xs font-bold">QUEUED</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-xs text-label-xs text-outline">Auto-retry diatur: 3 kali jika sinyal terputus</span>
+<button class="px-space-md py-1.5 bg-primary text-on-primary font-body-sm text-body-sm font-semibold rounded hover:bg-primary-container transition-colors shadow-sm" type="button">
+          Jalankan Paksa Batch OTA (14 Unit)
+        </button>
+</div>
+</div>
+<!-- Right: Quick Command SMS / GPRS Console Terminal -->
+<div class="lg:col-span-6 bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</div>
+<div>
+<h2 class="font-title-sm text-title-sm text-on-surface font-bold">Console Terminal Perintah Cepat (Remote Command)</h2>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Eksekusi payload ASCII via GPRS TCP Socket atau SMS Fallback</p>
+</div>
+</div>
+<span class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed-variant font-label-xs text-label-xs rounded font-bold">TCP PORT 7018</span>
+</div>
+<!-- Command Generator Inputs -->
+<div class="mt-space-sm space-y-space-xs">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+<div>
+<label class="font-label-xs text-label-xs uppercase font-semibold text-outline block mb-1">Target IMEI</label>
+<input class="w-full px-space-sm py-1.5 bg-surface-container-low text-on-surface font-data-tabular text-data-tabular rounded focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="864291048291024 (B 9421 UEI)">
+</div>
+<div>
+<label class="font-label-xs text-label-xs uppercase font-semibold text-outline block mb-1">Template Perintah Cepat</label>
+<select class="w-full px-space-sm py-1.5 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded focus:outline-none focus:ring-1 focus:ring-primary">
+<option>AT+GTRTO=gv300,1,,,,,,FFFF$ (Soft Reboot)</option>
+<option>AT+GTDAT=gv300,2,,CSQ?,,,,FFFF$ (Cek Sinyal)</option>
+<option>AT+GTCFG=gv300,internet,,telkomsel,,,FFFF$ (Set APN)</option>
+<option>AT+GTOUT=gv300,1,0,,,FFFF$ (Matikan Mesin / Relay)</option>
+</select>
+</div>
+</div>
+<!-- Raw Console Window -->
+<div class="mt-2">
+<div class="flex items-center justify-between px-3 py-1 bg-inverse-surface text-inverse-on-surface rounded-t font-mono text-label-xs font-label-xs">
+<span class="">RAW COMMAND SOCKET - NOC LOG</span>
+<span class="text-secondary-fixed">LIVE TCP STREAM</span>
+</div>
+<div class="p-3 bg-inverse-surface/95 text-inverse-on-surface rounded-b font-mono text-label-xs font-label-xs space-y-1 h-28 overflow-y-auto">
+<div class="text-outline-variant font-data-tabular">[14:38:01.120] TX &gt;&gt; +RESP:GTFRI,02010B,864291048291024,,0,0,1,1,28.2,142,12.4,...$</div>
+<div class="text-secondary-container font-data-tabular">[14:38:03.402] ACK &lt;&lt; +ACK:GTFRI,02010B,864291048291024,0001,20250524143803,FFFF$</div>
+<div class="text-inverse-on-surface font-data-tabular">[14:38:04.918] TX &gt;&gt; AT+GTDAT=gv300,2,,CSQ?,,,,FFFF$ [Channel: TCP_DIRECT]</div>
+<div class="text-secondary-fixed font-data-tabular">[14:38:05.104] RX &lt;&lt; +RESP:GTDAT,02010B,864291048291024,,CSQ:28,BER:0,,,,FFFF$</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<label class="flex items-center gap-1.5 cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-0" type="checkbox">
+<span class="font-label-xs text-label-xs text-on-surface-variant font-medium">Kirim via SMS jika TCP Socket Timeout &gt;5s</span>
+</label>
+<button class="px-space-md py-1.5 bg-primary-container text-on-primary font-body-sm text-body-sm font-semibold rounded hover:bg-primary transition-colors shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span class="">Eksekusi Perintah</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Gateway Connectivity & Compliance Footer Bar -->
+<div class="p-space-sm bg-surface-container rounded-lg flex items-center justify-between flex-wrap gap-space-sm text-label-xs font-label-xs text-on-surface-variant">
+<div class="flex items-center gap-space-md flex-wrap">
+<div class="flex items-center gap-1.5 font-semibold text-on-surface">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="">QUECLINK GATEWAY CLUSTER: JKT-01 &amp; SBY-02 (ACTIVE-ACTIVE)</span>
+</div>
+<span class="text-outline">•</span>
+<span class="">API Gateway: <strong class="font-data-tabular text-data-tabular text-on-surface">v2.8.4-build492</strong></span>
+<span class="text-outline">•</span>
+<span class="">Kompak Protokol: <strong class="text-on-surface">CANbus 2.0B / J1939 Standard Compliant</strong></span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-mono text-outline">HASH_INTEGRITY: 7e29b01c...a188</span>
+<a class="text-primary hover:underline font-bold" href="#">Unduh Audit Log Gateway</a>
+</div>
+</div>
+</div></main></div>
+
+</body></html>

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "telemetry.cfs300b.ble",
+  "name": "CFS300B Fuel Intelligence",
+  "version": "2.1.2",
+  "kind": "core",
+  "icon": "local_gas_station",
+  "description": "BLE 5.0 capacitive probe telemetry, anti-slosh filtering and siphon alarm.",
+  "minCore": "4.8.0",
+  "coreMajor": 4,
+  "dependencies": ["core.gis.tracker"],
+  "paths": ["/fuel-monitoring", "/devices/fuel"],
+  "permissions": ["fuel.view", "fuel.configure"],
+  "topics": ["fuel.reading"],
+  "config": [
+    {
+      "key": "siphonLiters",
+      "label": "Siphon alert threshold (L)",
+      "type": "number",
+      "min": 1,
+      "max": 100,
+      "default": 5
+    }
+  ],
+  "entry": null
+}

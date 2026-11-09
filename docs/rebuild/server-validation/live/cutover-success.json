@@ -1,0 +1,24 @@
+{
+  "state": "deployed_for_user_acceptance",
+  "url": "https://toko.azlaundry.my.id/",
+  "database": "pastrack_v2_20261103_r2",
+  "web_health": {
+    "physical_ignition": "NOT_INSTALLED",
+    "schema": "v2",
+    "status": "ok"
+  },
+  "receiver_health": {
+    "fuel_decoder": "raw_cfs300b_supported_units_unverified",
+    "queued": 0,
+    "schema": "v2",
+    "status": "ok"
+  },
+  "backup": "/root/pastrack-live-cutover-20261103-r2/backup",
+  "old_database_preserved": true,
+  "web_and_receiver_managed_by_aapanel": true,
+  "limitations": [
+    "push delivery not ported",
+    "unknown historical assignment remains unresolved",
+    "unsupported hardware commands disabled"
+  ]
+}

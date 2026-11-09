@@ -1,0 +1,70 @@
+[
+  {
+    "id": "device-management Hubungkan kendaraan",
+    "status": "observed",
+    "detail": {
+      "fields": 1
+    }
+  },
+  {
+    "id": "sensor-management Kalibrasi",
+    "status": "observed",
+    "detail": {
+      "fields": 2
+    }
+  },
+  {
+    "id": "user-management Edit",
+    "status": "observed",
+    "detail": {
+      "fields": 6
+    }
+  },
+  {
+    "id": "reports Buat laporan",
+    "status": "observed",
+    "detail": {
+      "fields": 5
+    }
+  },
+  {
+    "id": "raw-protocol-logs pagination",
+    "status": "observed",
+    "detail": "Berikutnya mengubah baris dan Sebelumnya mengembalikan baris awal"
+  },
+  {
+    "id": "gps-quality pagination",
+    "status": "observed",
+    "detail": "Berikutnya mengubah baris dan Sebelumnya mengembalikan baris awal"
+  },
+  {
+    "id": "data-activity pagination",
+    "status": "observed",
+    "detail": "Berikutnya mengubah baris dan Sebelumnya mengembalikan baris awal"
+  },
+  {
+    "id": "device-connectivity pagination",
+    "status": "observed",
+    "detail": "Berikutnya mengubah baris dan Sebelumnya mengembalikan baris awal"
+  },
+  {
+    "id": "fuel-monitoring pagination",
+    "status": "observed",
+    "detail": "Berikutnya mengubah baris dan Sebelumnya mengembalikan baris awal"
+  },
+  {
+    "id": "Vehicles CSV",
+    "status": "observed",
+    "detail": {
+      "name": "vehicles-2026-11-04.csv",
+      "bytes": 507
+    }
+  },
+  {
+    "id": "Fuel Events tabs",
+    "status": "observed",
+    "detail": {
+      "selected": true
+    }
+  }
+]

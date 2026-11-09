@@ -1,0 +1,6 @@
+﻿"approval_state","fuel_sensor_id","id","input_quantity","input_unit","media","output_unit","revision","tank_profile_id"
+"approved","1746","7","fuel_height_raw","mm","fuel_tank","liters","1","5"
+"approved","1745","6","fuel_height_raw","mm","fuel_tank","liters","1","4"
+"approved","1","5","volume_raw","two_point_capture","fuel_tank","liters","3","3"
+"approved","1","4","fuel_height_raw","raw","fuel_tank","liters","2","2"
+"unverified","1","1","legacy_observed_word","","unverified","percent","1",""

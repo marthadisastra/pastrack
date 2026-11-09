@@ -1,0 +1,22 @@
+[
+  {
+    "day": 29,
+    "positions": 725,
+    "trips": 3,
+    "delta": null
+  },
+  {
+    "day": 30,
+    "positions": 1105,
+    "trips": 3,
+    "delta": -40,
+    "event_at": "2026-10-30T03:04:00Z"
+  },
+  {
+    "day": 31,
+    "positions": 505,
+    "trips": 3,
+    "delta": 60,
+    "event_at": "2026-10-31T01:54:00Z"
+  }
+]

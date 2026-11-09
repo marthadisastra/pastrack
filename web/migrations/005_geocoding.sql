@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS tracking_geocode_cache (
+ cell_key VARCHAR(64) NOT NULL PRIMARY KEY,
+ name VARCHAR(200) NOT NULL,
+ address VARCHAR(1000) NOT NULL,
+ result_type VARCHAR(40) NOT NULL,
+ distance_m DOUBLE NULL,
+ expires_at DATETIME(3) NOT NULL,
+ updated_at DATETIME(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS tracking_geocode_usage (
+ usage_day DATE NOT NULL PRIMARY KEY,
+ requests INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

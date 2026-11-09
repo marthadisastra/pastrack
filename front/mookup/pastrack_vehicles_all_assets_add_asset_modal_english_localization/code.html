@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PASTRACK - Vehicles: All Assets</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-blue-100 selection:text-blue-900">
+<!-- TOP HEADER / NAV BAR -->
+<header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-xs">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<!-- Brand & Section Breadcrumb -->
+<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-2.5">
+<div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-lg shadow-sm shadow-blue-500/30 tracking-tight">
+            P
+          </div>
+<div>
+<span class="text-base font-bold tracking-tight text-slate-900 flex items-center gap-1.5">
+              PASTRACK
+              <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 font-semibold border border-blue-200">Fleet Core</span>
+</span>
+<span class="text-xs text-slate-500 block leading-none font-medium">Enterprise Telematics OS</span>
+</div>
+</div>
+<div class="h-5 w-px bg-slate-200 hidden sm:block"></div>
+<nav class="hidden sm:flex items-center space-x-1.5 text-xs font-medium text-slate-500">
+<span class="text-slate-400">Fleet</span>
+<span class="material-symbols-outlined text-[14px] text-slate-400">chevron_right</span>
+<span class="text-slate-400">Vehicles</span>
+<span class="material-symbols-outlined text-[14px] text-slate-400">chevron_right</span>
+<span class="text-blue-600 font-semibold bg-blue-50/60 px-2 py-0.5 rounded">All Assets</span>
+</nav>
+</div>
+<!-- Quick Metrics & Top Actions -->
+<div class="flex items-center space-x-3">
+<div class="hidden lg:flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-slate-100/80 border border-slate-200/80 text-xs text-slate-600 font-mono">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="">QUECLINK GATEWAY: <strong class="text-slate-900 font-semibold">43/48 PAIRED</strong></span>
+<span class="text-slate-300">|</span>
+<span class="">BLE CFS300B: <strong class="text-slate-900 font-semibold">100% VERIFIED</strong></span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-sm shadow-blue-600/20 transition-all cursor-pointer" onclick="openAddAssetModal()">
+<span class="material-symbols-outlined text-base">add</span>
+<span class="">Add Asset</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN CONTAINER -->
+<main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+<!-- KPI SUMMARY CARDS -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Total Armada -->
+<div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex items-center justify-between">
+<div>
+<p class="text-xs font-semibold uppercase tracking-wider text-slate-500">TOTAL FLEET ASSETS</p>
+<div class="flex items-baseline gap-2 mt-1">
+<h3 class="text-2xl font-bold text-slate-900 font-mono">48</h3>
+<span class="text-xs text-slate-500 font-medium">Registered Vehicles</span>
+</div>
+<p class="text-[11px] text-slate-400 mt-1">Enrolled in Registry System</p>
+</div>
+<div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">local_shipping</span>
+</div>
+</div>
+<!-- Terhubung GPS -->
+<div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex items-center justify-between">
+<div>
+<p class="text-xs font-semibold uppercase tracking-wider text-slate-500">QUECLINK GPS PAIRED</p>
+<div class="flex items-baseline gap-2 mt-1">
+<h3 class="text-2xl font-bold text-emerald-600 font-mono">43</h3>
+<span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">89.6%</span>
+</div>
+<p class="text-[11px] text-slate-400 mt-1">GV30CEU Gateways Active</p>
+</div>
+<div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">sensors</span>
+</div>
+</div>
+<!-- Belum Terhubung GPS (Perhatian) -->
+<div class="bg-white p-4 rounded-xl border border-amber-200/80 bg-linear-to-br from-white to-amber-50/30 shadow-xs flex items-center justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<p class="text-xs font-semibold uppercase tracking-wider text-amber-700">UNPAIRED GPS</p>
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<h3 class="text-2xl font-bold text-amber-600 font-mono">5</h3>
+<span class="text-xs text-amber-700 font-medium">Needs Pairing</span>
+</div>
+<p class="text-[11px] text-amber-600/80 mt-1">Chassis Idle / Standby</p>
+</div>
+<div class="w-12 h-12 rounded-xl bg-amber-100/70 text-amber-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">link_off</span>
+</div>
+</div>
+<!-- Total Kapasitas BBM Armada -->
+<div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex items-center justify-between">
+<div>
+<p class="text-xs font-semibold uppercase tracking-wider text-slate-500">MONITORED TANK CAPACITY</p>
+<div class="flex items-baseline gap-2 mt-1">
+<h3 class="text-2xl font-bold text-slate-900 font-mono">18,400</h3>
+<span class="text-xs text-slate-500 font-medium">Liters Total</span>
+</div>
+<p class="text-[11px] text-slate-400 mt-1">CFS300B Wireless BLE Probes</p>
+</div>
+<div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">propane_tank</span>
+</div>
+</div>
+</section>
+<!-- CONTROL TOOLBAR: SEARCH, FILTERS, & VIEW TOGGLE -->
+<section class="bg-white rounded-xl border border-slate-200 p-3.5 shadow-xs flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+<!-- Search & Status Filters -->
+<div class="flex flex-1 flex-wrap items-center gap-2.5">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[240px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all" id="searchInput" placeholder="Search Unit ID, License Plate, VIN, Make, or IMEI..." type="text"/>
+</div>
+<!-- Filter Vehicle Type -->
+<div class="relative">
+<select class="appearance-none bg-slate-50 border border-slate-200 rounded-lg pl-3 pr-8 py-2 text-xs font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer" id="filterType">
+<option value="ALL">All Vehicle Types</option>
+<option value="HAULER">Heavy Duty Hauler (Tractor)</option>
+<option value="TANKER">Liquid Tanker (Fuel Tanker)</option>
+<option value="FLATBED">Flatbed Cargo</option>
+<option value="VAN">Light Cargo Van</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 text-base pointer-events-none">expand_more</span>
+</div>
+<!-- Filter GPS Status -->
+<div class="relative">
+<select class="appearance-none bg-slate-50 border border-slate-200 rounded-lg pl-3 pr-8 py-2 text-xs font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer" id="filterGps">
+<option value="ALL">All GPS Statuses</option>
+<option value="CONNECTED">Connected Queclink GPS</option>
+<option value="UNPAIRED">Unpaired GPS (5 Units)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 text-base pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Right controls: Quick sorting & View Switcher -->
+<div class="flex items-center justify-between md:justify-end gap-2 border-t md:border-t-0 pt-2 md:pt-0 border-slate-100">
+<span class="text-xs text-slate-400 font-medium hidden lg:inline">Showing: <strong class="text-slate-700 font-semibold" id="displayedCount">6 of 48 Units</strong></span>
+<!-- View Toggle Buttons -->
+<div class="flex items-center p-1 bg-slate-100 rounded-lg border border-slate-200">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-white text-blue-700 shadow-xs transition-all" id="listViewBtn" onclick="switchView('list')">
+<span class="material-symbols-outlined text-base">format_list_bulleted</span>
+<span class="">List Table</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all" id="gridViewBtn" onclick="switchView('grid')">
+<span class="material-symbols-outlined text-base">grid_view</span>
+<span class="">Grid Cards</span>
+</button>
+</div>
+</div>
+</section>
+<!-- VIEW 1: DATA TABLE / LIST VIEW (DEFAULT) -->
+<section class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden" id="listViewContainer">
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50/80 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-slate-500 font-mono">
+<th class="py-3 px-4">ASSET IDENTITY</th>
+<th class="py-3 px-4">VEHICLE SPECIFICATIONS</th>
+<th class="py-3 px-4">TANK CAPACITY</th>
+<th class="py-3 px-4">GPS GATEWAY HARDWARE (QUECLINK GV30CEU)</th>
+<th class="py-3 px-4">FUEL PROBE (CFS300B)</th>
+<th class="py-3 px-4 text-center">OPERATIONAL STATUS</th>
+<th class="py-3 px-4 text-right">ACTIONS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 text-xs">
+<!-- ROW 1: HAULER-01 (Connected) -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs font-mono">
+                    H1
+                  </div>
+<div>
+<div class="font-bold text-slate-900 font-mono">HAULER-01</div>
+<div class="inline-flex items-center gap-1 mt-0.5">
+<span class="font-mono px-1.5 py-0.2 rounded bg-slate-100 text-slate-700 text-[10px] font-bold border border-slate-200">B 9123 XYZ</span>
+<span class="text-[10px] text-slate-400">2023</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-slate-800">Scania R500 Heavy Puller</div>
+<div class="text-[11px] text-slate-400 font-mono mt-0.5">VIN: 1FUJGLDR5KL8902</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono font-bold text-slate-900">400 L</div>
+<div class="text-[11px] text-slate-500">Cylindrical Tank • Diesel B35</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<div>
+<span class="font-mono font-semibold text-slate-900">8649200417182901</span>
+<div class="text-[10px] text-slate-500 flex items-center gap-2 mt-0.5 font-mono">
+<span class="">LTE Cat 1</span>
+<span class="">•</span>
+<span class="text-emerald-700 font-semibold">CSQ 29/31</span>
+<span class="">•</span>
+<span class="">v1.03</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-blue-50 text-blue-800 border border-blue-200 font-mono text-[11px]">
+<span class="material-symbols-outlined text-sm text-blue-600">bluetooth_connected</span>
+<span class="">#SN-CFS-8841</span>
+</div>
+<div class="text-[10px] text-slate-400 mt-0.5 font-mono">BLE RSSI: -66 dBm</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  MOVING
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="p-1.5 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors" title="View Telematics Details">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="p-1.5 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-md transition-colors" title="Edit Vehicle">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: HAULER-04 (UNPAIRED GPS -> Highlight) -->
+<tr class="bg-amber-50/40 hover:bg-amber-50/80 transition-colors border-l-4 border-l-amber-500">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs font-mono">
+                    H4
+                  </div>
+<div>
+<div class="font-bold text-slate-900 font-mono flex items-center gap-1.5">
+                      HAULER-04
+                      <span class="text-[10px] bg-amber-100 text-amber-800 px-1 py-0.2 rounded font-semibold border border-amber-300">UNPAIRED</span>
+</div>
+<div class="inline-flex items-center gap-1 mt-0.5">
+<span class="font-mono px-1.5 py-0.2 rounded bg-white text-slate-700 text-[10px] font-bold border border-slate-200">B 9844 UVD</span>
+<span class="text-[10px] text-slate-400">2024</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-slate-800">Freightliner Cascadia 126</div>
+<div class="text-[11px] text-slate-400 font-mono mt-0.5">VIN: 1FUJGLDR8ML1042</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono font-bold text-slate-900">400 L</div>
+<div class="text-[11px] text-slate-500">Cylindrical Tank • Diesel B35</div>
+</td>
+<td class="py-3.5 px-4">
+<!-- Status Unpaired with Action Button -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 text-amber-700 font-semibold text-[11px]">
+<span class="material-symbols-outlined text-base text-amber-600">warning</span>
+<span class="">No GPS Linked</span>
+</div>
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-xs transition-colors cursor-pointer" onclick="openLinkModal('HAULER-04', 'B 9844 UVD', 'Freightliner Cascadia 126', '400 L')">
+<span class="material-symbols-outlined text-[13px]">link</span>
+<span class="">Pair GPS</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="text-slate-400 text-[11px] italic">Awaiting Gateway</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-600 border border-slate-200 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                  STANDBY
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1 text-xs font-semibold text-blue-600 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 transition-colors cursor-pointer" onclick="openLinkModal('HAULER-04', 'B 9844 UVD', 'Freightliner Cascadia 126', '400 L')">
+                    Pair GPS
+                  </button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: CRYOTANK-02 (Connected) -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-xs font-mono">
+                    CT
+                  </div>
+<div>
+<div class="font-bold text-slate-900 font-mono">CRYOTANK-02</div>
+<div class="inline-flex items-center gap-1 mt-0.5">
+<span class="font-mono px-1.5 py-0.2 rounded bg-slate-100 text-slate-700 text-[10px] font-bold border border-slate-200">B 9301 TKR</span>
+<span class="text-[10px] text-slate-400">2022</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-slate-800">Volvo FH16 Cryogenic Tanker</div>
+<div class="text-[11px] text-slate-400 font-mono mt-0.5">VIN: YV2RT40A9NA6782</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono font-bold text-slate-900">520 L</div>
+<div class="text-[11px] text-slate-500">D-Shape Dual Tank • High Grade Dex</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<div>
+<span class="font-mono font-semibold text-slate-900">864920045100982</span>
+<div class="text-[10px] text-slate-500 flex items-center gap-2 mt-0.5 font-mono">
+<span class="">LTE Cat 1</span>
+<span class="">•</span>
+<span class="text-emerald-700 font-semibold">CSQ 27/31</span>
+<span class="">•</span>
+<span class="">v1.03</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-blue-50 text-blue-800 border border-blue-200 font-mono text-[11px]">
+<span class="material-symbols-outlined text-sm text-blue-600">bluetooth_connected</span>
+<span class="">#SN-CFS-7731</span>
+</div>
+<div class="text-[10px] text-slate-400 mt-0.5 font-mono">BLE RSSI: -59 dBm</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  MOVING
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="p-1.5 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors" title="View Telematics Details">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="p-1.5 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-md transition-colors" title="Edit Vehicle">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: FLATBED-11 (Connected) -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-xs font-mono">
+                    FB
+                  </div>
+<div>
+<div class="font-bold text-slate-900 font-mono">FLATBED-11</div>
+<div class="inline-flex items-center gap-1 mt-0.5">
+<span class="font-mono px-1.5 py-0.2 rounded bg-slate-100 text-slate-700 text-[10px] font-bold border border-slate-200">B 8812 AB</span>
+<span class="text-[10px] text-slate-400">2021</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-slate-800">Hino 500 Super Eco Cargo</div>
+<div class="text-[11px] text-slate-400 font-mono mt-0.5">VIN: MHFGD8J13LP0922</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono font-bold text-slate-900">300 L</div>
+<div class="text-[11px] text-slate-500">Rectangular Tank • Diesel B35</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<div>
+<span class="font-mono font-semibold text-slate-900">864920041188392</span>
+<div class="text-[10px] text-slate-500 flex items-center gap-2 mt-0.5 font-mono">
+<span class="">LTE Cat 1</span>
+<span class="">•</span>
+<span class="text-emerald-700 font-semibold">CSQ 29/31</span>
+<span class="">•</span>
+<span class="">v1.03</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-blue-50 text-blue-800 border border-blue-200 font-mono text-[11px]">
+<span class="material-symbols-outlined text-sm text-blue-600">bluetooth_connected</span>
+<span class="">#SN-CFS-4190</span>
+</div>
+<div class="text-[10px] text-slate-400 mt-0.5 font-mono">BLE RSSI: -72 dBm</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-amber-50 text-amber-700 border border-amber-200 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                  IDLE (18m)
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="p-1.5 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors" title="View Telematics Details">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="p-1.5 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-md transition-colors" title="Edit Vehicle">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: VAN-28 (Connected) -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs font-mono">
+                    VN
+                  </div>
+<div>
+<div class="font-bold text-slate-900 font-mono">VAN-28</div>
+<div class="inline-flex items-center gap-1 mt-0.5">
+<span class="font-mono px-1.5 py-0.2 rounded bg-slate-100 text-slate-700 text-[10px] font-bold border border-slate-200">B 4419 SLL</span>
+<span class="text-[10px] text-slate-400">2023</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-slate-800">Isuzu Giga Urban Cargo</div>
+<div class="text-[11px] text-slate-400 font-mono mt-0.5">VIN: MP1TFR87JHT0189</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono font-bold text-slate-900">200 L</div>
+<div class="text-[11px] text-slate-500">Rectangular Tank • Diesel B35</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<div>
+<span class="font-mono font-semibold text-slate-900">864920046630018</span>
+<div class="text-[10px] text-slate-500 flex items-center gap-2 mt-0.5 font-mono">
+<span class="">LTE Cat 1</span>
+<span class="">•</span>
+<span class="text-emerald-700 font-semibold">CSQ 30/31</span>
+<span class="">•</span>
+<span class="">v1.03</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-blue-50 text-blue-800 border border-blue-200 font-mono text-[11px]">
+<span class="material-symbols-outlined text-sm text-blue-600">bluetooth_connected</span>
+<span class="">#SN-CFS-2091</span>
+</div>
+<div class="text-[10px] text-slate-400 mt-0.5 font-mono">BLE RSSI: -64 dBm</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  MOVING
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="p-1.5 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors" title="View Telematics Details">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="p-1.5 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-md transition-colors" title="Edit Vehicle">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 6: TANKER-07 (UNPAIRED GPS -> Highlight) -->
+<tr class="bg-amber-50/40 hover:bg-amber-50/80 transition-colors border-l-4 border-l-amber-500">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs font-mono">
+                    T7
+                  </div>
+<div>
+<div class="font-bold text-slate-900 font-mono flex items-center gap-1.5">
+                      TANKER-07
+                      <span class="text-[10px] bg-amber-100 text-amber-800 px-1 py-0.2 rounded font-semibold border border-amber-300">UNPAIRED</span>
+</div>
+<div class="inline-flex items-center gap-1 mt-0.5">
+<span class="font-mono px-1.5 py-0.2 rounded bg-white text-slate-700 text-[10px] font-bold border border-slate-200">B 9042 KLA</span>
+<span class="text-[10px] text-slate-400">2024</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-slate-800">Scania P360 Fuel Transport</div>
+<div class="text-[11px] text-slate-400 font-mono mt-0.5">VIN: YS2P6X200021948</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono font-bold text-slate-900">450 L</div>
+<div class="text-[11px] text-slate-500">Cylindrical Tank • High Grade Dex</div>
+</td>
+<td class="py-3.5 px-4">
+<!-- Status Unpaired with Action Button -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 text-amber-700 font-semibold text-[11px]">
+<span class="material-symbols-outlined text-base text-amber-600">warning</span>
+<span class="">No GPS Linked</span>
+</div>
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-xs transition-colors cursor-pointer" onclick="openLinkModal('TANKER-07', 'B 9042 KLA', 'Scania P360 Fuel Transport', '450 L')">
+<span class="material-symbols-outlined text-[13px]">link</span>
+<span class="">Pair GPS</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="text-slate-400 text-[11px] italic">Awaiting Gateway</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-600 border border-slate-200 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                  STANDBY
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1 text-xs font-semibold text-blue-600 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 transition-colors cursor-pointer" onclick="openLinkModal('TANKER-07', 'B 9042 KLA', 'Scania P360 Fuel Transport', '450 L')">
+                    Pair GPS
+                  </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Pagination -->
+<div class="p-3.5 bg-slate-50/90 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 font-medium">
+<div class="">
+          Showing <strong class="text-slate-800">1 - 6</strong> of total <strong class="text-slate-800">48 Fleet Vehicles</strong>
+</div>
+<div class="flex items-center space-x-1">
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 disabled:opacity-50 cursor-not-allowed" disabled="">Previous</button>
+<button class="px-2.5 py-1 rounded border border-blue-600 bg-blue-600 text-white font-bold">1</button>
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white text-slate-700 hover:bg-slate-50">2</button>
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white text-slate-700 hover:bg-slate-50">3</button>
+<span class="px-1 text-slate-400">...</span>
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white text-slate-700 hover:bg-slate-50">8</button>
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white text-slate-700 hover:bg-slate-50">Next</button>
+</div>
+</div>
+</section>
+<!-- VIEW 2: GRID CARDS VIEW (HIDDEN BY DEFAULT, TOGGLEABLE) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 hidden" id="gridViewContainer">
+<!-- CARD 1: HAULER-01 (Connected) -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-xs hover:shadow-md transition-all p-4.5 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm font-mono">
+                H1
+              </div>
+<div>
+<h4 class="font-bold text-slate-900 font-mono text-base">HAULER-01</h4>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-mono text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-800 font-bold border border-slate-200">B 9123 XYZ</span>
+<span class="text-xs text-slate-400">2023</span>
+</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              MOVING
+            </span>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-slate-500">Make &amp; Model:</span>
+<span class="font-semibold text-slate-800">Scania R500</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-500">Fuel Tank:</span>
+<span class="font-mono font-bold text-slate-800">400 L (Cylindrical)</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500">Queclink GPS:</span>
+<span class="font-mono text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                8649200417182901
+              </span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500">CFS300B Probe:</span>
+<span class="font-mono text-[11px] text-blue-700 font-semibold">#SN-CFS-8841 (BLE)</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<span class="text-[11px] text-slate-400 font-mono">CSQ: 29/31 • 68 km/h</span>
+<button class="px-3 py-1.5 rounded-lg text-xs font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 transition-colors">
+            Telematics Details
+          </button>
+</div>
+</div>
+<!-- CARD 2: HAULER-04 (UNPAIRED GPS -> Highlight) -->
+<div class="bg-amber-50/30 rounded-xl border-2 border-amber-300 shadow-xs hover:shadow-md transition-all p-4.5 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-24 h-24 bg-amber-100/50 rounded-full blur-xl pointer-events-none"></div>
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-sm font-mono">
+                H4
+              </div>
+<div>
+<h4 class="font-bold text-slate-900 font-mono text-base flex items-center gap-1.5">
+                  HAULER-04
+                </h4>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-mono text-xs px-2 py-0.5 rounded bg-white text-slate-800 font-bold border border-slate-200">B 9844 UVD</span>
+<span class="text-xs text-slate-400">2024</span>
+</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-800 border border-amber-300 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
+              UNPAIRED
+            </span>
+</div>
+<div class="mt-4 pt-3 border-t border-amber-200/60 space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-slate-500">Make &amp; Model:</span>
+<span class="font-semibold text-slate-800">Freightliner Cascadia 126</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-500">Fuel Tank:</span>
+<span class="font-mono font-bold text-slate-800">400 L (Cylindrical)</span>
+</div>
+<div class="p-2.5 rounded-lg bg-amber-100/60 border border-amber-200 text-amber-900 text-xs flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-700 text-base shrink-0">link_off</span>
+<span class="leading-tight">This asset has not been paired with a Queclink GV30CEU GPS gateway hardware.</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-amber-200/60 flex items-center justify-between">
+<span class="text-[11px] text-amber-700 font-medium">Chassis Standby</span>
+<button class="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-all cursor-pointer" onclick="openLinkModal('HAULER-04', 'B 9844 UVD', 'Freightliner Cascadia 126', '400 L')">
+<span class="material-symbols-outlined text-sm">link</span>
+<span class="">Pair GPS</span>
+</button>
+</div>
+</div>
+<!-- CARD 3: CRYOTANK-02 (Connected) -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-xs hover:shadow-md transition-all p-4.5 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-sm font-mono">
+                CT
+              </div>
+<div>
+<h4 class="font-bold text-slate-900 font-mono text-base">CRYOTANK-02</h4>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-mono text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-800 font-bold border border-slate-200">B 9301 TKR</span>
+<span class="text-xs text-slate-400">2022</span>
+</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              MOVING
+            </span>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-slate-500">Make &amp; Model:</span>
+<span class="font-semibold text-slate-800">Volvo FH16 Cryogenic</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-500">Fuel Tank:</span>
+<span class="font-mono font-bold text-slate-800">520 L (D-Shape)</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500">Queclink GPS:</span>
+<span class="font-mono text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                864920045100982
+              </span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500">CFS300B Probe:</span>
+<span class="font-mono text-[11px] text-blue-700 font-semibold">#SN-CFS-7731 (BLE)</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<span class="text-[11px] text-slate-400 font-mono">CSQ: 27/31 • 54 km/h</span>
+<button class="px-3 py-1.5 rounded-lg text-xs font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 transition-colors">
+            Telematics Details
+          </button>
+</div>
+</div>
+<!-- CARD 4: FLATBED-11 (Connected) -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-xs hover:shadow-md transition-all p-4.5 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-sm font-mono">
+                FB
+              </div>
+<div>
+<h4 class="font-bold text-slate-900 font-mono text-base">FLATBED-11</h4>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-mono text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-800 font-bold border border-slate-200">B 8812 AB</span>
+<span class="text-xs text-slate-400">2021</span>
+</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-50 text-amber-700 border border-amber-200 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+              IDLE (18m)
+            </span>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-slate-500">Make &amp; Model:</span>
+<span class="font-semibold text-slate-800">Hino 500 Super Eco</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-500">Fuel Tank:</span>
+<span class="font-mono font-bold text-slate-800">300 L (Rectangular)</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500">Queclink GPS:</span>
+<span class="font-mono text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                864920041188392
+              </span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500">CFS300B Probe:</span>
+<span class="font-mono text-[11px] text-blue-700 font-semibold">#SN-CFS-4190 (BLE)</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<span class="text-[11px] text-slate-400 font-mono">CSQ: 29/31 • 0 km/h</span>
+<button class="px-3 py-1.5 rounded-lg text-xs font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 transition-colors">
+            Telematics Details
+          </button>
+</div>
+</div>
+<!-- CARD 5: VAN-28 (Connected) -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-xs hover:shadow-md transition-all p-4.5 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm font-mono">
+                VN
+              </div>
+<div>
+<h4 class="font-bold text-slate-900 font-mono text-base">VAN-28</h4>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-mono text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-800 font-bold border border-slate-200">B 4419 SLL</span>
+<span class="text-xs text-slate-400">2023</span>
+</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              MOVING
+            </span>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-slate-500">Make &amp; Model:</span>
+<span class="font-semibold text-slate-800">Isuzu Giga Urban Cargo</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-500">Fuel Tank:</span>
+<span class="font-mono font-bold text-slate-800">200 L (Rectangular)</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500">Queclink GPS:</span>
+<span class="font-mono text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                864920046630018
+              </span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500">CFS300B Probe:</span>
+<span class="font-mono text-[11px] text-blue-700 font-semibold">#SN-CFS-2091 (BLE)</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<span class="text-[11px] text-slate-400 font-mono">CSQ: 30/31 • 42 km/h</span>
+<button class="px-3 py-1.5 rounded-lg text-xs font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 transition-colors">
+            Telematics Details
+          </button>
+</div>
+</div>
+<!-- CARD 6: TANKER-07 (UNPAIRED GPS -> Highlight) -->
+<div class="bg-amber-50/30 rounded-xl border-2 border-amber-300 shadow-xs hover:shadow-md transition-all p-4.5 flex flex-col justify-between relative overflow-hidden">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-sm font-mono">
+                T7
+              </div>
+<div>
+<h4 class="font-bold text-slate-900 font-mono text-base flex items-center gap-1.5">
+                  TANKER-07
+                </h4>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-mono text-xs px-2 py-0.5 rounded bg-white text-slate-800 font-bold border border-slate-200">B 9042 KLA</span>
+<span class="text-xs text-slate-400">2024</span>
+</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-800 border border-amber-300 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
+              UNPAIRED
+            </span>
+</div>
+<div class="mt-4 pt-3 border-t border-amber-200/60 space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-slate-500">Make &amp; Model:</span>
+<span class="font-semibold text-slate-800">Scania P360 Fuel Transport</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-500">Fuel Tank:</span>
+<span class="font-mono font-bold text-slate-800">450 L (Cylindrical)</span>
+</div>
+<div class="p-2.5 rounded-lg bg-amber-100/60 border border-amber-200 text-amber-900 text-xs flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-700 text-base shrink-0">link_off</span>
+<span class="leading-tight">This asset has not been paired with a Queclink GV30CEU GPS gateway hardware.</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-amber-200/60 flex items-center justify-between">
+<span class="text-[11px] text-amber-700 font-medium">Chassis Standby</span>
+<button class="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-all cursor-pointer" onclick="openLinkModal('TANKER-07', 'B 9042 KLA', 'Scania P360 Fuel Transport', '450 L')">
+<span class="material-symbols-outlined text-sm">link</span>
+<span class="">Pair GPS</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- MODAL 1: ADD NEW ASSET (REGISTER FLEET ASSET & HARDWARE PROVISIONING) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs transition-opacity hidden" id="addAssetModal">
+<div class="bg-white rounded-2xl border border-slate-200 shadow-2xl max-w-3xl w-full overflow-hidden transform transition-all max-h-[92vh] flex flex-col" onclick="event.stopPropagation()">
+<!-- Modal Header -->
+<div class="bg-slate-50 px-6 py-4.5 border-b border-slate-200 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-xl">add_to_photos</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-slate-900">Add New Fleet Asset</h3>
+<p class="text-xs text-slate-500">Register vehicle profile, tank configuration, and optional telematics provisioning</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 flex items-center justify-center transition-colors cursor-pointer" onclick="closeAddAssetModal()">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<!-- Modal Body (Scrollable Multi-Section Form) -->
+<div class="p-6 overflow-y-auto custom-scrollbar space-y-6 flex-1">
+<!-- SECTION 1: Vehicle Profile & Identity -->
+<div class="space-y-3">
+<div class="flex items-center gap-2 border-b border-slate-100 pb-2">
+<span class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 font-mono font-bold text-[11px] flex items-center justify-center">1</span>
+<h4 class="text-xs font-bold uppercase tracking-wider text-slate-800">Vehicle Profile &amp; Identity</h4>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">Asset ID <span class="text-rose-500">*</span></label>
+<input class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-mono font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" id="newAssetId" placeholder="e.g. HAULER-05" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">License Plate / Reg <span class="text-rose-500">*</span></label>
+<input class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-mono font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" id="newPlate" placeholder="e.g. B 9552 XYZ" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">Vehicle Type <span class="text-rose-500">*</span></label>
+<div class="relative">
+<select class="w-full appearance-none px-3 pr-8 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 cursor-pointer" id="newVehicleType">
+<option value="HAULER">Heavy Duty Hauler (Tractor)</option>
+<option value="TANKER">Liquid Tanker (Fuel)</option>
+<option value="FLATBED">Flatbed Cargo</option>
+<option value="VAN">Commercial Cargo Van</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 text-base pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">Make &amp; Model <span class="text-rose-500">*</span></label>
+<input class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" id="newModel" placeholder="e.g. Scania R500 / Volvo FH16" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">Year of Manufacture</label>
+<input class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-mono font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" id="newYear" max="2026" min="2000" type="number" value="2024"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">VIN / Chassis Number</label>
+<input class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-mono font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" id="newVin" placeholder="e.g. 1FUJGLDR9NL3421" type="text"/>
+</div>
+</div>
+</div>
+<!-- SECTION 2: Fuel Tank Geometry & Specifications -->
+<div class="space-y-3">
+<div class="flex items-center gap-2 border-b border-slate-100 pb-2">
+<span class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 font-mono font-bold text-[11px] flex items-center justify-center">2</span>
+<h4 class="text-xs font-bold uppercase tracking-wider text-slate-800">Fuel Tank Geometry &amp; Calibration</h4>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">Tank Shape Geometry</label>
+<div class="relative">
+<select class="w-full appearance-none px-3 pr-8 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 cursor-pointer" id="newTankShape">
+<option value="Cylindrical">Cylindrical Tank</option>
+<option value="Rectangular">Rectangular Tank</option>
+<option value="D-Shape">D-Shape (Dual-D)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 text-base pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">Tank Capacity (Liters) <span class="text-rose-500">*</span></label>
+<input class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-mono font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" id="newCapacity" placeholder="e.g. 400" type="number" value="400"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">Fuel Formulation</label>
+<div class="relative">
+<select class="w-full appearance-none px-3 pr-8 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 cursor-pointer" id="newFuelType">
+<option value="Diesel B35">Diesel B35</option>
+<option value="High Grade Dex">High Grade Dex</option>
+<option value="Industrial Diesel">Industrial Diesel</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 text-base pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">Compartments</label>
+<div class="relative">
+<select class="w-full appearance-none px-3 pr-8 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 cursor-pointer" id="newCompartments">
+<option value="1">Single (1 Compartment)</option>
+<option value="2">Dual (2 Compartments)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 text-base pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: Hardware Provisioning (Queclink GV30CEU & CFS300B BLE) -->
+<div class="space-y-3">
+<div class="flex items-center justify-between border-b border-slate-100 pb-2">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 font-mono font-bold text-[11px] flex items-center justify-center">3</span>
+<h4 class="text-xs font-bold uppercase tracking-wider text-slate-800">Hardware Provisioning (Optional Pairing)</h4>
+</div>
+<span class="text-[11px] font-mono text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-semibold">GV30CEU + CFS300B BLE Ready</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">Queclink GV30CEU Gateway</label>
+<div class="relative">
+<select class="w-full appearance-none px-3 pr-8 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-mono font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 cursor-pointer" id="provisionImei">
+<option value="NONE">— Pair Later (Keep Unassigned) —</option>
+<option selected="" value="864920049021844">IMEI: 864920049021844 (Telkomsel IoT)</option>
+<option value="864920047712093">IMEI: 864920047712093 (Indosat IoT)</option>
+<option value="864920043819441">IMEI: 864920043819441 (XL Axiata IoT)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 text-base pointer-events-none">expand_more</span>
+</div>
+<p class="text-[10px] text-slate-400 mt-1 font-mono">1:1 Chassis to Gateway IMEI</p>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">Initial Odometer (km)</label>
+<input class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-mono font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" id="provisionOdo" placeholder="e.g. 0 or current km" type="number" value="125400"/>
+<p class="text-[10px] text-slate-400 mt-1">Starting baseline reading</p>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">CFS300B Wireless Probe Sensor ID</label>
+<input class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-mono font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" id="provisionProbe" placeholder="#SN-CFS-XXXX or BLE MAC" type="text" value="#SN-CFS-9912"/>
+<p class="text-[10px] text-slate-400 mt-1">Direct BLE bridge to Queclink</p>
+</div>
+</div>
+<div class="p-3 bg-blue-50/60 rounded-xl border border-blue-200/80 text-[11px] text-slate-600 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-blue-600 text-base shrink-0 mt-0.5">verified</span>
+<div class="leading-relaxed">
+<span class="font-semibold text-slate-900">Vehicle-Centric Architecture:</span> Asset registry is strictly linked to physical chassis telematics and ultrasonic/capacitive BLE fuel telemetry. Sensor telemetry will start transmitting once gateway receives ignition power.
+            </div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="bg-slate-50 px-6 py-4 border-t border-slate-200 flex items-center justify-between shrink-0">
+<button class="px-4 py-2 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-800 hover:bg-slate-200/50 transition-colors cursor-pointer" onclick="closeAddAssetModal()">
+          Cancel
+        </button>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-sm shadow-blue-600/30 transition-all cursor-pointer" onclick="submitNewAsset()">
+<span class="material-symbols-outlined text-base">check</span>
+<span class="">Save &amp; Provision Asset</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MODAL 2: PAIR GPS GATEWAY HARDWARE (QUECLINK GV30CEU MASTER DATA SELECTION) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs transition-opacity hidden" id="linkDeviceModal" onclick="closeLinkModal()">
+<div class="bg-white rounded-2xl border border-slate-200 shadow-2xl max-w-2xl w-full overflow-hidden transform transition-all" onclick="event.stopPropagation()">
+<!-- Modal Header -->
+<div class="bg-slate-50 px-6 py-4.5 border-b border-slate-200 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">phonelink_setup</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-slate-900">Pair GPS Hardware (Queclink GV30CEU)</h3>
+<p class="text-xs text-slate-500">Bind telematics gateway to the selected fleet asset</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 flex items-center justify-center transition-colors cursor-pointer" onclick="closeLinkModal()">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-5">
+<!-- Target Vehicle Profile Banner -->
+<div class="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200/80 flex flex-wrap items-center justify-between gap-3 text-xs">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-mono font-bold text-xs" id="modalUnitBadge">H04</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-slate-900 font-mono text-sm" id="modalUnitId">HAULER-04</span>
+<span class="font-mono text-xs px-2 py-0.5 rounded bg-white text-slate-800 font-bold border border-slate-200" id="modalPlate">B 9844 UVD</span>
+</div>
+<p class="text-slate-600 text-[11px] mt-0.5" id="modalModel">Freightliner Cascadia 126 • Tank: 400 L</p>
+</div>
+</div>
+<span class="text-[11px] font-semibold text-blue-700 bg-white px-2.5 py-1 rounded-md border border-blue-200">
+            Relation: 1 Vehicle Chassis = 1 Gateway IMEI
+          </span>
+</div>
+<!-- Master Data Device Selection -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="text-xs font-bold text-slate-700 uppercase tracking-wider">Select Available Queclink GPS in Master Data:</label>
+<span class="text-xs text-emerald-600 font-semibold font-mono">3 Units Available</span>
+</div>
+<!-- Selector Table / List of Unassigned Queclink Devices -->
+<div class="border border-slate-200 rounded-xl overflow-hidden divide-y divide-slate-100 max-h-56 overflow-y-auto custom-scrollbar">
+<!-- OPTION 1 -->
+<label class="flex items-center justify-between p-3.5 hover:bg-blue-50/50 cursor-pointer transition-colors has-checked:bg-blue-50 has-checked:border-blue-300">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 text-blue-600 border-slate-300 focus:ring-blue-500" name="selectedImei" type="radio" value="864920049021844"/>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-mono font-bold text-slate-900 text-xs">IMEI: 864920049021844</span>
+<span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-1.5 py-0.2 rounded font-mono">READY</span>
+</div>
+<div class="text-[11px] text-slate-500 font-mono mt-0.5 flex items-center gap-2">
+<span class="">Firmware: R01A03V05</span>
+<span class="">•</span>
+<span class="">SIM: Telkomsel IoT</span>
+<span class="">•</span>
+<span class="">LiPo: 4.16V (100%)</span>
+</div>
+</div>
+</div>
+<div class="text-right font-mono text-[11px]">
+<span class="text-slate-400 block">S/N: QCK-30911</span>
+<span class="text-emerald-600 font-semibold">LTE Cat 1 Online</span>
+</div>
+</label>
+<!-- OPTION 2 -->
+<label class="flex items-center justify-between p-3.5 hover:bg-blue-50/50 cursor-pointer transition-colors has-checked:bg-blue-50 has-checked:border-blue-300">
+<div class="flex items-center gap-3">
+<input class="w-4 h-4 text-blue-600 border-slate-300 focus:ring-blue-500" name="selectedImei" type="radio" value="864920047712093"/>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-mono font-bold text-slate-900 text-xs">IMEI: 864920047712093</span>
+<span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-1.5 py-0.2 rounded font-mono">READY</span>
+</div>
+<div class="text-[11px] text-slate-500 font-mono mt-0.5 flex items-center gap-2">
+<span class="">Firmware: R01A03V05</span>
+<span class="">•</span>
+<span class="">SIM: Indosat M2 IoT</span>
+<span class="">•</span>
+<span class="">LiPo: 4.12V (98%)</span>
+</div>
+</div>
+</div>
+<div class="text-right font-mono text-[11px]">
+<span class="text-slate-400 block">S/N: QCK-30912</span>
+<span class="text-emerald-600 font-semibold">LTE Cat 1 Online</span>
+</div>
+</label>
+<!-- OPTION 3 -->
+<label class="flex items-center justify-between p-3.5 hover:bg-blue-50/50 cursor-pointer transition-colors has-checked:bg-blue-50 has-checked:border-blue-300">
+<div class="flex items-center gap-3">
+<input class="w-4 h-4 text-blue-600 border-slate-300 focus:ring-blue-500" name="selectedImei" type="radio" value="864920043819441"/>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-mono font-bold text-slate-900 text-xs">IMEI: 864920043819441</span>
+<span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-1.5 py-0.2 rounded font-mono">READY</span>
+</div>
+<div class="text-[11px] text-slate-500 font-mono mt-0.5 flex items-center gap-2">
+<span class="">Firmware: R01A03V04</span>
+<span class="">•</span>
+<span class="">SIM: XL Axiata IoT</span>
+<span class="">•</span>
+<span class="">LiPo: 4.10V (95%)</span>
+</div>
+</div>
+</div>
+<div class="text-right font-mono text-[11px]">
+<span class="text-slate-400 block">S/N: QCK-30915</span>
+<span class="text-emerald-600 font-semibold">LTE Cat 1 Online</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Installation Metadata Inputs -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">Physical Installation Date</label>
+<input class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" type="date" value="2025-02-28"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">Initial Installation Odometer (km)</label>
+<input class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-mono font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" type="number" value="142500"/>
+</div>
+</div>
+<div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80 text-[11px] text-slate-500 flex items-start gap-2">
+<span class="material-symbols-outlined text-blue-600 text-base shrink-0 mt-0.5">info</span>
+<span class="">Once paired, the <strong>CFS300B</strong> wireless sensor probe signals will be automatically scanned via the BLE 5.0 bridge by the assigned Queclink GV30CEU gateway.</span>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="bg-slate-50 px-6 py-3.5 border-t border-slate-200 flex items-center justify-between">
+<button class="px-4 py-2 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-800 hover:bg-slate-200/50 transition-colors cursor-pointer" onclick="closeLinkModal()">
+          Cancel
+        </button>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-sm shadow-blue-600/30 transition-all cursor-pointer" onclick="submitPairing()">
+<span class="material-symbols-outlined text-base">link</span>
+<span class="">Confirm &amp; Pair Gateway</span>
+</button>
+</div>
+</div>
+</div>
+<!-- TOAST NOTIFICATION -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none" id="toastNotification">
+<div class="bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl border border-slate-700 flex items-center gap-3 text-xs">
+<div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-base">check_circle</span>
+</div>
+<div>
+<p class="font-bold text-slate-100" id="toastTitle">Successfully Paired</p>
+<p class="text-slate-400 text-[11px]" id="toastMessage">Hardware GPS Queclink successfully linked to fleet asset.</p>
+</div>
+</div>
+</div>
+<!-- JAVASCRIPT LOGIC -->
+<script>
+    // Toggle View State: List vs Grid
+    function switchView(mode) {
+      const listView = document.getElementById('listViewContainer');
+      const gridView = document.getElementById('gridViewContainer');
+      const listBtn = document.getElementById('listViewBtn');
+      const gridBtn = document.getElementById('gridViewBtn');
+
+      if (mode === 'list') {
+        listView.classList.remove('hidden');
+        gridView.classList.add('hidden');
+        
+        listBtn.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-white text-blue-700 shadow-xs transition-all";
+        gridBtn.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all";
+      } else {
+        listView.classList.add('hidden');
+        gridView.classList.remove('hidden');
+        
+        gridBtn.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-white text-blue-700 shadow-xs transition-all";
+        listBtn.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all";
+      }
+    }
+
+    // Modal 1: Add Asset Modal Controls
+    function openAddAssetModal() {
+      const modal = document.getElementById('addAssetModal');
+      modal.classList.remove('hidden');
+    }
+
+    function closeAddAssetModal() {
+      const modal = document.getElementById('addAssetModal');
+      modal.classList.add('hidden');
+    }
+
+    function submitNewAsset() {
+      const assetId = document.getElementById('newAssetId').value.trim() || 'HAULER-05';
+      const plate = document.getElementById('newPlate').value.trim() || 'B 9552 XYZ';
+      const imeiChoice = document.getElementById('provisionImei').value;
+
+      closeAddAssetModal();
+
+      if (imeiChoice && imeiChoice !== 'NONE') {
+        showToast("Asset Registered & Paired", `Asset ${assetId} (${plate}) created and paired with Queclink IMEI ${imeiChoice}.`);
+      } else {
+        showToast("Asset Successfully Created", `Asset ${assetId} (${plate}) saved to fleet registry. Hardware status: Unpaired.`);
+      }
+    }
+
+    // Modal 2: Link GPS Modal Controls
+    let currentUnit = "HAULER-04";
+
+    function openLinkModal(unitId = 'HAULER-04', plate = 'B 9844 UVD', model = 'Freightliner Cascadia 126', tank = '400 L') {
+      currentUnit = unitId;
+      document.getElementById('modalUnitId').innerText = unitId;
+      document.getElementById('modalUnitBadge').innerText = unitId.split('-')[0].charAt(0) + (unitId.split('-')[1] || '1');
+      document.getElementById('modalPlate').innerText = plate;
+      document.getElementById('modalModel').innerText = `${model} • Tank: ${tank}`;
+
+      const modal = document.getElementById('linkDeviceModal');
+      modal.classList.remove('hidden');
+    }
+
+    function closeLinkModal() {
+      const modal = document.getElementById('linkDeviceModal');
+      modal.classList.add('hidden');
+    }
+
+    function submitPairing() {
+      const selected = document.querySelector('input[name="selectedImei"]:checked');
+      const imei = selected ? selected.value : '864920049021844';
+      
+      closeLinkModal();
+
+      showToast("Gateway Paired Successfully", `Queclink GV30CEU (IMEI: ${imei}) successfully linked to ${currentUnit}.`);
+    }
+
+    // Toast Functionality
+    function showToast(title, msg) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastTitle').innerText = title;
+      document.getElementById('toastMessage').innerText = msg;
+
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 4200);
+    }
+
+    // Search filter simulation
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      const val = e.target.value.toLowerCase();
+      const rows = document.querySelectorAll('#listViewContainer tbody tr');
+      let visible = 0;
+      rows.forEach(r => {
+        const text = r.innerText.toLowerCase();
+        if (text.includes(val)) {
+          r.style.display = '';
+          visible++;
+        } else {
+          r.style.display = 'none';
+        }
+      });
+      document.getElementById('displayedCount').innerText = `${visible} of 48 Units`;
+    });
+
+    // Close modals on Escape key
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeAddAssetModal();
+        closeLinkModal();
+      }
+    });
+
+    // Close modals when clicking backdrop
+    document.getElementById('addAssetModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeAddAssetModal();
+      }
+    });
+  </script>
+</body></html>

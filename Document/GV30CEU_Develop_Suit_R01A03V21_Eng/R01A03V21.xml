@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Release Type="Formal" Project="GV30CEU" Version="R01A03V21" Date="2026-07-16 15:25:10">
+  <BBFW Filename="GV30CEUR01A03V21M128.zip">
+  </BBFW>
+  <MCUFW Filename="N/A">
+  </MCUFW>
+  <BLEFW Filename="GV30CEU_BLER13V4.05_SPI.rar">
+  </BLEFW>
+  <FOTABIN Filename="FOTABIN_For_R01A03V21">
+  </FOTABIN>
+  <ManageTool>N/A</ManageTool>
+  <UserManual Filename="GV30CEU_User_Manual_v0100.pdf">
+  </UserManual>
+  <QuickStart Filename="GV30CEU_Quick_Start_v0100.pdf">
+  </QuickStart>
+  <AirProtocol Filename="GV30CEU@Track_Air_Interface_Protocol_v0306.pdf">
+  </AirProtocol>
+  <ReleaseNote Filename="GV30CEU_FW_RN_R01A03V21.pdf">
+  </ReleaseNote>
+</Release>

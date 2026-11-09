@@ -1,0 +1,155 @@
+{
+  "api": [
+    {
+      "path": "vehicles",
+      "status": 200
+    },
+    {
+      "path": "devices",
+      "status": 200
+    },
+    {
+      "path": "device-models",
+      "status": 200
+    },
+    {
+      "path": "sensors",
+      "status": 200
+    },
+    {
+      "path": "fuel/sensors",
+      "status": 200
+    },
+    {
+      "path": "fuel/readings",
+      "status": 200
+    },
+    {
+      "path": "fuel/events",
+      "status": 200
+    },
+    {
+      "path": "fuel/analytics",
+      "status": 200
+    },
+    {
+      "path": "gps/positions",
+      "status": 200
+    },
+    {
+      "path": "gps/quality",
+      "status": 200
+    },
+    {
+      "path": "trips",
+      "status": 200
+    },
+    {
+      "path": "devices/health",
+      "status": 200
+    },
+    {
+      "path": "devices/connectivity",
+      "status": 200
+    },
+    {
+      "path": "devices/data-activity",
+      "status": 200
+    },
+    {
+      "path": "devices/raw-messages",
+      "status": 200
+    },
+    {
+      "path": "devices/parse-errors",
+      "status": 200
+    },
+    {
+      "path": "events",
+      "status": 200
+    },
+    {
+      "path": "geofences",
+      "status": 200
+    },
+    {
+      "path": "geofence-events",
+      "status": 200
+    },
+    {
+      "path": "alerts/rules",
+      "status": 200
+    },
+    {
+      "path": "alerts/events",
+      "status": 200
+    },
+    {
+      "path": "sensor-telemetry",
+      "status": 200
+    },
+    {
+      "path": "calibrations",
+      "status": 200
+    },
+    {
+      "path": "tank-profiles",
+      "status": 200
+    },
+    {
+      "path": "users",
+      "status": 200
+    },
+    {
+      "path": "notifications",
+      "status": 200
+    },
+    {
+      "path": "audit",
+      "status": 200
+    },
+    {
+      "path": "reports",
+      "status": 200
+    },
+    {
+      "path": "event-types",
+      "status": 200
+    },
+    {
+      "path": "event-severities",
+      "status": 200
+    },
+    {
+      "path": "geofence-assignments",
+      "status": 200
+    },
+    {
+      "path": "fleet/overview",
+      "status": 200
+    },
+    {
+      "path": "fleet/live",
+      "status": 200
+    },
+    {
+      "path": "fleet/activity",
+      "status": 200
+    },
+    {
+      "path": "trips/summary",
+      "status": 200
+    }
+  ],
+  "replay_is_physical_device_test": false,
+  "replayed_actual_payload": true,
+  "raw_receipts_after_replay": 2,
+  "new_sensor_telemetry": 1,
+  "fuel_states": [
+    {
+      "validity": "uncalibrated",
+      "n": 1
+    }
+  ],
+  "old_live_services_changed": false
+}

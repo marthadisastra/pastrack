@@ -1,0 +1,8 @@
+{
+  "source": "pastrack",
+  "target": "pastrack_v2_stage_20261103",
+  "source_backup": "/root/pastrack-rebuild-20261103/backup/pastrack-source.sql.gz",
+  "backup_sha256": "65526e08ed4fc2f9141f176e2d8c53a0d8fe5aac77afe49959c02bec8786dd6a",
+  "foreign_keys": 109,
+  "source_services_changed": false
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "base": "https://toko.azlaundry.my.id",
+    "status": 200,
+    "initial_delta_verified": true
+  },
+  {
+    "base": "http://127.0.0.1:18090",
+    "status": 200,
+    "initial_delta_verified": true
+  }
+]

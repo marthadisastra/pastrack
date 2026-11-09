@@ -1,0 +1,7 @@
+'use strict';
+const menuToggle=$('#menu-toggle'),menuScrim=$('#menu-scrim');
+function closeMenu(){document.body.classList.remove('menu-open');menuScrim.hidden=true;menuToggle.setAttribute('aria-expanded','false')}
+menuToggle.addEventListener('click',()=>{const open=!document.body.classList.contains('menu-open');document.body.classList.toggle('menu-open',open);menuScrim.hidden=!open;menuToggle.setAttribute('aria-expanded',String(open))});menuScrim.addEventListener('click',closeMenu);document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+$$('.menu-group').forEach(group=>{const label=group.querySelector('summary span').textContent;try{const saved=localStorage.getItem('pastrack-menu-'+label);if(saved!==null)group.open=saved==='1'}catch{}group.addEventListener('toggle',()=>{try{localStorage.setItem('pastrack-menu-'+label,group.open?'1':'0')}catch{}})});
+function syncMenu(){const active=$('.nav.active');if(active)active.closest('.menu-group').open=true;$$('.nav').forEach(n=>{if(n.classList.contains('active'))n.setAttribute('aria-current','page');else n.removeAttribute('aria-current')})}
+document.addEventListener('click',e=>{if(e.target.closest('[data-view]')){syncMenu();if(innerWidth<=740)closeMenu()}});window.addEventListener('hashchange',()=>{const next=location.hash.slice(1);if(titles[next]){navigate(next);syncMenu()}});window.addEventListener('resize',()=>{if(innerWidth>740)closeMenu()});syncMenu();

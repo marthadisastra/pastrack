@@ -1,0 +1,1 @@
+{"deployed": true, "feature": "reduce page load assets and API calls", "receiver_restarted": false, "receiver_health": {"fuel_decoder": "raw_cfs300b_supported_units_unverified", "queued": 0, "schema": "v2", "status": "ok"}, "backup": "/root/pastrack-performance-20261104", "binary_sha256": "e02a30efbf5aef5ec4593182cbfc0865f3277db545839137368ce0932bf52b46"}

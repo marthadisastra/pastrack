@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PASTRACK Fleet Core - Fuel Monitoring Telematics</title>
+<!-- Material Symbols & Inter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary": "#ffffff",
+            "primary-fixed": "#dce1ff",
+            "on-secondary-container": "#006f66",
+            "surface-tint": "#2151da",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#00201d",
+            "on-primary-fixed": "#001551",
+            "secondary": "#006a61",
+            "on-secondary-fixed-variant": "#005049",
+            "outline-variant": "#e2e8f0",
+            "tertiary-fixed-dim": "#93ccff",
+            "on-primary-container": "#cad3ff",
+            "on-surface": "#0f172a",
+            "primary-fixed-dim": "#b7c4ff",
+            "surface-container-highest": "#f1f5f9",
+            "secondary-container": "#e0f2fe",
+            "on-background": "#0f172a",
+            "on-tertiary-fixed-variant": "#004b73",
+            "secondary-fixed-dim": "#bae6fd",
+            "inverse-primary": "#b7c4ff",
+            "on-tertiary": "#ffffff",
+            "background": "#f8fafc",
+            "on-tertiary-container": "#b2d9ff",
+            "primary-container": "#1d4ed8",
+            "tertiary-fixed": "#cce5ff",
+            "on-error": "#ffffff",
+            "error": "#b91c1c",
+            "on-tertiary-fixed": "#001d31",
+            "secondary-fixed": "#ccfbf1",
+            "surface-container": "#f8fafc",
+            "surface-container-low": "#f1f5f9",
+            "outline": "#64748b",
+            "on-error-container": "#991b1b",
+            "surface-dim": "#f8fafc",
+            "surface": "#ffffff",
+            "tertiary-container": "#0284c7",
+            "surface-container-high": "#e2e8f0",
+            "surface-bright": "#ffffff",
+            "surface-variant": "#f1f5f9",
+            "primary": "#1d4ed8",
+            "surface-container-lowest": "#ffffff",
+            "tertiary": "#0369a1",
+            "on-surface-variant": "#475569",
+            "on-primary-fixed-variant": "#0039b5",
+            "inverse-on-surface": "#f8fafc",
+            "inverse-surface": "#1e293b",
+            "on-secondary": "#ffffff"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            mono: ["'JetBrains Mono'", "monospace"],
+            "body-md": ["Inter", "sans-serif"],
+            "headline-lg": ["Inter", "sans-serif"],
+            "label-lg": ["Inter", "sans-serif"],
+            "display-lg-mobile": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "headline-md": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "headline-sm": ["Inter", "sans-serif"],
+            "data-mono": ["'JetBrains Mono'", "monospace"],
+            "display-lg": ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+<meta content="web_blank" name="shell-type"/></head>
+<body class="antialiased min-h-screen flex bg-background text-on-surface">
+<!-- MAIN VIEWPORT CONTAINER (Content-Only View) -->
+<div class="flex-1 flex flex-col min-w-0 w-full">
+<!-- MAIN INTERFACE BODY -->
+<main class="p-6 md:p-8 space-y-6 flex-1 bg-slate-50/70"><div class="flex flex-col w-full max-w-7xl mx-auto">
+<!-- TOAST NOTIFICATION CONTAINER -->
+<div class="fixed top-5 right-5 z-50 flex flex-col gap-2 pointer-events-none" id="toast-shelf"></div>
+<!-- INTERNAL HEADER & BREADCRUMB -->
+<section class="w-full bg-white border border-slate-200 p-6 shadow-sm mb-6 rounded-xl">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div>
+<nav aria-label="Breadcrumb" class="flex items-center gap-1.5 text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wide">
+<span class="hover:text-slate-800 transition-colors cursor-pointer">System</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-blue-700 font-semibold">Settings &amp; Engine</span>
+</nav>
+<div class="flex items-center gap-3">
+<h1 class="text-2xl font-bold text-slate-900 tracking-tight">System Settings &amp; Extension Engine</h1>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-mono text-xs font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="">Core v4.8.2-STABLE</span>
+</div>
+</div>
+<p class="text-sm text-slate-600 mt-1">
+  Manage modular runtime packages, enterprise white-label branding, hardware audio alerts, and granular role permissions.
+</p>
+</div>
+<div class="flex items-center gap-2.5 self-start lg:self-center">
+<button class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 font-semibold text-xs transition-colors flex items-center gap-1.5 shadow-sm" id="btn-reset-defaults" type="button">
+<span class="material-symbols-outlined text-base text-slate-500">restart_alt</span>
+  Reset Defaults
+</button>
+<button class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs transition-colors flex items-center gap-2 shadow-sm" id="btn-save-changes" type="button">
+<span class="material-symbols-outlined text-base">save</span>
+<span class="">Save Changes</span>
+<kbd class="ml-1 text-[11px] font-mono bg-blue-800/40 text-blue-100 px-1.5 py-0.5 rounded">⌘S</kbd>
+</button>
+</div>
+</div>
+<!-- SUB-NAVIGATION TABS (100% Interactive with Fallback onclick) -->
+<div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-2" id="nav-tabs-container">
+<button class="nav-tab px-4 py-2 rounded-lg font-medium text-xs flex items-center gap-2 transition-all bg-blue-600 text-white shadow-sm" id="tab-btn-modules" onclick="switchTab('tab-content-modules')" type="button">
+<span class="material-symbols-outlined text-lg">extension</span>
+<span class="">Module Manager</span>
+<span class="tab-badge px-2 py-0.5 rounded-full text-[11px] font-semibold bg-white/20 text-white">6 Active</span>
+</button>
+<button class="nav-tab px-4 py-2 rounded-lg font-normal text-xs flex items-center gap-2 transition-all bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 border border-slate-200/80" id="tab-btn-branding" onclick="switchTab('tab-content-branding')" type="button">
+<span class="material-symbols-outlined text-lg text-slate-500">branding_watermark</span>
+<span class="">Branding &amp; Web Assets</span>
+<span class="tab-badge px-2 py-0.5 rounded-full text-[11px] font-semibold bg-slate-200 text-slate-700">White-label</span>
+</button>
+<button class="nav-tab px-4 py-2 rounded-lg font-normal text-xs flex items-center gap-2 transition-all bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 border border-slate-200/80" id="tab-btn-sound" onclick="switchTab('tab-content-sound')" type="button">
+<span class="material-symbols-outlined text-lg text-slate-500">volume_up</span>
+<span class="">Sound &amp; Audio Alerts</span>
+<span class="tab-badge px-2 py-0.5 rounded-full text-[11px] font-semibold bg-slate-200 text-slate-700">Hardware</span>
+</button>
+<button class="nav-tab px-4 py-2 rounded-lg font-normal text-xs flex items-center gap-2 transition-all bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 border border-slate-200/80" id="tab-btn-access" onclick="switchTab('tab-content-access')" type="button">
+<span class="material-symbols-outlined text-lg text-slate-500">admin_panel_settings</span>
+<span class="">Access &amp; RBAC</span>
+<span class="tab-badge px-2 py-0.5 rounded-full text-[11px] font-semibold bg-slate-200 text-slate-700">4 Roles</span>
+</button>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- TAB PANE 1: MODULE MANAGER                -->
+<!-- ========================================== -->
+<div class="tab-content flex flex-col gap-6" id="tab-content-modules">
+<!-- Top Action Ribbon -->
+<div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex flex-1 items-center gap-3 w-full md:w-auto">
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400 text-lg pointer-events-none">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 font-sans text-sm placeholder:text-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors" id="module-search" placeholder="Search installed packages, protocol decoders..." type="text"/>
+</div>
+<select class="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-800 font-semibold text-xs focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors" id="module-filter">
+<option value="all">All Modules (6)</option>
+<option value="core">Native Core</option>
+<option value="extension">Extensions</option>
+</select>
+</div>
+<div class="flex items-center gap-2 w-full md:w-auto justify-end">
+<button class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs transition-colors flex items-center gap-1.5 shadow-sm" id="btn-open-upload-modal" type="button">
+<span class="material-symbols-outlined text-base">cloud_upload</span>
+<span class="">+ Upload Module (.ptm / .zip)</span>
+</button>
+</div>
+</div>
+<!-- Storage & Sandbox Resource Meter -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+<div>
+<span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Sandbox Storage</span>
+<span class="text-xl font-bold text-slate-900 mt-0.5 block">142 MB <span class="text-xs font-normal text-slate-500">/ 2.0 GB</span></span>
+<div class="w-48 bg-slate-100 border border-slate-200 h-2 rounded-full mt-2.5 overflow-hidden">
+<div class="bg-blue-600 h-full w-[14%] rounded-full"></div>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-blue-50 border border-blue-100 text-blue-700">
+<span class="material-symbols-outlined text-2xl">hard_drive</span>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+<div>
+<span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">BLE Telemetry Workers</span>
+<span class="text-xl font-bold text-slate-900 mt-0.5 block">6 <span class="text-xs font-semibold text-cyan-700">Active Daemons</span></span>
+<p class="text-xs text-slate-500 mt-1">CFS300B probe polling pool</p>
+</div>
+<div class="p-3 rounded-xl bg-cyan-50 border border-cyan-100 text-cyan-700">
+<span class="material-symbols-outlined text-2xl">bluetooth_searching</span>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+<div>
+<span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Event Dispatchers</span>
+<span class="text-xl font-bold text-slate-900 mt-0.5 block">Optimal</span>
+<p class="text-xs text-slate-500 mt-1">Queclink GTFRI parsing latency: &lt;1.2ms</p>
+</div>
+<div class="p-3 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-700">
+<span class="material-symbols-outlined text-2xl">bolt</span>
+</div>
+</div>
+</div>
+<!-- Installed Modules Roster Table -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+<div class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+<h2 class="text-sm font-semibold text-slate-900">Runtime Modules &amp; Subsystems</h2>
+<span class="font-mono text-xs text-slate-500">Target runtime compatibility: PASTRACK Core &gt;= 4.8.0</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50/80 text-slate-600 border-b border-slate-200 text-xs font-semibold uppercase tracking-wider">
+<th class="py-3 px-5">Module / Package Name</th>
+<th class="py-3 px-4">Classification</th>
+<th class="py-3 px-4">Hardware Target / Function</th>
+<th class="py-3 px-4 text-center">Engine State</th>
+<th class="py-3 px-5 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 text-sm">
+<!-- Row 1: Live Tracking Engine -->
+<tr class="hover:bg-slate-50/80 transition-colors module-row" data-type="core">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700">
+<span class="material-symbols-outlined text-lg">explore</span>
+</div>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Live Tracking Engine</span>
+<span class="font-mono text-xs text-slate-500">core.gis.tracker • v2.4.0</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">Native Core</span>
+</td>
+<td class="py-3.5 px-4 text-slate-600 text-xs">
+  Real-time multi-asset GIS rendering &amp; Queclink GNSS stream parser
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-cyan-600"></span> Active (Locked)
+</span>
+</td>
+<td class="py-3.5 px-5 text-right">
+<span class="text-xs text-slate-400 italic">Protected Core</span>
+</td>
+</tr>
+<!-- Row 2: CFS300B Fuel Intelligence -->
+<tr class="hover:bg-slate-50/80 transition-colors module-row" data-type="core">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-700">
+<span class="material-symbols-outlined text-lg">local_gas_station</span>
+</div>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">CFS300B Fuel Intelligence</span>
+<span class="font-mono text-xs text-slate-500">telemetry.cfs300b.ble • v2.1.2</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">Native Core</span>
+</td>
+<td class="py-3.5 px-4 text-slate-600 text-xs">
+  BLE 5.0 capacitive probe telemetry, anti-slosh Kalman filtering, siphon alarm
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-cyan-600"></span> Active (Locked)
+</span>
+</td>
+<td class="py-3.5 px-5 text-right">
+<button class="btn-module-config px-2.5 py-1 text-xs font-semibold rounded bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 transition-colors" type="button">Telemetry Config</button>
+</td>
+</tr>
+<!-- Row 3: Kinematic Dynamics & Shock -->
+<tr class="hover:bg-slate-50/80 transition-colors module-row" data-type="extension">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700">
+<span class="material-symbols-outlined text-lg">speed</span>
+</div>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Kinematic Dynamics &amp; Shock</span>
+<span class="font-mono text-xs text-slate-500">ext.queclink.kinematics • v1.8.0</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">Extension</span>
+</td>
+<td class="py-3.5 px-4 text-slate-600 text-xs">
+  Queclink 3-axis MEMS accelerometer G-force vector audit &amp; harsh braking
+</td>
+<td class="py-3.5 px-4 text-center">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer toggle-input" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+</label>
+</td>
+<td class="py-3.5 px-5 text-right space-x-1">
+<button class="btn-module-config px-2.5 py-1 text-xs font-semibold rounded bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 transition-colors" type="button">Config</button>
+<button class="btn-module-uninstall px-2.5 py-1 text-xs font-semibold rounded bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 transition-colors" type="button">Uninstall</button>
+</td>
+</tr>
+<!-- Row 4: Preventive Maintenance & Work Orders -->
+<tr class="hover:bg-slate-50/80 transition-colors module-row" data-type="extension">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700">
+<span class="material-symbols-outlined text-lg">construction</span>
+</div>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Preventive Maintenance &amp; Work Orders</span>
+<span class="font-mono text-xs text-slate-500">ext.fleet.maintenance • v1.5.1</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">Extension</span>
+</td>
+<td class="py-3.5 px-4 text-slate-600 text-xs">
+  Odometer accumulation &amp; ACC DI1 running hours automated service triggers
+</td>
+<td class="py-3.5 px-4 text-center">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer toggle-input" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+</label>
+</td>
+<td class="py-3.5 px-5 text-right space-x-1">
+<button class="btn-module-config px-2.5 py-1 text-xs font-semibold rounded bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 transition-colors" type="button">Config</button>
+<button class="btn-module-uninstall px-2.5 py-1 text-xs font-semibold rounded bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 transition-colors" type="button">Uninstall</button>
+</td>
+</tr>
+<!-- Row 5: Spatial Geofence Engine -->
+<tr class="hover:bg-slate-50/80 transition-colors module-row" data-type="core">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700">
+<span class="material-symbols-outlined text-lg">polyline</span>
+</div>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Spatial Geofence Engine</span>
+<span class="font-mono text-xs text-slate-500">core.geofence.spatial • v2.0.0</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">Native Core</span>
+</td>
+<td class="py-3.5 px-4 text-slate-600 text-xs">
+  High-precision polygon &amp; circular geofence boundary monitoring
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-cyan-600"></span> Active (Locked)
+</span>
+</td>
+<td class="py-3.5 px-5 text-right">
+<span class="text-xs text-slate-400 italic">Protected Core</span>
+</td>
+</tr>
+<!-- Row 6: Raw Telemetry Socket Inspector -->
+<tr class="hover:bg-slate-50/80 transition-colors module-row" data-type="extension">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-700">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</div>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Raw Telemetry Socket Inspector</span>
+<span class="font-mono text-xs text-slate-500">ext.socket.queclink.gtfri • v1.2.0</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">Extension</span>
+</td>
+<td class="py-3.5 px-4 text-slate-600 text-xs">
+  Live hex payload decoder for Queclink +RESP:GTFRI protocol packets
+</td>
+<td class="py-3.5 px-4 text-center">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer toggle-input" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+</label>
+</td>
+<td class="py-3.5 px-5 text-right space-x-1">
+<button class="btn-module-config px-2.5 py-1 text-xs font-semibold rounded bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 transition-colors" type="button">Config</button>
+<button class="btn-module-uninstall px-2.5 py-1 text-xs font-semibold rounded bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-600 transition-colors" type="button">Disable</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- TAB PANE 2: BRANDING & WEB ASSETS         -->
+<!-- ========================================== -->
+<div class="tab-content hidden flex-col gap-6" id="tab-content-branding">
+<!-- Header / Intro Banner -->
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-blue-600 text-2xl">verified_user</span>
+<h2 class="text-lg font-bold text-slate-900 tracking-tight">Application Identity &amp; White-label Customization</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">Enterprise Multi-Tenant</span>
+</div>
+<p class="text-xs text-slate-500 mt-1">Configure fleet portal metadata, PWA configuration, and graphic brand assets.</p>
+</div>
+<div class="flex items-center gap-2">
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-mono text-slate-700">
+<span class="w-2 h-2 rounded-full bg-blue-600"></span>
+<span class="">FQDN: telematics.pastrack-fleet.com</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold">
+<span class="material-symbols-outlined text-sm">lock</span> TLS 1.3
+    </span>
+</div>
+</div>
+<!-- Main Dual Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Core Application Metadata & Settings (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col gap-5">
+<div class="pb-3 border-b border-slate-100 flex items-center justify-between">
+<h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-600 text-base">settings_suggest</span>
+          Application Metadata
+        </h3>
+<span class="text-[11px] font-mono text-slate-400">Global Runtime Scope</span>
+</div>
+<!-- Application Display Name -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-xs font-semibold uppercase tracking-wider text-slate-600">Application Name</label>
+<span class="text-[11px] text-slate-400">Client Title Header</span>
+</div>
+<input class="w-full px-3.5 py-2 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm font-semibold focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors" type="text" value="PASTRACK"/>
+</div>
+<!-- Portal Subtitle / Tagline -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-xs font-semibold uppercase tracking-wider text-slate-600">Portal Subtitle / Tagline</label>
+<span class="text-[11px] text-slate-400">Login &amp; Shell Tag</span>
+</div>
+<input class="w-full px-3.5 py-2 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm font-medium focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors" type="text" value="Enterprise Fleet Telematics OS"/>
+</div>
+<!-- Organization Entity -->
+<div>
+<label class="text-xs font-semibold uppercase tracking-wider text-slate-600 block mb-1.5">Company / Organization Name</label>
+<input class="w-full px-3.5 py-2 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm font-medium focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors" type="text" value="Pastrack Telematics Global Ltd."/>
+</div>
+<!-- System Version (Read-Only) -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-xs font-semibold uppercase tracking-wider text-slate-600">System Version / Release Code</label>
+<span class="text-[11px] font-mono text-emerald-700 font-semibold">Runtime Stable</span>
+</div>
+<div class="px-3.5 py-2 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 text-sm font-mono flex items-center justify-between">
+<span class="">v4.8.2-STABLE (Core)</span>
+<span class="material-symbols-outlined text-slate-400 text-base">lock</span>
+</div>
+</div>
+<!-- Primary Brand Color & Contrast -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-xs font-semibold uppercase tracking-wider text-slate-600">Primary Brand Color</label>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">AAA (12.4:1 on white)</span>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-lg bg-[#1D4ED8] shrink-0 border border-slate-300 shadow-sm flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">palette</span>
+</div>
+<div class="flex-1">
+<input class="w-full px-3.5 py-2 rounded-lg bg-slate-50 border border-slate-300 font-mono text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors" type="text" value="#1D4ED8 (Precision Blue)"/>
+</div>
+</div>
+</div>
+<!-- Support Contact & Custom Domain -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="text-xs font-semibold uppercase tracking-wider text-slate-600 block mb-1.5">Support Hotline / NOC</label>
+<input class="w-full px-3 py-2 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-xs font-medium focus:outline-none focus:bg-white" type="text" value="+1 (800) 555-PAST"/>
+</div>
+<div>
+<label class="text-xs font-semibold uppercase tracking-wider text-slate-600 block mb-1.5">Custom Domain FQDN</label>
+<input class="w-full px-3 py-2 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-xs font-mono focus:outline-none focus:bg-white" type="text" value="telematics.pastrack-fleet.com"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Web & Mobile Brand Assets Grid (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<!-- Card 1: Primary Enterprise Logo -->
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-blue-600 text-base">image</span>
+<h3 class="text-sm font-bold text-slate-900">Primary Enterprise Logo</h3>
+</div>
+<span class="font-mono text-[11px] text-slate-400">512×128px</span>
+</div>
+<p class="text-xs text-slate-500 mb-3">Horizontal wordmark for dispatch consoles, reports, and fuel audit PDFs.</p>
+<div class="h-28 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center p-4 overflow-hidden shadow-inner">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden shrink-0 shadow-sm">
+<img alt="PASTRACK Symbol" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrBEdDcJKNtuzQYqxAFuyTKTAc-ILo8mwg_U5D035ooi9ADJAgNmnbNUGH0hrLr3fGtj5T50YPoHmK7Tu_yuhgrb_-Ud1BLsF0508hhStqSpctebkN20iobZ4q982Yl_9aw8wdByEA3-SMlD49esLSmrBdBhYTpdJFAJhh986FmaqxWKolO4RrmVvmMhJykVvJjc7tA7aKXS1WkU5Py1oLqTv8KZdzlWqbpfXaXW"/>
+</div>
+<div>
+<span class="font-sans font-bold text-lg text-slate-900 tracking-wider block">PASTRACK</span>
+<span class="font-mono text-[10px] text-blue-700 font-semibold uppercase tracking-widest block">FLEET TELEMATICS</span>
+</div>
+</div>
+</div>
+<div class="mt-2.5 flex items-center justify-between text-[11px] text-slate-400">
+<span class="">Format: SVG / High-Res PNG</span>
+<span class="">Max size: 2.0 MB</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<button class="btn-replace-asset px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">upload</span> Replace File
+          </button>
+<div class="flex items-center gap-1.5">
+<button class="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors" type="button">SVG</button>
+<button class="px-2 py-1.5 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition-colors" title="Remove" type="button">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Browser Favicon & PWA App Icon -->
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-blue-600 text-base">tab</span>
+<h3 class="text-sm font-bold text-slate-900">Favicon &amp; PWA Icon</h3>
+</div>
+<span class="font-mono text-[11px] text-cyan-700 font-semibold">1:1 Square</span>
+</div>
+<p class="text-xs text-slate-500 mb-3">Browser tab identity and progressive web application desktop shortcut.</p>
+<!-- Browser Tab Mockup -->
+<div class="rounded-lg bg-slate-100 border border-slate-200 p-2 mb-2">
+<div class="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded shadow-sm border border-slate-200 text-xs text-slate-800 font-medium max-w-full truncate">
+<img alt="PASTRACK Tab Favicon" class="w-4 h-4 rounded-sm object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrBEdDcJKNtuzQYqxAFuyTKTAc-ILo8mwg_U5D035ooi9ADJAgNmnbNUGH0hrLr3fGtj5T50YPoHmK7Tu_yuhgrb_-Ud1BLsF0508hhStqSpctebkN20iobZ4q982Yl_9aw8wdByEA3-SMlD49esLSmrBdBhYTpdJFAJhh986FmaqxWKolO4RrmVvmMhJykVvJjc7tA7aKXS1WkU5Py1oLqTv8KZdzlWqbpfXaXW"/>
+<span class="truncate text-[11px]">PASTRACK - Fleet Telematics...</span>
+<span class="material-symbols-outlined text-slate-400 text-xs shrink-0">close</span>
+</div>
+</div>
+<div class="h-20 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center p-2 shadow-inner gap-4">
+<img alt="PASTRACK Favicon Preview" class="h-14 w-14 rounded-xl object-cover shadow-sm border border-slate-300" src="https://lh3.googleusercontent.com/aida/ALJJyrBEdDcJKNtuzQYqxAFuyTKTAc-ILo8mwg_U5D035ooi9ADJAgNmnbNUGH0hrLr3fGtj5T50YPoHmK7Tu_yuhgrb_-Ud1BLsF0508hhStqSpctebkN20iobZ4q982Yl_9aw8wdByEA3-SMlD49esLSmrBdBhYTpdJFAJhh986FmaqxWKolO4RrmVvmMhJykVvJjc7tA7aKXS1WkU5Py1oLqTv8KZdzlWqbpfXaXW"/>
+<div class="text-xs text-slate-500">
+<span class="font-semibold text-slate-800 block">1024×1024px PNG</span>
+<span class="text-[11px] block mt-0.5">Auto-scaled: 32px, 64px, 192px, 512px</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<span class="text-[11px] text-slate-400 font-mono">RGBA 32-bit</span>
+<button class="btn-replace-asset px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-blue-700 text-xs font-semibold transition-colors" type="button">Update Favicon</button>
+</div>
+</div>
+<!-- Card 3: Apple Touch Icon -->
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-blue-600 text-base">phone_iphone</span>
+<h3 class="text-sm font-bold text-slate-900">Apple Touch Icon</h3>
+</div>
+<span class="font-mono text-[11px] text-slate-400">iOS / iPadOS</span>
+</div>
+<p class="text-xs text-slate-500 mb-3">High-res home screen tile icon with borderless deep obsidian gradient.</p>
+<div class="h-28 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center p-3 shadow-inner gap-4">
+<div class="relative">
+<img alt="PASTRACK Apple Touch Icon" class="h-20 w-20 rounded-2xl object-cover shadow-md border border-slate-900/10" src="https://lh3.googleusercontent.com/aida/AEtjO1Vw_QuiWYhU3Uf6RL7GyOSBR6sMLnkyeCq0E6omFViRH_B-_QNX1uv8J88R11ZbHXbUfPdrQ1meK7UCKUoU0mPFM05jaYXFrHJjrd7vP9HRWMrkiGYT7p4Yti9JWnp-QeKMEDzLoWMErwOPHxMBzA7LxMc_xabXYGpXy0YzqB95v4H4RaeTyoVxckhR3lVF0XykOz91Kb7ImmG5BxsKY-4T6HF11rHirtlE0Ot7Ew"/>
+</div>
+<div class="text-xs text-slate-600">
+<span class="font-bold text-slate-900 block">1024×1024px Tile</span>
+<span class="text-[11px] text-slate-500 block mt-0.5">Full-bleed square</span>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-blue-50 text-blue-700 border border-blue-200">PWA Standalone</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<button class="btn-replace-asset px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-blue-700 text-xs font-semibold transition-colors" type="button">Replace Icon</button>
+<button class="text-slate-500 hover:text-slate-800 text-xs font-semibold transition-colors" type="button">Preview on iPad</button>
+</div>
+</div>
+<!-- Card 4: Web App Manifest Inspector -->
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-blue-600 text-base">data_object</span>
+<h3 class="text-sm font-bold text-slate-900">Web App Manifest</h3>
+</div>
+<span class="font-mono text-[11px] font-semibold text-cyan-700">manifest.json</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-xs font-semibold text-emerald-700">Linked &amp; Validated (4 PWA Shortcuts)</span>
+</div>
+<div class="h-28 rounded-lg bg-slate-900 p-2.5 font-mono text-slate-200 overflow-y-auto leading-relaxed text-xs shadow-inner">
+<pre class="m-0 font-mono text-[11px]">{
+  "name": "PASTRACK Telematics",
+  "short_name": "PASTRACK",
+  "display": "standalone",
+  "background_color": "#070E1C",
+  "theme_color": "#1D4ED8",
+  "scope": "/",
+  "start_url": "/fleet/dispatch"
+}</pre>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<button class="text-blue-700 hover:text-blue-900 text-xs font-semibold transition-colors" type="button">View Raw JSON</button>
+<button class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-blue-700 text-xs font-semibold transition-colors" id="btn-regen-manifest" type="button">Re-index PWA Cache</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action Ribbon -->
+<div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 mt-2">
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+<span class="">Branding metadata synced with active telematics dispatch tenant.</span>
+</div>
+<div class="flex items-center gap-2.5 w-full sm:w-auto justify-end">
+<button class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 font-semibold text-xs transition-colors" type="button">Discard Changes</button>
+<button class="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs transition-colors flex items-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-base">save</span>
+<span class="">Save Brand Settings</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- TAB PANE 3: SOUND & AUDIO ALERTS          -->
+<!-- ========================================== -->
+<div class="tab-content hidden flex-col gap-6" id="tab-content-sound">
+<!-- Global Audio Master Ribbon -->
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4 w-full lg:w-auto">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="master-sound-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+</label>
+<div>
+<h2 class="text-sm font-bold text-slate-900">Enable Hardware Telemetry Audio Alerts</h2>
+<p class="text-xs text-slate-500">Active acoustic feedback for critical field sensors and Queclink hardware state changes.</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-6 w-full lg:w-auto">
+<!-- Master Volume -->
+<div class="flex items-center gap-3 w-full sm:w-64">
+<span class="material-symbols-outlined text-slate-400 text-lg">volume_down</span>
+<input class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600" id="master-volume-slider" max="100" min="0" type="range" value="85"/>
+<span class="font-mono text-xs text-slate-800 font-bold w-9 text-right" id="master-volume-label">85%</span>
+</div>
+<!-- Output Device Select -->
+<div class="w-full sm:w-64">
+<select class="w-full px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-800 text-xs font-semibold focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500">
+<option>Dispatch Console Speaker (Default)</option>
+<option>External Hardware Siren Interface (GPIO-OUT)</option>
+<option>Auxiliary Monitor DAC Audio</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Hardware Trigger Audio Matrix -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+<div class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+<h2 class="text-sm font-semibold text-slate-900">Hardware Incident Audio Configuration Matrix</h2>
+<span class="font-mono text-xs text-slate-500">Queclink GV30CEU &amp; CFS300B Event Triggers</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50/80 text-slate-600 border-b border-slate-200 text-xs font-semibold uppercase tracking-wider">
+<th class="py-3 px-5">Telemetry Event / Incident</th>
+<th class="py-3 px-4">Hardware Sensor Trigger Condition</th>
+<th class="py-3 px-4">Synthesized Siren Tone</th>
+<th class="py-3 px-4 text-center">Gain</th>
+<th class="py-3 px-4 text-center">Test Tone</th>
+<th class="py-3 px-5 text-right">State</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 text-sm">
+<!-- Event 1: Fuel Theft / Siphon -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-600"></span>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Fuel Theft / Siphon (P1 Critical)</span>
+<span class="font-mono text-xs text-slate-500">CFS300B BLE Siphon Intercept</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-mono text-xs font-semibold text-rose-600">
+  Level drop &gt;5L in 3 min (ACC DI1 == 0)
+</td>
+<td class="py-3.5 px-4">
+<select class="px-2 py-1 rounded bg-slate-50 border border-slate-300 text-slate-800 text-xs font-semibold focus:outline-none">
+<option selected="">Siren Klaxon (Continuous)</option>
+<option>Rapid Pulse Siren</option>
+<option>Pulsed Warble</option>
+</select>
+</td>
+<td class="py-3.5 px-4 text-center font-mono text-xs font-bold text-slate-700">100%</td>
+<td class="py-3.5 px-4 text-center">
+<button class="btn-play-tone px-3 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-blue-700 font-semibold text-xs transition-all shadow-sm flex items-center gap-1 mx-auto" data-tone="klaxon" type="button">
+<span class="material-symbols-outlined text-sm">play_arrow</span> Test Tone
+</button>
+</td>
+<td class="py-3.5 px-5 text-right">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+</label>
+</td>
+</tr>
+<!-- Event 2: Power Disconnect / Aki Cut -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-600"></span>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Power Disconnect / Aki Cut (P1 Critical)</span>
+<span class="font-mono text-xs text-slate-500">Queclink GV30CEU Main Power V_IN</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-mono text-xs font-semibold text-rose-600">
+  Vin == 0.0V &amp; Backup LiPo 3.7V engaged
+</td>
+<td class="py-3.5 px-4">
+<select class="px-2 py-1 rounded bg-slate-50 border border-slate-300 text-slate-800 text-xs font-semibold focus:outline-none">
+<option selected="">High-Freq Pulse</option>
+<option>Urgent Chirp</option>
+</select>
+</td>
+<td class="py-3.5 px-4 text-center font-mono text-xs font-bold text-slate-700">90%</td>
+<td class="py-3.5 px-4 text-center">
+<button class="btn-play-tone px-3 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-blue-700 font-semibold text-xs transition-all shadow-sm flex items-center gap-1 mx-auto" data-tone="beep" type="button">
+<span class="material-symbols-outlined text-sm">play_arrow</span> Test Tone
+</button>
+</td>
+<td class="py-3.5 px-5 text-right">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+</label>
+</td>
+</tr>
+<!-- Event 3: Geofence Perimeter Breach -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-cyan-600"></span>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Geofence Perimeter Breach (P2 High)</span>
+<span class="font-mono text-xs text-slate-500">Spatial Boundary Enforcement</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-mono text-xs text-slate-600">
+  Exit coordinate vector without route clearance
+</td>
+<td class="py-3.5 px-4">
+<select class="px-2 py-1 rounded bg-slate-50 border border-slate-300 text-slate-800 text-xs font-semibold focus:outline-none">
+<option selected="">Dual Ping Alert</option>
+<option>Double Chime</option>
+</select>
+</td>
+<td class="py-3.5 px-4 text-center font-mono text-xs font-bold text-slate-700">75%</td>
+<td class="py-3.5 px-4 text-center">
+<button class="btn-play-tone px-3 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-blue-700 font-semibold text-xs transition-all shadow-sm flex items-center gap-1 mx-auto" data-tone="pulse" type="button">
+<span class="material-symbols-outlined text-sm">play_arrow</span> Test Tone
+</button>
+</td>
+<td class="py-3.5 px-5 text-right">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+</label>
+</td>
+</tr>
+<!-- Event 4: Kinematic Shock / Severe Impact -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-cyan-600"></span>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Kinematic Shock / Severe Impact (P2 High)</span>
+<span class="font-mono text-xs text-slate-500">Queclink 3-Axis Accelerometer</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-mono text-xs text-slate-600">
+  G-force vector &gt;0.55g instantaneous decelerate
+</td>
+<td class="py-3.5 px-4">
+<select class="px-2 py-1 rounded bg-slate-50 border border-slate-300 text-slate-800 text-xs font-semibold focus:outline-none">
+<option selected="">Low Warning Thud</option>
+<option>Tri-Tone Strike</option>
+</select>
+</td>
+<td class="py-3.5 px-4 text-center font-mono text-xs font-bold text-slate-700">80%</td>
+<td class="py-3.5 px-4 text-center">
+<button class="btn-play-tone px-3 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-blue-700 font-semibold text-xs transition-all shadow-sm flex items-center gap-1 mx-auto" data-tone="sonar" type="button">
+<span class="material-symbols-outlined text-sm">play_arrow</span> Test Tone
+</button>
+</td>
+<td class="py-3.5 px-5 text-right">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+</label>
+</td>
+</tr>
+<!-- Event 5: CFS300B BLE Probe Signal Loss -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">CFS300B BLE Probe Drop (P3 Warning)</span>
+<span class="font-mono text-xs text-slate-500">BLE 5.0 Beacon Watchdog</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-mono text-xs text-slate-500">
+  Broadcast frame timeout &gt;180 seconds
+</td>
+<td class="py-3.5 px-4">
+<select class="px-2 py-1 rounded bg-slate-50 border border-slate-300 text-slate-800 text-xs font-semibold focus:outline-none">
+<option selected="">Subtle Chime</option>
+<option>Single Pip</option>
+</select>
+</td>
+<td class="py-3.5 px-4 text-center font-mono text-xs font-bold text-slate-700">50%</td>
+<td class="py-3.5 px-4 text-center">
+<button class="btn-play-tone px-3 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-blue-700 font-semibold text-xs transition-all shadow-sm flex items-center gap-1 mx-auto" data-tone="chime" type="button">
+<span class="material-symbols-outlined text-sm">play_arrow</span> Test Tone
+</button>
+</td>
+<td class="py-3.5 px-5 text-right">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+</label>
+</td>
+</tr>
+<!-- Event 6: Low Probe Battery -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Low Probe Battery (P4 Health)</span>
+<span class="font-mono text-xs text-slate-500">CFS300B Li-SOCl2 Cell Health</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-mono text-xs text-slate-500">
+  Internal cell voltage &lt;3.00V
+</td>
+<td class="py-3.5 px-4">
+<select class="px-2 py-1 rounded bg-slate-50 border border-slate-300 text-slate-800 text-xs font-semibold focus:outline-none">
+<option selected="">Soft Beep</option>
+<option>Muted Beep</option>
+</select>
+</td>
+<td class="py-3.5 px-4 text-center font-mono text-xs font-bold text-slate-700">40%</td>
+<td class="py-3.5 px-4 text-center">
+<button class="btn-play-tone px-3 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-blue-700 font-semibold text-xs transition-all shadow-sm flex items-center gap-1 mx-auto" data-tone="blip" type="button">
+<span class="material-symbols-outlined text-sm">play_arrow</span> Test Tone
+</button>
+</td>
+<td class="py-3.5 px-5 text-right">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+</label>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Quiet Hours & Mute Schedules -->
+<div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-700 shrink-0">
+<span class="material-symbols-outlined text-xl">bedtime</span>
+</div>
+<div>
+<h3 class="text-sm font-semibold text-slate-900">Scheduled Audio Mute / Night Protocol</h3>
+<p class="text-xs text-slate-500">Suppress routine telemetry notifications during specified quiet windows.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<input class="px-2.5 py-1.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-800 font-mono text-xs font-semibold focus:outline-none focus:bg-white" type="time" value="22:00"/>
+<span class="text-slate-400 text-xs">to</span>
+<input class="px-2.5 py-1.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-800 font-mono text-xs font-semibold focus:outline-none focus:bg-white" type="time" value="06:00"/>
+</div>
+<label class="flex items-center gap-2 text-xs font-medium text-slate-700 cursor-pointer select-none">
+<input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/>
+<span class="font-semibold text-rose-600">Never mute P1 Critical</span>
+</label>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- TAB PANE 4: ACCESS CONTROL & RBAC         -->
+<!-- ========================================== -->
+<div class="tab-content hidden flex-col gap-6" id="tab-content-access">
+<!-- User Directory Table -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+<div class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+<div>
+<h2 class="text-sm font-semibold text-slate-900">Authorized Telematics Operators</h2>
+<p class="text-xs text-slate-500 mt-0.5">Strict role-based system authentications with mandatory hardware 2FA</p>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs flex items-center gap-1.5 transition-colors shadow-sm" id="btn-invite-operator" type="button">
+<span class="material-symbols-outlined text-base">person_add</span>
+<span class="">Invite Operator</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50/80 text-slate-600 border-b border-slate-200 text-xs font-semibold uppercase tracking-wider">
+<th class="py-3 px-5">System Identity</th>
+<th class="py-3 px-4">Assigned Role</th>
+<th class="py-3 px-4">2FA Security</th>
+<th class="py-3 px-4">Last Telemetry Session</th>
+<th class="py-3 px-5 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 text-sm">
+<!-- User 1: Super Admin -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center font-bold text-xs">
+  SA
+</div>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Super Admin</span>
+<span class="font-mono text-xs text-slate-500">admin@pastrack.internal</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">Full System Access</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700">
+<span class="material-symbols-outlined text-sm">verified_user</span> Enforced
+</span>
+</td>
+<td class="py-3.5 px-4 font-mono text-xs text-slate-600">4m ago (10.240.12.8)</td>
+<td class="py-3.5 px-5 text-right">
+<button class="text-blue-700 hover:text-blue-900 text-xs font-semibold" type="button">Edit Permissions</button>
+</td>
+</tr>
+<!-- User 2: Dispatcher -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs">
+  FD
+</div>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Fleet Operations Dispatcher</span>
+<span class="font-mono text-xs text-slate-500">dispatch.lead@pastrack.internal</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">Operations Operator</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700">
+<span class="material-symbols-outlined text-sm">verified_user</span> Enabled
+</span>
+</td>
+<td class="py-3.5 px-4 font-mono text-xs text-slate-600">18m ago (10.240.12.44)</td>
+<td class="py-3.5 px-5 text-right">
+<button class="text-blue-700 hover:text-blue-900 text-xs font-semibold" type="button">Edit Permissions</button>
+</td>
+</tr>
+<!-- User 3: Workshop Lead -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs">
+  WS
+</div>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Workshop Lead Specialist</span>
+<span class="font-mono text-xs text-slate-500">sensor.tech@pastrack.internal</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">Diagnostics &amp; Maintenance</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-slate-500">
+<span class="material-symbols-outlined text-sm">shield</span> Optional
+</span>
+</td>
+<td class="py-3.5 px-4 font-mono text-xs text-slate-600">2h ago (10.240.14.19)</td>
+<td class="py-3.5 px-5 text-right">
+<button class="text-blue-700 hover:text-blue-900 text-xs font-semibold" type="button">Edit Permissions</button>
+</td>
+</tr>
+<!-- User 4: Auditor -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3.5 px-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs">
+  TA
+</div>
+<div>
+<span class="text-sm font-semibold text-slate-900 block">Telematics Compliance Auditor</span>
+<span class="font-mono text-xs text-slate-500">audit.external@compliance.corp</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">Read-Only Compliance</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700">
+<span class="material-symbols-outlined text-sm">verified_user</span> Enforced
+</span>
+</td>
+<td class="py-3.5 px-4 font-mono text-xs text-slate-600">Yesterday (192.168.1.100)</td>
+<td class="py-3.5 px-5 text-right">
+<button class="text-blue-700 hover:text-blue-900 text-xs font-semibold" type="button">Edit Permissions</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Granular Module Permission Matrix -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between pb-4 border-b border-slate-100 gap-3">
+<div>
+<h2 class="text-sm font-semibold text-slate-900">Subsystem &amp; Telemetry Command Permission Matrix</h2>
+<p class="text-xs text-slate-500 mt-0.5">Control access to live tracking, raw Queclink relays, and CFS300B calibration commands.</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 text-xs font-semibold flex items-center gap-1 transition-colors" id="btn-duplicate-policy" type="button">
+<span class="material-symbols-outlined text-base text-slate-500">content_copy</span> Duplicate Role
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 text-xs font-semibold flex items-center gap-1 transition-colors" id="btn-export-rbac" type="button">
+<span class="material-symbols-outlined text-base text-slate-500">download</span> Export JSON
+</button>
+</div>
+</div>
+<div class="overflow-x-auto mt-2">
+<table class="w-full text-left text-xs">
+<thead>
+<tr class="bg-slate-50/80 text-slate-600 border-b border-slate-200 font-semibold uppercase tracking-wider">
+<th class="py-2.5 px-4">Role Classification</th>
+<th class="py-2.5 px-2 text-center">Live Tracking</th>
+<th class="py-2.5 px-2 text-center">Asset Config</th>
+<th class="py-2.5 px-2 text-center">Fuel CFS300B</th>
+<th class="py-2.5 px-2 text-center">Maintenance</th>
+<th class="py-2.5 px-2 text-center">Geofencing</th>
+<th class="py-2.5 px-2 text-center">Shock/Kinematic</th>
+<th class="py-2.5 px-2 text-center">Relay Cut (DO1)</th>
+<th class="py-2.5 px-2 text-center">System Settings</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200">
+<!-- Super Admin -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3 px-4 text-xs font-bold text-slate-900">Super Admin</td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-rose-600 focus:ring-rose-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+</tr>
+<!-- Dispatcher -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3 px-4 text-xs font-bold text-slate-900">Dispatcher</td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input class="rounded border-slate-300 text-rose-600 focus:ring-rose-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+</tr>
+<!-- Workshop Lead -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3 px-4 text-xs font-bold text-slate-900">Workshop Lead</td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-rose-600 focus:ring-rose-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+</tr>
+<!-- Auditor -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3 px-4 text-xs font-bold text-slate-900">Auditor (Compliance)</td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input checked="" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input class="rounded border-slate-300 text-rose-600 focus:ring-rose-500" type="checkbox"/></td>
+<td class="py-3 px-2 text-center"><input class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-end">
+<button class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs transition-colors flex items-center gap-2 shadow-sm" onclick="showToast('RBAC permission matrix saved successfully', 'success')" type="button">
+<span class="material-symbols-outlined text-base">save</span>
+<span>Save Permissions Matrix</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- MODAL: UPLOAD NEW MODULE PACKAGE          -->
+<!-- ========================================== -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm hidden p-4" id="modal-upload-module">
+<div class="bg-white w-full max-w-xl rounded-xl border border-slate-200 shadow-2xl overflow-hidden flex flex-col">
+<div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-600 text-xl">package_2</span>
+<h3 class="text-base font-bold text-slate-900">Upload Runtime Module Package</h3>
+</div>
+<button class="text-slate-400 hover:text-slate-700 transition-colors" id="btn-close-modal" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<!-- Dropzone -->
+<div class="border-2 border-dashed border-slate-300 hover:border-blue-500 rounded-xl p-8 flex flex-col items-center justify-center text-center cursor-pointer transition-colors bg-slate-50" id="dropzone">
+<span class="material-symbols-outlined text-4xl text-blue-600 mb-2">upload_file</span>
+<p class="text-sm font-semibold text-slate-900">Drag &amp; drop package file (.ptm or .zip)</p>
+<p class="text-xs text-slate-500 mt-1">Accepts cryptographically signed binary packages up to 250 MB</p>
+<input accept=".zip,.ptm" class="hidden" id="file-input" type="file"/>
+</div>
+<!-- Security & Version Check Info -->
+<div class="bg-slate-50 border border-slate-200 p-3.5 rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between text-xs font-mono">
+<span class="text-slate-500">Engine Target:</span>
+<span class="text-slate-800 font-bold">PASTRACK Core &gt;= 4.8.0</span>
+</div>
+<div class="flex items-center justify-between text-xs font-mono">
+<span class="text-slate-500">Signature Algorithm:</span>
+<span class="text-emerald-700 font-bold">Ed25519 + SHA-256</span>
+</div>
+<div class="flex items-center justify-between text-xs font-mono">
+<span class="text-slate-500">Hardware Compatibility:</span>
+<span class="text-slate-800 font-bold">Queclink GV30CEU / CFS300B</span>
+</div>
+</div>
+</div>
+<div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-end gap-3">
+<button class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 font-semibold text-xs transition-colors" id="btn-cancel-modal" type="button">
+  Cancel
+</button>
+<button class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs flex items-center gap-1.5 shadow-sm transition-colors" id="btn-confirm-install" type="button">
+<span class="material-symbols-outlined text-base">verified</span>
+<span class="">Verify &amp; Install Module</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- ========================================== -->
+<!-- JAVASCRIPT: CLEAN VANILLA LOGIC            -->
+<!-- ========================================== -->
+<script>
+  // Toast Helper
+  function showToast(message, type = 'info') {
+    const toastShelf = document.getElementById('toast-shelf');
+    if (!toastShelf) return;
+    const toast = document.createElement('div');
+    const isSuccess = type === 'success';
+    const isError = type === 'error';
+
+    toast.className = `pointer-events-auto px-4 py-2.5 rounded-lg shadow-lg flex items-center gap-2.5 text-xs font-semibold transition-all duration-300 transform translate-y-2 opacity-0 border ${
+      isSuccess ? 'bg-blue-600 text-white border-blue-700 shadow-blue-500/20' :
+      isError ? 'bg-rose-600 text-white border-rose-700 shadow-rose-500/20' :
+      'bg-slate-800 text-white border-slate-700 shadow-slate-900/20'
+    }`;
+
+    const icon = isSuccess ? 'check_circle' : isError ? 'error' : 'info';
+    toast.innerHTML = `<span class="material-symbols-outlined text-base">${icon}</span><span>${message}</span>`;
+    toastShelf.appendChild(toast);
+
+    requestAnimationFrame(() => {
+      toast.classList.remove('translate-y-2', 'opacity-0');
+    });
+
+    setTimeout(() => {
+      toast.classList.add('opacity-0', '-translate-y-2');
+      setTimeout(() => toast.remove(), 300);
+    }, 3200);
+  }
+
+  // TAB SWITCHING FUNCTION (Global Scope)
+  const tabRegistry = [
+    { btnId: 'tab-btn-modules', contentId: 'tab-content-modules' },
+    { btnId: 'tab-btn-branding', contentId: 'tab-content-branding' },
+    { btnId: 'tab-btn-sound', contentId: 'tab-content-sound' },
+    { btnId: 'tab-btn-access', contentId: 'tab-content-access' }
+  ];
+
+  function switchTab(targetContentId) {
+    tabRegistry.forEach(tab => {
+      const btn = document.getElementById(tab.btnId);
+      const content = document.getElementById(tab.contentId);
+      const isTarget = (tab.contentId === targetContentId);
+
+      // Handle Container Visibility
+      if (content) {
+        if (isTarget) {
+          content.classList.remove('hidden');
+          content.classList.add('flex');
+        } else {
+          content.classList.add('hidden');
+          content.classList.remove('flex');
+        }
+      }
+
+      // Handle Tab Button Styling
+      if (btn) {
+        const badge = btn.querySelector('.tab-badge');
+        const icon = btn.querySelector('.material-symbols-outlined');
+
+        if (isTarget) {
+          btn.className = 'nav-tab px-4 py-2 rounded-lg font-medium text-xs flex items-center gap-2 transition-all bg-blue-600 text-white shadow-sm';
+          if (badge) {
+            badge.className = 'tab-badge px-2 py-0.5 rounded-full text-[11px] font-semibold bg-white/20 text-white';
+          }
+          if (icon) {
+            icon.className = 'material-symbols-outlined text-lg text-white';
+          }
+        } else {
+          btn.className = 'nav-tab px-4 py-2 rounded-lg font-normal text-xs flex items-center gap-2 transition-all bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 border border-slate-200/80';
+          if (badge) {
+            badge.className = 'tab-badge px-2 py-0.5 rounded-full text-[11px] font-semibold bg-slate-200 text-slate-700';
+          }
+          if (icon) {
+            icon.className = 'material-symbols-outlined text-lg text-slate-500';
+          }
+        }
+      }
+    });
+  }
+
+  // DOM INIT & INTERACTIVITY
+  document.addEventListener('DOMContentLoaded', function () {
+    // Explicit event listeners for tab buttons
+    tabRegistry.forEach(item => {
+      const btn = document.getElementById(item.btnId);
+      if (btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          switchTab(item.contentId);
+        });
+      }
+    });
+
+    // Ensure Module Manager starts active
+    switchTab('tab-content-modules');
+
+    // SAVE & RESET BUTTONS
+    const btnSave = document.getElementById('btn-save-changes');
+    if (btnSave) {
+      btnSave.addEventListener('click', function() {
+        btnSave.classList.add('scale-95');
+        setTimeout(() => btnSave.classList.remove('scale-95'), 150);
+        showToast('System configuration & runtime engine settings persisted.', 'success');
+      });
+    }
+
+    const btnReset = document.getElementById('btn-reset-defaults');
+    if (btnReset) {
+      btnReset.addEventListener('click', function() {
+        showToast('Default parameters loaded into sandbox memory.', 'info');
+      });
+    }
+
+    // CMD+S Shortcut
+    window.addEventListener('keydown', function(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 's') {
+        e.preventDefault();
+        if (btnSave) btnSave.click();
+      }
+    });
+
+    // MODULE SEARCH & FILTER
+    const searchInput = document.getElementById('module-search');
+    const filterSelect = document.getElementById('module-filter');
+    const rows = document.querySelectorAll('.module-row');
+
+    function filterModules() {
+      const term = (searchInput?.value || '').toLowerCase();
+      const filter = filterSelect?.value || 'all';
+
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        const type = row.getAttribute('data-type');
+        const matchesTerm = text.includes(term);
+        const matchesType = (filter === 'all' || type === filter);
+        row.style.display = (matchesTerm && matchesType) ? '' : 'none';
+      });
+    }
+
+    if (searchInput) searchInput.addEventListener('input', filterModules);
+    if (filterSelect) filterSelect.addEventListener('change', filterModules);
+
+    // MODAL HANDLERS
+    const uploadModal = document.getElementById('modal-upload-module');
+    const btnOpenUpload = document.getElementById('btn-open-upload-modal');
+    const btnCloseModal = document.getElementById('btn-close-modal');
+    const btnCancelModal = document.getElementById('btn-cancel-modal');
+    const btnConfirmInstall = document.getElementById('btn-confirm-install');
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('file-input');
+
+    function openModal() { if (uploadModal) uploadModal.classList.remove('hidden'); }
+    function closeModal() { if (uploadModal) uploadModal.classList.add('hidden'); }
+
+    if (btnOpenUpload) btnOpenUpload.addEventListener('click', openModal);
+    if (btnCloseModal) btnCloseModal.addEventListener('click', closeModal);
+    if (btnCancelModal) btnCancelModal.addEventListener('click', closeModal);
+
+    if (dropzone && fileInput) {
+      dropzone.addEventListener('click', () => fileInput.click());
+      dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.classList.add('border-blue-500', 'bg-blue-50/50');
+      });
+      dropzone.addEventListener('dragleave', () => {
+        dropzone.classList.remove('border-blue-500', 'bg-blue-50/50');
+      });
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('border-blue-500', 'bg-blue-50/50');
+        if (e.dataTransfer.files.length > 0) {
+          showToast(`Loaded ${e.dataTransfer.files[0].name} for verification`, 'info');
+        }
+      });
+      fileInput.addEventListener('change', () => {
+        if (fileInput.files.length > 0) {
+          showToast(`Loaded ${fileInput.files[0].name} for verification`, 'info');
+        }
+      });
+    }
+
+    if (btnConfirmInstall) {
+      btnConfirmInstall.addEventListener('click', () => {
+        closeModal();
+        showToast('Module cryptographic hash verified. Package installed.', 'success');
+      });
+    }
+
+    // AUDIO TEST TONE SIMULATION
+    const audioButtons = document.querySelectorAll('.btn-play-tone');
+    audioButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tone = btn.getAttribute('data-tone') || 'Tone';
+        btn.classList.add('bg-blue-600', 'text-white');
+        showToast(`Playing tone simulation: ${tone.toUpperCase()}`, 'info');
+        setTimeout(() => {
+          btn.classList.remove('bg-blue-600', 'text-white');
+        }, 500);
+      });
+    });
+
+    // MASTER VOLUME SLIDER
+    const masterVol = document.getElementById('master-volume-slider');
+    const masterLabel = document.getElementById('master-volume-label');
+    if (masterVol && masterLabel) {
+      masterVol.addEventListener('input', (e) => {
+        masterLabel.textContent = `${e.target.value}%`;
+      });
+    }
+
+    // MISCELLANEOUS BUTTONS
+    const assetBtns = document.querySelectorAll('.btn-replace-asset');
+    assetBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        showToast('Select replacement asset file (PNG/SVG 1:1)', 'info');
+      });
+    });
+
+    const btnRegenManifest = document.getElementById('btn-regen-manifest');
+    if (btnRegenManifest) {
+      btnRegenManifest.addEventListener('click', () => {
+        showToast('Web App Manifest JSON regenerated successfully.', 'success');
+      });
+    }
+
+    const btnInvite = document.getElementById('btn-invite-operator');
+    if (btnInvite) {
+      btnInvite.addEventListener('click', () => {
+        showToast('Operator invitation modal opened. Link generated.', 'info');
+      });
+    }
+
+    const btnDuplicate = document.getElementById('btn-duplicate-policy');
+    if (btnDuplicate) {
+      btnDuplicate.addEventListener('click', () => {
+        showToast('Role security matrix template duplicated.', 'info');
+      });
+    }
+
+    const btnExportRbac = document.getElementById('btn-export-rbac');
+    if (btnExportRbac) {
+      btnExportRbac.addEventListener('click', () => {
+        showToast('RBAC security policy exported as JSON.', 'success');
+      });
+    }
+  });
+</script>
+</body></html>

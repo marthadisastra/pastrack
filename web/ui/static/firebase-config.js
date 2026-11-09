@@ -1,0 +1,2 @@
+/* Firebase public web configuration. Server credentials are never served here. */
+self.pastrackFirebaseConfig={apiKey:'AIzaSyBGkRS31jMji5e3WuOxw8XzXg6zNu1NpUs',authDomain:'rumahcuci-56dec.firebaseapp.com',databaseURL:'https://rumahcuci-56dec-default-rtdb.asia-southeast1.firebasedatabase.app',projectId:'rumahcuci-56dec',storageBucket:'rumahcuci-56dec.firebasestorage.app',messagingSenderId:'827052970652',appId:'1:827052970652:web:7afd1fbf5c8d7455735359',measurementId:'G-BZP0KZN4ZW'};

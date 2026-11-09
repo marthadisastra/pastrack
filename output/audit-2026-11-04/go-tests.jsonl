@@ -1,0 +1,341 @@
+{"Time":"2026-11-04T11:05:17.066818+07:00","Action":"start","Package":"pastrack"}
+{"Time":"2026-11-04T11:05:17.067106+07:00","Action":"start","Package":"pastrack/cmd/pastrack-db"}
+{"Time":"2026-11-04T11:05:17.067172+07:00","Action":"start","Package":"pastrack/cmd/pastrack-local"}
+{"Time":"2026-11-04T11:05:17.06716+07:00","Action":"output","Package":"pastrack/cmd/pastrack-db","Output":"?   \tpastrack/cmd/pastrack-db\t[no test files]\n"}
+{"Time":"2026-11-04T11:05:17.067198+07:00","Action":"output","Package":"pastrack/cmd/pastrack-local","Output":"?   \tpastrack/cmd/pastrack-local\t[no test files]\n"}
+{"Time":"2026-11-04T11:05:17.067262+07:00","Action":"skip","Package":"pastrack/cmd/pastrack-local","Elapsed":0}
+{"Time":"2026-11-04T11:05:17.067207+07:00","Action":"start","Package":"pastrack/database"}
+{"Time":"2026-11-04T11:05:17.067224+07:00","Action":"skip","Package":"pastrack/cmd/pastrack-db","Elapsed":0}
+{"Time":"2026-11-04T11:05:17.067323+07:00","Action":"output","Package":"pastrack/database","Output":"?   \tpastrack/database\t[no test files]\n"}
+{"Time":"2026-11-04T11:05:17.067364+07:00","Action":"skip","Package":"pastrack/database","Elapsed":0}
+{"Time":"2026-11-04T11:05:17.067347+07:00","Action":"start","Package":"pastrack/internal/database"}
+{"Time":"2026-11-04T11:05:17.067414+07:00","Action":"start","Package":"pastrack/internal/fuel"}
+{"Time":"2026-11-04T11:05:17.067451+07:00","Action":"start","Package":"pastrack/internal/geofence"}
+{"Time":"2026-11-04T11:05:17.232984+07:00","Action":"start","Package":"pastrack/internal/platform"}
+{"Time":"2026-11-04T11:05:17.233043+07:00","Action":"start","Package":"pastrack/internal/protocol"}
+{"Time":"2026-11-04T11:05:17.233143+07:00","Action":"start","Package":"pastrack/internal/remoteoutput"}
+{"Time":"2026-11-04T11:05:17.233275+07:00","Action":"start","Package":"pastrack/internal/trip"}
+{"Time":"2026-11-04T11:05:17.689743+07:00","Action":"run","Package":"pastrack","Test":"TestObservedFuelSignal"}
+{"Time":"2026-11-04T11:05:17.68983+07:00","Action":"output","Package":"pastrack","Test":"TestObservedFuelSignal","Output":"=== RUN   TestObservedFuelSignal\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.689856+07:00","Action":"output","Package":"pastrack","Test":"TestObservedFuelSignal","Output":"--- PASS: TestObservedFuelSignal (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.689863+07:00","Action":"pass","Package":"pastrack","Test":"TestObservedFuelSignal","Elapsed":0}
+{"Time":"2026-11-04T11:05:17.689906+07:00","Action":"run","Package":"pastrack","Test":"TestObservedGTSTT"}
+{"Time":"2026-11-04T11:05:17.689911+07:00","Action":"output","Package":"pastrack","Test":"TestObservedGTSTT","Output":"=== RUN   TestObservedGTSTT\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.689921+07:00","Action":"output","Package":"pastrack","Test":"TestObservedGTSTT","Output":"--- PASS: TestObservedGTSTT (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.689925+07:00","Action":"pass","Package":"pastrack","Test":"TestObservedGTSTT","Elapsed":0}
+{"Time":"2026-11-04T11:05:17.689949+07:00","Action":"run","Package":"pastrack","Test":"TestObservedGTSTTWithoutGPSFix"}
+{"Time":"2026-11-04T11:05:17.689954+07:00","Action":"output","Package":"pastrack","Test":"TestObservedGTSTTWithoutGPSFix","Output":"=== RUN   TestObservedGTSTTWithoutGPSFix\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.689965+07:00","Action":"output","Package":"pastrack","Test":"TestObservedGTSTTWithoutGPSFix","Output":"--- PASS: TestObservedGTSTTWithoutGPSFix (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.689969+07:00","Action":"pass","Package":"pastrack","Test":"TestObservedGTSTTWithoutGPSFix","Elapsed":0}
+{"Time":"2026-11-04T11:05:17.689973+07:00","Action":"run","Package":"pastrack","Test":"TestInvalidAndUnverified"}
+{"Time":"2026-11-04T11:05:17.689977+07:00","Action":"output","Package":"pastrack","Test":"TestInvalidAndUnverified","Output":"=== RUN   TestInvalidAndUnverified\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.689987+07:00","Action":"output","Package":"pastrack","Test":"TestInvalidAndUnverified","Output":"--- PASS: TestInvalidAndUnverified (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.690028+07:00","Action":"pass","Package":"pastrack","Test":"TestInvalidAndUnverified","Elapsed":0}
+{"Time":"2026-11-04T11:05:17.690033+07:00","Action":"run","Package":"pastrack","Test":"TestUnknownFuelPreservesFields"}
+{"Time":"2026-11-04T11:05:17.690036+07:00","Action":"output","Package":"pastrack","Test":"TestUnknownFuelPreservesFields","Output":"=== RUN   TestUnknownFuelPreservesFields\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.69004+07:00","Action":"output","Package":"pastrack","Test":"TestUnknownFuelPreservesFields","Output":"--- PASS: TestUnknownFuelPreservesFields (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.690047+07:00","Action":"pass","Package":"pastrack","Test":"TestUnknownFuelPreservesFields","Elapsed":0}
+{"Time":"2026-11-04T11:05:17.690051+07:00","Action":"run","Package":"pastrack","Test":"TestBufferedMessage"}
+{"Time":"2026-11-04T11:05:17.690054+07:00","Action":"output","Package":"pastrack","Test":"TestBufferedMessage","Output":"=== RUN   TestBufferedMessage\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.690058+07:00","Action":"output","Package":"pastrack","Test":"TestBufferedMessage","Output":"--- PASS: TestBufferedMessage (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.690067+07:00","Action":"pass","Package":"pastrack","Test":"TestBufferedMessage","Elapsed":0}
+{"Time":"2026-11-04T11:05:17.690072+07:00","Action":"run","Package":"pastrack","Test":"TestFrameStream"}
+{"Time":"2026-11-04T11:05:17.690075+07:00","Action":"output","Package":"pastrack","Test":"TestFrameStream","Output":"=== RUN   TestFrameStream\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.690114+07:00","Action":"output","Package":"pastrack","Test":"TestFrameStream","Output":"--- PASS: TestFrameStream (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.690121+07:00","Action":"pass","Package":"pastrack","Test":"TestFrameStream","Elapsed":0}
+{"Time":"2026-11-04T11:05:17.690131+07:00","Action":"run","Package":"pastrack","Test":"TestDurableSpool"}
+{"Time":"2026-11-04T11:05:17.690136+07:00","Action":"output","Package":"pastrack","Test":"TestDurableSpool","Output":"=== RUN   TestDurableSpool\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.703221+07:00","Action":"output","Package":"pastrack","Test":"TestDurableSpool","Output":"--- PASS: TestDurableSpool (0.01s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.704182+07:00","Action":"pass","Package":"pastrack","Test":"TestDurableSpool","Elapsed":0.01}
+{"Time":"2026-11-04T11:05:17.704309+07:00","Action":"run","Package":"pastrack","Test":"TestRealtimePublisherWakesOnCommitAndStops"}
+{"Time":"2026-11-04T11:05:17.704328+07:00","Action":"output","Package":"pastrack","Test":"TestRealtimePublisherWakesOnCommitAndStops","Output":"=== RUN   TestRealtimePublisherWakesOnCommitAndStops\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.70581+07:00","Action":"output","Package":"pastrack","Test":"TestRealtimePublisherWakesOnCommitAndStops","Output":"--- PASS: TestRealtimePublisherWakesOnCommitAndStops (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.705862+07:00","Action":"pass","Package":"pastrack","Test":"TestRealtimePublisherWakesOnCommitAndStops","Elapsed":0}
+{"Time":"2026-11-04T11:05:17.705876+07:00","Action":"run","Package":"pastrack","Test":"TestEnqueueSignalsWorkerAfterDurableWrite"}
+{"Time":"2026-11-04T11:05:17.705882+07:00","Action":"output","Package":"pastrack","Test":"TestEnqueueSignalsWorkerAfterDurableWrite","Output":"=== RUN   TestEnqueueSignalsWorkerAfterDurableWrite\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.718068+07:00","Action":"output","Package":"pastrack","Test":"TestEnqueueSignalsWorkerAfterDurableWrite","Output":"--- PASS: TestEnqueueSignalsWorkerAfterDurableWrite (0.01s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.718134+07:00","Action":"pass","Package":"pastrack","Test":"TestEnqueueSignalsWorkerAfterDurableWrite","Elapsed":0.01}
+{"Time":"2026-11-04T11:05:17.718152+07:00","Action":"run","Package":"pastrack","Test":"TestV2RawAndPositionIdempotency"}
+{"Time":"2026-11-04T11:05:17.718191+07:00","Action":"output","Package":"pastrack","Test":"TestV2RawAndPositionIdempotency","Output":"=== RUN   TestV2RawAndPositionIdempotency\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.744194+07:00","Action":"output","Package":"pastrack","Test":"TestV2RawAndPositionIdempotency","Output":"--- PASS: TestV2RawAndPositionIdempotency (0.03s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.744227+07:00","Action":"pass","Package":"pastrack","Test":"TestV2RawAndPositionIdempotency","Elapsed":0.03}
+{"Time":"2026-11-04T11:05:17.744237+07:00","Action":"run","Package":"pastrack","Test":"TestSTTUTCAndSatelliteMask"}
+{"Time":"2026-11-04T11:05:17.744242+07:00","Action":"output","Package":"pastrack","Test":"TestSTTUTCAndSatelliteMask","Output":"=== RUN   TestSTTUTCAndSatelliteMask\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.745275+07:00","Action":"output","Package":"pastrack","Test":"TestSTTUTCAndSatelliteMask","Output":"--- PASS: TestSTTUTCAndSatelliteMask (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.745303+07:00","Action":"pass","Package":"pastrack","Test":"TestSTTUTCAndSatelliteMask","Elapsed":0}
+{"Time":"2026-11-04T11:05:17.745315+07:00","Action":"run","Package":"pastrack","Test":"TestV2DocumentedBLEWithoutInventedFuel"}
+{"Time":"2026-11-04T11:05:17.74532+07:00","Action":"output","Package":"pastrack","Test":"TestV2DocumentedBLEWithoutInventedFuel","Output":"=== RUN   TestV2DocumentedBLEWithoutInventedFuel\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.777864+07:00","Action":"output","Package":"pastrack","Test":"TestV2DocumentedBLEWithoutInventedFuel","Output":"--- PASS: TestV2DocumentedBLEWithoutInventedFuel (0.03s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.777899+07:00","Action":"pass","Package":"pastrack","Test":"TestV2DocumentedBLEWithoutInventedFuel","Elapsed":0.03}
+{"Time":"2026-11-04T11:05:17.777911+07:00","Action":"run","Package":"pastrack","Test":"TestRawSurvivesNormalizationFailure"}
+{"Time":"2026-11-04T11:05:17.777916+07:00","Action":"output","Package":"pastrack","Test":"TestRawSurvivesNormalizationFailure","Output":"=== RUN   TestRawSurvivesNormalizationFailure\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.786819+07:00","Action":"output","Package":"pastrack","Test":"TestRawSurvivesNormalizationFailure","Output":"--- PASS: TestRawSurvivesNormalizationFailure (0.01s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.786853+07:00","Action":"pass","Package":"pastrack","Test":"TestRawSurvivesNormalizationFailure","Elapsed":0.01}
+{"Time":"2026-11-04T11:05:17.786863+07:00","Action":"run","Package":"pastrack","Test":"TestSpoolPreservesInvalidUTF8"}
+{"Time":"2026-11-04T11:05:17.786868+07:00","Action":"output","Package":"pastrack","Test":"TestSpoolPreservesInvalidUTF8","Output":"=== RUN   TestSpoolPreservesInvalidUTF8\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.798312+07:00","Action":"output","Package":"pastrack","Test":"TestSpoolPreservesInvalidUTF8","Output":"--- PASS: TestSpoolPreservesInvalidUTF8 (0.01s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.798364+07:00","Action":"pass","Package":"pastrack","Test":"TestSpoolPreservesInvalidUTF8","Elapsed":0.01}
+{"Time":"2026-11-04T11:05:17.798374+07:00","Action":"run","Package":"pastrack","Test":"TestProtocol0306FixIsNotSatelliteCount"}
+{"Time":"2026-11-04T11:05:17.79838+07:00","Action":"output","Package":"pastrack","Test":"TestProtocol0306FixIsNotSatelliteCount","Output":"=== RUN   TestProtocol0306FixIsNotSatelliteCount\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.798387+07:00","Action":"output","Package":"pastrack","Test":"TestProtocol0306FixIsNotSatelliteCount","Output":"--- PASS: TestProtocol0306FixIsNotSatelliteCount (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.798393+07:00","Action":"pass","Package":"pastrack","Test":"TestProtocol0306FixIsNotSatelliteCount","Elapsed":0}
+{"Time":"2026-11-04T11:05:17.798397+07:00","Action":"run","Package":"pastrack","Test":"TestACKEnvelopeDoesNotInventDeviceFields"}
+{"Time":"2026-11-04T11:05:17.798428+07:00","Action":"output","Package":"pastrack","Test":"TestACKEnvelopeDoesNotInventDeviceFields","Output":"=== RUN   TestACKEnvelopeDoesNotInventDeviceFields\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.798435+07:00","Action":"output","Package":"pastrack","Test":"TestACKEnvelopeDoesNotInventDeviceFields","Output":"--- PASS: TestACKEnvelopeDoesNotInventDeviceFields (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.798441+07:00","Action":"pass","Package":"pastrack","Test":"TestACKEnvelopeDoesNotInventDeviceFields","Elapsed":0}
+{"Time":"2026-11-04T11:05:17.798445+07:00","Action":"output","Package":"pastrack","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:17.799399+07:00","Action":"output","Package":"pastrack","Output":"ok  \tpastrack\t0.731s\n"}
+{"Time":"2026-11-04T11:05:17.804359+07:00","Action":"pass","Package":"pastrack","Elapsed":0.738}
+{"Time":"2026-11-04T11:05:18.129115+07:00","Action":"run","Package":"pastrack/internal/database","Test":"TestMigrationDestinationGuard"}
+{"Time":"2026-11-04T11:05:18.129195+07:00","Action":"output","Package":"pastrack/internal/database","Test":"TestMigrationDestinationGuard","Output":"=== RUN   TestMigrationDestinationGuard\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:18.129228+07:00","Action":"output","Package":"pastrack/internal/database","Test":"TestMigrationDestinationGuard","Output":"--- PASS: TestMigrationDestinationGuard (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:18.129237+07:00","Action":"pass","Package":"pastrack/internal/database","Test":"TestMigrationDestinationGuard","Elapsed":0}
+{"Time":"2026-11-04T11:05:18.129253+07:00","Action":"run","Package":"pastrack/internal/database","Test":"TestProductionRuntimeIsExplicit"}
+{"Time":"2026-11-04T11:05:18.129258+07:00","Action":"output","Package":"pastrack/internal/database","Test":"TestProductionRuntimeIsExplicit","Output":"=== RUN   TestProductionRuntimeIsExplicit\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:18.129263+07:00","Action":"output","Package":"pastrack/internal/database","Test":"TestProductionRuntimeIsExplicit","Output":"--- PASS: TestProductionRuntimeIsExplicit (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:18.129272+07:00","Action":"pass","Package":"pastrack/internal/database","Test":"TestProductionRuntimeIsExplicit","Elapsed":0}
+{"Time":"2026-11-04T11:05:18.129281+07:00","Action":"output","Package":"pastrack/internal/database","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:18.129775+07:00","Action":"output","Package":"pastrack/internal/database","Output":"ok  \tpastrack/internal/database\t1.061s\n"}
+{"Time":"2026-11-04T11:05:18.134377+07:00","Action":"pass","Package":"pastrack/internal/database","Elapsed":1.067}
+{"Time":"2026-11-04T11:05:18.554154+07:00","Action":"run","Package":"pastrack/internal/geofence","Test":"TestCircleAndPolygon"}
+{"Time":"2026-11-04T11:05:18.554209+07:00","Action":"output","Package":"pastrack/internal/geofence","Test":"TestCircleAndPolygon","Output":"=== RUN   TestCircleAndPolygon\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:18.554226+07:00","Action":"output","Package":"pastrack/internal/geofence","Test":"TestCircleAndPolygon","Output":"--- PASS: TestCircleAndPolygon (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:18.554232+07:00","Action":"pass","Package":"pastrack/internal/geofence","Test":"TestCircleAndPolygon","Elapsed":0}
+{"Time":"2026-11-04T11:05:18.554239+07:00","Action":"output","Package":"pastrack/internal/geofence","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:18.554817+07:00","Action":"output","Package":"pastrack/internal/geofence","Output":"ok  \tpastrack/internal/geofence\t1.487s\n"}
+{"Time":"2026-11-04T11:05:18.558467+07:00","Action":"pass","Package":"pastrack/internal/geofence","Elapsed":1.491}
+{"Time":"2026-11-04T11:05:18.965076+07:00","Action":"run","Package":"pastrack/internal/fuel","Test":"TestCalibrationSafeguards"}
+{"Time":"2026-11-04T11:05:18.965131+07:00","Action":"output","Package":"pastrack/internal/fuel","Test":"TestCalibrationSafeguards","Output":"=== RUN   TestCalibrationSafeguards\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:18.965167+07:00","Action":"output","Package":"pastrack/internal/fuel","Test":"TestCalibrationSafeguards","Output":"--- PASS: TestCalibrationSafeguards (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:18.965181+07:00","Action":"pass","Package":"pastrack/internal/fuel","Test":"TestCalibrationSafeguards","Elapsed":0}
+{"Time":"2026-11-04T11:05:18.965187+07:00","Action":"run","Package":"pastrack/internal/fuel","Test":"TestSustainedFuelEvents"}
+{"Time":"2026-11-04T11:05:18.965191+07:00","Action":"output","Package":"pastrack/internal/fuel","Test":"TestSustainedFuelEvents","Output":"=== RUN   TestSustainedFuelEvents\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:18.965196+07:00","Action":"output","Package":"pastrack/internal/fuel","Test":"TestSustainedFuelEvents","Output":"--- PASS: TestSustainedFuelEvents (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:18.965201+07:00","Action":"pass","Package":"pastrack/internal/fuel","Test":"TestSustainedFuelEvents","Elapsed":0}
+{"Time":"2026-11-04T11:05:18.965221+07:00","Action":"output","Package":"pastrack/internal/fuel","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:18.965676+07:00","Action":"output","Package":"pastrack/internal/fuel","Output":"ok  \tpastrack/internal/fuel\t1.898s\n"}
+{"Time":"2026-11-04T11:05:18.970287+07:00","Action":"pass","Package":"pastrack/internal/fuel","Elapsed":1.903}
+{"Time":"2026-11-04T11:05:19.385116+07:00","Action":"run","Package":"pastrack/internal/trip","Test":"TestTripsRejectJumpsAndGaps"}
+{"Time":"2026-11-04T11:05:19.385183+07:00","Action":"output","Package":"pastrack/internal/trip","Test":"TestTripsRejectJumpsAndGaps","Output":"=== RUN   TestTripsRejectJumpsAndGaps\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.385204+07:00","Action":"output","Package":"pastrack/internal/trip","Test":"TestTripsRejectJumpsAndGaps","Output":"--- PASS: TestTripsRejectJumpsAndGaps (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.385212+07:00","Action":"pass","Package":"pastrack/internal/trip","Test":"TestTripsRejectJumpsAndGaps","Elapsed":0}
+{"Time":"2026-11-04T11:05:19.385224+07:00","Action":"output","Package":"pastrack/internal/trip","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.385768+07:00","Action":"output","Package":"pastrack/internal/trip","Output":"ok  \tpastrack/internal/trip\t2.152s\n"}
+{"Time":"2026-11-04T11:05:19.388702+07:00","Action":"pass","Package":"pastrack/internal/trip","Elapsed":2.156}
+{"Time":"2026-11-04T11:05:19.817646+07:00","Action":"run","Package":"pastrack/internal/protocol","Test":"TestObservedCFS300BWords"}
+{"Time":"2026-11-04T11:05:19.817717+07:00","Action":"output","Package":"pastrack/internal/protocol","Test":"TestObservedCFS300BWords","Output":"=== RUN   TestObservedCFS300BWords\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.817735+07:00","Action":"output","Package":"pastrack/internal/protocol","Test":"TestObservedCFS300BWords","Output":"--- PASS: TestObservedCFS300BWords (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.817742+07:00","Action":"pass","Package":"pastrack/internal/protocol","Test":"TestObservedCFS300BWords","Elapsed":0}
+{"Time":"2026-11-04T11:05:19.81775+07:00","Action":"run","Package":"pastrack/internal/protocol","Test":"TestDocumentedERILayout"}
+{"Time":"2026-11-04T11:05:19.817754+07:00","Action":"output","Package":"pastrack/internal/protocol","Test":"TestDocumentedERILayout","Output":"=== RUN   TestDocumentedERILayout\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.817765+07:00","Action":"output","Package":"pastrack/internal/protocol","Test":"TestDocumentedERILayout","Output":"--- PASS: TestDocumentedERILayout (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.817772+07:00","Action":"pass","Package":"pastrack/internal/protocol","Test":"TestDocumentedERILayout","Elapsed":0}
+{"Time":"2026-11-04T11:05:19.817776+07:00","Action":"run","Package":"pastrack/internal/protocol","Test":"TestActualObserved8104"}
+{"Time":"2026-11-04T11:05:19.81781+07:00","Action":"output","Package":"pastrack/internal/protocol","Test":"TestActualObserved8104","Output":"=== RUN   TestActualObserved8104\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.817817+07:00","Action":"output","Package":"pastrack/internal/protocol","Test":"TestActualObserved8104","Output":"--- PASS: TestActualObserved8104 (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.817822+07:00","Action":"pass","Package":"pastrack/internal/protocol","Test":"TestActualObserved8104","Elapsed":0}
+{"Time":"2026-11-04T11:05:19.817826+07:00","Action":"run","Package":"pastrack/internal/protocol","Test":"TestIgnitionReport"}
+{"Time":"2026-11-04T11:05:19.817829+07:00","Action":"output","Package":"pastrack/internal/protocol","Test":"TestIgnitionReport","Output":"=== RUN   TestIgnitionReport\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.817859+07:00","Action":"output","Package":"pastrack/internal/protocol","Test":"TestIgnitionReport","Output":"--- PASS: TestIgnitionReport (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.817877+07:00","Action":"pass","Package":"pastrack/internal/protocol","Test":"TestIgnitionReport","Elapsed":0}
+{"Time":"2026-11-04T11:05:19.817886+07:00","Action":"run","Package":"pastrack/internal/protocol","Test":"TestIgnitionDedicatedEventsAndBuffer"}
+{"Time":"2026-11-04T11:05:19.817892+07:00","Action":"output","Package":"pastrack/internal/protocol","Test":"TestIgnitionDedicatedEventsAndBuffer","Output":"=== RUN   TestIgnitionDedicatedEventsAndBuffer\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.817903+07:00","Action":"output","Package":"pastrack/internal/protocol","Test":"TestIgnitionDedicatedEventsAndBuffer","Output":"--- PASS: TestIgnitionDedicatedEventsAndBuffer (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.817909+07:00","Action":"pass","Package":"pastrack/internal/protocol","Test":"TestIgnitionDedicatedEventsAndBuffer","Elapsed":0}
+{"Time":"2026-11-04T11:05:19.817917+07:00","Action":"run","Package":"pastrack/internal/protocol","Test":"TestVirtualIgnitionDedicatedLayout"}
+{"Time":"2026-11-04T11:05:19.817925+07:00","Action":"output","Package":"pastrack/internal/protocol","Test":"TestVirtualIgnitionDedicatedLayout","Output":"=== RUN   TestVirtualIgnitionDedicatedLayout\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.817935+07:00","Action":"output","Package":"pastrack/internal/protocol","Test":"TestVirtualIgnitionDedicatedLayout","Output":"--- PASS: TestVirtualIgnitionDedicatedLayout (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.817944+07:00","Action":"pass","Package":"pastrack/internal/protocol","Test":"TestVirtualIgnitionDedicatedLayout","Elapsed":0}
+{"Time":"2026-11-04T11:05:19.817949+07:00","Action":"output","Package":"pastrack/internal/protocol","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:19.818505+07:00","Action":"output","Package":"pastrack/internal/protocol","Output":"ok  \tpastrack/internal/protocol\t2.585s\n"}
+{"Time":"2026-11-04T11:05:19.821103+07:00","Action":"pass","Package":"pastrack/internal/protocol","Elapsed":2.588}
+{"Time":"2026-11-04T11:05:20.280664+07:00","Action":"run","Package":"pastrack/internal/remoteoutput","Test":"TestDOSProtocol"}
+{"Time":"2026-11-04T11:05:20.280723+07:00","Action":"output","Package":"pastrack/internal/remoteoutput","Test":"TestDOSProtocol","Output":"=== RUN   TestDOSProtocol\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.280754+07:00","Action":"output","Package":"pastrack/internal/remoteoutput","Test":"TestDOSProtocol","Output":"--- PASS: TestDOSProtocol (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.280762+07:00","Action":"pass","Package":"pastrack/internal/remoteoutput","Test":"TestDOSProtocol","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.280769+07:00","Action":"run","Package":"pastrack/internal/remoteoutput","Test":"TestDOSDispatchIdempotencyACKAndOutputAreSeparate"}
+{"Time":"2026-11-04T11:05:20.280782+07:00","Action":"output","Package":"pastrack/internal/remoteoutput","Test":"TestDOSDispatchIdempotencyACKAndOutputAreSeparate","Output":"=== RUN   TestDOSDispatchIdempotencyACKAndOutputAreSeparate\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.309371+07:00","Action":"output","Package":"pastrack/internal/remoteoutput","Test":"TestDOSDispatchIdempotencyACKAndOutputAreSeparate","Output":"--- PASS: TestDOSDispatchIdempotencyACKAndOutputAreSeparate (0.03s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.309398+07:00","Action":"pass","Package":"pastrack/internal/remoteoutput","Test":"TestDOSDispatchIdempotencyACKAndOutputAreSeparate","Elapsed":0.03}
+{"Time":"2026-11-04T11:05:20.309424+07:00","Action":"run","Package":"pastrack/internal/remoteoutput","Test":"TestDefaultDOSNeedsNoProfileOrUserPassword"}
+{"Time":"2026-11-04T11:05:20.309432+07:00","Action":"output","Package":"pastrack/internal/remoteoutput","Test":"TestDefaultDOSNeedsNoProfileOrUserPassword","Output":"=== RUN   TestDefaultDOSNeedsNoProfileOrUserPassword\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.309439+07:00","Action":"output","Package":"pastrack/internal/remoteoutput","Test":"TestDefaultDOSNeedsNoProfileOrUserPassword","Output":"--- PASS: TestDefaultDOSNeedsNoProfileOrUserPassword (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.309445+07:00","Action":"pass","Package":"pastrack/internal/remoteoutput","Test":"TestDefaultDOSNeedsNoProfileOrUserPassword","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.30945+07:00","Action":"output","Package":"pastrack/internal/remoteoutput","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.310224+07:00","Action":"output","Package":"pastrack/internal/remoteoutput","Output":"ok  \tpastrack/internal/remoteoutput\t3.076s\n"}
+{"Time":"2026-11-04T11:05:20.313276+07:00","Action":"pass","Package":"pastrack/internal/remoteoutput","Elapsed":3.08}
+{"Time":"2026-11-04T11:05:20.595443+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestBLERegistrationAtomicAndExclusive"}
+{"Time":"2026-11-04T11:05:20.595503+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestBLERegistrationAtomicAndExclusive","Output":"=== RUN   TestBLERegistrationAtomicAndExclusive\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.62444+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestBLERegistrationAtomicAndExclusive","Output":"--- PASS: TestBLERegistrationAtomicAndExclusive (0.03s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.624493+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestBLERegistrationAtomicAndExclusive","Elapsed":0.03}
+{"Time":"2026-11-04T11:05:20.624503+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestDashboardStreamCommitAndSessionRevocation"}
+{"Time":"2026-11-04T11:05:20.624509+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardStreamCommitAndSessionRevocation","Output":"=== RUN   TestDashboardStreamCommitAndSessionRevocation\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.635859+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardStreamCommitAndSessionRevocation","Output":"--- PASS: TestDashboardStreamCommitAndSessionRevocation (0.01s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.635906+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestDashboardStreamCommitAndSessionRevocation","Elapsed":0.01}
+{"Time":"2026-11-04T11:05:20.635917+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles"}
+{"Time":"2026-11-04T11:05:20.635922+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles","Output":"=== RUN   TestDashboardReadAccessForAllRoles\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.635934+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/admin/fleet/live"}
+{"Time":"2026-11-04T11:05:20.635939+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/admin/fleet/live","Output":"=== RUN   TestDashboardReadAccessForAllRoles/admin/fleet/live\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.662128+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/admin/fleet/live","Output":"--- PASS: TestDashboardReadAccessForAllRoles/admin/fleet/live (0.03s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.662194+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/admin/fleet/live","Elapsed":0.03}
+{"Time":"2026-11-04T11:05:20.662204+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/admin/fleet/overview"}
+{"Time":"2026-11-04T11:05:20.662209+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/admin/fleet/overview","Output":"=== RUN   TestDashboardReadAccessForAllRoles/admin/fleet/overview\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.684545+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/admin/fleet/overview","Output":"--- PASS: TestDashboardReadAccessForAllRoles/admin/fleet/overview (0.02s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.684608+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/admin/fleet/overview","Elapsed":0.02}
+{"Time":"2026-11-04T11:05:20.684619+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/admin/fleet/activity"}
+{"Time":"2026-11-04T11:05:20.684627+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/admin/fleet/activity","Output":"=== RUN   TestDashboardReadAccessForAllRoles/admin/fleet/activity\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.686945+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/admin/fleet/activity","Output":"--- PASS: TestDashboardReadAccessForAllRoles/admin/fleet/activity (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.686987+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/admin/fleet/activity","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.686996+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/operator/fleet/live"}
+{"Time":"2026-11-04T11:05:20.687001+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/operator/fleet/live","Output":"=== RUN   TestDashboardReadAccessForAllRoles/operator/fleet/live\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.712667+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/operator/fleet/live","Output":"--- PASS: TestDashboardReadAccessForAllRoles/operator/fleet/live (0.03s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.71273+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/operator/fleet/live","Elapsed":0.03}
+{"Time":"2026-11-04T11:05:20.712745+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/operator/fleet/overview"}
+{"Time":"2026-11-04T11:05:20.712751+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/operator/fleet/overview","Output":"=== RUN   TestDashboardReadAccessForAllRoles/operator/fleet/overview\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.735864+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/operator/fleet/overview","Output":"--- PASS: TestDashboardReadAccessForAllRoles/operator/fleet/overview (0.02s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.735921+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/operator/fleet/overview","Elapsed":0.02}
+{"Time":"2026-11-04T11:05:20.735964+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/operator/fleet/activity"}
+{"Time":"2026-11-04T11:05:20.735971+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/operator/fleet/activity","Output":"=== RUN   TestDashboardReadAccessForAllRoles/operator/fleet/activity\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.737712+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/operator/fleet/activity","Output":"--- PASS: TestDashboardReadAccessForAllRoles/operator/fleet/activity (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.737724+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/operator/fleet/activity","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.73774+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/viewer/fleet/live"}
+{"Time":"2026-11-04T11:05:20.737746+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/viewer/fleet/live","Output":"=== RUN   TestDashboardReadAccessForAllRoles/viewer/fleet/live\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.762467+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/viewer/fleet/live","Output":"--- PASS: TestDashboardReadAccessForAllRoles/viewer/fleet/live (0.02s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.762532+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/viewer/fleet/live","Elapsed":0.02}
+{"Time":"2026-11-04T11:05:20.762542+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/viewer/fleet/overview"}
+{"Time":"2026-11-04T11:05:20.762548+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/viewer/fleet/overview","Output":"=== RUN   TestDashboardReadAccessForAllRoles/viewer/fleet/overview\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.785183+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/viewer/fleet/overview","Output":"--- PASS: TestDashboardReadAccessForAllRoles/viewer/fleet/overview (0.02s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.785271+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/viewer/fleet/overview","Elapsed":0.02}
+{"Time":"2026-11-04T11:05:20.785282+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/viewer/fleet/activity"}
+{"Time":"2026-11-04T11:05:20.785288+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/viewer/fleet/activity","Output":"=== RUN   TestDashboardReadAccessForAllRoles/viewer/fleet/activity\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787408+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/viewer/fleet/activity","Output":"--- PASS: TestDashboardReadAccessForAllRoles/viewer/fleet/activity (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787444+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles/viewer/fleet/activity","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787463+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles","Output":"--- PASS: TestDashboardReadAccessForAllRoles (0.15s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787473+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestDashboardReadAccessForAllRoles","Elapsed":0.15}
+{"Time":"2026-11-04T11:05:20.787479+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness"}
+{"Time":"2026-11-04T11:05:20.787514+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness","Output":"=== RUN   TestFleetExclusiveStatesAndFreshness\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.78752+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/unassigned"}
+{"Time":"2026-11-04T11:05:20.787524+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/unassigned","Output":"=== RUN   TestFleetExclusiveStatesAndFreshness/unassigned\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787529+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/unassigned","Output":"--- PASS: TestFleetExclusiveStatesAndFreshness/unassigned (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787533+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/unassigned","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787537+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/offline"}
+{"Time":"2026-11-04T11:05:20.787541+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/offline","Output":"=== RUN   TestFleetExclusiveStatesAndFreshness/offline\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787545+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/offline","Output":"--- PASS: TestFleetExclusiveStatesAndFreshness/offline (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787549+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/offline","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787553+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/no_fix"}
+{"Time":"2026-11-04T11:05:20.787557+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/no_fix","Output":"=== RUN   TestFleetExclusiveStatesAndFreshness/no_fix\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787561+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/no_fix","Output":"--- PASS: TestFleetExclusiveStatesAndFreshness/no_fix (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787565+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/no_fix","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787569+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/buffered"}
+{"Time":"2026-11-04T11:05:20.787573+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/buffered","Output":"=== RUN   TestFleetExclusiveStatesAndFreshness/buffered\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787577+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/buffered","Output":"--- PASS: TestFleetExclusiveStatesAndFreshness/buffered (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.78758+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/buffered","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787584+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/unknown_speed"}
+{"Time":"2026-11-04T11:05:20.787587+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/unknown_speed","Output":"=== RUN   TestFleetExclusiveStatesAndFreshness/unknown_speed\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787592+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/unknown_speed","Output":"--- PASS: TestFleetExclusiveStatesAndFreshness/unknown_speed (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787615+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/unknown_speed","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787619+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/moving"}
+{"Time":"2026-11-04T11:05:20.787623+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/moving","Output":"=== RUN   TestFleetExclusiveStatesAndFreshness/moving\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787627+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/moving","Output":"--- PASS: TestFleetExclusiveStatesAndFreshness/moving (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787631+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/moving","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787634+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/threshold"}
+{"Time":"2026-11-04T11:05:20.787638+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/threshold","Output":"=== RUN   TestFleetExclusiveStatesAndFreshness/threshold\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787644+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/threshold","Output":"--- PASS: TestFleetExclusiveStatesAndFreshness/threshold (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787648+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/threshold","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787652+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/future_clock"}
+{"Time":"2026-11-04T11:05:20.787655+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/future_clock","Output":"=== RUN   TestFleetExclusiveStatesAndFreshness/future_clock\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787662+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/future_clock","Output":"--- PASS: TestFleetExclusiveStatesAndFreshness/future_clock (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787705+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness/future_clock","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787752+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness","Output":"--- PASS: TestFleetExclusiveStatesAndFreshness (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787762+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestFleetExclusiveStatesAndFreshness","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787767+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestFleetBufferedFuelIsNotFresh"}
+{"Time":"2026-11-04T11:05:20.787772+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetBufferedFuelIsNotFresh","Output":"=== RUN   TestFleetBufferedFuelIsNotFresh\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787779+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFleetBufferedFuelIsNotFresh","Output":"--- PASS: TestFleetBufferedFuelIsNotFresh (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787784+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestFleetBufferedFuelIsNotFresh","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787788+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestIgnitionPersistsWhenGatewayOffline"}
+{"Time":"2026-11-04T11:05:20.787791+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestIgnitionPersistsWhenGatewayOffline","Output":"=== RUN   TestIgnitionPersistsWhenGatewayOffline\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787819+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestIgnitionPersistsWhenGatewayOffline","Output":"--- PASS: TestIgnitionPersistsWhenGatewayOffline (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787823+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestIgnitionPersistsWhenGatewayOffline","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787827+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestGTIGFLastStateUsesSendTimeDespiteOldNoFixPosition"}
+{"Time":"2026-11-04T11:05:20.787831+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestGTIGFLastStateUsesSendTimeDespiteOldNoFixPosition","Output":"=== RUN   TestGTIGFLastStateUsesSendTimeDespiteOldNoFixPosition\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787835+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestGTIGFLastStateUsesSendTimeDespiteOldNoFixPosition","Output":"--- PASS: TestGTIGFLastStateUsesSendTimeDespiteOldNoFixPosition (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787839+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestGTIGFLastStateUsesSendTimeDespiteOldNoFixPosition","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787843+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestRemoteOutputIndependentFromIgnition"}
+{"Time":"2026-11-04T11:05:20.787846+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestRemoteOutputIndependentFromIgnition","Output":"=== RUN   TestRemoteOutputIndependentFromIgnition\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787852+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestRemoteOutputIndependentFromIgnition","Output":"--- PASS: TestRemoteOutputIndependentFromIgnition (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787856+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestRemoteOutputIndependentFromIgnition","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787859+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestFuelInvestigationValidation"}
+{"Time":"2026-11-04T11:05:20.787863+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFuelInvestigationValidation","Output":"=== RUN   TestFuelInvestigationValidation\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787867+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFuelInvestigationValidation","Output":"--- PASS: TestFuelInvestigationValidation (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.787871+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestFuelInvestigationValidation","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.787874+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestFuelEventsWorkspaceAndInvestigation"}
+{"Time":"2026-11-04T11:05:20.787877+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFuelEventsWorkspaceAndInvestigation","Output":"=== RUN   TestFuelEventsWorkspaceAndInvestigation\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.805747+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFuelEventsWorkspaceAndInvestigation","Output":"--- PASS: TestFuelEventsWorkspaceAndInvestigation (0.02s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.805787+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestFuelEventsWorkspaceAndInvestigation","Elapsed":0.02}
+{"Time":"2026-11-04T11:05:20.805796+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestFuelSimulationScenarios"}
+{"Time":"2026-11-04T11:05:20.805801+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFuelSimulationScenarios","Output":"=== RUN   TestFuelSimulationScenarios\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.807163+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestFuelSimulationScenarios","Output":"--- PASS: TestFuelSimulationScenarios (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.807209+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestFuelSimulationScenarios","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.807217+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestRetiredFuelSimulationAPI"}
+{"Time":"2026-11-04T11:05:20.807222+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestRetiredFuelSimulationAPI","Output":"=== RUN   TestRetiredFuelSimulationAPI\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.807227+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestRetiredFuelSimulationAPI","Output":"--- PASS: TestRetiredFuelSimulationAPI (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.807232+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestRetiredFuelSimulationAPI","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.807236+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestLocalAuthenticatedAPIIntegration"}
+{"Time":"2026-11-04T11:05:20.807239+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestLocalAuthenticatedAPIIntegration","Output":"=== RUN   TestLocalAuthenticatedAPIIntegration\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.930935+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestLocalAuthenticatedAPIIntegration","Output":"--- PASS: TestLocalAuthenticatedAPIIntegration (0.12s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.931008+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestLocalAuthenticatedAPIIntegration","Elapsed":0.12}
+{"Time":"2026-11-04T11:05:20.931021+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestLiveDeltaOnlyChangedFields"}
+{"Time":"2026-11-04T11:05:20.931044+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestLiveDeltaOnlyChangedFields","Output":"=== RUN   TestLiveDeltaOnlyChangedFields\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.93106+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestLiveDeltaOnlyChangedFields","Output":"--- PASS: TestLiveDeltaOnlyChangedFields (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.931066+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestLiveDeltaOnlyChangedFields","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.931072+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestLivePaginationMetadataChangesWithoutChangingRows"}
+{"Time":"2026-11-04T11:05:20.931077+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestLivePaginationMetadataChangesWithoutChangingRows","Output":"=== RUN   TestLivePaginationMetadataChangesWithoutChangingRows\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.931112+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestLivePaginationMetadataChangesWithoutChangingRows","Output":"--- PASS: TestLivePaginationMetadataChangesWithoutChangingRows (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.931131+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestLivePaginationMetadataChangesWithoutChangingRows","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.931139+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestActualXLSXAndPDFExports"}
+{"Time":"2026-11-04T11:05:20.931143+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestActualXLSXAndPDFExports","Output":"=== RUN   TestActualXLSXAndPDFExports\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.939496+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestActualXLSXAndPDFExports","Output":"--- PASS: TestActualXLSXAndPDFExports (0.01s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.939553+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestActualXLSXAndPDFExports","Elapsed":0.01}
+{"Time":"2026-11-04T11:05:20.939602+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestUnauthenticatedAPI"}
+{"Time":"2026-11-04T11:05:20.939609+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestUnauthenticatedAPI","Output":"=== RUN   TestUnauthenticatedAPI\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.939619+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestUnauthenticatedAPI","Output":"--- PASS: TestUnauthenticatedAPI (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.939625+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestUnauthenticatedAPI","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.939629+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestBoundedJSON"}
+{"Time":"2026-11-04T11:05:20.939633+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestBoundedJSON","Output":"=== RUN   TestBoundedJSON\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.939638+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestBoundedJSON","Output":"--- PASS: TestBoundedJSON (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.939643+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestBoundedJSON","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.939647+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestGeofenceValidation"}
+{"Time":"2026-11-04T11:05:20.939651+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestGeofenceValidation","Output":"=== RUN   TestGeofenceValidation\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.939688+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestGeofenceValidation","Output":"--- PASS: TestGeofenceValidation (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.93971+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestGeofenceValidation","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.939716+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestLiveUpstreamRejectsUnknownDestination"}
+{"Time":"2026-11-04T11:05:20.939721+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestLiveUpstreamRejectsUnknownDestination","Output":"=== RUN   TestLiveUpstreamRejectsUnknownDestination\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.939727+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestLiveUpstreamRejectsUnknownDestination","Output":"--- PASS: TestLiveUpstreamRejectsUnknownDestination (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.939732+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestLiveUpstreamRejectsUnknownDestination","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.939737+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestSimpleSetupLifecycle"}
+{"Time":"2026-11-04T11:05:20.939741+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestSimpleSetupLifecycle","Output":"=== RUN   TestSimpleSetupLifecycle\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.981259+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestSimpleSetupLifecycle","Output":"--- PASS: TestSimpleSetupLifecycle (0.04s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.981319+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestSimpleSetupLifecycle","Elapsed":0.04}
+{"Time":"2026-11-04T11:05:20.981329+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestHistoryJourneys"}
+{"Time":"2026-11-04T11:05:20.981335+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestHistoryJourneys","Output":"=== RUN   TestHistoryJourneys\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.981343+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestHistoryJourneys","Output":"--- PASS: TestHistoryJourneys (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.981348+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestHistoryJourneys","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.981393+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestTripHistoryValidation"}
+{"Time":"2026-11-04T11:05:20.981397+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestTripHistoryValidation","Output":"=== RUN   TestTripHistoryValidation\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.981406+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestTripHistoryValidation","Output":"--- PASS: TestTripHistoryValidation (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.981411+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestTripHistoryValidation","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.981417+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestTripSimulationHasJourneys"}
+{"Time":"2026-11-04T11:05:20.98142+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestTripSimulationHasJourneys","Output":"=== RUN   TestTripSimulationHasJourneys\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.982871+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestTripSimulationHasJourneys","Output":"--- PASS: TestTripSimulationHasJourneys (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.982917+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestTripSimulationHasJourneys","Elapsed":0}
+{"Time":"2026-11-04T11:05:20.982925+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestTripHistoryDatabase"}
+{"Time":"2026-11-04T11:05:20.98293+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestTripHistoryDatabase","Output":"=== RUN   TestTripHistoryDatabase\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.993544+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestTripHistoryDatabase","Output":"--- PASS: TestTripHistoryDatabase (0.01s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:20.993578+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestTripHistoryDatabase","Elapsed":0.01}
+{"Time":"2026-11-04T11:05:20.993588+07:00","Action":"run","Package":"pastrack/internal/platform","Test":"TestVehicleRegistryFilteringPaginationAndValidation"}
+{"Time":"2026-11-04T11:05:20.993593+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestVehicleRegistryFilteringPaginationAndValidation","Output":"=== RUN   TestVehicleRegistryFilteringPaginationAndValidation\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:21.010588+07:00","Action":"output","Package":"pastrack/internal/platform","Test":"TestVehicleRegistryFilteringPaginationAndValidation","Output":"--- PASS: TestVehicleRegistryFilteringPaginationAndValidation (0.02s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:21.010635+07:00","Action":"pass","Package":"pastrack/internal/platform","Test":"TestVehicleRegistryFilteringPaginationAndValidation","Elapsed":0.02}
+{"Time":"2026-11-04T11:05:21.010644+07:00","Action":"output","Package":"pastrack/internal/platform","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-11-04T11:05:21.012113+07:00","Action":"output","Package":"pastrack/internal/platform","Output":"ok  \tpastrack/internal/platform\t3.778s\n"}
+{"Time":"2026-11-04T11:05:21.016028+07:00","Action":"pass","Package":"pastrack/internal/platform","Elapsed":3.783}

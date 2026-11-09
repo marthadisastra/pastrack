@@ -1,0 +1,31 @@
+'use strict';
+let sensorRows=[],sensorCSRF='',sensorPage=1,sensorHasNext=false,sensorEditing=null,sensorTimer,relationGPS=[];
+async function refreshSensorMaster(){
+ const requested=view;if(!['sensors-master','device-mapping'].includes(requested))return;
+ try{
+  if(requested==='device-mapping'){
+   const gps=await enterpriseFetch('/api/master/devices');if(view!==requested)return;
+   relationGPS=(gps.data||[]).slice(0,50);vehicleOptions=gps.vehicles||[];renderMapping();showError('');return;
+  }
+  const params=new URLSearchParams({page:String(sensorPage),search:$('#sensor-master-search').value,archived:$('#sensor-master-archive').value});
+  const sensors=await enterpriseFetch('/api/master/sensors?'+params);if(view!==requested)return;
+  sensorCSRF=sensors.csrf_token;sensorHasNext=sensors.data.length>50;sensorRows=sensors.data.slice(0,50);renderSensorMaster();showError('');
+ }catch(e){showError(e.message)}
+}
+function sensorActions(r,i){const archived=!!r.deleted_at;return archived?`<button type="button" class="text-button" data-sensor-restore="${i}">Pulihkan</button>`:`<div class="action-group"><button type="button" class="text-button" data-sensor-edit="${i}">Edit</button><button type="button" class="text-button" data-sensor-calibrate="${Number(r.id)}" ${r.device_id&&Number(r.is_active)===1?'':'disabled'}>Kalibrasi</button><button type="button" class="text-button danger-link" data-sensor-archive="${i}">Arsipkan</button></div>`}
+function renderSensorMaster(){
+ $('#sensor-master-count').textContent=`${sensorRows.length} sensor`;
+ $('#sensor-master-table').innerHTML=sensorRows.length?table(['MAC SENSOR','MODEL','GPS TERHUBUNG','KENDARAAN','GPS PELAPOR TERAKHIR','PEMBACAAN','STATUS','AKSI'],sensorRows.map((r,i)=>`<tr><td><strong>${esc(r.sensor_id)}</strong></td><td>${esc(r.model)}</td><td>${esc(r.imei||'Belum ditautkan')}</td><td>${esc(r.plate_number||'—')}</td><td>${esc(r.reported_imei||'—')}</td><td>${r.observed_raw_value==null?'—':num(r.observed_raw_value)}<span class="subtext">${date(r.observed_at)} WIB</span></td><td><span class="badge ${r.device_id&&Number(r.is_active)===1?'online':'partial'}">${r.deleted_at?'Arsip':!r.device_id?'Belum terhubung':Number(r.is_active)===1?'Aktif':'Nonaktif'}</span></td><td>${sensorActions(r,i)}</td></tr>`)):empty('Sensor tidak ditemukan');
+ $('#sensor-master-page').textContent=`Halaman ${sensorPage}`;$('#sensor-master-prev').disabled=sensorPage<=1;$('#sensor-master-next').disabled=!sensorHasNext;
+}
+function renderMapping(){
+ $('#mapping-gps-table').innerHTML=relationGPS.length?table(['IMEI GPS','MODEL','KENDARAAN','SENSOR BBM','AKSI'],relationGPS.map((r,i)=>`<tr><td><strong>${esc(r.imei)}</strong></td><td>${esc(r.model)}</td><td>${esc(r.plate_number||'Belum ditautkan')}</td><td>${num(r.sensor_count)} sensor</td><td><button type="button" class="btn button compact" data-map-gps="${i}">${r.vehicle_id?'Ubah kendaraan':'Hubungkan kendaraan'}</button></td></tr>`)):empty('Belum ada GPS terdaftar');
+
+}
+function openSensorMaster(row=null){sensorEditing=row;$('#sensor-master-title').textContent=row?'Edit sensor BBM':'Tambah sensor BBM';$('#sensor-master-error').hidden=true;const form=$('#sensor-master-form');form.elements.sensor_id.value=row?.sensor_id||'';form.elements.model.value=row?.model||'CFS300B';form.elements.is_active.checked=!row||Number(row.is_active)===1;$('#sensor-master-dialog').showModal()}
+$('#sensor-create').addEventListener('click',()=>openSensorMaster());$('#sensor-master-close').addEventListener('click',()=>$('#sensor-master-dialog').close());
+$('#sensor-master-form').addEventListener('submit',async e=>{e.preventDefault();const form=e.target;if(!UI.beginForm(form,'Menyimpan sensor…'))return;const values=UI.formData(form);const body={sensor_id:String(values.get('sensor_id')||'').toUpperCase().trim(),model:String(values.get('model')||'').trim(),is_active:values.has('is_active'),row_version:Number(sensorEditing?.row_version||0)};try{await enterpriseFetch(`/api/master/sensors${sensorEditing?'/'+sensorEditing.id:''}`,{method:sensorEditing?'PUT':'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':sensorCSRF},body:JSON.stringify(body)});$('#sensor-master-dialog').close();UI.notify(sensorEditing?'Sensor disimpan':'Sensor didaftarkan');await refreshSensorMaster()}catch(err){UI.formError(form,err,$('#sensor-master-error'))}finally{UI.endForm(form)}});
+async function changeSensorArchive(row,restore){const action=restore?'Pulihkan':'Arsipkan';if(!await UI.confirmAction({title:action+' sensor?',message:`${row.sensor_id} akan ${restore?'dipulihkan sebagai nonaktif':'diarsipkan'}.`,accept:action,danger:!restore}))return;try{await enterpriseFetch(`/api/master/sensors/${Number(row.id)}${restore?'/restore':''}`,{method:restore?'POST':'DELETE',headers:{'Content-Type':'application/json','X-CSRF-Token':sensorCSRF},body:JSON.stringify({row_version:Number(row.row_version)})});UI.notify('Status sensor diperbarui');await refreshSensorMaster()}catch(e){UI.notify(e.message,'error')}}
+document.addEventListener('click',e=>{const edit=e.target.closest('[data-sensor-edit]');if(edit){const i=Number(edit.dataset.sensorEdit);openSensorMaster(sensorRows[i])}const gps=e.target.closest('[data-map-gps]');if(gps)openMaster('devices',relationGPS[Number(gps.dataset.mapGps)]);const archive=e.target.closest('[data-sensor-archive]');if(archive)changeSensorArchive(sensorRows[Number(archive.dataset.sensorArchive)],false);const restore=e.target.closest('[data-sensor-restore]');if(restore)changeSensorArchive(sensorRows[Number(restore.dataset.sensorRestore)],true);const cal=e.target.closest('[data-sensor-calibrate]');if(cal&&typeof openFuelCalibrationSensor==='function')openFuelCalibrationSensor(Number(cal.dataset.sensorCalibrate))});
+$('#sensor-master-search').addEventListener('input',()=>{clearTimeout(sensorTimer);sensorTimer=setTimeout(()=>{sensorPage=1;refreshSensorMaster()},300)});$('#sensor-master-archive').addEventListener('change',()=>{sensorPage=1;refreshSensorMaster()});$('#sensor-master-prev').addEventListener('click',()=>{if(sensorPage>1){sensorPage--;refreshSensorMaster()}});$('#sensor-master-next').addEventListener('click',()=>{if(sensorHasNext){sensorPage++;refreshSensorMaster()}});
+if(['sensors-master','device-mapping'].includes(location.hash.slice(1)))navigate(location.hash.slice(1));

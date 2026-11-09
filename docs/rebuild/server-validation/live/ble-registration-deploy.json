@@ -1,0 +1,14 @@
+{
+  "deployed": true,
+  "feature": "atomic BLE vehicle registration",
+  "database": "pastrack_v2_20261103_r2",
+  "migration": "004_unassigned_tank_profiles.sql",
+  "receiver_restarted": false,
+  "receiver_health": {
+    "fuel_decoder": "raw_cfs300b_supported_units_unverified",
+    "queued": 0,
+    "schema": "v2",
+    "status": "ok"
+  },
+  "backup": "/root/pastrack-ble-registration-20261103"
+}

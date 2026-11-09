@@ -1,0 +1,283 @@
+;
+; Android WinUsb driver installation.
+;
+[Version]
+Signature           = "$Windows NT$"
+Class               = AndroidUsbDeviceClass
+ClassGuid           = {3F966BD9-FA04-4ec5-991C-D326973B5128}
+Provider            = %ProviderName%
+DriverVer           = 02/03/2021,4.0.2.0
+CatalogFile.NTx86   = WinUSB\adb_i386.cat
+CatalogFile.NTamd64 = WinUSB\adb_amd64.cat
+
+;
+; This section seems to be required for WinUsb driver installation.
+; If this section is removed the installer will report an error
+; "Required section not found in INF file".
+;
+[ClassInstall32]
+Addreg = AndroidWinUsbClassReg
+
+[AndroidWinUsbClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-1
+
+[Manufacturer]
+%ProviderName% = Google, NTx86, NTamd64
+
+
+
+;------------------------------------NTx86------------------------------------
+[Google.NTx86]
+; For loopback testing
+%USB\VID_18D1&PID_DDDD.DeviceDescTest%     = USB_Install, USB\VID_18D1&PID_DDDD
+
+;Add for ASR mobile phone
+;diag,acm,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2100&MI_03
+;diag,acm,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2101&MI_04
+;diag,acm
+
+;rndis,diag,acm,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2103&MI_06
+
+;Add for ASR data product
+;rndis,acm,diag,adb,sulog
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3010&MI_05
+;acm,diag,adb,sulog
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3011&MI_03
+;rndis,acm,diag,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3012&MI_06
+;rndis,acm,acm,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3013&MI_07
+;rndis,acm,acm,adb,sulog
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3014&MI_06
+;rndis,acm,acm,diag,adb,sulog
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3015&MI_07
+;rndis,acm,acm,diag,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3016&MI_08
+;acm
+
+;acm,diag,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3018&MI_04
+;acm,acm,diag,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3019&MI_06
+;acm,acm,diag,adb,sulog
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_301A&MI_05
+;acm,acm,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_301B&MI_05
+;acm,acm,adb,sulog
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_301C&MI_04
+;rndis,generic,generic,generic
+;
+;acm,generic,generic,generic
+;
+;generic,generic,generic,generic
+;
+
+;zte
+;rndis,acm,diag,adb
+%CompositeAdbInterface_zte%     = USB_Install, USB\VID_19D2&PID_1489&MI_05
+;acm,diag
+;
+
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2D01&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_2006&MI_01
+%SingleBootLoaderInterface%        = USB_Install, USB\VID_18D1&PID_4E11
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2D03&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_2002&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2009&MI_01
+%SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_2007
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2006&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_2100&MI_03
+%SingleAdbInterface%        = USB_Install, USB\VID_2ECC&PID_2007
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2002&MI_01
+%SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_0707
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2004&MI_02
+%SingleAdbInterface%        = USB_Install, USB\VID_2ECC&PID_0707
+%SingleBootLoaderInterface%        = USB_Install, USB\VID_2ECC&PID_4E11
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_2101&MI_04
+
+
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E1B&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E4E&MI_03
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E15&MI_00
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E29&MI_02
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E18&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E41&MI_03
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E43&MI_03
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E28&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E22&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_0bb4&PID_0c02&MI_04
+%CompositeAdbInterface%     = USB_Install, USB\VID_0bb4&PID_0c01&MI_05
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E16&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E49&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E44&MI_04
+%CompositeAdbInterface%     = USB_Install, USB\VID_0bb4&PID_0c01&MI_00
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E4B&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E4D&MI_04
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E4C&MI_02
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E17&MI_02
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E4A&MI_05
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E42&MI_03
+
+
+;------------------------------------NTamd64------------------------------------
+[Google.NTamd64]
+; For loopback testing
+%USB\VID_18D1&PID_DDDD.DeviceDescTest%     = USB_Install, USB\VID_18D1&PID_DDDD
+
+;Add for ASR mobile phone
+;diag,acm,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2100&MI_03
+;diag,acm,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2101&MI_04
+;diag,acm
+
+;rndis,diag,acm,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2103&MI_06
+
+;Add for ASR data product
+;rndis,acm,diag,adb,sulog
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3010&MI_05
+;acm,diag,adb,sulog
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3011&MI_03
+;rndis,acm,diag,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3012&MI_06
+;rndis,acm,acm,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3013&MI_07
+;rndis,acm,acm,adb,sulog
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3014&MI_06
+;rndis,acm,acm,diag,adb,sulog
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3015&MI_07
+;rndis,acm,acm,diag,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3016&MI_08
+;acm
+
+;acm,diag,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3018&MI_04
+;acm,acm,diag,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_3019&MI_06
+;acm,acm,diag,adb,sulog
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_301A&MI_05
+;acm,acm,sulog,adb
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_301B&MI_05
+;acm,acm,adb,sulog
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_301C&MI_04
+;rndis,generic,generic,generic
+;
+;acm,generic,generic,generic
+;
+;generic,generic,generic,generic
+;
+
+;zte
+;rndis,acm,diag,adb
+%CompositeAdbInterface_zte%     = USB_Install, USB\VID_19D2&PID_1489&MI_05
+;acm,diag
+;
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2D01&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_2006&MI_01
+%SingleBootLoaderInterface%        = USB_Install, USB\VID_18D1&PID_4E11
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2D03&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_2002&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2009&MI_01
+%SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_2007
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2006&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_2100&MI_03
+%SingleAdbInterface%        = USB_Install, USB\VID_2ECC&PID_2007
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2002&MI_01
+%SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_0707
+%CompositeAdbInterface%     = USB_Install, USB\VID_2ECC&PID_2004&MI_02
+%SingleAdbInterface%        = USB_Install, USB\VID_2ECC&PID_0707
+%SingleBootLoaderInterface%        = USB_Install, USB\VID_2ECC&PID_4E11
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_2101&MI_04
+
+
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E1B&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E4E&MI_03
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E15&MI_00
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E29&MI_02
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E18&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E41&MI_03
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E43&MI_03
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E28&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_4E22&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_0bb4&PID_0c02&MI_04
+%CompositeAdbInterface%     = USB_Install, USB\VID_0bb4&PID_0c01&MI_05
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E16&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E49&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E44&MI_04
+%CompositeAdbInterface%     = USB_Install, USB\VID_0bb4&PID_0c01&MI_00
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E4B&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E4D&MI_04
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E4C&MI_02
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E17&MI_02
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E4A&MI_05
+%CompositeAdbInterface%     = USB_Install, USB\VID_0BB4&PID_4E42&MI_03
+
+
+[USB_Install]
+Include = winusb.inf
+Needs   = WINUSB.NT
+
+[USB_Install.Services]
+Include     = winusb.inf
+AddService  = WinUSB,0x00000002,WinUSB_ServiceInstall
+
+[WinUSB_ServiceInstall]
+DisplayName     = %WinUSB_SvcDesc%
+ServiceType     = 1
+StartType       = 3
+ErrorControl    = 1
+ServiceBinary   = %12%\WinUSB.sys
+
+[USB_Install.Wdf]
+KmdfService = WINUSB, WinUSB_Install
+
+[WinUSB_Install]
+KmdfLibraryVersion  = 1.9
+
+[USB_Install.HW]
+AddReg  = Dev_AddReg
+
+[Dev_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{F72FE0D4-CBCB-407d-8814-9ED673D0DD6B}"
+
+[USB_Install.CoInstallers]
+AddReg    = CoInstallers_AddReg
+CopyFiles = CoInstallers_CopyFiles
+
+[CoInstallers_AddReg]
+HKR,,CoInstallers32,0x00010000,"WdfCoInstaller01009.dll,WdfCoInstaller","WinUSBCoInstaller2.dll"
+
+[CoInstallers_CopyFiles]
+WinUSBCoInstaller2.dll
+WdfCoInstaller01009.dll
+
+[DestinationDirs]
+CoInstallers_CopyFiles=11
+
+[SourceDisksNames]
+1 = %DISK_NAME%,,,\WinUSB\i386
+2 = %DISK_NAME%,,,\WinUSB\amd64
+
+[SourceDisksFiles.x86]
+WinUSBCoInstaller2.dll  = 1
+WdfCoInstaller01009.dll = 1
+
+[SourceDisksFiles.amd64]
+WinUSBCoInstaller2.dll  = 2
+WdfCoInstaller01009.dll = 2
+
+[Strings]
+ProviderName                = "Google, Inc."
+SingleAdbInterface          = "Android ADB Interface"
+CompositeAdbInterface       = "ASR ADB"
+CompositeAdbInterface_zte   = "ZTE ADB USB Interface"
+SingleBootLoaderInterface   = "Android Bootloader Interface"
+WinUSB_SvcDesc              = "Android USB Driver"
+DISK_NAME                   = "Android WinUsb installation disk"
+ClassName                   = "ADB Interface"
+USB\VID_18D1&PID_DDDD.DeviceDescTest    = "ADB Testing Interface"

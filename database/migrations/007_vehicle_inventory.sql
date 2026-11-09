@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS vehicle_inventory (
+ vehicle_id BIGINT UNSIGNED NOT NULL PRIMARY KEY,
+ vehicle_code VARCHAR(64) NULL UNIQUE,
+ tank_capacity_l DECIMAL(12,3) NULL,
+ photo MEDIUMBLOB NULL,
+ photo_mime VARCHAR(32) NULL,
+ photo_updated_at DATETIME(3) NULL,
+ updated_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
+ CONSTRAINT fk_vehicle_inventory_vehicle FOREIGN KEY(vehicle_id) REFERENCES vehicles(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

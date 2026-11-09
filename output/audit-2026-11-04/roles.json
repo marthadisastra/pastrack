@@ -1,0 +1,110 @@
+[
+  {
+    "role": "admin",
+    "endpoint": "fleet/live",
+    "method": "GET",
+    "status": 200,
+    "expected": 200,
+    "pass": true,
+    "environment": "local"
+  },
+  {
+    "role": "admin",
+    "endpoint": "devices/raw-messages",
+    "method": "GET",
+    "status": 200,
+    "expected": 200,
+    "pass": true,
+    "environment": "local"
+  },
+  {
+    "role": "admin",
+    "endpoint": "users",
+    "method": "GET",
+    "status": 200,
+    "expected": 200,
+    "pass": true,
+    "environment": "local"
+  },
+  {
+    "role": "admin",
+    "endpoint": "vehicles",
+    "method": "POST",
+    "status": 201,
+    "expected": 201,
+    "pass": true,
+    "environment": "local"
+  },
+  {
+    "role": "operator",
+    "endpoint": "fleet/live",
+    "method": "GET",
+    "status": 200,
+    "expected": 200,
+    "pass": true,
+    "environment": "local"
+  },
+  {
+    "role": "operator",
+    "endpoint": "devices/raw-messages",
+    "method": "GET",
+    "status": 403,
+    "expected": 403,
+    "pass": true,
+    "environment": "local"
+  },
+  {
+    "role": "operator",
+    "endpoint": "users",
+    "method": "GET",
+    "status": 403,
+    "expected": 403,
+    "pass": true,
+    "environment": "local"
+  },
+  {
+    "role": "operator",
+    "endpoint": "vehicles",
+    "method": "POST",
+    "status": 403,
+    "expected": 201,
+    "pass": false,
+    "environment": "local"
+  },
+  {
+    "role": "viewer",
+    "endpoint": "fleet/live",
+    "method": "GET",
+    "status": 200,
+    "expected": 200,
+    "pass": true,
+    "environment": "local"
+  },
+  {
+    "role": "viewer",
+    "endpoint": "devices/raw-messages",
+    "method": "GET",
+    "status": 403,
+    "expected": 403,
+    "pass": true,
+    "environment": "local"
+  },
+  {
+    "role": "viewer",
+    "endpoint": "users",
+    "method": "GET",
+    "status": 403,
+    "expected": 403,
+    "pass": true,
+    "environment": "local"
+  },
+  {
+    "role": "viewer",
+    "endpoint": "vehicles",
+    "method": "POST",
+    "status": 403,
+    "expected": 403,
+    "pass": true,
+    "environment": "local"
+  }
+]

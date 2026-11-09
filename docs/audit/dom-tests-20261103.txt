@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: sidebar matches all 17 exported menu entries in exact order, with no developer-only extras
+ok 1 - sidebar matches all 17 exported menu entries in exact order, with no developer-only extras
+  ---
+  duration_ms: 131.612334
+  type: 'test'
+  ...
+# Subtest: all 21 source layouts are packaged, preserving original table headers
+ok 2 - all 21 source layouts are packaged, preserving original table headers
+  ---
+  duration_ms: 267.1405
+  type: 'test'
+  ...
+# Subtest: all primary menus navigate to their own imported source and load empty real-data states without JS errors
+ok 3 - all primary menus navigate to their own imported source and load empty real-data states without JS errors
+  ---
+  duration_ms: 609.509041
+  type: 'test'
+  ...
+# Subtest: vehicle detail subroutes use distinct exported layouts
+ok 4 - vehicle detail subroutes use distinct exported layouts
+  ---
+  duration_ms: 199.885708
+  type: 'test'
+  ...
+# Subtest: runtime does not display exported demo plates or claim a 100% telemetry enrollment
+ok 5 - runtime does not display exported demo plates or claim a 100% telemetry enrollment
+  ---
+  duration_ms: 36.198208
+  type: 'test'
+  ...
+# Subtest: untrusted row labels are text, missing values stay N/A, and physical ignition stays NOT_INSTALLED
+ok 6 - untrusted row labels are text, missing values stay N/A, and physical ignition stays NOT_INSTALLED
+  ---
+  duration_ms: 41.182
+  type: 'test'
+  ...
+# Subtest: keyset pagination and exported search filter call APIs, errors are visible
+ok 7 - keyset pagination and exported search filter call APIs, errors are visible
+  ---
+  duration_ms: 401.2725
+  type: 'test'
+  ...
+# Subtest: register unit uses the existing mutation API and preserves the exported action location
+ok 8 - register unit uses the existing mutation API and preserves the exported action location
+  ---
+  duration_ms: 52.603667
+  type: 'test'
+  ...
+# Subtest: unsupported hardware controls remain visibly disabled with an explicit reason
+ok 9 - unsupported hardware controls remain visibly disabled with an explicit reason
+  ---
+  duration_ms: 28.913917
+  type: 'test'
+  ...
+# Subtest: initial dashboard also has the full inactive text/icon color state
+ok 10 - initial dashboard also has the full inactive text/icon color state
+  ---
+  duration_ms: 4.776625
+  type: 'test'
+  ...
+# Subtest: legacy Register Unit directs users to gateway vehicle linking
+ok 11 - legacy Register Unit directs users to gateway vehicle linking
+  ---
+  duration_ms: 57.255958
+  type: 'test'
+  ...
+# Subtest: Trip History uses an inclusive WIB date range and rejects reversed dates
+ok 12 - Trip History uses an inclusive WIB date range and rejects reversed dates
+  ---
+  duration_ms: 63.502958
+  type: 'test'
+  ...
+# Subtest: vehicle trip date range is retained when selecting a different vehicle
+ok 13 - vehicle trip date range is retained when selecting a different vehicle
+  ---
+  duration_ms: 80.711542
+  type: 'test'
+  ...
+# Subtest: Device Management connects a GPS through the vehicle selection dialog
+ok 14 - Device Management connects a GPS through the vehicle selection dialog
+  ---
+  duration_ms: 58.075917
+  type: 'test'
+  ...
+# Subtest: Sensor Management captures live Empty and Full, resumes draft, and saves capacity
+ok 15 - Sensor Management captures live Empty and Full, resumes draft, and saves capacity
+  ---
+  duration_ms: 101.968417
+  type: 'test'
+  ...
+# Subtest: stale sensor data is visible but cannot be captured
+ok 16 - stale sensor data is visible but cannot be captured
+  ---
+  duration_ms: 46.425708
+  type: 'test'
+  ...
+# Subtest: Fuel Monitoring omits tank specifications while retaining liters and percent columns
+ok 17 - Fuel Monitoring omits tank specifications while retaining liters and percent columns
+  ---
+  duration_ms: 42.3075
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2599.387

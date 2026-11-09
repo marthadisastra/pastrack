@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "core.geofence.spatial",
+  "name": "Spatial Geofence Engine",
+  "version": "2.0.0",
+  "kind": "core",
+  "icon": "polyline",
+  "description": "High-precision polygon and circular geofence boundary monitoring.",
+  "minCore": "4.8.0",
+  "coreMajor": 4,
+  "dependencies": ["core.gis.tracker"],
+  "paths": ["/geofence"],
+  "permissions": ["geofence.view", "geofence.configure"],
+  "topics": ["geofence.event"],
+  "config": [],
+  "entry": null
+}

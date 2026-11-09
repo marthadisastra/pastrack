@@ -1,0 +1,77 @@
+;***********************************************************************************************
+;
+; Name:  mrvlmtp.inf
+;
+; Function:  Install Marvell Mobile MTP Device Driver on XP
+;
+; Copyright (c) Marvell Co., Ltd.
+;
+;***********************************************************************************************
+
+[Version]
+Signature="$Windows NT$"
+Class=WPD
+ClassGUID={EEC5AD98-8080-425f-922A-DABF3DE3F69A}
+Provider= %Provider%
+LayoutFile=layout.inf
+DriverVer=10/28/2013, 1.0.0.1
+CatalogFile=mtp.cat
+
+[ControlFlags]
+;ExcludeFromSelect=*
+
+[Manufacturer]
+%mrvl%=mrvl, NTx86, NTamd64
+
+[mrvl]
+
+[mrvl.NTx86]
+%MTPDesc%=mrvl.Install, USB\VID_1286&PID_4e20&MI_00
+%MTPDesc%=mrvl.Install, USB\VID_0bb4&PID_4e16&MI_00
+
+;For SS Beam TD
+;ACM,MTP
+%MTPDesc%=mrvl.Install, USB\VID_1286&PID_4e37&MI_00
+;ACM,MTP,ADB
+%MTPDesc%=mrvl.Install, USB\VID_0bb4&PID_4e41&MI_00
+
+
+[mrvl.NTamd64]
+%MTPDesc%=mrvl.Install, USB\VID_1286&PID_4e20&MI_00
+%MTPDesc%=mrvl.Install, USB\VID_0bb4&PID_4e16&MI_00
+
+;For SS Beam TD
+;ACM,MTP
+%MTPDesc%=mrvl.Install, USB\VID_1286&PID_4e37&MI_00
+;ACM,MTP,ADB
+%MTPDesc%=mrvl.Install, USB\VID_0bb4&PID_4e41&MI_00
+
+
+[mrvl.Install]
+Include = wpdmtp.inf, WINUSB.INF
+Needs   = WPD.MTP, WINUSB.NT
+
+[mrvl.Install.hw]
+Include = wpdmtp.inf
+Needs   = WPD.MTP.Registration
+
+[mrvl.Install.Services]
+Include = wpdmtp.inf
+Needs   = WPD.MTP.Services
+
+[mrvl.Install.CoInstallers]
+Include = wpdmtp.inf
+Needs = WPD.MTP.CoInstallers
+
+[mrvl.Install.Wdf]
+Include = wpdmtp.inf
+Needs = WPD.MTP.Wdf
+UmdfServiceOrder=WpdMtpDriver
+
+; no sys copyfiles - the sys files are already in place
+
+[Strings]
+mrvl="Marvell"
+Provider="Marvell"
+MTPDesc="Marvell MTP Device"
+

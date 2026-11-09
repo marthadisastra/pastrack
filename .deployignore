@@ -1,0 +1,7 @@
+# rsync filter file, relative to the receiver project root.
+# Deploy only the runtime binary and launch script.
+# Exclusions also protect server-only files: never use --delete-excluded.
++ /pastrack
++ /deploy/
++ /deploy/run-aapanel.sh
+- *

@@ -1,0 +1,999 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-tint":"#0053db","on-primary-container":"#eeefff","on-primary":"#ffffff","on-surface":"#191c1e","surface-bright":"#f7f9fb","surface-container":"#eceef0","secondary":"#006398","primary-container":"#2563eb","on-error-container":"#93000a","secondary-fixed":"#cce5ff","on-secondary-fixed":"#001d31","on-tertiary-container":"#ecf1ff","secondary-fixed-dim":"#93ccff","error":"#ba1a1a","primary-fixed-dim":"#b4c5ff","on-secondary-container":"#00476e","primary-fixed":"#dbe1ff","on-tertiary-fixed-variant":"#3c475a","outline":"#737686","tertiary-fixed":"#d8e3fb","tertiary":"#4b566a","surface-container-low":"#f2f4f6","surface-container-lowest":"#ffffff","on-tertiary":"#ffffff","surface-dim":"#d8dadc","background":"#f7f9fb","on-primary-fixed":"#00174b","on-error":"#ffffff","inverse-surface":"#2d3133","on-tertiary-fixed":"#111c2d","on-background":"#191c1e","surface-container-high":"#e6e8ea","primary":"#004ac6","tertiary-fixed-dim":"#bcc7de","surface-variant":"#e0e3e5","on-surface-variant":"#434655","on-secondary":"#ffffff","inverse-on-surface":"#eff1f3","surface-container-highest":"#e0e3e5","surface":"#f7f9fb","outline-variant":"#c3c6d7","secondary-container":"#5bb8fe","tertiary-container":"#636e83","error-container":"#ffdad6","on-primary-fixed-variant":"#003ea8","on-secondary-fixed-variant":"#004b73","inverse-primary":"#b4c5ff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin-mobile":"0.75rem","gutter-dense":"0.5rem","space-lg":"1rem","space-md":"0.75rem","margin":"1.5rem","space-xs":"0.25rem","gutter":"1rem","space-xl":"1.5rem","space-sm":"0.5rem"},"fontFamily":{"label-md":["Inter"],"headline-lg":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"display":["Inter"],"label-xs":["Inter"],"headline-lg-mobile":["Inter"],"telemetry-metric":["Inter"],"data-tabular":["Inter"],"headline-md":["Inter"],"title-sm":["Inter"]},"fontSize":{"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-xs":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"headline-lg-mobile":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"telemetry-metric":["22px",{"lineHeight":"26px","letterSpacing":"-0.02em","fontWeight":"700"}],"data-tabular":["13px",{"lineHeight":"18px","letterSpacing":"-0.005em","fontWeight":"500"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"title-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary"><aside class="fixed left-0 top-0 h-screen w-64 bg-inverse-surface z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="h-16 px-space-md flex items-center justify-between bg-inverse-surface"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">hub</span></div><div class="flex flex-col"><span class="font-title-sm text-title-sm text-inverse-on-surface font-bold tracking-tight">PasTrack</span><span class="font-label-xs text-label-xs text-outline-variant font-medium">Fleet Intelligence</span></div></div><span class="px-1.5 py-0.5 rounded bg-surface-container/20 text-inverse-on-surface font-label-xs text-[10px] uppercase font-bold tracking-wider">Pro</span></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm space-y-space-md"><div class="space-y-space-xs"><div class="px-space-sm py-1 font-label-xs text-label-xs text-outline-variant uppercase tracking-wider">Overview</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="fleet-dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="">Fleet Dashboard</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-1 font-label-xs text-label-xs text-outline-variant uppercase tracking-wider">Fleet Management</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="vehicles" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="">Vehicles</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="live-tracking" href="#"><span class="material-symbols-outlined text-[18px]">my_location</span><span class="">Live Tracking</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="trip-history" href="#"><span class="material-symbols-outlined text-[18px]">route</span><span class="">Trip History</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-space-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="geofences" href="#"><span class="material-symbols-outlined text-[18px]">cloud_upload</span><span class="">Geofences</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-1 font-label-xs text-label-xs text-outline-variant uppercase tracking-wider">Fuel Intelligence</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="fuel-monitoring" href="#"><span class="material-symbols-outlined text-[18px]">local_gas_station</span><span class="">Fuel Monitoring</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="fuel-analytics" href="#"><span class="material-symbols-outlined text-[18px]">monitoring</span><span class="">Fuel Analytics</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="fuel-events" href="#"><span class="material-symbols-outlined text-[18px]">warning</span><span class="">Fuel Events</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-1 font-label-xs text-label-xs text-outline-variant uppercase tracking-wider">Device &amp; Data Health</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="gps-quality" href="#"><span class="material-symbols-outlined text-[18px]">satellite_alt</span><span class="">GPS Quality</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="device-connectivity" href="#"><span class="material-symbols-outlined text-[18px]">wifi_tethering</span><span class="">Device Connectivity</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="data-activity" href="#"><span class="material-symbols-outlined text-[18px]">network_check</span><span class="">Data Activity</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="raw-protocol-logs" href="#"><span class="material-symbols-outlined text-[18px]">terminal</span><span class="">Raw Protocol Logs</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-1 font-label-xs text-label-xs text-outline-variant uppercase tracking-wider">Monitoring &amp; Reports</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="alert-center" href="#"><span class="material-symbols-outlined text-[18px]">notifications_active</span><span class="">Alert Center</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">bar_chart</span><span class="">Reports</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-1 font-label-xs text-label-xs text-outline-variant uppercase tracking-wider">Settings</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="device-management" href="#"><span class="material-symbols-outlined text-[18px]">developer_board</span><span class="">Device Management</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="sensor-management" href="#"><span class="material-symbols-outlined text-[18px]">sensors</span><span class="">Sensor Management</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="user-management" href="#"><span class="material-symbols-outlined text-[18px]">manage_accounts</span><span class="">User Management</span></a></nav></div></div><div class="p-space-sm bg-inverse-surface"><div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container/10"><div class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></div><div class="flex-1 truncate"><div class="font-label-xs text-label-xs text-inverse-on-surface truncate font-semibold">Queclink GV30CEU</div><div class="font-label-xs text-[10px] text-outline-variant truncate">BLE CFS300B Integrated</div></div><span class="material-symbols-outlined text-outline-variant text-[16px]">verified</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0"><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant truncate"><span class="hover:text-on-surface transition-colors cursor-pointer">PasTrack</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span class="text-on-surface font-semibold">Fleet Intelligence</span></div></div><div class="flex items-center gap-space-md"><div class="relative w-64 md:w-80"><span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-3 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Quick search plate / VIN / ID..." type="text"></div><div class="hidden lg:flex items-center gap-space-xs px-3 h-9 rounded-lg bg-surface-container-low text-on-surface-variant font-data-tabular text-data-tabular"><span class="material-symbols-outlined text-[16px] text-outline">calendar_today</span><span class="">Today: 00:00 - 23:59</span></div><div class="hidden md:flex items-center gap-space-xs px-2.5 h-9 rounded-lg bg-surface-container-low text-on-surface font-label-xs text-label-xs"><span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span><span class="text-on-surface-variant">Sync: Real-time MQTT</span><span class="text-outline font-data-tabular">• 3s ago</span></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-error text-on-error font-label-xs text-[10px] flex items-center justify-center font-bold">3</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden sm:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface">Budi Santoso</span><span class="font-label-xs text-[10px] text-on-surface-variant leading-none">Fleet Ops Head</span></div><span class="material-symbols-outlined text-outline text-[18px]">expand_more</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Global Context & Breadcrumb Bar -->
+<div class="bg-surface-container-lowest px-space-xl py-space-sm border-b border-surface-container">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant min-w-0">
+<span class="hover:text-primary transition-colors cursor-pointer">PasTrack</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Fleet Management</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Vehicles</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="font-semibold text-on-surface font-title-sm text-title-sm">B 9421 UEI</span>
+<span class="ml-space-sm px-2 py-0.5 rounded bg-primary/10 text-primary font-label-xs text-label-xs font-bold uppercase tracking-wider">Tronton Wingbox 26T</span>
+</nav>
+<!-- Context Badges & Global Stats -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-label-xs text-label-xs">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-bold text-on-surface">LIVE SCADA STREAM</span>
+<span class="text-outline">|</span>
+<span class="">Active Fleet: <strong class="text-on-surface font-semibold">148 Units</strong></span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="h-8 px-3 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-outline">file_download</span>
+<span class="">Export Log</span>
+</button>
+<button class="h-8 px-3 rounded bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md flex items-center gap-1.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span class="">Register Unit</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Vehicle Master Inspection Hero Banner -->
+<div class="px-space-xl py-space-md bg-surface-container-lowest shadow-sm">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<!-- Left: Vehicle Identity & Hardware Rigging -->
+<div class="flex flex-col lg:flex-row lg:items-center gap-space-md min-w-0">
+<div class="flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-[32px]">local_shipping</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-display text-[22px] leading-tight font-bold text-on-surface tracking-tight">B 9421 UEI</span>
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-xs text-label-xs font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                MOVING 58.2 km/h
+              </span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs">Fleet #JKT-409</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 flex flex-wrap items-center gap-x-space-md gap-y-0.5">
+<span class="">Hino 500 FL 260 Heavy Duty</span>
+<span class="text-outline">•</span>
+<span class="">Driver: <strong class="text-on-surface font-semibold">Hendra Kurniawan</strong></span>
+<span class="text-outline">•</span>
+<span class="">Depot: <span class="text-on-surface font-semibold">Cakung Central Hub</span></span>
+<span class="text-outline">•</span>
+<span class="">Odo: <span class="font-data-tabular font-medium text-on-surface">142,504.2 km</span></span>
+</div>
+</div>
+</div>
+<!-- Rigging Signals Separator -->
+<div class="hidden 2xl:block h-10 w-px bg-surface-container-highest"></div>
+<!-- Hardware & Ignition Status Cards -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- UNWIRED IGNITION BADGE -->
+<div class="px-2.5 py-1.5 rounded bg-amber-50 text-amber-900 flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-600 text-[18px]">power_off</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-xs text-label-xs font-bold leading-none">IGNITION: N/A — UNWIRED (NO WIRE)</span>
+<span class="material-symbols-outlined text-amber-700 text-[13px]" title="Wire insulated per company electrical standard. Motion calculated via GPS Doppler vector &amp; 3-axis accelerometer">info</span>
+</div>
+<span class="font-label-xs text-[10px] text-amber-700 leading-none mt-0.5">GPS Doppler + 3-Axis MEMS Active</span>
+</div>
+</div>
+<!-- Tracker Telematics Badge -->
+<div class="px-2.5 py-1.5 rounded bg-surface-container-lowest text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">memory</span>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs font-semibold leading-none">Queclink GV30CEU • 4G Cat-1</span>
+<span class="font-label-xs text-[10px] text-outline font-data-tabular leading-none mt-0.5">IMEI: 864920048192031 | @ACK GV30CEU</span>
+</div>
+</div>
+<!-- BLE CFS300B Badge -->
+<div class="px-2.5 py-1.5 rounded bg-surface-container-lowest text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">sensors</span>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs font-semibold leading-none">BLE CFS300B Paired (-68 dBm)</span>
+<span class="font-label-xs text-[10px] text-outline leading-none mt-0.5">Tank Spec: 400.0 L (Single) • Normal Stream</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Action Buttons Group -->
+<div class="flex items-center gap-space-xs self-end xl:self-center shrink-0">
+<button class="h-9 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">cell_tower</span>
+<span class="">Send Poll Command</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px] text-secondary">tune</span>
+<span class="">Calibrate BLE</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px] text-outline">share_location</span>
+<span class="">Share Dispatch</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface flex items-center justify-center shadow-sm transition-colors" title="More unit actions">
+<span class="material-symbols-outlined text-[18px] text-outline">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Inspector Sub-Tabs Navigation -->
+<div class="flex items-center gap-space-lg mt-space-md font-label-md text-label-md overflow-x-auto">
+<!-- Active Tab: Telematics Overview -->
+<a class="relative pb-2.5 text-primary font-bold flex items-center gap-1.5 transition-colors shrink-0" href="#">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="">Telematics Overview</span>
+<div class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full"></div>
+</a>
+<!-- Subtab 2 -->
+<a class="pb-2.5 text-on-surface-variant hover:text-on-surface font-semibold flex items-center gap-1.5 transition-colors shrink-0" href="#">
+<span class="material-symbols-outlined text-[16px] text-outline">route</span>
+<span class="">Trip History (218.4 km • 4 Stops)</span>
+</a>
+<!-- Subtab 3 -->
+<a class="pb-2.5 text-on-surface-variant hover:text-on-surface font-semibold flex items-center gap-1.5 transition-colors shrink-0" href="#">
+<span class="material-symbols-outlined text-[16px] text-secondary">local_gas_station</span>
+<span class="">Fuel &amp; BLE CFS300B (284.5L • 71.1%)</span>
+</a>
+<!-- Subtab 4 -->
+<a class="pb-2.5 text-on-surface-variant hover:text-on-surface font-semibold flex items-center gap-1.5 transition-colors shrink-0" href="#">
+<span class="material-symbols-outlined text-[16px] text-outline">square_foot</span>
+<span class="">Sensor Calibration (14-Point Table • Kalman K=0.85)</span>
+</a>
+</div>
+</div>
+<!-- Main Scrollable Content Area -->
+<div class="p-space-xl space-y-space-xl">
+<!-- 1. Top Primary SCADA Metric Cards (5 KPI Row) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-space-md">
+<!-- KPI 1: Speed & Dynamics -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-xs text-label-xs uppercase tracking-wider font-semibold">Speed &amp; Dynamics</span>
+<span class="material-symbols-outlined text-primary text-[18px]">speed</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-1">
+<span class="font-display text-display text-on-surface font-bold">58.2</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">km/h</span>
+</div>
+<div class="font-label-xs text-label-xs text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded inline-flex items-center gap-1 mt-1 font-semibold">
+<span class="material-symbols-outlined text-[12px]">trending_flat</span>
+            Cruise Mode • Gear 6 Est.
+          </div>
+</div>
+<div class="font-data-tabular text-[11px] text-on-surface-variant flex justify-between pt-1.5 border-t border-surface-container">
+<span class="">Avg: 52.0 km/h</span>
+<span class="">Max: 78.4 km/h</span>
+<span class="text-primary font-semibold">+0.12 m/s²</span>
+</div>
+</div>
+<!-- KPI 2: Fuel Volume -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-xs text-label-xs uppercase tracking-wider font-semibold">Fuel (CFS300B BLE)</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">local_gas_station</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-1">
+<span class="font-display text-display text-on-surface font-bold">284.5</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">/ 400.0 L</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden flex-1">
+<div class="bg-secondary h-2 rounded-full" style="width: 71.1%"></div>
+</div>
+<span class="font-data-tabular text-label-xs text-on-surface font-bold">71.1%</span>
+</div>
+</div>
+<div class="font-data-tabular text-[11px] text-on-surface-variant flex justify-between pt-1.5 border-t border-surface-container">
+<span class="">1,480 Hz (234.8 pF)</span>
+<span class="text-emerald-700 font-semibold">No Theft</span>
+<span class="">2.84 km/L</span>
+</div>
+</div>
+<!-- KPI 3: GPS Satellites & Position -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-xs text-label-xs uppercase tracking-wider font-semibold">GPS Constellation</span>
+<span class="material-symbols-outlined text-primary text-[18px]">satellite_alt</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-1">
+<span class="font-display text-display text-on-surface font-bold">16</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Sats Fixed 3D</span>
+</div>
+<div class="font-label-xs text-label-xs text-on-surface-variant mt-1 flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[12px] text-emerald-600">verified</span>
+<span class="font-data-tabular font-medium text-on-surface">Tol Cipali KM 102A</span>
+</div>
+</div>
+<div class="font-data-tabular text-[11px] text-on-surface-variant flex justify-between pt-1.5 border-t border-surface-container">
+<span class="">HDOP: <strong>0.82</strong></span>
+<span class="">Acc: ±1.1m</span>
+<span class="font-mono text-[10px]">-6.5218, 107.694</span>
+</div>
+</div>
+<!-- KPI 4: 4G Cellular & Protocol Stream -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-xs text-label-xs uppercase tracking-wider font-semibold">Cellular &amp; SCADA Link</span>
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">cell_tower</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-1">
+<span class="font-display text-display text-on-surface font-bold">CSQ 28</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">/ 31</span>
+</div>
+<div class="font-label-xs text-label-xs text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded inline-flex items-center gap-1 mt-1 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+            4G Cat-1 Telkomsel (-65 dBm)
+          </div>
+</div>
+<div class="font-data-tabular text-[11px] text-on-surface-variant flex justify-between pt-1.5 border-t border-surface-container">
+<span class="">MQTT v5.1</span>
+<span class="">Lat: 1.1s</span>
+<span class="text-on-surface font-semibold">24.6 VDC Bus</span>
+</div>
+</div>
+<!-- KPI 5: BLE Sensor Telemetry Health -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-xs text-label-xs uppercase tracking-wider font-semibold">BLE Sensor (CFS300B)</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">bluetooth_connected</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-1">
+<span class="font-display text-display text-on-surface font-bold">-68</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">dBm</span>
+</div>
+<div class="font-label-xs text-label-xs text-on-surface-variant mt-1 flex items-center justify-between">
+<span class="text-emerald-700 font-semibold">Strong Link (4/4)</span>
+<span class="font-data-tabular font-medium">Batt: 3.12V (94%)</span>
+</div>
+</div>
+<div class="font-data-tabular text-[11px] text-on-surface-variant flex justify-between pt-1.5 border-t border-surface-container">
+<span class="">Temp: 31.4°C</span>
+<span class="">Tilt: 0.00G</span>
+<span class="text-emerald-700 font-semibold">Normal</span>
+</div>
+</div>
+</div>
+<!-- 2. Two-Column Core Operational Panel -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- LEFT COLUMN: Map & Telemetry Gauges (approx 65% = 8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-xl">
+<!-- Live Map & Highway Trajectory Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">explore</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Current Spatial Position &amp; Active Corridor Trajectory</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs">Tol Cipali KM 102A</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-xs text-label-xs font-semibold shadow-sm hover:bg-surface-container">Vector View</button>
+<button class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface-variant font-label-xs text-label-xs hover:bg-surface-container">Satellite</button>
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container" title="Full screen">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Dynamic Visual Map Canvas -->
+<div class="relative w-full h-[360px] bg-slate-900 overflow-hidden" data-location="Subang, Jawa Barat, Indonesia">
+<!-- Simulated GIS Highway Render -->
+<svg class="w-full h-full absolute inset-0 opacity-80" fill="none" preserveAspectRatio="xMidYMid slice" viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+<!-- Topographic Grid lines -->
+<defs>
+<pattern height="40" id="grid" patternUnits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-opacity="0.4" stroke-width="0.5"></path>
+</pattern>
+<linearGradient id="routeGlow" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#0284c7" stop-opacity="0.3"></stop>
+<stop offset="70%" stop-color="#2563eb" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#38bdf8" stop-opacity="1"></stop>
+</linearGradient>
+</defs>
+<rect fill="url(#grid)" height="360" width="800"></rect>
+<!-- Landscape Water & Terrain contours -->
+<path d="M 0 120 Q 200 80 400 130 T 800 90 L 800 0 L 0 0 Z" fill="#0f172a" opacity="0.6"></path>
+<!-- Secondary Arterial Roads -->
+<path d="M 120 360 C 140 280 200 240 240 180 S 320 100 360 0" stroke="#334155" stroke-dasharray="4 4" stroke-width="2"></path>
+<path d="M 480 360 C 500 290 530 220 620 170 S 740 80 800 40" stroke="#334155" stroke-width="2"></path>
+<!-- Tol Trans-Jawa / Cipali Dual Carriageway Spine -->
+<path d="M -40 260 C 150 250 280 210 420 190 S 680 140 840 120" stroke="#475569" stroke-linecap="round" stroke-width="12"></path>
+<path d="M -40 260 C 150 250 280 210 420 190 S 680 140 840 120" stroke="#1e293b" stroke-linecap="round" stroke-width="10"></path>
+<path d="M -40 260 C 150 250 280 210 420 190 S 680 140 840 120" stroke="#64748b" stroke-dasharray="10 8" stroke-width="1"></path>
+<!-- Completed Traversed Path Polyline (from Cakung Hub) -->
+<path d="M -40 260 C 150 250 280 210 420 190" stroke="url(#routeGlow)" stroke-linecap="round" stroke-width="5"></path>
+<!-- Rest Area KM 102A Geofence Zone Polygon -->
+<polygon fill="#0284c7" fill-opacity="0.15" points="500,165 570,150 590,185 520,200" stroke="#38bdf8" stroke-dasharray="3 3" stroke-width="1.5"></polygon>
+<text fill="#93c5fd" font-family="Inter" font-size="10" font-weight="600" x="525" y="160">Rest Area KM 102A (1.4 km ahead)</text>
+<!-- Live Vehicle Anchor (B 9421 UEI at Subang KM 102A) -->
+<g transform="translate(420, 190)">
+<!-- Pulse circle -->
+<circle class="animate-ping" fill="#2563eb" fill-opacity="0.25" r="18"></circle>
+<circle fill="#2563eb" r="10" stroke="#ffffff" stroke-width="2"></circle>
+<!-- Direction Vector Heading 084° E -->
+<polygon fill="#ffffff" points="0,-7 6,4 0,2 -6,4" transform="rotate(84)"></polygon>
+</g>
+</svg>
+<!-- Floating Telemetry HUD Overlay -->
+<div class="absolute top-3 left-3 bg-inverse-surface/90 backdrop-blur-md text-inverse-on-surface px-3 py-2 rounded-lg shadow-lg flex items-center gap-space-md border border-white/10">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="font-title-sm text-title-sm font-bold text-white tracking-wide">KM 102A</span>
+</div>
+<span class="text-white/20">|</span>
+<div class="flex items-center gap-1 font-data-tabular text-body-sm text-sky-200">
+<span class="material-symbols-outlined text-[15px]">speed</span>
+<span class="font-bold">58.2 km/h</span>
+</div>
+<span class="text-white/20">|</span>
+<div class="flex items-center gap-1 font-data-tabular text-body-sm text-emerald-200">
+<span class="material-symbols-outlined text-[15px]">local_gas_station</span>
+<span class="font-bold">284.5 L</span>
+</div>
+<span class="text-white/20">|</span>
+<span class="font-label-xs text-label-xs bg-primary-container px-2 py-0.5 rounded text-white font-semibold">GPS Doppler Active</span>
+</div>
+<!-- Bottom Floating Corridor Metadata -->
+<div class="absolute bottom-3 right-3 bg-inverse-surface/90 backdrop-blur-md text-inverse-on-surface px-3 py-1.5 rounded-lg shadow font-data-tabular text-[11px] text-white/80 flex items-center gap-space-sm border border-white/10">
+<span class="">Heading: <strong class="text-white">084° East</strong></span>
+<span class="">•</span>
+<span class="">Lat: -6.52184, Lon: 107.69412</span>
+<span class="">•</span>
+<span class="">Alt: 48m ASL</span>
+</div>
+</div>
+<!-- Segment Performance Strip -->
+<div class="p-space-md bg-surface-container-low grid grid-cols-2 md:grid-cols-4 gap-space-md font-body-sm text-body-sm">
+<div>
+<span class="text-on-surface-variant font-label-xs text-label-xs uppercase">Trip Origin</span>
+<div class="font-semibold text-on-surface mt-0.5">08:30 WIB • Cakung Hub</div>
+</div>
+<div>
+<span class="text-on-surface-variant font-label-xs text-label-xs uppercase">Distance Traversed</span>
+<div class="font-semibold text-on-surface font-data-tabular mt-0.5">218.4 km (4 Stops)</div>
+</div>
+<div>
+<span class="text-on-surface-variant font-label-xs text-label-xs uppercase">Active Running Time</span>
+<div class="font-semibold text-on-surface font-data-tabular mt-0.5">04h 12m 45s</div>
+</div>
+<div>
+<span class="text-on-surface-variant font-label-xs text-label-xs uppercase">Approaching Waypoint</span>
+<div class="font-semibold text-primary font-data-tabular mt-0.5">Rest Area KM 102A (ETA 14:14)</div>
+</div>
+</div>
+</div>
+<!-- Real-Time Telemetry Gauges & Sensor Status Grid (4 Gauges) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Gauge 1: Fuel Tank & Kalman Slosh Filter -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">water_drop</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Fuel Tank Level (BLE Capacitive)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 font-label-xs text-label-xs font-semibold">Kalman K=0.85 Active</span>
+</div>
+<!-- Gauge Graphic Representation -->
+<div class="flex items-center gap-space-md my-space-md">
+<div class="relative w-24 h-24 shrink-0 flex items-center justify-center">
+<!-- SVG Circular Fuel Meter -->
+<svg class="w-24 h-24 -rotate-90" viewBox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="71.1, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-telemetry-metric text-telemetry-metric font-bold text-on-surface leading-none">71.1</span>
+<span class="font-label-xs text-[10px] text-outline font-semibold">%</span>
+</div>
+</div>
+<div class="flex-1 space-y-1.5 font-data-tabular">
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Calibrated Net Volume:</span>
+<span class="font-bold text-on-surface text-[15px]">284.5 Liters</span>
+</div>
+<div class="flex justify-between text-label-xs text-outline">
+<span class="">Tank Total Capacity:</span>
+<span class="font-medium text-on-surface">400.0 Liters</span>
+</div>
+<div class="flex justify-between text-label-xs text-outline">
+<span class="">Raw BLE Frequency:</span>
+<span class="font-medium text-on-surface">1,480.2 Hz (234.8 pF)</span>
+</div>
+<div class="flex justify-between text-label-xs text-outline">
+<span class="">Slosh Damping Efficiency:</span>
+<span class="font-medium text-emerald-700">98.6% Wave Filtered</span>
+</div>
+</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low font-label-xs text-label-xs text-on-surface-variant flex items-center justify-between">
+<span class="">Remaining Est. Range: <strong class="text-on-surface">~808 km</strong></span>
+<span class="">Refuel Alert Cutoff: <strong>40.0 L (10%)</strong></span>
+</div>
+</div>
+<!-- Gauge 2: Speedometer & Doppler Vector -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">speed</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Speedometer &amp; Doppler Vector</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs font-semibold">Limit: 80 km/h</span>
+</div>
+<!-- Gauge Graphic Representation -->
+<div class="flex items-center gap-space-md my-space-md">
+<div class="relative w-24 h-24 shrink-0 flex items-center justify-center">
+<!-- SVG Arc Speed Dial -->
+<svg class="w-24 h-24 -rotate-90" viewBox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="58.2, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-telemetry-metric text-telemetry-metric font-bold text-on-surface leading-none">58.2</span>
+<span class="font-label-xs text-[10px] text-outline font-semibold">km/h</span>
+</div>
+</div>
+<div class="flex-1 space-y-1.5 font-data-tabular">
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant">Instantaneous Velocity:</span>
+<span class="font-bold text-on-surface text-[15px]">58.2 km/h</span>
+</div>
+<div class="flex justify-between text-label-xs text-outline">
+<span class="">GPS Doppler Frequency:</span>
+<span class="font-medium text-on-surface">1,575.42 MHz (L1 Shift)</span>
+</div>
+<div class="flex justify-between text-label-xs text-outline">
+<span class="">Axial Acceleration (G):</span>
+<span class="font-medium text-emerald-700">+0.012 G (Stable)</span>
+</div>
+<div class="flex justify-between text-label-xs text-outline">
+<span class="">Speed Governor Headroom:</span>
+<span class="font-medium text-primary">21.8 km/h Under Max</span>
+</div>
+</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low font-label-xs text-label-xs text-on-surface-variant flex items-center justify-between">
+<span class="">Road Class: <strong class="text-on-surface">Tol Trans-Jawa Dual Carriageway</strong></span>
+<span class="text-emerald-700 font-semibold">Normal Smooth Flow</span>
+</div>
+</div>
+<!-- Gauge 3: Electrical System & Battery Telemetry -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-amber-600 text-[18px]">bolt</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Electrical System &amp; Alternator</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 font-label-xs text-label-xs font-semibold">24V System Normal</span>
+</div>
+<div class="space-y-space-sm my-space-sm font-data-tabular">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div>
+<div class="text-label-xs text-outline">Main Vehicle Bus Voltage</div>
+<div class="text-telemetry-metric font-bold text-on-surface">24.6 <span class="text-body-sm font-normal text-on-surface-variant">VDC</span></div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-xs text-label-xs font-bold">Alternator Charging</span>
+<div class="text-label-xs text-outline mt-1">Ripple: &lt; 0.12 Vp-p</div>
+</div>
+</div>
+<div class="flex justify-between items-center text-body-sm px-1">
+<span class="text-on-surface-variant">Queclink Internal Li-Po Backup:</span>
+<span class="font-bold text-on-surface">3.82 VDC (100% Float)</span>
+</div>
+<div class="flex justify-between items-center text-label-xs text-outline px-1">
+<span class="">BLE CFS300B Battery (CR2450):</span>
+<span class="font-semibold text-emerald-700">3.12 VDC (Est 2.4 Years Left)</span>
+</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low font-label-xs text-label-xs text-on-surface-variant">
+<span class="">Alternator Overcharge Protection: <strong class="text-emerald-700 font-semibold">ACTIVE (Cutoff 29.5V)</strong></span>
+</div>
+</div>
+<!-- Gauge 4: BLE Radio & Sensor Link Quality -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">signal_cellular_alt</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">BLE 5.0 Sensor Link Quality</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 font-label-xs text-label-xs font-semibold">Pairing Synced</span>
+</div>
+<div class="space-y-space-sm my-space-sm font-data-tabular">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div>
+<div class="text-label-xs text-outline">Sensor RSSI Field Strength</div>
+<div class="text-telemetry-metric font-bold text-on-surface">-68 <span class="text-body-sm font-normal text-on-surface-variant">dBm</span></div>
+</div>
+<div class="text-right">
+<div class="flex items-center justify-end gap-1">
+<span class="w-1.5 h-3.5 bg-emerald-600 rounded-sm"></span>
+<span class="w-1.5 h-4.5 bg-emerald-600 rounded-sm"></span>
+<span class="w-1.5 h-5.5 bg-emerald-600 rounded-sm"></span>
+<span class="w-1.5 h-7 bg-emerald-600 rounded-sm"></span>
+</div>
+<span class="text-label-xs font-semibold text-emerald-800 mt-1 block">4/4 Full Bars</span>
+</div>
+</div>
+<div class="flex justify-between items-center text-body-sm px-1">
+<span class="text-on-surface-variant">Packet Drop Rate (Last 1,000):</span>
+<span class="font-bold text-emerald-700">0.0% (0 Lost)</span>
+</div>
+<div class="flex justify-between items-center text-label-xs text-outline px-1">
+<span class="">Broadcast Interval:</span>
+<span class="font-medium text-on-surface">500 ms (CFS300B High Rate)</span>
+</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low font-label-xs text-label-xs text-on-surface-variant">
+<span class="">Transmitter MAC: <strong class="font-mono text-on-surface">D4:22:CD:88:91:0F</strong></span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Diagnostics & Event Stream (approx 35% = 4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-xl">
+<!-- Quick Diagnostics & Tracker Health Status Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">monitor_heart</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">SCADA Hardware Diagnostics</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-xs text-label-xs font-bold">ALL PASS</span>
+</div>
+<div class="divide-y divide-surface-container font-body-sm text-body-sm">
+<!-- Item 1: Virtual Ignition Status -->
+<div class="py-space-sm space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-on-surface flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  Virtual Ignition State:
+                </span>
+<span class="font-bold text-emerald-700 font-data-tabular">ON (Movement)</span>
+</div>
+<p class="text-label-xs text-on-surface-variant">
+                Detection criteria: GPS Doppler &gt; 3.0 km/h + MEMS 3-axis vibration &gt; 0.08G. Physical wire intentionally unwired for alternator surge protection.
+              </p>
+</div>
+<!-- Item 2: Queclink Tracker Hardware -->
+<div class="py-space-sm space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Queclink GV30CEU Uptime:</span>
+<span class="font-medium text-on-surface font-data-tabular">14d 08h 22m</span>
+</div>
+<div class="flex items-center justify-between text-label-xs text-outline">
+<span class="">Firmware Release:</span>
+<span class="font-medium text-on-surface">v1.42_PROD_QUEC</span>
+</div>
+<div class="flex items-center justify-between text-label-xs text-outline">
+<span class="">TCP Keepalive / ACK:</span>
+<span class="font-medium text-emerald-700">ACK Handshake Confirmed</span>
+</div>
+</div>
+<!-- Item 3: Fuel Theft Protection Monitor -->
+<div class="py-space-sm space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Anti-Siphon Fuel Monitor:</span>
+<span class="font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-label-xs">NORMAL (No Anomaly)</span>
+</div>
+<div class="flex items-center justify-between text-label-xs text-outline">
+<span class="">Theft Trigger Gradient:</span>
+<span class="font-medium text-on-surface">&gt; 3.0 L / 10 min sudden drop</span>
+</div>
+<div class="flex items-center justify-between text-label-xs text-outline">
+<span class="">Last Verified Refuel:</span>
+<span class="font-medium text-on-surface">+140.0 L @ Cakung (06:15 WIB)</span>
+</div>
+</div>
+<!-- Item 4: Active Geofence -->
+<div class="py-space-sm space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Active Corridor Zone:</span>
+<span class="font-medium text-primary text-label-xs font-bold">Koridor Tol Trans-Jawa Zone B</span>
+</div>
+<div class="flex items-center justify-between text-label-xs text-outline">
+<span class="">Next Station Checkpoint:</span>
+<span class="font-medium text-on-surface">Geofence Rest Area KM 102A (~2m)</span>
+</div>
+</div>
+</div>
+<!-- Bottom Action Buttons inside Diagnostics -->
+<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center gap-space-xs">
+<button class="flex-1 h-8 rounded bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">sensors</span>
+<span class="">Ping Tracker</span>
+</button>
+<button class="flex-1 h-8 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">description</span>
+<span class="">Raw Logs</span>
+</button>
+</div>
+</div>
+<!-- Recent Live Event & Telemetry Stream (Last 5 events) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">history</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Live SCADA Event Log</span>
+</div>
+<span class="font-data-tabular text-label-xs text-outline">MQTT Sync: 1.1s</span>
+</div>
+<div class="space-y-space-md mt-space-md">
+<!-- Event 1 -->
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-emerald-500 mt-1.5 shrink-0"></div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Telemetry Ingestion (Acked)</span>
+<span class="font-data-tabular text-[11px] text-outline shrink-0">14:02:18 WIB</span>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mt-0.5">
+                  GV30CEU -&gt; MQTT payload decoded: 58.2 km/h, 284.5 L (1,480 Hz), 24.6V, CSQ 28.
+                </p>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-blue-500 mt-1.5 shrink-0"></div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Speed Advisory Normal</span>
+<span class="font-data-tabular text-[11px] text-outline shrink-0">13:45:00 WIB</span>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mt-0.5">
+                  Vehicle returned to cruising 72.0 km/h following highway slowdown at KM 88.
+                </p>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-amber-500 mt-1.5 shrink-0"></div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Rest Stop Departure Logged</span>
+<span class="font-data-tabular text-[11px] text-outline shrink-0">12:15:30 WIB</span>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mt-0.5">
+                  Rest Area KM 57 departure recorded. Stop duration: 28m 14s. Fuel invariant at 334.2 L.
+                </p>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-slate-400 mt-1.5 shrink-0"></div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Rest Stop Arrival (KM 57)</span>
+<span class="font-data-tabular text-[11px] text-outline shrink-0">11:47:16 WIB</span>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mt-0.5">
+                  Virtual Ignition switched OFF via Doppler &lt; 2.0 km/h + 0G. Driver break initiated.
+                </p>
+</div>
+</div>
+<!-- Event 5 -->
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-primary mt-1.5 shrink-0"></div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Dispatch Start Cakung</span>
+<span class="font-data-tabular text-[11px] text-outline shrink-0">08:30:00 WIB</span>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mt-0.5">
+                  Mission started: Delivery to Semarang Distribution Center. Starting fuel: 398.0 L.
+                </p>
+</div>
+</div>
+</div>
+<button class="w-full mt-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">analytics</span>
+<span class="">Generate SCADA Health Report</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 3. Bottom Fleet Telemetry Master Registry (5-Row Table Identical to Specs) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Registry Filter Toolbar -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">format_list_bulleted</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Fleet Telematics Master Registry</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-xs text-label-xs font-bold">148 Monitored Units</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<!-- Filter 1: Chassis -->
+<div class="h-8 px-2.5 rounded bg-surface-container-lowest flex items-center gap-1.5 text-on-surface font-label-xs text-label-xs shadow-sm">
+<span class="text-outline">Chassis:</span>
+<span class="font-semibold text-primary">All Chassis (148)</span>
+<span class="material-symbols-outlined text-[14px] text-outline">expand_more</span>
+</div>
+<!-- Filter 2: Status -->
+<div class="h-8 px-2.5 rounded bg-surface-container-lowest flex items-center gap-1.5 text-on-surface font-label-xs text-label-xs shadow-sm">
+<span class="text-outline">Status:</span>
+<span class="font-semibold text-emerald-700">Moving (84)</span>
+<span class="material-symbols-outlined text-[14px] text-outline">expand_more</span>
+</div>
+<!-- Search Input -->
+<div class="relative w-48">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-outline text-[16px]">search</span>
+<input class="w-full h-8 pl-7 pr-2 rounded bg-surface-container-lowest text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none shadow-sm" placeholder="Filter plate/VIN..." type="text">
+</div>
+</div>
+</div>
+<!-- Table Representation -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-xs text-label-xs uppercase tracking-wider border-b border-surface-container">
+<th class="py-2.5 px-space-md font-semibold">Vehicle Plate / Unit</th>
+<th class="py-2.5 px-space-md font-semibold">Chassis / Fleet ID</th>
+<th class="py-2.5 px-space-md font-semibold">Operational State</th>
+<th class="py-2.5 px-space-md font-semibold">Speed &amp; Heading</th>
+<th class="py-2.5 px-space-md font-semibold">Ignition Circuit</th>
+<th class="py-2.5 px-space-md font-semibold">Fuel Tank Level (BLE)</th>
+<th class="py-2.5 px-space-md font-semibold">Queclink &amp; BLE Link</th>
+<th class="py-2.5 px-space-md font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm">
+<!-- Row 1: B 9421 UEI (Selected active vehicle) -->
+<tr class="bg-primary/5 hover:bg-primary/10 transition-colors">
+<td class="py-2.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<div>
+<span class="font-title-sm text-title-sm font-bold text-primary">B 9421 UEI</span>
+<div class="font-label-xs text-[10px] text-on-surface-variant">Hino 500 FL 260 Heavy Duty</div>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="font-medium text-on-surface">Tronton Wingbox 26T</span>
+<div class="font-data-tabular text-label-xs text-outline">Fleet #JKT-409</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-xs text-label-xs font-semibold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                  MOVING
+                </span>
+<div class="text-[11px] text-on-surface-variant mt-0.5">Tol Cipali KM 102A</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="font-bold text-on-surface">58.2 km/h</div>
+<div class="text-label-xs text-outline">Heading 084° E</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-amber-50 text-amber-900 font-label-xs text-label-xs font-semibold">
+                  UNWIRED (NO WIRE)
+                </span>
+<div class="text-[10px] text-amber-700 mt-0.5">Virtual: ON (Doppler)</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="font-bold text-on-surface">284.5 / 400.0 L</div>
+<div class="text-label-xs text-emerald-700 font-semibold">71.1% • 1,480 Hz</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="text-on-surface font-medium">4G Cat-1 (-65 dBm)</div>
+<div class="text-label-xs text-secondary font-semibold">CFS300B: -68 dBm</div>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="h-7 px-2.5 rounded bg-primary text-on-primary font-label-xs text-label-xs font-semibold shadow-sm">Inspect</button>
+</td>
+</tr>
+<!-- Row 2: B 9812 SRA -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<div>
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">B 9812 SRA</span>
+<div class="font-label-xs text-[10px] text-on-surface-variant">Mitsubishi Fuso Fighter FN 62</div>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="font-medium text-on-surface">Tronton Box 24T</span>
+<div class="font-data-tabular text-label-xs text-outline">Fleet #JKT-312</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-xs text-label-xs font-semibold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  MOVING
+                </span>
+<div class="text-[11px] text-on-surface-variant mt-0.5">Tol Cikampek Utama KM 70</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="font-bold text-on-surface">64.0 km/h</div>
+<div class="text-label-xs text-outline">Heading 112° SE</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-amber-50 text-amber-900 font-label-xs text-label-xs font-semibold">
+                  UNWIRED (NO WIRE)
+                </span>
+<div class="text-[10px] text-amber-700 mt-0.5">Virtual: ON (Doppler)</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="font-bold text-on-surface">312.0 / 380.0 L</div>
+<div class="text-label-xs text-emerald-700 font-semibold">82.1% • 1,590 Hz</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="text-on-surface font-medium">4G Cat-1 (-71 dBm)</div>
+<div class="text-label-xs text-secondary font-semibold">CFS300B: -64 dBm</div>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="h-7 px-2.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-xs text-label-xs font-semibold">View</button>
+</td>
+</tr>
+<!-- Row 3: BK 8730 MT -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<div>
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">BK 8730 MT</span>
+<div class="font-label-xs text-[10px] text-on-surface-variant">Isuzu Giga FVM 34 U Heavy</div>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="font-medium text-on-surface">Tanker CPO 20KL</span>
+<div class="font-data-tabular text-label-xs text-outline">Fleet #MDN-108</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-label-xs text-label-xs font-semibold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                  IDLING
+                </span>
+<div class="text-[11px] text-on-surface-variant mt-0.5">Depot Belawan Terminal 3</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="font-bold text-on-surface">0.0 km/h</div>
+<div class="text-label-xs text-outline">Heading 350° N</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-amber-50 text-amber-900 font-label-xs text-label-xs font-semibold">
+                  UNWIRED (NO WIRE)
+                </span>
+<div class="text-[10px] text-amber-700 mt-0.5">Virtual: IDLE (Vib 0.14G)</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="font-bold text-on-surface">190.4 / 300.0 L</div>
+<div class="text-label-xs text-emerald-700 font-semibold">63.4% • 1,320 Hz</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="text-on-surface font-medium">4G Cat-1 (-62 dBm)</div>
+<div class="text-label-xs text-secondary font-semibold">CFS300B: -70 dBm</div>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="h-7 px-2.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-xs text-label-xs font-semibold">View</button>
+</td>
+</tr>
+<!-- Row 4: D 7120 XY -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<div>
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">D 7120 XY</span>
+<div class="font-label-xs text-[10px] text-on-surface-variant">UD Trucks Quester CWE 280</div>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="font-medium text-on-surface">Wingbox 26T</span>
+<div class="font-data-tabular text-label-xs text-outline">Fleet #BDG-204</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-xs text-label-xs font-semibold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  MOVING
+                </span>
+<div class="text-[11px] text-on-surface-variant mt-0.5">Tol Padaleunyi KM 132</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="font-bold text-on-surface">51.8 km/h</div>
+<div class="text-label-xs text-outline">Heading 275° W</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-amber-50 text-amber-900 font-label-xs text-label-xs font-semibold">
+                  UNWIRED (NO WIRE)
+                </span>
+<div class="text-[10px] text-amber-700 mt-0.5">Virtual: ON (Doppler)</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="font-bold text-on-surface">240.0 / 400.0 L</div>
+<div class="text-label-xs text-emerald-700 font-semibold">60.0% • 1,290 Hz</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="text-on-surface font-medium">4G Cat-1 (-78 dBm)</div>
+<div class="text-label-xs text-secondary font-semibold">CFS300B: -72 dBm</div>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="h-7 px-2.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-xs text-label-xs font-semibold">View</button>
+</td>
+</tr>
+<!-- Row 5: B 9104 KLU -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-slate-400"></span>
+<div>
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">B 9104 KLU</span>
+<div class="font-label-xs text-[10px] text-on-surface-variant">Hino Ranger FM 260 JD</div>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="font-medium text-on-surface">Dump Truck 24T</span>
+<div class="font-data-tabular text-label-xs text-outline">Fleet #JKT-551</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-label-xs text-label-xs font-semibold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                  PARKED
+                </span>
+<div class="text-[11px] text-on-surface-variant mt-0.5">Depot Marunda Pool B</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="font-bold text-on-surface">0.0 km/h</div>
+<div class="text-label-xs text-outline">Stationary</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-amber-50 text-amber-900 font-label-xs text-label-xs font-semibold">
+                  UNWIRED (NO WIRE)
+                </span>
+<div class="text-[10px] text-amber-700 mt-0.5">Virtual: OFF (Sleep)</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="font-bold text-on-surface">365.0 / 400.0 L</div>
+<div class="text-label-xs text-emerald-700 font-semibold">91.2% • 1,740 Hz</div>
+</td>
+<td class="py-2.5 px-space-md font-data-tabular">
+<div class="text-on-surface font-medium">4G Cat-1 (-69 dBm)</div>
+<div class="text-label-xs text-secondary font-semibold">CFS300B: -66 dBm</div>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="h-7 px-2.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-xs text-label-xs font-semibold">View</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Bottom Global Health Status Strip (Continuity across tabs) -->
+<div class="px-space-md py-2.5 bg-surface-container-low border-t border-surface-container flex flex-wrap items-center justify-between gap-space-md font-data-tabular text-[11px] text-on-surface-variant">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="">Queclink GV30CEU Gateway: <strong class="text-on-surface">146/148 Online</strong></span>
+</div>
+<span class="text-outline">•</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="">CFS300B BLE Sensors: <strong class="text-on-surface">144 Paired</strong></span>
+</div>
+<span class="text-outline">•</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span class="">Ignition Circuit: <strong class="text-on-surface">0/148 Wired (Company UNWIRED Policy)</strong></span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="">MQTT QoS-1 Server Buffer: <strong class="text-emerald-700">0% (Clean)</strong></span>
+<span class="text-outline">•</span>
+<span class="">Sync Cycle: <strong class="text-on-surface">5000 ms</strong></span>
+<span class="text-outline">•</span>
+<span class="text-primary font-semibold">PasTrack Core v4.18-SCADA</span>
+</div>
+</div>
+</div>
+</div>
+</div></main></div>
+
+</body></html>

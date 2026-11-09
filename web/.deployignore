@@ -1,0 +1,9 @@
+# rsync filter file, relative to web/.
+# Templates and static assets are embedded in pastrack-web.
+# Exclusions protect existing server-only credentials: never use --delete-excluded.
++ /pastrack-web
++ /deploy/
++ /deploy/run-aapanel.sh
++ /conf/
++ /conf/app.conf
+- *

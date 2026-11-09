@@ -1,0 +1,708 @@
+erDiagram
+  roles {
+    BIGINT id PK
+    VARCHAR32 code
+    VARCHAR100 name
+  }
+  permissions {
+    BIGINT id PK
+    VARCHAR80 code
+    VARCHAR255 description
+  }
+  users {
+    BIGINT id PK
+    VARCHAR64 username
+    VARCHAR100 full_name
+    VARCHAR190 email
+    VARCHAR32 phone
+    VARCHAR100 job_title
+    VARCHAR100 department
+    BIGINT row_version
+    DATETIME password_changed_at
+    DATETIME last_login_at
+    VARCHAR255 password_hash
+    VARCHAR30 password_algo
+    BIGINT auth_version
+    BOOLEAN is_active
+    DATETIME deleted_at
+  }
+  user_roles {
+    BIGINT id PK
+    BIGINT user_id FK
+    BIGINT role_id FK
+  }
+  role_permissions {
+    BIGINT id PK
+    BIGINT role_id FK
+    BIGINT permission_id FK
+  }
+  sessions {
+    BIGINT id PK
+    BIGINT user_id FK
+    CHAR64 token_hash
+    BIGINT auth_version
+    DATETIME expires_at
+  }
+  vehicle_types {
+    BIGINT id PK
+    VARCHAR32 code
+    VARCHAR100 name
+  }
+  vehicle_groups {
+    BIGINT id PK
+    VARCHAR100 name
+  }
+  vehicles {
+    BIGINT id PK
+    VARCHAR32 plate_number
+    VARCHAR120 vehicle_name
+    VARCHAR64 fleet_code
+    BIGINT vehicle_type_id FK
+    VARCHAR24 physical_ignition_state
+    DATETIME deleted_at
+    BIGINT row_version
+  }
+  vehicle_group_members {
+    BIGINT id PK
+    BIGINT vehicle_id FK
+    BIGINT group_id FK
+  }
+  vehicle_assets {
+    BIGINT id PK
+    BIGINT vehicle_id FK
+    VARCHAR120 make_model
+    SMALLINT production_year
+    VARCHAR60 vin
+    VARCHAR60 engine_number
+    VARCHAR40 fuel_type
+    VARCHAR80 ownership
+    VARCHAR120 owner_name
+    VARCHAR60 color
+    VARCHAR60 transmission
+    SMALLINT seats
+    VARCHAR120 insurance_provider
+    VARCHAR100 insurance_policy
+    DATE insurance_expiry
+    DATE tax_expiry
+    DATE registration_expiry
+    TEXT notes
+    VARCHAR20 photo_mime
+    DATETIME photo_updated_at
+  }
+  gps_device_models {
+    BIGINT id PK
+    VARCHAR80 manufacturer
+    VARCHAR80 model
+    VARCHAR64 protocol_family
+  }
+  gps_devices {
+    BIGINT id PK
+    VARCHAR20 imei
+    BIGINT model_id FK
+    VARCHAR64 firmware_version
+    VARCHAR32 protocol_version
+    BOOLEAN is_active
+    DATETIME deleted_at
+  }
+  vehicle_assignments {
+    BIGINT id PK
+    BIGINT vehicle_id FK
+    BIGINT device_id FK
+    DATETIME starts_at
+    DATETIME ends_at
+    VARCHAR32 provenance
+  }
+  gps_device_status {
+    BIGINT id PK
+    BIGINT device_id FK
+    DATETIME last_received_at
+    VARCHAR24 connectivity
+    BIGINT last_raw_message_id FK
+  }
+  gps_device_configurations {
+    BIGINT id PK
+    BIGINT device_id FK
+    BIGINT version
+    JSON configuration
+    DATETIME applied_at
+    DATETIME confirmed_at
+  }
+  gps_device_command_logs {
+    BIGINT id PK
+    BIGINT device_id FK
+    BIGINT requested_by FK
+    VARCHAR32 command_code
+    TEXT payload_redacted
+    VARCHAR24 state
+    DATETIME sent_at
+    BIGINT acknowledged_raw_id FK
+  }
+  protocol_message_types {
+    BIGINT id PK
+    VARCHAR64 family
+    VARCHAR32 code
+    BOOLEAN supported
+  }
+  device_raw_messages {
+    BIGINT id PK
+    BIGINT device_id FK
+    BIGINT legacy_id
+    VARBINARY255 identifier_encrypted
+    BIGINT message_type_id FK
+    VARCHAR32 protocol_version
+    LONGBLOB payload
+    BINARY32 payload_sha256
+    DATETIME received_at
+    DATETIME device_time
+    VARCHAR64 spool_receipt_id
+  }
+  protocol_parse_logs {
+    BIGINT id PK
+    BIGINT raw_message_id FK
+    VARCHAR64 parser_version
+    VARCHAR24 parse_status
+    VARCHAR24 processing_status
+    JSON fields
+    DATETIME processed_at
+  }
+  protocol_parser_errors {
+    BIGINT id PK
+    BIGINT parse_log_id FK
+    VARCHAR64 code
+    VARCHAR120 field_path
+    TEXT detail_redacted
+  }
+  message_processing_keys {
+    BIGINT id PK
+    BIGINT device_id FK
+    BINARY32 message_key
+    BIGINT canonical_raw_id FK
+    VARCHAR64 parser_version
+  }
+  gps_positions {
+    BIGINT id PK
+    BIGINT device_id FK
+    BIGINT vehicle_id FK
+    BIGINT assignment_id FK
+    BIGINT raw_message_id FK
+    SMALLINT sample_index
+    DATETIME gps_time
+    DATETIME received_at
+    DATETIME device_send_time
+    DECIMAL96 latitude
+    DECIMAL106 longitude
+    DECIMAL62 speed_kmh
+    DECIMAL52 heading_deg
+    DECIMAL102 altitude_m
+    SMALLINT satellite_count
+    DECIMAL62 hdop
+    VARCHAR16 gnss_accuracy_raw
+    VARCHAR24 fix_status
+    VARCHAR24 validation_state
+  }
+  latest_positions {
+    BIGINT id PK
+    BIGINT vehicle_id FK
+    BIGINT position_id FK
+    DATETIME gps_time
+    DATETIME received_at
+  }
+  gps_quality_logs {
+    BIGINT id PK
+    BIGINT device_id FK
+    BIGINT position_id FK
+    BIGINT raw_message_id FK
+    SMALLINT satellite_count
+    DECIMAL62 hdop
+    VARCHAR24 fix_status
+    DATETIME event_at
+  }
+  device_status_logs {
+    BIGINT id PK
+    BIGINT device_id FK
+    BIGINT raw_message_id FK
+    DATETIME event_at
+    VARCHAR32 status_code_raw
+    JSON decoded_status
+  }
+  network_status_logs {
+    BIGINT id PK
+    BIGINT device_id FK
+    BIGINT raw_message_id FK
+    DATETIME event_at
+    VARCHAR4 mcc
+    VARCHAR4 mnc
+    VARCHAR8 lac
+    VARCHAR16 cell_id
+    SMALLINT rssi
+  }
+  trips {
+    BIGINT id PK
+    BIGINT vehicle_id FK
+    BIGINT start_position_id FK
+    BIGINT end_position_id FK
+    DATETIME started_at
+    DATETIME ended_at
+    DECIMAL143 distance_m
+    INT driving_seconds
+    INT stopped_seconds
+    DECIMAL62 max_speed_kmh
+    DECIMAL62 average_speed_kmh
+    VARCHAR32 calculation_version
+    VARCHAR24 confidence
+  }
+  trip_segments {
+    BIGINT id PK
+    BIGINT trip_id FK
+    BIGINT start_position_id FK
+    BIGINT end_position_id FK
+    VARCHAR24 segment_kind
+    DECIMAL143 distance_m
+    INT duration_seconds
+  }
+  trip_events {
+    BIGINT id PK
+    BIGINT trip_id FK
+    BIGINT position_id FK
+    VARCHAR32 event_kind
+    DATETIME event_at
+  }
+  ble_sensors {
+    BIGINT id PK
+    VARCHAR64 sensor_identifier
+    CHAR12 mac
+    VARCHAR64 model
+    BOOLEAN is_active
+    DATETIME deleted_at
+  }
+  ble_sensor_bindings {
+    BIGINT id PK
+    BIGINT sensor_id FK
+    BIGINT vehicle_id FK
+    BIGINT device_id FK
+    DATETIME starts_at
+    DATETIME ends_at
+    VARCHAR24 binding_source
+  }
+  sensor_telemetry {
+    BIGINT id PK
+    BIGINT sensor_id FK
+    BIGINT device_id FK
+    BIGINT binding_id FK
+    BIGINT raw_message_id FK
+    SMALLINT accessory_index
+    DATETIME sensor_time
+    DATETIME received_at
+    SMALLINT accessory_type
+    SMALLINT accessory_model
+    VARCHAR8 append_mask
+    VARCHAR256 payload_hex
+    SMALLINT tilt_raw
+    INT fuel_height_raw
+    INT volume_raw
+    INT battery_mv
+    DECIMAL52 battery_percent
+    DECIMAL62 temperature_c
+    SMALLINT rssi
+    VARCHAR24 validation_state
+    VARCHAR64 decoder_version
+  }
+  ble_connection_logs {
+    BIGINT id PK
+    BIGINT sensor_id FK
+    BIGINT device_id FK
+    BIGINT raw_message_id FK
+    DATETIME event_at
+    DATETIME received_at
+    VARCHAR24 status
+    VARCHAR24 source
+  }
+  ble_sensor_status {
+    BIGINT id PK
+    BIGINT sensor_id FK
+    BIGINT telemetry_id FK
+    DATETIME last_received_at
+    VARCHAR24 status
+    INT stale_after_seconds
+  }
+  fuel_tank_profiles {
+    BIGINT id PK
+    BIGINT vehicle_id FK
+    VARCHAR100 name
+    DECIMAL123 capacity_l
+    BIGINT revision
+    DATETIME effective_from
+    DATETIME effective_to
+  }
+  fuel_sensors {
+    BIGINT id PK
+    BIGINT sensor_id FK
+    BIGINT tank_profile_id FK
+    VARCHAR24 measurement_unit
+    VARCHAR24 decoding_state
+  }
+  fuel_calibrations {
+    BIGINT id PK
+    BIGINT fuel_sensor_id FK
+    BIGINT tank_profile_id FK
+    BIGINT revision
+    VARCHAR24 media
+    VARCHAR32 input_quantity
+    VARCHAR24 input_unit
+    VARCHAR24 output_unit
+    VARCHAR24 approval_state
+    BIGINT approved_by FK
+    DATETIME effective_from
+    DATETIME effective_to
+  }
+  fuel_calibration_points {
+    BIGINT id PK
+    BIGINT calibration_id FK
+    DECIMAL166 input_value
+    DECIMAL123 output_value
+    DECIMAL52 legacy_percent
+    TEXT evidence
+  }
+  fuel_readings {
+    BIGINT id PK
+    BIGINT fuel_sensor_id FK
+    BIGINT telemetry_id FK
+    BIGINT vehicle_id FK
+    BIGINT calibration_id FK
+    DATETIME reading_at
+    DATETIME received_at
+    DECIMAL166 raw_measurement
+    VARCHAR24 raw_unit
+    DECIMAL123 fuel_liters
+    DECIMAL52 fuel_percent
+    VARCHAR32 validity
+    VARCHAR120 invalid_reason
+  }
+  latest_fuel_readings {
+    BIGINT id PK
+    BIGINT fuel_sensor_id FK
+    BIGINT reading_id FK
+    BIGINT last_valid_reading_id FK
+    DATETIME updated_at
+  }
+  fuel_events {
+    BIGINT id PK
+    BIGINT vehicle_id FK
+    BIGINT fuel_sensor_id FK
+    BIGINT start_reading_id FK
+    BIGINT end_reading_id FK
+    VARCHAR24 event_type
+    DECIMAL123 delta_l
+    DATETIME event_at
+    VARCHAR32 rule_version
+    VARCHAR24 confidence
+  }
+  fuel_consumption_summaries {
+    BIGINT id PK
+    BIGINT vehicle_id FK
+    DATETIME period_start
+    DATETIME period_end
+    DECIMAL143 consumed_l
+    DECIMAL143 distance_m
+    DECIMAL52 coverage_percent
+    VARCHAR32 algorithm_version
+  }
+  event_types {
+    BIGINT id PK
+    VARCHAR64 code
+    VARCHAR255 description
+  }
+  event_severities {
+    BIGINT id PK
+    VARCHAR24 code
+    SMALLINT rank
+  }
+  device_events {
+    BIGINT id PK
+    BIGINT device_id FK
+    BIGINT vehicle_id FK
+    BIGINT raw_message_id FK
+    BIGINT event_type_id FK
+    BIGINT severity_id FK
+    DATETIME event_at
+    DATETIME received_at
+    VARCHAR64 raw_code
+    TEXT raw_value
+    VARCHAR32 source
+    VARCHAR24 verification_state
+  }
+  event_acknowledgements {
+    BIGINT id PK
+    BIGINT event_id FK
+    BIGINT user_id FK
+    DATETIME acknowledged_at
+    TEXT note
+  }
+  geofences {
+    BIGINT id PK
+    VARCHAR100 name
+    VARCHAR16 shape
+    DECIMAL96 center_lat
+    DECIMAL106 center_lon
+    DECIMAL123 radius_m
+    JSON polygon_geojson
+    BOOLEAN is_active
+    BIGINT row_version
+  }
+  geofence_vehicle_assignments {
+    BIGINT id PK
+    BIGINT geofence_id FK
+    BIGINT vehicle_id FK
+    DATETIME starts_at
+    DATETIME ends_at
+  }
+  geofence_events {
+    BIGINT id PK
+    BIGINT geofence_id FK
+    BIGINT vehicle_id FK
+    BIGINT position_id FK
+    VARCHAR16 transition
+    DATETIME event_at
+  }
+  alert_rules {
+    BIGINT id PK
+    VARCHAR120 name
+    BIGINT event_type_id FK
+    BIGINT severity_id FK
+    JSON configuration
+    BIGINT version
+    BOOLEAN enabled
+  }
+  alert_events {
+    BIGINT id PK
+    BIGINT rule_id FK
+    BIGINT device_event_id FK
+    BIGINT fuel_event_id FK
+    BIGINT geofence_event_id FK
+    BIGINT vehicle_id FK
+    VARCHAR24 state
+    DATETIME raised_at
+    BIGINT acknowledged_by FK
+    DATETIME acknowledged_at
+    DATETIME resolved_at
+  }
+  notification_channels {
+    BIGINT id PK
+    BIGINT user_id FK
+    VARCHAR24 channel
+    BLOB configuration_encrypted
+    BOOLEAN enabled
+  }
+  alert_notifications {
+    BIGINT id PK
+    BIGINT alert_id FK
+    BIGINT channel_id FK
+    BIGINT notification_id FK
+    VARCHAR24 state
+    INT attempts
+    DATETIME sent_at
+  }
+  notifications {
+    BIGINT id PK
+    BIGINT user_id FK
+    VARCHAR120 title
+    VARCHAR1000 body
+    VARCHAR200 target
+    DATETIME read_at
+  }
+  push_tokens {
+    BIGINT id PK
+    BIGINT user_id FK
+    BIGINT session_id FK
+    CHAR64 token_hash
+    BLOB token_encrypted
+    VARCHAR64 client_id
+  }
+  push_jobs {
+    BIGINT id PK
+    BIGINT notification_id FK
+    BIGINT push_token_id FK
+    VARCHAR24 state
+    INT attempts
+    DATETIME next_attempt
+  }
+  audit_log {
+    BIGINT id PK
+    BIGINT actor_id FK
+    VARCHAR100 actor_legacy
+    VARCHAR30 action
+    VARCHAR64 entity
+    BIGINT entity_id
+    JSON before_data
+    JSON after_data
+    VARCHAR64 request_id
+    DATETIME occurred_at
+  }
+  tracking_places {
+    BIGINT id PK
+    VARCHAR100 name
+    DECIMAL96 latitude
+    DECIMAL106 longitude
+    INT radius_m
+    BIGINT row_version
+  }
+  tracking_geocode_cache {
+    BIGINT id PK
+    VARCHAR64 cell_key
+    VARCHAR200 name
+    VARCHAR1000 address
+    VARCHAR40 result_type
+    DOUBLE distance_m
+    DATETIME expires_at
+  }
+  tracking_geocode_usage {
+    BIGINT id PK
+    DATE usage_day
+    INT requests
+  }
+  report_jobs {
+    BIGINT id PK
+    BIGINT requested_by FK
+    VARCHAR64 report_type
+    JSON filters
+    VARCHAR24 state
+    VARCHAR255 artifact_path
+    DATETIME expires_at
+  }
+  report_schedules {
+    BIGINT id PK
+    BIGINT user_id FK
+    VARCHAR64 report_type
+    JSON filters
+    VARCHAR64 timezone
+    VARCHAR120 schedule
+    BOOLEAN enabled
+  }
+  migration_batches {
+    BIGINT id PK
+    VARCHAR64 source_schema
+    VARCHAR255 snapshot_reference
+    VARCHAR24 state
+    JSON source_watermarks
+    JSON validation_report
+  }
+  migration_record_map {
+    BIGINT id PK
+    BIGINT batch_id FK
+    VARCHAR64 source_table
+    VARCHAR128 source_pk
+    VARCHAR64 target_table
+    BIGINT target_pk
+    BINARY32 source_checksum
+    VARCHAR24 state
+    TEXT issue
+  }
+  users ||--o{ user_roles : user_id
+  roles ||--o{ user_roles : role_id
+  roles ||--o{ role_permissions : role_id
+  permissions ||--o{ role_permissions : permission_id
+  users ||--o{ sessions : user_id
+  vehicle_types |o--o{ vehicles : vehicle_type_id
+  vehicles ||--o{ vehicle_group_members : vehicle_id
+  vehicle_groups ||--o{ vehicle_group_members : group_id
+  vehicles ||--o{ vehicle_assets : vehicle_id
+  gps_device_models ||--o{ gps_devices : model_id
+  vehicles ||--o{ vehicle_assignments : vehicle_id
+  gps_devices ||--o{ vehicle_assignments : device_id
+  gps_devices ||--o{ gps_device_status : device_id
+  device_raw_messages |o--o{ gps_device_status : last_raw_message_id
+  gps_devices ||--o{ gps_device_configurations : device_id
+  gps_devices ||--o{ gps_device_command_logs : device_id
+  users |o--o{ gps_device_command_logs : requested_by
+  device_raw_messages |o--o{ gps_device_command_logs : acknowledged_raw_id
+  gps_devices |o--o{ device_raw_messages : device_id
+  protocol_message_types |o--o{ device_raw_messages : message_type_id
+  device_raw_messages ||--o{ protocol_parse_logs : raw_message_id
+  protocol_parse_logs ||--o{ protocol_parser_errors : parse_log_id
+  gps_devices |o--o{ message_processing_keys : device_id
+  device_raw_messages ||--o{ message_processing_keys : canonical_raw_id
+  gps_devices ||--o{ gps_positions : device_id
+  vehicles |o--o{ gps_positions : vehicle_id
+  vehicle_assignments |o--o{ gps_positions : assignment_id
+  device_raw_messages |o--o{ gps_positions : raw_message_id
+  vehicles ||--o{ latest_positions : vehicle_id
+  gps_positions ||--o{ latest_positions : position_id
+  gps_devices ||--o{ gps_quality_logs : device_id
+  gps_positions |o--o{ gps_quality_logs : position_id
+  device_raw_messages ||--o{ gps_quality_logs : raw_message_id
+  gps_devices ||--o{ device_status_logs : device_id
+  device_raw_messages ||--o{ device_status_logs : raw_message_id
+  gps_devices ||--o{ network_status_logs : device_id
+  device_raw_messages ||--o{ network_status_logs : raw_message_id
+  vehicles ||--o{ trips : vehicle_id
+  gps_positions ||--o{ trips : start_position_id
+  gps_positions |o--o{ trips : end_position_id
+  trips ||--o{ trip_segments : trip_id
+  gps_positions ||--o{ trip_segments : start_position_id
+  gps_positions ||--o{ trip_segments : end_position_id
+  trips ||--o{ trip_events : trip_id
+  gps_positions |o--o{ trip_events : position_id
+  ble_sensors ||--o{ ble_sensor_bindings : sensor_id
+  vehicles |o--o{ ble_sensor_bindings : vehicle_id
+  gps_devices |o--o{ ble_sensor_bindings : device_id
+  ble_sensors |o--o{ sensor_telemetry : sensor_id
+  gps_devices ||--o{ sensor_telemetry : device_id
+  ble_sensor_bindings |o--o{ sensor_telemetry : binding_id
+  device_raw_messages ||--o{ sensor_telemetry : raw_message_id
+  ble_sensors ||--o{ ble_connection_logs : sensor_id
+  gps_devices ||--o{ ble_connection_logs : device_id
+  device_raw_messages |o--o{ ble_connection_logs : raw_message_id
+  ble_sensors ||--o{ ble_sensor_status : sensor_id
+  sensor_telemetry |o--o{ ble_sensor_status : telemetry_id
+  vehicles ||--o{ fuel_tank_profiles : vehicle_id
+  ble_sensors ||--o{ fuel_sensors : sensor_id
+  fuel_tank_profiles |o--o{ fuel_sensors : tank_profile_id
+  fuel_sensors ||--o{ fuel_calibrations : fuel_sensor_id
+  fuel_tank_profiles |o--o{ fuel_calibrations : tank_profile_id
+  users |o--o{ fuel_calibrations : approved_by
+  fuel_calibrations ||--o{ fuel_calibration_points : calibration_id
+  fuel_sensors ||--o{ fuel_readings : fuel_sensor_id
+  sensor_telemetry ||--o{ fuel_readings : telemetry_id
+  vehicles |o--o{ fuel_readings : vehicle_id
+  fuel_calibrations |o--o{ fuel_readings : calibration_id
+  fuel_sensors ||--o{ latest_fuel_readings : fuel_sensor_id
+  fuel_readings ||--o{ latest_fuel_readings : reading_id
+  fuel_readings |o--o{ latest_fuel_readings : last_valid_reading_id
+  vehicles ||--o{ fuel_events : vehicle_id
+  fuel_sensors ||--o{ fuel_events : fuel_sensor_id
+  fuel_readings ||--o{ fuel_events : start_reading_id
+  fuel_readings ||--o{ fuel_events : end_reading_id
+  vehicles ||--o{ fuel_consumption_summaries : vehicle_id
+  gps_devices |o--o{ device_events : device_id
+  vehicles |o--o{ device_events : vehicle_id
+  device_raw_messages |o--o{ device_events : raw_message_id
+  event_types |o--o{ device_events : event_type_id
+  event_severities |o--o{ device_events : severity_id
+  device_events ||--o{ event_acknowledgements : event_id
+  users ||--o{ event_acknowledgements : user_id
+  geofences ||--o{ geofence_vehicle_assignments : geofence_id
+  vehicles ||--o{ geofence_vehicle_assignments : vehicle_id
+  geofences ||--o{ geofence_events : geofence_id
+  vehicles ||--o{ geofence_events : vehicle_id
+  gps_positions ||--o{ geofence_events : position_id
+  event_types |o--o{ alert_rules : event_type_id
+  event_severities ||--o{ alert_rules : severity_id
+  alert_rules ||--o{ alert_events : rule_id
+  device_events |o--o{ alert_events : device_event_id
+  fuel_events |o--o{ alert_events : fuel_event_id
+  geofence_events |o--o{ alert_events : geofence_event_id
+  vehicles |o--o{ alert_events : vehicle_id
+  users |o--o{ alert_events : acknowledged_by
+  users ||--o{ notification_channels : user_id
+  alert_events ||--o{ alert_notifications : alert_id
+  notification_channels ||--o{ alert_notifications : channel_id
+  notifications |o--o{ alert_notifications : notification_id
+  users ||--o{ notifications : user_id
+  users ||--o{ push_tokens : user_id
+  sessions ||--o{ push_tokens : session_id
+  notifications ||--o{ push_jobs : notification_id
+  push_tokens ||--o{ push_jobs : push_token_id
+  users |o--o{ audit_log : actor_id
+  users ||--o{ report_jobs : requested_by
+  users ||--o{ report_schedules : user_id
+  migration_batches ||--o{ migration_record_map : batch_id

@@ -1,0 +1,526 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-tint":"#0053db","on-primary-container":"#eeefff","on-primary":"#ffffff","on-surface":"#191c1e","surface-bright":"#f7f9fb","surface-container":"#eceef0","secondary":"#006398","primary-container":"#2563eb","on-error-container":"#93000a","secondary-fixed":"#cce5ff","on-secondary-fixed":"#001d31","on-tertiary-container":"#ecf1ff","secondary-fixed-dim":"#93ccff","error":"#ba1a1a","primary-fixed-dim":"#b4c5ff","on-secondary-container":"#00476e","primary-fixed":"#dbe1ff","on-tertiary-fixed-variant":"#3c475a","outline":"#737686","tertiary-fixed":"#d8e3fb","tertiary":"#4b566a","surface-container-low":"#f2f4f6","surface-container-lowest":"#ffffff","on-tertiary":"#ffffff","surface-dim":"#d8dadc","background":"#f7f9fb","on-primary-fixed":"#00174b","on-error":"#ffffff","inverse-surface":"#2d3133","on-tertiary-fixed":"#111c2d","on-background":"#191c1e","surface-container-high":"#e6e8ea","primary":"#004ac6","tertiary-fixed-dim":"#bcc7de","surface-variant":"#e0e3e5","on-surface-variant":"#434655","on-secondary":"#ffffff","inverse-on-surface":"#eff1f3","surface-container-highest":"#e0e3e5","surface":"#f7f9fb","outline-variant":"#c3c6d7","secondary-container":"#5bb8fe","tertiary-container":"#636e83","error-container":"#ffdad6","on-primary-fixed-variant":"#003ea8","on-secondary-fixed-variant":"#004b73","inverse-primary":"#b4c5ff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin-mobile":"0.75rem","gutter-dense":"0.5rem","space-lg":"1rem","space-md":"0.75rem","margin":"1.5rem","space-xs":"0.25rem","gutter":"1rem","space-xl":"1.5rem","space-sm":"0.5rem"},"fontFamily":{"label-md":["Inter"],"headline-lg":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"display":["Inter"],"label-xs":["Inter"],"headline-lg-mobile":["Inter"],"telemetry-metric":["Inter"],"data-tabular":["Inter"],"headline-md":["Inter"],"title-sm":["Inter"]},"fontSize":{"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-xs":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"headline-lg-mobile":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"telemetry-metric":["22px",{"lineHeight":"26px","letterSpacing":"-0.02em","fontWeight":"700"}],"data-tabular":["13px",{"lineHeight":"18px","letterSpacing":"-0.005em","fontWeight":"500"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"title-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary"><aside class="fixed left-0 top-0 h-screen w-64 bg-inverse-surface z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="h-16 px-space-md flex items-center justify-between bg-inverse-surface"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">hub</span></div><div class="flex flex-col"><span class="font-title-sm text-title-sm text-inverse-on-surface font-bold tracking-tight">PasTrack</span><span class="font-label-xs text-label-xs text-outline-variant font-medium">Fleet Intelligence</span></div></div><span class="px-1.5 py-0.5 rounded bg-surface-container/20 text-inverse-on-surface font-label-xs text-[10px] uppercase font-bold tracking-wider">Pro</span></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm space-y-space-md"><div class="space-y-space-xs"><div class="px-space-sm py-1 font-label-xs text-label-xs text-outline-variant uppercase tracking-wider">Overview</div><nav class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="fleet-dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="">Fleet Dashboard</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-1 font-label-xs text-label-xs text-outline-variant uppercase tracking-wider">Fleet Management</div><nav class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="vehicles" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="">Vehicles</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="live-tracking" href="#"><span class="material-symbols-outlined text-[18px]">my_location</span><span class="">Live Tracking</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="trip-history" href="#"><span class="material-symbols-outlined text-[18px]">route</span><span class="">Trip History</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="geofences" href="#"><span class="material-symbols-outlined text-[18px]">cloud_upload</span><span class="">Geofences</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-1 font-label-xs text-label-xs text-outline-variant uppercase tracking-wider">Fuel Intelligence</div><nav class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="fuel-monitoring" href="#"><span class="material-symbols-outlined text-[18px]">local_gas_station</span><span class="">Fuel Monitoring</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="fuel-analytics" href="#"><span class="material-symbols-outlined text-[18px]">monitoring</span><span class="">Fuel Analytics</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="fuel-events" href="#"><span class="material-symbols-outlined text-[18px]">warning</span><span class="">Fuel Events</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-1 font-label-xs text-label-xs text-outline-variant uppercase tracking-wider">Device &amp; Data Health</div><nav class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="gps-quality" href="#"><span class="material-symbols-outlined text-[18px]">satellite_alt</span><span class="">GPS Quality</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="device-connectivity" href="#"><span class="material-symbols-outlined text-[18px]">wifi_tethering</span><span class="">Device Connectivity</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="data-activity" href="#"><span class="material-symbols-outlined text-[18px]">network_check</span><span class="">Data Activity</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg bg-primary-container text-on-primary-container font-semibold transition-colors font-body-sm text-body-sm shadow-sm" data-path="raw-protocol-logs" href="#"><span class="material-symbols-outlined text-[18px]">terminal</span><span class="flex-1">Raw Protocol Logs</span><span class="w-1.5 h-1.5 rounded-full bg-on-primary animate-pulse"></span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-1 font-label-xs text-label-xs text-outline-variant uppercase tracking-wider">Monitoring &amp; Reports</div><nav class="space-y-0.5"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="alert-center" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">notifications_active</span><span class="">Alert Center</span></div><span class="px-1.5 py-0.2 rounded-full bg-error text-on-error font-label-xs text-[10px] font-bold">5</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="reports" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">bar_chart</span><span class="">Reports &amp; Fleet Audit</span></div><span class="px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-label-xs text-[10px] font-bold uppercase">NEW</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-1 font-label-xs text-label-xs text-outline-variant uppercase tracking-wider">Settings &amp; Configuration</div><nav class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="device-management" href="#"><span class="material-symbols-outlined text-[18px]">developer_board</span><span class="">Device Management</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="sensor-management" href="#"><span class="material-symbols-outlined text-[18px]">sensors</span><span class="">Sensor Management</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-surface-container-high/20 hover:text-inverse-on-surface transition-colors font-body-sm text-body-sm" data-path="user-management" href="#"><span class="material-symbols-outlined text-[18px]">manage_accounts</span><span class="">User Management</span></a></nav></div></div><div class="p-space-sm bg-inverse-surface"><div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container/10"><div class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></div><div class="flex-1 truncate"><div class="font-label-xs text-label-xs text-inverse-on-surface truncate font-semibold">Queclink GV30CEU</div><div class="font-label-xs text-[10px] text-outline-variant truncate">BLE CFS300B • CAN2.0 v3.14.8</div></div><span class="material-symbols-outlined text-outline-variant text-[16px]">verified</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0"><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant truncate"><span class="hover:text-on-surface transition-colors cursor-pointer">PasTrack</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span class="text-on-surface font-semibold">Fleet Intelligence</span></div><div class="hidden xl:flex items-center gap-space-xs px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs"><span class="material-symbols-outlined text-primary text-[14px]">memory</span><span class="">Queclink GV30CEU &amp; BLE CFS300B Integrated</span></div></div><div class="flex items-center gap-space-md"><div class="relative w-64 md:w-80"><span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-3 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Quick search plate / VIN / ID..." type="text"></div><div class="hidden lg:flex items-center gap-space-xs px-3 h-9 rounded-lg bg-surface-container-low text-on-surface-variant font-data-tabular text-data-tabular"><span class="material-symbols-outlined text-[16px] text-outline">calendar_today</span><span class="">Today: 00:00 - 23:59</span></div><div class="hidden md:flex items-center gap-space-xs px-2.5 h-9 rounded-lg bg-surface-container-low text-on-surface font-label-xs text-label-xs"><span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span><span class="text-on-surface-variant">Sync: Real-time MQTT</span><span class="text-outline font-data-tabular">• 3s ago</span></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-error text-on-error font-label-xs text-[10px] flex items-center justify-center font-bold">3</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden sm:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface">Budi Santoso</span><span class="font-label-xs text-[10px] text-on-surface-variant leading-none">Fleet Ops Head</span></div><span class="material-symbols-outlined text-outline text-[18px]">expand_more</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Sub-Header & Diagnostic Notice -->
+<div class="px-margin pt-space-md pb-space-lg flex flex-col gap-space-md">
+<!-- Breadcrumb & Title Area -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-label-xs text-label-xs text-outline mb-1 uppercase tracking-wider">
+<span class="">Diagnostics &amp; Integrity</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span class="text-primary font-bold">Telemetry Protocol Lab</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Device &amp; Data Health</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Hardware diagnostic center, protocol telemetry integrity, and wireless sensor health monitoring for fleet edge nodes.
+        </p>
+</div>
+<!-- Edge Nodes Bus Badges -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-space-xs px-2.5 py-1.5 rounded-lg bg-surface-container-low shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-xs text-label-xs text-on-surface font-semibold">HARDWARE TELEMETRY BUS</span>
+<span class="font-label-xs text-[10px] px-1.5 py-0.2 rounded bg-surface-container text-primary font-bold">MQTT v5.0 Live</span>
+</div>
+<div class="flex items-center gap-space-xs px-2.5 py-1.5 rounded-lg bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">sensors</span>
+<span class="font-label-xs text-label-xs text-on-surface font-medium">Queclink GV30CEU + CFS300B BLE 5.0</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-xs text-[10px] text-secondary font-bold uppercase">Active Pair</span>
+</div>
+</div>
+</div>
+<!-- Fleet Physical Policy Banner: Ignition Notice -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary text-[18px]">power_off</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-xs text-label-xs uppercase tracking-wider font-bold text-tertiary">Fleet Hardware Configuration Notice</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-xs text-[10px] font-semibold">IGNITION WIRE: DISCONNECTED</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5 leading-snug">
+<strong class="font-semibold text-on-surface">Ignition Wire: N/A</strong> — Physical line intentionally isolated per fleet battery preservation policy. Device ignition signal is <span class="text-tertiary font-medium">NOT AVAILABLE</span>. Motion &amp; trip state are computed exclusively via high-precision GPS Doppler vector &amp; 3-axis MEMS accelerometer.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 self-end sm:self-center">
+<span class="font-data-tabular text-label-xs text-outline bg-surface-container px-2 py-1 rounded">ACCEL: ±0.02G THRESHOLD</span>
+</div>
+</div>
+<!-- 4 Sub-Tabs Navigation Rail -->
+<div class="flex items-center justify-between overflow-x-auto gap-space-sm pt-space-xs">
+<div class="flex items-center gap-1.5 p-1 rounded-xl bg-surface-container-high/60">
+<a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]">satellite_alt</span>
+<span class="">GPS Quality</span>
+</a>
+<a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]">wifi_tethering</span>
+<span class="">Device Connectivity</span>
+</a>
+<a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]">network_check</span>
+<span class="">Data Activity</span>
+<span class="font-data-tabular text-[10px] px-1.5 py-0.2 rounded bg-surface-container text-on-surface font-semibold">99.91%</span>
+</a>
+<!-- Active Tab: Raw Protocol Logs -->
+<a class="px-space-md py-1.5 rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary font-bold shadow-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px] text-primary">terminal</span>
+<span class="">Raw Protocol Logs</span>
+<span class="flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-xs text-[9px] uppercase tracking-wider font-extrabold animate-pulse">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary"></span>
+            LIVE STREAMING
+          </span>
+</a>
+</div>
+<!-- Quick Metrics Ribbon -->
+<div class="hidden xl:flex items-center gap-space-lg text-right pl-4">
+<div>
+<div class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Queue Lag</div>
+<div class="font-data-tabular text-title-sm font-bold text-on-surface">12 ms</div>
+</div>
+<div>
+<div class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Parser Clock</div>
+<div class="font-data-tabular text-title-sm font-bold text-on-surface" id="clock-wib">10:18:13.288 WIB</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Protocol Inspector Area -->
+<div class="px-margin pb-space-xl flex flex-col gap-space-md">
+<!-- Top Filter & Stream Control Toolbar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<!-- Left Filters -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Live Stream Toggle -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-bright transition-all" id="stream-toggle-btn">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-bold">Stream Active</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-md font-label-xs text-label-xs text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">south</span>
+<span class="">Auto-Scroll: ON</span>
+</button>
+</div>
+<!-- Target Unit Selector -->
+<div class="relative min-w-[280px]">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px] text-primary">local_shipping</span>
+<div class="flex flex-col truncate flex-1 leading-tight">
+<span class="font-semibold text-on-surface text-label-md">B 9421 UEI</span>
+<span class="font-data-tabular text-[10px] text-outline truncate">IMEI: 864920048192031 • Hino 500 FL</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</div>
+</div>
+<!-- Descriptor Filter -->
+<div class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md">
+<span class="font-label-xs text-outline uppercase">Msg:</span>
+<span class="font-semibold">All Queclink Descriptors</span>
+<span class="material-symbols-outlined text-[16px] text-outline ml-1">filter_list</span>
+</div>
+<!-- Search Raw Hex / CRC -->
+<div class="relative flex-1 sm:w-64">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-[16px]">search</span>
+<input class="w-full h-8 pl-8 pr-3 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-data-tabular text-body-sm focus:outline-none focus:bg-surface-bright transition-colors" placeholder="Filter hex / descriptor / CRC / IMEI..." type="text">
+</div>
+</div>
+<!-- Right Action Items -->
+<div class="flex items-center gap-space-xs self-end xl:self-center">
+<span class="hidden md:inline font-data-tabular text-label-xs text-outline mr-2">Port: 8500 (GPRS TCP)</span>
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-1" title="Clear Console Memory">
+<span class="material-symbols-outlined text-[16px] text-outline">delete_sweep</span>
+<span class="hidden sm:inline">Clear</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-1" title="Copy Selected Payload">
+<span class="material-symbols-outlined text-[16px] text-outline">content_copy</span>
+<span class="hidden sm:inline">Copy Raw</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold hover:bg-primary transition-all flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span class="">Export .PCAP</span>
+</button>
+</div>
+</div>
+<!-- Split-Pane Technical Message Inspector (Wireshark / Developer IDE Style) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md min-h-[680px]">
+<!-- SISI KIRI: Monospace Raw Transmission Packet Feed (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col rounded-xl overflow-hidden bg-slate-950 text-slate-100 shadow-xl">
+<!-- Terminal Header Bar -->
+<div class="h-10 px-space-md bg-slate-900 flex items-center justify-between select-none">
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+</div>
+<span class="font-data-tabular text-[11px] text-slate-400 font-bold uppercase tracking-wider ml-2">Queclink GV300/GV30CEU Telemetry Stream</span>
+</div>
+<div class="flex items-center gap-space-md text-[11px] font-data-tabular text-slate-400">
+<span class="flex items-center gap-1 text-emerald-400">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+              2.4 KB/s
+            </span>
+<span class="hidden sm:inline">Enc: ASCII-Hex @ACK</span>
+</div>
+</div>
+<!-- Terminal Subheader Columns -->
+<div class="grid grid-cols-12 px-3 py-1.5 bg-slate-900/60 text-[10px] font-mono text-slate-400 uppercase tracking-wider font-semibold">
+<span class="col-span-3">Timestamp (WIB)</span>
+<span class="col-span-3">Message Type</span>
+<span class="col-span-4">Checksum / Status</span>
+<span class="col-span-2 text-right">Length</span>
+</div>
+<!-- Scrollable Monospace Packet Feed -->
+<div class="flex-1 overflow-y-auto divide-y divide-slate-900 text-xs font-mono select-text bg-slate-950/90">
+<!-- Packet 1: SELECTED +RESP:GTFRI -->
+<div class="p-3 bg-slate-900/90 hover:bg-slate-800/80 transition-colors cursor-pointer group flex flex-col gap-1.5">
+<div class="grid grid-cols-12 items-center">
+<span class="col-span-3 text-cyan-300 font-semibold">14:32:05.120</span>
+<span class="col-span-3">
+<span class="px-1.5 py-0.5 rounded bg-blue-900/60 text-blue-300 font-bold text-[10px]">+RESP:GTFRI</span>
+</span>
+<div class="col-span-4 flex items-center gap-1.5">
+<span class="px-1 py-0.2 rounded bg-emerald-950 text-emerald-400 text-[10px] font-bold">CRC: 0x7A (OK)</span>
+<span class="text-slate-400 text-[10px]">Seq: 0460</span>
+</div>
+<span class="col-span-2 text-right text-slate-400 text-[11px]">184 B</span>
+</div>
+<!-- Raw String Content -->
+<div class="text-[11px] leading-relaxed text-emerald-400/95 break-all pl-1 py-1 rounded bg-slate-950/60 font-mono tracking-tight">
+<span class="text-slate-500">&gt;</span> <span class="text-amber-300">+RESP:GTFRI</span>,02010B,864920048192031,,0,0,1,1,<span class="text-sky-300">58.2</span>,124,42.0,<span class="text-fuchsia-300">107.694110,-6.521820</span>,20241014143205,0460,0000,18F0,00002845,<span class="text-emerald-300 font-semibold">BLE:CFS300B;BATT:3.12V;RSSI:-68;HZ:1842;L:284.5</span>,0000$CRC:7A
+            </div>
+</div>
+<!-- Packet 2: +RESP:GTBPL (BLE Sensor Burst) -->
+<div class="p-3 hover:bg-slate-900 transition-colors cursor-pointer group flex flex-col gap-1.5">
+<div class="grid grid-cols-12 items-center">
+<span class="col-span-3 text-slate-400">14:31:18.042</span>
+<span class="col-span-3">
+<span class="px-1.5 py-0.5 rounded bg-purple-950 text-purple-300 font-bold text-[10px]">+RESP:GTBPL</span>
+</span>
+<div class="col-span-4 flex items-center gap-1.5">
+<span class="px-1 py-0.2 rounded bg-emerald-950 text-emerald-400 text-[10px] font-bold">CRC: 0xE2 (OK)</span>
+<span class="text-slate-500 text-[10px]">Burst 1/2</span>
+</div>
+<span class="col-span-2 text-right text-slate-400 text-[11px]">142 B</span>
+</div>
+<!-- Raw String Content -->
+<div class="text-[11px] leading-relaxed text-slate-300/90 break-all pl-1 py-1 rounded font-mono tracking-tight">
+<span class="text-slate-600">&gt;</span> <span class="text-purple-400">+RESP:GTBPL</span>,02010B,864920048192031,,0,0,1,1,0.0,0,42.0,107.412000,-6.388147,20241014143118,0460,0000,18F0,<span class="text-emerald-400 font-semibold">BLE:CFS300B;ID:F31A8B;HZ:1842.1;TEMP:28.4;BATT:3.12V;RSSI:-68</span>$CRC:E2
+            </div>
+</div>
+<!-- Packet 3: @ACK (Device Command Handshake) -->
+<div class="p-3 hover:bg-slate-900 transition-colors cursor-pointer group flex flex-col gap-1.5">
+<div class="grid grid-cols-12 items-center">
+<span class="col-span-3 text-slate-400">14:30:00.890</span>
+<span class="col-span-3">
+<span class="px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 font-bold text-[10px]">@ACK:CONF</span>
+</span>
+<div class="col-span-4 flex items-center gap-1.5">
+<span class="px-1 py-0.2 rounded bg-emerald-950 text-emerald-400 text-[10px] font-bold">CRC: 0x3F (OK)</span>
+<span class="text-slate-500 text-[10px]">Handshake</span>
+</div>
+<span class="col-span-2 text-right text-slate-400 text-[11px]">58 B</span>
+</div>
+<div class="text-[11px] leading-relaxed text-slate-400 break-all pl-1 py-1 font-mono tracking-tight">
+<span class="text-slate-600">&gt;</span> <span class="text-emerald-400">@ACK</span>,GTFRI,02010B,864920048192031,20241014143000,0001$CRC:3F
+            </div>
+</div>
+<!-- Packet 4: +RESP:GTEPN (Emergency Geofence/Power Alert) -->
+<div class="p-3 hover:bg-slate-900 transition-colors cursor-pointer group flex flex-col gap-1.5">
+<div class="grid grid-cols-12 items-center">
+<span class="col-span-3 text-slate-400">14:28:10.005</span>
+<span class="col-span-3">
+<span class="px-1.5 py-0.5 rounded bg-amber-950 text-amber-300 font-bold text-[10px]">+RESP:GTEPN</span>
+</span>
+<div class="col-span-4 flex items-center gap-1.5">
+<span class="px-1 py-0.2 rounded bg-emerald-950 text-emerald-400 text-[10px] font-bold">CRC: 0x8B (OK)</span>
+<span class="text-amber-400 text-[10px]">Boundary Hit</span>
+</div>
+<span class="col-span-2 text-right text-slate-400 text-[11px]">162 B</span>
+</div>
+<div class="text-[11px] leading-relaxed text-slate-300/80 break-all pl-1 py-1 font-mono tracking-tight">
+<span class="text-slate-600">&gt;</span> <span class="text-amber-400">+RESP:GTEPN</span>,02010B,864920048192031,,0,0,1,1,61.0,120,40.0,107.620100,-6.501100,20241014142810,0459,0000,18F0,GF:CKR_EAST_DC$CRC:8B
+            </div>
+</div>
+<!-- Packet 5: +RESP:GTINF (General System & Diagnostic) -->
+<div class="p-3 hover:bg-slate-900 transition-colors cursor-pointer group flex flex-col gap-1.5">
+<div class="grid grid-cols-12 items-center">
+<span class="col-span-3 text-slate-400">14:25:00.110</span>
+<span class="col-span-3">
+<span class="px-1.5 py-0.5 rounded bg-teal-950 text-teal-300 font-bold text-[10px]">+RESP:GTINF</span>
+</span>
+<div class="col-span-4 flex items-center gap-1.5">
+<span class="px-1 py-0.2 rounded bg-emerald-950 text-emerald-400 text-[10px] font-bold">CRC: 0x5C (OK)</span>
+<span class="text-slate-500 text-[10px]">Heartbeat 5m</span>
+</div>
+<span class="col-span-2 text-right text-slate-400 text-[11px]">118 B</span>
+</div>
+<div class="text-[11px] leading-relaxed text-slate-400 break-all pl-1 py-1 font-mono tracking-tight">
+<span class="text-slate-600">&gt;</span> <span class="text-teal-400">+RESP:GTINF</span>,02010B,864920048192031,,0201,114.12,0,1,0,24.6,100,0,0,20241014142500$CRC:5C
+            </div>
+</div>
+</div>
+<!-- Terminal Quick Action & Hex Dump Preview Switch -->
+<div class="p-2.5 bg-slate-900 flex items-center justify-between text-[11px] font-mono text-slate-400">
+<div class="flex items-center gap-space-sm">
+<span class="text-emerald-400 font-bold">● MQTT INGESTION ENGINE</span>
+<span class="">Broker: tcp://mqtt.fleet.internal:1883</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-slate-500">Payload encoding: UTF-8</span>
+<span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 text-[10px]">Buffer: 500 pkts</span>
+</div>
+</div>
+</div>
+<!-- SISI KANAN: Deep Field Decoded Inspector for Selected Packet (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Inspector Card Container -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md flex-1">
+<!-- Inspector Header -->
+<div class="flex items-center justify-between pb-space-sm">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">+RESP:GTFRI</span>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-xs text-label-xs font-bold">PARSER VALID</span>
+</div>
+<div class="font-label-xs text-label-xs text-outline mt-0.5">
+                Queclink @ACK Protocol Specification v2.4 • CRC-16 Valid (0x7A)
+              </div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high transition-colors" title="Reload Schema">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schema</span>
+</button>
+</div>
+</div>
+<!-- Unit Header Chip -->
+<div class="p- space-sm rounded-lg bg-surface-container-low flex items-center justify-between p-2.5">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-primary">pin</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">B 9421 UEI (Hino 500 FL)</div>
+<div class="font-data-tabular text-[11px] text-outline">IMEI: 864920048192031 | Protocol Port: 8500</div>
+</div>
+</div>
+<span class="font-data-tabular text-label-xs text-secondary font-bold">WIB: 14:32:05</span>
+</div>
+<!-- Section 1: Explicit Ignition Notification Card -->
+<div class="p-3 rounded-lg bg-surface-variant/40 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">power_off</span>
+                Hardware Ignition Wire Status
+              </span>
+<span class="font-data-tabular text-label-xs font-bold px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">
+                N/A (DISCONNECTED)
+              </span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant leading-relaxed">
+              Physical wire disconnected per fleet engineering standard. Ignition field is strictly <strong class="text-on-surface">NOT AVAILABLE</strong>. Speed vector (58.2 km/h) is determined via dual GPS Doppler &amp; 3D G-sensor.
+            </p>
+</div>
+<!-- Section 2: GPS & Constellation Metrics -->
+<div class="flex flex-col gap-2">
+<div class="font-label-xs text-label-xs uppercase tracking-wider text-outline font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">satellite</span>
+              Satellite &amp; Positional Fix
+            </div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-xs text-[10px] text-outline uppercase">Fix Mode</span>
+<span class="font-data-tabular text-body-sm font-bold text-on-surface flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  3D DGPS Fix
+                </span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-xs text-[10px] text-outline uppercase">Sats Visible</span>
+<span class="font-data-tabular text-body-sm font-bold text-on-surface mt-0.5">16 Satellites</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-xs text-[10px] text-outline uppercase">HDOP Precision</span>
+<span class="font-data-tabular text-body-sm font-bold text-emerald-600 mt-0.5">0.78 (Optimal)</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-xs text-[10px] text-outline uppercase">Doppler Speed</span>
+<span class="font-data-tabular text-body-sm font-bold text-primary mt-0.5">58.2 km/h</span>
+</div>
+</div>
+<!-- Coordinate Strip -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between text-body-sm font-data-tabular">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">explore</span>
+<span class="text-on-surface-variant">Coordinates:</span>
+<span class="font-bold text-on-surface">-6.521820, 107.694110</span>
+</div>
+<div class="text-outline text-[11px]">
+                HDG: 124° SE • ALT: 42.0m
+              </div>
+</div>
+</div>
+<!-- Section 3: BLE Fuel Sensor CFS300B Detailed Decoding -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="font-label-xs text-label-xs uppercase tracking-wider text-outline font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">bluetooth_searching</span>
+                CFS300B Wireless Fuel Probe Payload (BLE 5.0)
+              </div>
+<span class="font-label-xs text-[10px] text-secondary font-semibold bg-secondary-fixed/40 px-2 py-0.5 rounded">
+                CAPACITIVE SENSOR
+              </span>
+</div>
+<!-- BLE Hardware Stats Grid -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2.5">
+<div class="grid grid-cols-2 gap-space-sm pb-2 border-b border-surface-container">
+<div>
+<span class="font-label-xs text-[10px] text-outline uppercase">Peripheral MAC</span>
+<div class="font-data-tabular text-label-md font-bold text-on-surface mt-0.5">F3:1A:8B:20:91:04</div>
+</div>
+<div>
+<span class="font-label-xs text-[10px] text-outline uppercase">BLE RSSI Link Quality</span>
+<div class="font-data-tabular text-label-md font-bold text-emerald-600 mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">wifi</span>
+                    -68 dBm (Strong)
+                  </div>
+</div>
+</div>
+<!-- Sensor Internal Electrical & Physical Measurements -->
+<div class="grid grid-cols-3 gap-2">
+<div>
+<span class="font-label-xs text-[10px] text-outline uppercase">Coin Cell Volt</span>
+<div class="font-data-tabular text-title-sm font-bold text-on-surface mt-0.5">3.12 V</div>
+<span class="font-label-xs text-[10px] text-emerald-600">92% Health</span>
+</div>
+<div>
+<span class="font-label-xs text-[10px] text-outline uppercase">Resonance Freq</span>
+<div class="font-data-tabular text-title-sm font-bold text-primary mt-0.5">1,842.0 Hz</div>
+<span class="font-label-xs text-[10px] text-outline">Capacitive Tank</span>
+</div>
+<div>
+<span class="font-label-xs text-[10px] text-outline uppercase">Probe Temp</span>
+<div class="font-data-tabular text-title-sm font-bold text-on-surface mt-0.5">31.4 °C</div>
+<span class="font-label-xs text-[10px] text-outline">Compensated</span>
+</div>
+</div>
+<!-- Computed Fuel Volume Bar -->
+<div class="pt-2 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-[11px] font-bold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">local_gas_station</span>
+                    Calibrated Volume: 284.5 Liters
+                  </span>
+<span class="font-data-tabular text-label-xs font-bold text-secondary">71.1% of 400.0L</span>
+</div>
+<!-- Mini Progress Gauge -->
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full transition-all duration-500" style="width: 71.1%"></div>
+</div>
+<div class="flex items-center justify-between text-[10px] text-outline font-data-tabular pt-0.5">
+<span class="">Tank ID: TANK-1 (Main Belly)</span>
+<span class="text-emerald-600 font-semibold">Sensor Status: VALID (CRC OK)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Socket Network Transport Layer -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between text-body-sm font-data-tabular">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">lan</span>
+<span class="text-on-surface-variant">Socket:</span>
+<span class="text-on-surface font-semibold">10.240.12.88:8500</span>
+</div>
+<div class="flex items-center gap-3 text-label-xs">
+<span class="text-outline">Latency: <strong class="text-on-surface">2.1s</strong></span>
+<span class="text-outline">Buffer Queued: <strong class="text-on-surface">0 pkts</strong></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer / Interactive AT Command Simulator & Pipeline Diagnostics Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col xl:flex-row items-center justify-between gap-space-md">
+<!-- Left: Interactive Test AT Command Simulator -->
+<div class="w-full xl:w-2/3 flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
+<div class="flex items-center gap-2 shrink-0">
+<span class="material-symbols-outlined text-primary text-[18px]">terminal</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Test GPRS AT Command:</span>
+</div>
+<div class="relative flex-1">
+<input class="w-full h-9 pl-3 pr-20 rounded-lg bg-surface-container-low text-on-surface font-mono text-body-sm focus:outline-none focus:bg-surface-container transition-colors" type="text" value="AT+CFG? LLS_PARAMS">
+<button class="absolute right-1 top-1 bottom-1 px-3 rounded bg-primary text-on-primary font-label-xs text-label-xs font-semibold hover:bg-surface-tint transition-all flex items-center gap-1 shadow-sm">
+<span class="">Send</span>
+<span class="material-symbols-outlined text-[12px]">send</span>
+</button>
+</div>
+<span class="font-label-xs text-[10px] text-outline shrink-0">Simulated over UART GPRS Channel</span>
+</div>
+<!-- Right: Pipeline Real-time Diagnostic Counters -->
+<div class="w-full xl:w-auto flex items-center justify-between sm:justify-end gap-space-md border-t xl:border-t-0 pt-2 xl:pt-0 border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="font-label-xs text-[11px] text-outline uppercase font-semibold">Parsed:</span>
+<span class="font-data-tabular text-label-md font-bold text-on-surface">12,840</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1.5">
+<span class="font-label-xs text-[11px] text-outline uppercase font-semibold">Errors:</span>
+<span class="font-data-tabular text-label-md font-bold text-emerald-600">0</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1.5">
+<span class="font-label-xs text-[11px] text-outline uppercase font-semibold">CRC Mismatch:</span>
+<span class="font-data-tabular text-label-md font-bold text-emerald-600">0</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1.5">
+<span class="font-label-xs text-[11px] text-outline uppercase font-semibold">Dropped:</span>
+<span class="font-data-tabular text-label-md font-bold text-outline">0</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Dynamic Realtime Clock Simulation
+  function updateInspectorClock() {
+    const clockEl = document.getElementById('clock-wib');
+    if (!clockEl) return;
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const ms = String(now.getMilliseconds()).padStart(3, '0');
+    clockEl.textContent = `${hours}:${minutes}:${seconds}.${ms} WIB`;
+  }
+  setInterval(updateInspectorClock, 85);
+
+  // Toggle Live Streaming micro-interaction
+  const streamToggleBtn = document.getElementById('stream-toggle-btn');
+  if (streamToggleBtn) {
+    let isStreaming = true;
+    streamToggleBtn.addEventListener('click', () => {
+      isStreaming = !isStreaming;
+      if (isStreaming) {
+        streamToggleBtn.innerHTML = `
+          <span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+          <span class="font-bold">Stream Active</span>
+        `;
+      } else {
+        streamToggleBtn.innerHTML = `
+          <span class="w-2 h-2 rounded-full bg-outline"></span>
+          <span class="font-bold text-outline">Stream Paused</span>
+        `;
+      }
+    });
+  }
+</script></main></div>
+
+</body></html>

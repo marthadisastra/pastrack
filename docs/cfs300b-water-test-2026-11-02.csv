@@ -1,0 +1,3 @@
+waktu_wib,imei_gps,id_sensor,media,perkiraan_tinggi_air_persen,payload_field_35,hex_2_bytes_1,hex_2_bytes_2,catatan
+2026-11-02 14:15:01,861252080093110,E04E7A648774,air,15,0D090800E7,2312,231,Perkiraan tinggi air; stabil di laporan sekitar waktu ini
+2026-11-02 14:48:56,861252080093110,E04E7A648774,air,75,0B0AF10118,2801,280,Perkiraan tinggi air; stabil di laporan sekitar waktu ini

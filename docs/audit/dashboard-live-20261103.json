@@ -1,0 +1,53 @@
+{
+  "fleet/overview": {
+    "active_alerts": 0,
+    "devices_online": 0,
+    "fuel_coverage": 0,
+    "gps_coverage": 0,
+    "gps_no_fix": 0,
+    "gps_stale": 0,
+    "messages_today": 250,
+    "moving": 0,
+    "parse_errors_today": 67,
+    "stopped": 0,
+    "total_fleet": 1,
+    "unassigned": 0,
+    "unknown_speed": 0,
+    "valid_fuel_readings": 219,
+    "vehicles_offline": 1
+  },
+  "fleet/live": [
+    {
+      "active_alerts": 0,
+      "connectivity": "OFFLINE",
+      "device_id": 8,
+      "device_identifier": "\u2022\u2022\u2022\u20223110",
+      "device_last_received_at": "2026-11-03T06:23:29.821Z",
+      "device_model": "GV30CEU",
+      "fix_status": "valid",
+      "fuel_fresh": false,
+      "fuel_liters": "112.618",
+      "fuel_percent": "93.85",
+      "fuel_reading_at": null,
+      "fuel_received_at": "2026-11-03T06:23:29.821Z",
+      "fuel_validity": "valid",
+      "gps_fresh": false,
+      "gps_time": "2026-11-02T10:52:44Z",
+      "hdop": "1.00",
+      "heading_deg": "347.00",
+      "id": 1,
+      "latitude": "-6.1337890",
+      "longitude": "106.8723210",
+      "movement_status": "OFFLINE",
+      "physical_ignition_state": "NOT_INSTALLED",
+      "plate_number": "B 1307 KNQ",
+      "received_at": "2026-11-03T06:23:29.821Z",
+      "satellite_count": 19,
+      "sensor_last_received_at": "2026-11-03T06:23:29.821Z",
+      "sensor_last_status": "connected",
+      "sensor_status": "STALE",
+      "speed_kmh": "0.00",
+      "vehicle_name": "DT AXOR"
+    }
+  ]
+}

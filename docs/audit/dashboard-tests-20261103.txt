@@ -1,0 +1,166 @@
+TAP version 13
+# Subtest: sidebar matches all 17 exported menu entries in exact order, with no developer-only extras
+ok 1 - sidebar matches all 17 exported menu entries in exact order, with no developer-only extras
+  ---
+  duration_ms: 125.965083
+  type: 'test'
+  ...
+# Subtest: all 21 source layouts are packaged, preserving original table headers
+ok 2 - all 21 source layouts are packaged, preserving original table headers
+  ---
+  duration_ms: 250.737958
+  type: 'test'
+  ...
+# Subtest: all primary menus navigate to their own imported source and load empty real-data states without JS errors
+ok 3 - all primary menus navigate to their own imported source and load empty real-data states without JS errors
+  ---
+  duration_ms: 607.897584
+  type: 'test'
+  ...
+# Subtest: vehicle detail subroutes use distinct exported layouts
+ok 4 - vehicle detail subroutes use distinct exported layouts
+  ---
+  duration_ms: 198.680083
+  type: 'test'
+  ...
+# Subtest: runtime does not display exported demo plates or claim a 100% telemetry enrollment
+ok 5 - runtime does not display exported demo plates or claim a 100% telemetry enrollment
+  ---
+  duration_ms: 56.978208
+  type: 'test'
+  ...
+# Subtest: untrusted row labels are text, missing values stay N/A, and physical ignition stays NOT_INSTALLED
+ok 6 - untrusted row labels are text, missing values stay N/A, and physical ignition stays NOT_INSTALLED
+  ---
+  duration_ms: 40.600459
+  type: 'test'
+  ...
+# Subtest: keyset pagination and exported search filter call APIs, errors are visible
+ok 7 - keyset pagination and exported search filter call APIs, errors are visible
+  ---
+  duration_ms: 393.778625
+  type: 'test'
+  ...
+# Subtest: register unit uses the existing mutation API and preserves the exported action location
+ok 8 - register unit uses the existing mutation API and preserves the exported action location
+  ---
+  duration_ms: 67.75925
+  type: 'test'
+  ...
+# Subtest: unsupported hardware controls remain visibly disabled with an explicit reason
+ok 9 - unsupported hardware controls remain visibly disabled with an explicit reason
+  ---
+  duration_ms: 29.343
+  type: 'test'
+  ...
+# Subtest: initial dashboard also has the full inactive text/icon color state
+ok 10 - initial dashboard also has the full inactive text/icon color state
+  ---
+  duration_ms: 5.185667
+  type: 'test'
+  ...
+# Subtest: legacy Register Unit directs users to gateway vehicle linking
+ok 11 - legacy Register Unit directs users to gateway vehicle linking
+  ---
+  duration_ms: 57.93275
+  type: 'test'
+  ...
+# Subtest: Trip History uses an inclusive WIB date range and rejects reversed dates
+ok 12 - Trip History uses an inclusive WIB date range and rejects reversed dates
+  ---
+  duration_ms: 62.762791
+  type: 'test'
+  ...
+# Subtest: vehicle trip date range is retained when selecting a different vehicle
+ok 13 - vehicle trip date range is retained when selecting a different vehicle
+  ---
+  duration_ms: 82.50775
+  type: 'test'
+  ...
+# Subtest: Device Management connects a GPS through the vehicle selection dialog
+ok 14 - Device Management connects a GPS through the vehicle selection dialog
+  ---
+  duration_ms: 62.181541
+  type: 'test'
+  ...
+# Subtest: Sensor Management captures live Empty and Full, resumes draft, and saves capacity
+ok 15 - Sensor Management captures live Empty and Full, resumes draft, and saves capacity
+  ---
+  duration_ms: 98.1695
+  type: 'test'
+  ...
+# Subtest: stale sensor data is visible but cannot be captured
+ok 16 - stale sensor data is visible but cannot be captured
+  ---
+  duration_ms: 50.651333
+  type: 'test'
+  ...
+# Subtest: Fuel Monitoring omits tank specifications while retaining liters and percent columns
+ok 17 - Fuel Monitoring omits tank specifications while retaining liters and percent columns
+  ---
+  duration_ms: 41.325958
+  type: 'test'
+  ...
+# Subtest: realtime patches retain rows and unchanged cells without fetching or reloading the page
+ok 18 - realtime patches retain rows and unchanged cells without fetching or reloading the page
+  ---
+  duration_ms: 46.246208
+  type: 'test'
+  ...
+# Subtest: dashboard combines fuel, gateway status and exclusive distribution with functional filters
+ok 19 - dashboard combines fuel, gateway status and exclusive distribution with functional filters
+  ---
+  duration_ms: 83.638292
+  type: 'test'
+  ...
+# Subtest: dashboard SSE updates the distribution and activity feed without refetch
+ok 20 - dashboard SSE updates the distribution and activity feed without refetch
+  ---
+  duration_ms: 61.036375
+  type: 'test'
+  ...
+# Subtest: dashboard fleet/data filters, reset and legend work together without fetch
+ok 21 - dashboard fleet/data filters, reset and legend work together without fetch
+  ---
+  duration_ms: 84.688334
+  type: 'test'
+  ...
+# Subtest: dashboard controls explain actual device capabilities instead of dead layer buttons
+ok 22 - dashboard controls explain actual device capabilities instead of dead layer buttons
+  ---
+  duration_ms: 55.442625
+  type: 'test'
+  ...
+# Subtest: dashboard activity stays newest first after incremental insertion
+ok 23 - dashboard activity stays newest first after incremental insertion
+  ---
+  duration_ms: 64.407875
+  type: 'test'
+  ...
+# Subtest: dashboard read controls remain available for admin, operator and viewer
+ok 24 - dashboard read controls remain available for admin, operator and viewer
+  ---
+  duration_ms: 164.4265
+  type: 'test'
+  ...
+# Subtest: dashboard activity popups show labeled GPS and fuel details without raw JSON
+ok 25 - dashboard activity popups show labeled GPS and fuel details without raw JSON
+  ---
+  duration_ms: 67.201791
+  type: 'test'
+  ...
+# Subtest: detail formatting preserves identifiers and translates only status fields
+ok 26 - detail formatting preserves identifiers and translates only status fields
+  ---
+  duration_ms: 25.067625
+  type: 'test'
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 26
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3107.142875

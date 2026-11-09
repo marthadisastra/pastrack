@@ -1,0 +1,4 @@
+﻿"capacity_l","decoding_state","fuel_height_raw","id","identifier","is_active","model","plate_number","received_at","vehicle_id","volume_raw"
+"400.000","verified","530","1746","••••TR-2","1","CFS300B","B 9102 PTR","2026-10-31T05:00:00Z","3",""
+"400.000","verified","630","1745","••••TR-1","1","CFS300B","B 9101 PTR","2026-10-31T05:00:00Z","2",""
+"120.000","calibrated_raw_signal","497","1","••••8774","1","CFS300B","B 1307 KNQ","2026-11-03T11:58:14.382Z","1","49"

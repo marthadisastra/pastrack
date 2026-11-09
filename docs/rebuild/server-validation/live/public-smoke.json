@@ -1,0 +1,44 @@
+{
+  "public_smoke": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/me",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/vehicles",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/fleet/overview",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/fleet/live",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/devices/health",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/devices/raw-messages",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/sensors",
+      "status": 200
+    },
+    {
+      "path": "/assets/stitch.css",
+      "status": 200
+    }
+  ],
+  "positions": 428,
+  "raw_receipts": 2971,
+  "password_hashes_preserved": true,
+  "database": "pastrack_v2_20261103_r2"
+}

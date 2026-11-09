@@ -1,0 +1,813 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error":"#ba1a1a","secondary-fixed":"#cce5ff","tertiary":"#4b566a","tertiary-container":"#636e83","on-tertiary-fixed-variant":"#3c475a","on-error":"#ffffff","on-primary-container":"#eeefff","on-primary-fixed-variant":"#003ea8","surface-container":"#eceef0","on-surface-variant":"#434655","inverse-primary":"#b4c5ff","surface-container-highest":"#e0e3e5","tertiary-fixed":"#d8e3fb","outline-variant":"#c3c6d7","surface-container-high":"#e6e8ea","on-tertiary-container":"#ecf1ff","on-surface":"#191c1e","on-tertiary":"#ffffff","surface":"#f7f9fb","surface-container-lowest":"#ffffff","surface-dim":"#d8dadc","secondary-container":"#5bb8fe","on-primary-fixed":"#00174b","outline":"#737686","on-secondary-fixed":"#001d31","on-secondary-fixed-variant":"#004b73","background":"#f7f9fb","error-container":"#ffdad6","surface-bright":"#f7f9fb","tertiary-fixed-dim":"#bcc7de","primary":"#004ac6","inverse-on-surface":"#eff1f3","surface-container-low":"#f2f4f6","on-secondary":"#ffffff","surface-tint":"#0053db","on-error-container":"#93000a","primary-fixed-dim":"#b4c5ff","surface-variant":"#e0e3e5","primary-container":"#2563eb","secondary":"#006398","inverse-surface":"#2d3133","secondary-fixed-dim":"#93ccff","primary-fixed":"#dbe1ff","on-secondary-container":"#00476e","on-background":"#191c1e","on-tertiary-fixed":"#111c2d","on-primary":"#ffffff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter":"1rem","margin":"1.5rem","space-xl":"1.5rem","gutter-dense":"0.5rem","space-lg":"1rem","space-md":"0.75rem","space-sm":"0.5rem","margin-mobile":"0.75rem","space-xs":"0.25rem"},fontFamily:{"title-sm":["Inter"],"telemetry-metric":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"label-xs":["Inter"],"body-sm":["Inter"],"display":["Inter"],"data-tabular":["Inter"],"label-md":["Inter"],"headline-lg-mobile":["Inter"],"headline-lg":["Inter"]},fontSize:{"title-sm":["15px",{lineHeight:"20px",letterSpacing:"-0.005em",fontWeight:"600"}],"telemetry-metric":["22px",{lineHeight:"26px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-md":["18px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-xs":["11px",{lineHeight:"14px",letterSpacing:"0.03em",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"18px",fontWeight:"400"}],"display":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"data-tabular":["13px",{lineHeight:"18px",letterSpacing:"-0.005em",fontWeight:"500"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-lg-mobile":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-[#0b132b] border-r border-[#1e293b] z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex flex-col h-full overflow-hidden"><div class="h-14 px-space-md flex items-center gap-space-sm bg-[#0b132b] border-b border-[#1e293b]/70"><div class="w-7 h-7 bg-primary flex items-center justify-center rounded"><span class="material-symbols-outlined text-white text-[18px]">radar</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-title-sm text-title-sm text-white tracking-tight leading-none">PasTrack</span><span class="px-1.5 py-0.5 bg-primary text-white font-label-xs text-label-xs rounded font-bold">PRO</span></div><span class="font-label-xs text-label-xs text-slate-400 uppercase tracking-wider leading-none mt-0.5">Fleet Intelligence</span></div></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm space-y-space-md"><nav data-active-classes="bg-primary text-white font-bold shadow-sm"><div class="px-space-xs pb-space-xs"><span class="font-label-xs text-label-xs text-slate-400 font-semibold tracking-wider uppercase">Overview</span></div><div class="space-y-0.5"><a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="fleet-dashboard" href="#">Fleet Dashboard</a></div><div class="px-space-xs pt-space-sm pb-space-xs"><span class="font-label-xs text-label-xs text-slate-400 font-semibold tracking-wider uppercase">Fleet Management</span></div><div class="space-y-0.5"><a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="vehicles" href="#">Vehicles</a><a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="live-tracking" href="#">Live Tracking</a><a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="trip-history" href="#">Trip History</a><a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="geofences" href="#">Geofences</a></div><div class="px-space-xs pt-space-sm pb-space-xs"><span class="font-label-xs text-label-xs text-slate-400 font-semibold tracking-wider uppercase">Fuel Intelligence</span></div><div class="space-y-0.5"><a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="fuel-monitoring" href="#">Fuel Monitoring</a><a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="fuel-analytics" href="#">Fuel Analytics</a><a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="fuel-events" href="#">Fuel Events</a></div><div class="px-space-xs pt-space-sm pb-space-xs"><span class="font-label-xs text-label-xs text-slate-400 font-semibold tracking-wider uppercase">Device &amp; Data Health</span></div><div class="space-y-0.5"><a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="gps-quality" href="#">GPS Quality</a><a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="device-connectivity" href="#">Device Connectivity</a><a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="data-activity" href="#">Data Activity</a><a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="raw-protocol-logs" href="#">Raw Protocol Logs</a></div><div class="px-space-xs pt-space-sm pb-space-xs"><span class="font-label-xs text-label-xs text-slate-400 font-semibold tracking-wider uppercase">Monitoring &amp; Reports</span></div><div class="space-y-0.5"><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="alert-center" href="#"><span class="">Alert Center</span><span class="px-1.5 py-0.5 bg-error text-white font-label-xs text-label-xs rounded font-bold">5</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="reports" href="#"><span class="">Reports &amp; Fleet Audit</span><span class="px-1.5 py-0.5 bg-primary-container text-white font-label-xs text-label-xs rounded font-bold">NEW</span></a></div><div class="px-space-xs pt-space-sm pb-space-xs"><span class="font-label-xs text-label-xs text-slate-400 font-semibold tracking-wider uppercase">Settings &amp; Configuration</span></div><div class="space-y-0.5"><a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="device-management" href="#">Device Management</a><a aria-current="page" class="flex items-center px-space-sm py-1.5 rounded transition-colors bg-primary text-white font-bold shadow-sm" data-path="sensor-management" href="#">Sensor Management</a><a class="flex items-center px-space-sm py-1.5 rounded text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors font-body-sm text-body-sm" data-path="user-management" href="#">User Management</a></div></nav></div><div class="p-space-sm m-space-sm bg-[#162238] border border-[#233554] rounded"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary-container"></span><span class="font-label-xs text-label-xs text-white font-semibold">HARDWARE TELEMETRY</span></div><div class="mt-1 font-label-xs text-label-xs text-slate-400">Queclink GV30CEU / BLE CFS300B Integrated</div><div class="mt-1 flex items-center justify-between font-label-xs text-label-xs text-secondary-container"><span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[12px]">memory</span> CAN2.0</span><span class="font-data-tabular text-data-tabular text-slate-200 font-medium">v3.14.8</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin"><div class="flex items-center gap-space-md flex-1 max-w-2xl"><div class="relative flex items-center"><button class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low text-on-surface rounded font-body-sm text-body-sm hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[16px] text-secondary">departure_board</span><span class="font-medium">Semua Armada</span><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div><div class="relative flex-1"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-space-md py-1 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded placeholder-outline focus:outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Cari plat nomor / nama driver / IMEI / sensor ID..." type="search"></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low rounded"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-label-xs text-label-xs text-on-surface font-semibold tracking-wide">LIVE NOC SYNC:</span><span class="font-data-tabular text-data-tabular text-secondary font-medium">14:38:05 WIB</span></div><button class="relative p-1.5 text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-label-xs text-label-xs font-bold">3</span></button><div class="h-4 w-px bg-surface-container-high"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="relative"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary ring-1 ring-surface-container-lowest"></span></div><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm text-on-surface font-semibold leading-tight">Ahmad Fauzi</span><span class="font-label-xs text-label-xs text-on-surface-variant leading-tight">Dispatcher Lead NOC</span></div></div></div></header><main class="w-full pt-14 bg-surface px-margin"><div class="flex flex-col w-full">
+<!-- Top Operational Banner & Primary Action Header -->
+<section class="flex flex-col gap-space-md pb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 bg-primary-fixed text-on-primary-fixed font-label-xs text-label-xs rounded font-bold uppercase tracking-wider">HARDWARE METROLOGY</span>
+<span class="text-outline font-label-xs text-label-xs">•</span>
+<span class="font-label-xs text-label-xs text-tertiary">ISO/IEC 17025 Compliant Calibration</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-0.5">
+          Manajemen Sensor &amp; Kalibrasi Telemetri (Sensor Management)
+        </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-4xl mt-0.5">
+          Konfigurasi sensor bahan bakar (LLS Capacitive RS-485, Wireless BLE CFS300B, Ultrasonic), sensor temperatur kargo dingin, sensor pintu, dan parameter kalibrasi tangki armada.
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-xs shrink-0">
+<button class="flex items-center gap-1.5 px-space-md py-1.5 bg-surface-container-lowest text-on-surface font-body-sm text-body-sm rounded shadow-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">science</span>
+<span class="">Diagnostik Raw Signal</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 bg-surface-container-lowest text-on-surface font-body-sm text-body-sm rounded shadow-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">upload_file</span>
+<span class="">Impor Tabel Kalibrasi (CSV)</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 bg-primary-container text-on-primary font-body-sm text-body-sm rounded shadow-sm hover:bg-primary transition-colors font-medium" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span class="">+ Pasang Sensor Baru</span>
+</button>
+</div>
+</div>
+</section>
+<!-- KPI Metric Cards Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-lg">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline">Total Sensor Terhubung</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface">246</span>
+<span class="font-title-sm text-title-sm text-tertiary">Unit Aktif</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">sensors</span>
+</div>
+</div>
+<div class="mt-3 pt-space-xs bg-surface-container-low rounded-lg p-2 flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-on-surface-variant flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>142 Fuel Probe LLS</span>
+<span class="font-data-tabular text-data-tabular text-on-surface font-semibold">57.7%</span>
+</div>
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-on-surface-variant flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>58 BLE Temp &amp; Door</span>
+<span class="font-data-tabular text-data-tabular text-on-surface font-semibold">23.6%</span>
+</div>
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-on-surface-variant flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>46 Akselerometer &amp; Sudut</span>
+<span class="font-data-tabular text-data-tabular text-on-surface font-semibold">18.7%</span>
+</div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline">Kalibrasi Terverifikasi</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface">138 / 142</span>
+<span class="font-title-sm text-title-sm text-secondary">Tangki</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="flex items-center justify-between font-label-xs text-label-xs mb-1">
+<span class="text-on-surface-variant">In-Tolerance Band (±0.5%)</span>
+<span class="font-data-tabular text-data-tabular text-on-surface font-bold">97.2%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full rounded-full" style="width: 97.2%"></div>
+<div class="bg-error h-full" style="width: 2.8%"></div>
+</div>
+<div class="flex items-center justify-between mt-2 font-label-xs text-label-xs text-on-surface-variant">
+<span class="text-error font-medium">4 Unit Deviasi / Butuh Tera</span>
+<span class="text-outline font-data-tabular text-data-tabular">Std Metrologi OK</span>
+</div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline">Integritas Sinyal / BLE RSSI</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface">-68</span>
+<span class="font-title-sm text-title-sm text-tertiary">dBm Avg</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">wifi_tethering</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="flex items-center gap-1.5 font-label-xs text-label-xs text-secondary mb-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-semibold">Kualitas Koneksi Stabil (Good Link)</span>
+</div>
+<!-- RSSI Signal Spectrum Visualizer SVG -->
+<div class="w-full h-7 bg-surface-container-low rounded p-1 flex items-end gap-1">
+<div class="w-1/6 bg-secondary h-2/6 rounded-xs" title="-85 dBm"></div>
+<div class="w-1/6 bg-secondary h-3/6 rounded-xs" title="-78 dBm"></div>
+<div class="w-1/6 bg-secondary h-5/6 rounded-xs" title="-72 dBm"></div>
+<div class="w-1/6 bg-secondary h-full rounded-xs" title="-68 dBm"></div>
+<div class="w-1/6 bg-secondary h-4/6 rounded-xs" title="-65 dBm"></div>
+<div class="w-1/6 bg-secondary h-3/6 rounded-xs" title="-61 dBm"></div>
+</div>
+<div class="flex items-center justify-between font-label-xs text-label-xs text-on-surface-variant mt-1">
+<span class="">0 Kasus Interferensi BLE</span>
+<span class="font-data-tabular text-data-tabular text-outline">Loss Rate: 0.02%</span>
+</div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline">Sensor Anomali &amp; Tamper</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-telemetry-metric text-telemetry-metric text-error">2</span>
+<span class="font-title-sm text-title-sm text-error font-medium">Peringatan Kritis</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-lg bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+</div>
+<div class="mt-3 bg-error-container/40 p-2 rounded-lg flex flex-col gap-1">
+<div class="flex items-center gap-1.5 font-label-xs text-label-xs text-error font-medium">
+<span class="material-symbols-outlined text-[14px]">gif_2</span>
+<span class="">1 Indikasi Deviasi Frekuensi Hz (Tangki CPO)</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-xs text-label-xs text-error font-medium">
+<span class="material-symbols-outlined text-[14px]">battery_alert</span>
+<span class="">1 Baterai Probe BLE Menipis (&lt;20%)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter & Controls Toolbar -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<!-- Dropdown Filter Clusters -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-xs flex-1">
+<!-- Filter Kategori -->
+<div class="flex flex-col">
+<label class="font-label-xs text-label-xs text-outline font-semibold mb-1">KATEGORI SENSOR</label>
+<div class="relative">
+<select class="w-full h-9 pl-2.5 pr-8 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded appearance-none focus:outline-none focus:bg-surface-container-highest cursor-pointer">
+<option value="all">Semua Kategori (BBM, Suhu, Pintu)</option>
+<option selected="" value="fuel">BBM / Fuel Probe Capacitive</option>
+<option value="temp">Temperatur Cold-Chain</option>
+<option value="door">Door Sensor Reed Magnetic</option>
+<option value="axle">Axle Load Sensor (WIM)</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[18px]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Tipe Koneksi -->
+<div class="flex flex-col">
+<label class="font-label-xs text-label-xs text-outline font-semibold mb-1">TIPE KONEKSI &amp; PROTOKOL</label>
+<div class="relative">
+<select class="w-full h-9 pl-2.5 pr-8 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded appearance-none focus:outline-none focus:bg-surface-container-highest cursor-pointer">
+<option value="all">Semua Protokol (BLE, RS485, Hz)</option>
+<option value="ble">BLE Wireless 2.4GHz</option>
+<option value="rs485">RS-485 Modbus RTU</option>
+<option value="analog">Analog Voltage 0-5V</option>
+<option value="freq">Frekuensi Hz (LLS Pulse)</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[18px]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Status Sensor -->
+<div class="flex flex-col">
+<label class="font-label-xs text-label-xs text-outline font-semibold mb-1">STATUS KALIBRASI</label>
+<div class="relative">
+<select class="w-full h-9 pl-2.5 pr-8 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded appearance-none focus:outline-none focus:bg-surface-container-highest cursor-pointer">
+<option value="all">Semua Status (Normal / Perlu Tera)</option>
+<option value="calibrated">Normal Terkalibrasi</option>
+<option value="recalibration">Perlu Rekalibrasi / Deviasi</option>
+<option value="low-battery">Baterai Low (&lt;20%)</option>
+<option value="disconnected">Disconnected / Wire-Cut</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[18px]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Depo Operasional -->
+<div class="flex flex-col">
+<label class="font-label-xs text-label-xs text-outline font-semibold mb-1">DEPO OPERASIONAL</label>
+<div class="relative">
+<select class="w-full h-9 pl-2.5 pr-8 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded appearance-none focus:outline-none focus:bg-surface-container-highest cursor-pointer">
+<option value="all">Semua Depo Operasional</option>
+<option value="cakung">Depo Logistik Cakung, JKT</option>
+<option value="surabaya">Depo Rungkut, Surabaya</option>
+<option value="medan">Depo Belawan, Medan</option>
+<option value="semarang">Depo Tanjung Emas, Semarang</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[18px]">arrow_drop_down</span>
+</div>
+</div>
+</div>
+<!-- Action Utilities -->
+<div class="flex items-end gap-space-xs shrink-0 pt-2 xl:pt-0">
+<button class="h-9 px-space-md bg-surface-container text-on-surface font-body-sm text-body-sm rounded hover:bg-surface-container-high transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">download</span>
+<span class="">Unduh Rekap Sensor</span>
+</button>
+<button class="h-9 px-space-md bg-secondary-fixed text-on-secondary-fixed-variant font-body-sm text-body-sm rounded hover:bg-secondary-container transition-colors flex items-center gap-1.5 font-medium" type="button">
+<span class="material-symbols-outlined text-[16px]">flaky</span>
+<span class="">Pengujian Deviasi Massal</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive Master Table of Sensors -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden mb-space-lg">
+<!-- Table Header Bar with Live Search & Count -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-title-sm text-title-sm text-on-surface">Daftar Inventaris Sensor Aktif</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant font-label-xs text-label-xs rounded-full font-bold">6 Terpilih di Tampilan</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-[16px]">filter_list</span>
+<input class="h-8 pl-8 pr-3 text-body-sm font-body-sm bg-surface-container-lowest text-on-surface rounded placeholder-outline focus:outline-none focus:bg-surface-container-lowest w-64 shadow-xs" placeholder="Filter ID Sensor / Plat Kendaraan..." type="text">
+</div>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-container-lowest text-outline hover:text-on-surface transition-colors" title="Reload Live Telemetry">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+</button>
+</div>
+</div>
+<!-- Telematics Responsive Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-tertiary font-label-xs text-label-xs uppercase tracking-wider">
+<th class="py-2.5 px-space-md font-semibold">Kode Sensor &amp; Tipe</th>
+<th class="py-2.5 px-space-md font-semibold">Kendaraan &amp; Tangki</th>
+<th class="py-2.5 px-space-md font-semibold">Protokol &amp; Interface</th>
+<th class="py-2.5 px-space-md font-semibold text-right">Nilai Live &amp; Kalibrasi</th>
+<th class="py-2.5 px-space-md font-semibold text-right">Kesehatan Sensor</th>
+<th class="py-2.5 px-space-md font-semibold text-center">Status &amp; Anomali</th>
+<th class="py-2.5 px-space-md font-semibold text-right">Aksi Metrologi</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-body-sm font-body-sm text-on-surface">
+<!-- Row 1: CFS300B-BLE-0841 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">local_gas_station</span>
+</div>
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface">CFS300B-BLE-0841</span>
+<span class="font-label-xs text-label-xs text-tertiary">Queclink BLE Capacitive Fuel Probe</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-primary">B 9421 UEI</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Tangki Utama 400L • Hino 500 Wingbox</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-label-xs text-label-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-secondary">bluetooth</span>
+<span class="">BLE 2.4GHz Wireless</span>
+</div>
+<span class="font-data-tabular text-data-tabular text-outline text-[11px]">MAC: C4:7E:AB:91:20:41</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex flex-col items-end">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-metric text-[16px] text-on-surface">281.5 L</span>
+<span class="font-label-xs text-label-xs text-secondary font-semibold">(1,510 Hz)</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant">14-Titik (12 Okt 2024) • Deviasi ±0.4%</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-tabular text-data-tabular font-semibold text-on-surface">3.6V (94%)</span>
+<span class="font-label-xs text-label-xs text-secondary">RSSI: -64 dBm • Temp 29°C</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-xs text-label-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Normal Terkalibrasi
+              </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 text-secondary hover:bg-surface-container rounded transition-colors" title="Lihat Kurva Kalibrasi" type="button">
+<span class="material-symbols-outlined text-[18px]">ssid_chart</span>
+</button>
+<button class="p-1 text-tertiary hover:bg-surface-container rounded transition-colors" title="Live Hz Diagnostics" type="button">
+<span class="material-symbols-outlined text-[18px]">query_stats</span>
+</button>
+<button class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors" title="Pengaturan Lanjutan" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: OMNI-LLS-9811 -->
+<tr class="bg-surface-container-low/20 hover:bg-surface-container-low/70 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+</div>
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface">OMNI-LLS-9811</span>
+<span class="font-label-xs text-label-xs text-tertiary">Omnicomm LLS 30160 Capacitive RS-485</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-primary">B 9811 KTX</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Tangki Utama 350L • Mitsubishi Fuso</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-label-xs text-label-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-tertiary">cable</span>
+<span class="">RS-485 Modbus RTU</span>
+</div>
+<span class="font-data-tabular text-data-tabular text-outline text-[11px]">Port 1 • ID: 01 (19200 bps)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex flex-col items-end">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-metric text-[16px] text-on-surface">185.0 L</span>
+<span class="font-label-xs text-label-xs text-tertiary font-semibold">(1,120 Hz)</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant">12-Titik (02 Sep 2024) • Deviasi ±0.6%</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-tabular text-data-tabular font-semibold text-on-surface">Supply 12V DC</span>
+<span class="font-label-xs text-label-xs text-tertiary">Probe Temp: 32°C • Noise 0.1%</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-xs text-label-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Normal Terkalibrasi
+              </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 text-secondary hover:bg-surface-container rounded transition-colors" title="Lihat Kurva Kalibrasi" type="button">
+<span class="material-symbols-outlined text-[18px]">ssid_chart</span>
+</button>
+<button class="p-1 text-tertiary hover:bg-surface-container rounded transition-colors" title="Live Hz Diagnostics" type="button">
+<span class="material-symbols-outlined text-[18px]">query_stats</span>
+</button>
+<button class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors" title="Pengaturan Lanjutan" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: BLE-TEMP-0422 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">ac_unit</span>
+</div>
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface">BLE-TEMP-0422</span>
+<span class="font-label-xs text-label-xs text-tertiary">Wireless Cold Chain Temp &amp; Humidity</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-primary">L 8842 UZ</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Box Reefer Kargo Beku • Isuzu Giga</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-label-xs text-label-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-secondary">bluetooth</span>
+<span class="">BLE Wireless Broadcast</span>
+</div>
+<span class="font-data-tabular text-data-tabular text-outline text-[11px]">MAC: D1:22:90:BC:11:80</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex flex-col items-end">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-metric text-[16px] text-primary">-18.4°C</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">(64% RH)</span>
+</div>
+<span class="font-label-xs text-label-xs text-tertiary">Target -20.0°C (±2.0°C Toleransi)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-tabular text-data-tabular font-semibold text-on-surface">CR2477 (98%)</span>
+<span class="font-label-xs text-label-xs text-tertiary">RSSI: -72 dBm • Interval 10s</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-xs text-label-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Normal Aman
+              </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 text-primary hover:bg-surface-container rounded transition-colors" title="Log Grafik Temperatur Cold-Chain" type="button">
+<span class="material-symbols-outlined text-[18px]">thermostat</span>
+</button>
+<button class="p-1 text-tertiary hover:bg-surface-container rounded transition-colors" title="Export Log Suhu PDF" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+<button class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors" title="Pengaturan Lanjutan" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: US-FUEL-8730 (ANOMALY: DEV 2.4%) -->
+<tr class="bg-error-container/20 hover:bg-error-container/30 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+</div>
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-error">US-FUEL-8730</span>
+<span class="font-label-xs text-label-xs text-error">Ultrasonic External Clamp Sensor</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">BK 8730 MT</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Tangki CPO 24,000L • UD Quester Semi-Trailer</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-label-xs text-label-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-tertiary">electric_meter</span>
+<span class="">Analog Voltage (0-5V)</span>
+</div>
+<span class="font-data-tabular text-data-tabular text-outline text-[11px]">ADC Channel 2 • Gain 1.0</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex flex-col items-end">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-metric text-[16px] text-error">210 L</span>
+<span class="font-label-xs text-label-xs text-error font-semibold">(2.45V)</span>
+</div>
+<span class="font-label-xs text-label-xs text-error font-medium">10-Titik • Deviasi 2.4% (Melebihi Batas)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-tabular text-data-tabular font-semibold text-on-surface">Supply 24V DC</span>
+<span class="font-label-xs text-label-xs text-secondary font-medium">Kopling Akustik Gel: Normal</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-xs text-label-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+                Perlu Tera Ulang
+              </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 bg-error text-on-error rounded font-label-xs text-label-xs font-semibold hover:opacity-90 transition-opacity" type="button">
+                  Rekalibrasi
+                </button>
+<button class="p-1 text-tertiary hover:bg-surface-container rounded transition-colors" title="Log Sinyal Transduser" type="button">
+<span class="material-symbols-outlined text-[18px]">troubleshoot</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: CFS300B-BLE-0902 (ANOMALY: LOW BATTERY) -->
+<tr class="bg-surface-container-low/20 hover:bg-surface-container-low/70 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">battery_alert</span>
+</div>
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface">CFS300B-BLE-0902</span>
+<span class="font-label-xs text-label-xs text-error font-medium">Wireless Fuel Probe (Bat Low)</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-primary">D 9205 AB</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Tangki 300L • Isuzu Elf NMR 71</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-label-xs text-label-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-secondary">bluetooth</span>
+<span class="">BLE 2.4GHz Wireless</span>
+</div>
+<span class="font-data-tabular text-data-tabular text-outline text-[11px]">MAC: F2:89:11:80:CC:02</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex flex-col items-end">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-metric text-[16px] text-on-surface">140.0 L</span>
+<span class="font-label-xs text-label-xs text-tertiary">(960 Hz)</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant">12-Titik (15 Agu 2024) • Deviasi ±0.5%</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-tabular text-data-tabular font-bold text-error">2.9V (18% Low)</span>
+<span class="font-label-xs text-label-xs text-error">Ganti Baterai ≤ 14 Hari</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-xs text-label-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                Baterai Menipis
+              </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs font-semibold hover:bg-surface-container-highest transition-colors" type="button">
+                  Ganti Baterai
+                </button>
+<button class="p-1 text-tertiary hover:bg-surface-container rounded transition-colors" title="Lihat Kurva Kalibrasi" type="button">
+<span class="material-symbols-outlined text-[18px]">ssid_chart</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: MAG-DOOR-9114 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">sensor_door</span>
+</div>
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface">MAG-DOOR-9114</span>
+<span class="font-label-xs text-label-xs text-tertiary">Wireless Magnetic Reed Door Switch</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-primary">B 9114 PQU</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Pintu Belakang Blind Van • Gran Max</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-label-xs text-label-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-secondary">bluetooth</span>
+<span class="">BLE Hall-Effect Contact</span>
+</div>
+<span class="font-data-tabular text-data-tabular text-outline text-[11px]">MAC: A8:34:65:00:91:14</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-title-sm text-title-sm">Tertutup Rapat</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Kontak Magnetik ON (Sirkuit Loop Aman)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-tabular text-data-tabular font-semibold text-on-surface">3.0V (92%)</span>
+<span class="font-label-xs text-label-xs text-secondary">RSSI: -58 dBm • Anti-Tamper OK</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-xs text-label-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Normal Operasional
+              </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 text-secondary hover:bg-surface-container rounded transition-colors" title="Log Buka / Tutup Pintu" type="button">
+<span class="material-symbols-outlined text-[18px]">event_note</span>
+</button>
+<button class="p-1 text-tertiary hover:bg-surface-container rounded transition-colors" title="Pengujian Sinyal Tamper" type="button">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</button>
+<button class="p-1 text-outline hover:text-on-surface hover:bg-surface-container rounded transition-colors" title="Pengaturan Lanjutan" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+        Menampilkan <span class="font-semibold text-on-surface">1 - 6</span> dari <span class="font-semibold text-on-surface">246</span> sensor armada terdaftar
+      </div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 text-outline hover:text-on-surface bg-surface-container-lowest rounded font-label-xs text-label-xs font-semibold hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+          &lt; Sebelumnya
+        </button>
+<button class="px-2.5 py-1 bg-primary text-on-primary rounded font-label-xs text-label-xs font-semibold">1</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface bg-surface-container-lowest rounded font-label-xs text-label-xs font-semibold hover:bg-surface-container transition-colors">2</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface bg-surface-container-lowest rounded font-label-xs text-label-xs font-semibold hover:bg-surface-container transition-colors">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface bg-surface-container-lowest rounded font-label-xs text-label-xs font-semibold hover:bg-surface-container transition-colors">41</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface bg-surface-container-lowest rounded font-label-xs text-label-xs font-semibold hover:bg-surface-container transition-colors">
+          Berikutnya &gt;
+        </button>
+</div>
+</div>
+</section>
+<!-- Bottom Technical Section: Visualizer & Standar Metrologi IoT -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-md mb-space-lg">
+<!-- Visualizer Kurva Kalibrasi Multi-Titik (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary">ssid_chart</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Visualizer Kurva Kalibrasi Multi-Titik</h2>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mt-0.5">
+              Interpolasi matematis volume tangki (Liter) terhadap sinyal input sensor (Hz / mV). Terkalibrasi pada armada <span class="font-bold text-on-surface">B 9421 UEI</span>.
+            </p>
+</div>
+<button class="px-space-sm py-1 bg-surface-container-low text-on-surface font-label-xs text-label-xs rounded font-semibold hover:bg-surface-container-high transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">download</span>
+<span class="">Sertifikat Metrologi (PDF)</span>
+</button>
+</div>
+<!-- Inline Visual Graph (SVG Calibration Curve) -->
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg relative">
+<div class="flex items-center justify-between font-label-xs text-label-xs text-tertiary mb-1">
+<span class="">Volume (Liter): 0L s/d 400L Max Tank</span>
+<span class="">Sensor Input: 1,024 Hz s/d 2,048 Hz</span>
+</div>
+<svg class="w-full h-44 overflow-visible" viewBox="0 0 600 160">
+<!-- Grid Lines -->
+<line stroke="#E2E8F0" stroke-dasharray="2 2" stroke-width="1" x1="40" x2="580" y1="20" y2="20"></line>
+<line stroke="#E2E8F0" stroke-dasharray="2 2" stroke-width="1" x1="40" x2="580" y1="60" y2="60"></line>
+<line stroke="#E2E8F0" stroke-dasharray="2 2" stroke-width="1" x1="40" x2="580" y1="100" y2="100"></line>
+<line stroke="#CBD5E1" stroke-width="1" x1="40" x2="580" y1="140" y2="140"></line>
+<!-- Axis Labels Y -->
+<text class="text-[10px] fill-tertiary font-sans" text-anchor="end" x="32" y="24">400 L</text>
+<text class="text-[10px] fill-tertiary font-sans" text-anchor="end" x="32" y="64">280 L</text>
+<text class="text-[10px] fill-tertiary font-sans" text-anchor="end" x="32" y="104">140 L</text>
+<text class="text-[10px] fill-tertiary font-sans" text-anchor="end" x="32" y="144">0 L</text>
+<!-- Curve Area Fill -->
+<path d="M 60 140 L 100 128 L 160 112 L 220 95 L 300 76 L 380 58 L 460 40 L 540 22 L 540 140 Z" fill="#2563EB" fill-opacity="0.08"></path>
+<!-- Calibration Curve Line -->
+<path d="M 60 140 L 100 128 L 160 112 L 220 95 L 300 76 L 380 58 L 460 40 L 540 22" fill="none" stroke="#2563EB" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Multi-Point Calibration Nodes -->
+<circle cx="60" cy="140" fill="#004AC6" r="4"></circle>
+<circle cx="100" cy="128" fill="#004AC6" r="3.5"></circle>
+<circle cx="160" cy="112" fill="#004AC6" r="3.5"></circle>
+<circle cx="220" cy="95" fill="#004AC6" r="3.5"></circle>
+<circle cx="300" cy="76" fill="#004AC6" r="3.5"></circle>
+<circle cx="380" cy="58" fill="#006398" r="5" stroke="#ffffff" stroke-width="2"></circle>
+<circle cx="460" cy="40" fill="#004AC6" r="3.5"></circle>
+<circle cx="540" cy="22" fill="#004AC6" r="4"></circle>
+<!-- Current Real-Time Operating Marker (at 281.5 L / 1,510 Hz) -->
+<line stroke="#006398" stroke-dasharray="2 2" stroke-width="1.5" x1="380" x2="380" y1="20" y2="140"></line>
+<rect fill="#006398" height="16" rx="3" width="80" x="340" y="4"></rect>
+<text class="text-[9px] fill-on-primary font-bold" text-anchor="middle" x="380" y="15">LIVE: 281.5 L</text>
+</svg>
+</div>
+<!-- Mini Interpolation Data Strip -->
+<div class="grid grid-cols-4 gap-2 mt-3 text-center">
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-label-xs text-label-xs text-tertiary">Titik Kalibrasi</span>
+<span class="block font-data-tabular text-data-tabular font-bold text-on-surface">14 Titik Ukur</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-label-xs text-label-xs text-tertiary">Sensor Min (Hz)</span>
+<span class="block font-data-tabular text-data-tabular font-bold text-on-surface">1,024 Hz (0 L)</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-label-xs text-label-xs text-tertiary">Sensor Max (Hz)</span>
+<span class="block font-data-tabular text-data-tabular font-bold text-on-surface">2,048 Hz (400 L)</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-label-xs text-label-xs text-tertiary">R-Squared Regresi</span>
+<span class="block font-data-tabular text-data-tabular font-bold text-secondary">R² = 0.9998</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-sm mt-space-sm">
+<span class="font-label-xs text-label-xs text-outline">Formula Interpolasi: Polynomial Kuadratik Orde-2 (Akuntansi Tangki Cembung)</span>
+<button class="text-primary hover:underline font-label-xs text-label-xs font-semibold flex items-center gap-0.5" type="button">
+<span class="">Edit Formula Tangki</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Spesifikasi Rekomendasi Standar IoT (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="material-symbols-outlined text-[20px] text-tertiary">verified_user</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Standar Rekomendasi Metrologi IoT</h2>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant">
+          Ambang batas operasional telemetri sensor bahan bakar &amp; rantai dingin armada PasTrack.
+        </p>
+<!-- Standard Parameters List -->
+<div class="space-y-space-xs mt-space-md">
+<!-- Standard 1 -->
+<div class="p- space-sm bg-surface-container-low rounded-lg p-2.5 flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Toleransi Deviasi Kalibrasi</span>
+<span class="font-label-xs text-label-xs text-tertiary">Maksimal galat volume per pengisian flowmeter</span>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed-variant rounded font-data-tabular text-data-tabular font-bold">≤ ±0.5% - 1.0%</span>
+<span class="block font-label-xs text-label-xs text-secondary mt-0.5">Mandatori Legal Tera</span>
+</div>
+</div>
+<!-- Standard 2 -->
+<div class="p- space-sm bg-surface-container-low rounded-lg p-2.5 flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Queclink CFS300B Wireless BLE</span>
+<span class="font-label-xs text-label-xs text-tertiary">Ambang batas tegangan baterai &amp; RSSI receiver</span>
+</div>
+<div class="text-right">
+<span class="font-data-tabular text-data-tabular font-semibold text-on-surface">≥ 3.0V / ≥ -80 dBm</span>
+<span class="block font-label-xs text-label-xs text-tertiary mt-0.5">Life cycle 3-5 Tahun</span>
+</div>
+</div>
+<!-- Standard 3 -->
+<div class="p- space-sm bg-surface-container-low rounded-lg p-2.5 flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Omnicomm LLS RS-485 Modbus</span>
+<span class="font-label-xs text-label-xs text-tertiary">Resolusi sampling frekuensi (LLS Mode)</span>
+</div>
+<div class="text-right">
+<span class="font-data-tabular text-data-tabular font-semibold text-on-surface">12-Bit (4096 step)</span>
+<span class="block font-label-xs text-label-xs text-tertiary mt-0.5">Sampling rate 10Hz</span>
+</div>
+</div>
+<!-- Standard 4 -->
+<div class="p- space-sm bg-surface-container-low rounded-lg p-2.5 flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Kargo Reefer Farmasi &amp; Frozen</span>
+<span class="font-label-xs text-label-xs text-tertiary">Batas toleransi sensor suhu BLE cold chain</span>
+</div>
+<div class="text-right">
+<span class="font-data-tabular text-data-tabular font-semibold text-on-surface">±0.3°C Presisi</span>
+<span class="block font-label-xs text-label-xs text-primary mt-0.5">HACCP &amp; BPOM Standard</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-2.5 bg-primary/5 rounded-lg flex items-center gap-space-sm mt-space-md">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">info</span>
+<p class="font-label-xs text-label-xs text-on-surface-variant">
+          Peringatan: Seluruh kalibrasi ulang fisik tangki armada wajib menggunakan flowmeter tersertifikasi Direktorat Metrologi Kementerian Perdagangan RI.
+        </p>
+</div>
+</div>
+</section>
+</div></main></div>
+
+</body></html>

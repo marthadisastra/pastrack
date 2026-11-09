@@ -1,0 +1,4086 @@
+{
+  "database": "pastrack_v2_20261103_r2",
+  "schema_mode": "v2",
+  "tables": [
+    "alert_events",
+    "alert_notifications",
+    "alert_rules",
+    "audit_log",
+    "ble_connection_logs",
+    "ble_sensor_bindings",
+    "ble_sensor_status",
+    "ble_sensors",
+    "device_events",
+    "device_raw_messages",
+    "device_status_logs",
+    "event_acknowledgements",
+    "event_severities",
+    "event_types",
+    "fuel_calibration_points",
+    "fuel_calibrations",
+    "fuel_consumption_summaries",
+    "fuel_event_investigations",
+    "fuel_events",
+    "fuel_readings",
+    "fuel_sensors",
+    "fuel_tank_profiles",
+    "geofence_events",
+    "geofence_vehicle_assignments",
+    "geofences",
+    "gps_device_command_logs",
+    "gps_device_configurations",
+    "gps_device_models",
+    "gps_device_status",
+    "gps_devices",
+    "gps_positions",
+    "gps_quality_logs",
+    "latest_fuel_readings",
+    "latest_positions",
+    "message_processing_keys",
+    "migration_batches",
+    "migration_record_map",
+    "network_status_logs",
+    "notification_channels",
+    "notifications",
+    "permissions",
+    "protocol_message_types",
+    "protocol_parse_logs",
+    "protocol_parser_errors",
+    "push_jobs",
+    "push_tokens",
+    "remote_output_commands",
+    "report_jobs",
+    "report_schedules",
+    "role_permissions",
+    "roles",
+    "sensor_calibration_sessions",
+    "sensor_reported_names",
+    "sensor_telemetry",
+    "sessions",
+    "stage_migration_steps",
+    "tracking_geocode_cache",
+    "tracking_geocode_usage",
+    "tracking_places",
+    "trip_events",
+    "trip_segments",
+    "trips",
+    "user_roles",
+    "users",
+    "vehicle_assets",
+    "vehicle_assignments",
+    "vehicle_group_members",
+    "vehicle_groups",
+    "vehicle_inventory",
+    "vehicle_types",
+    "vehicles"
+  ],
+  "counts": [
+    {
+      "vehicles": 2,
+      "devices": 2,
+      "sensors": 2,
+      "positions": 14581,
+      "fuel_readings": 12752,
+      "rules": 0,
+      "alerts": 0,
+      "notifications": 1,
+      "push_jobs": 0
+    }
+  ],
+  "assignments": [
+    {
+      "total": 2,
+      "closed": "0"
+    }
+  ],
+  "fuel_validity": [
+    {
+      "validity": "out_of_range",
+      "n": 54
+    },
+    {
+      "validity": "uncalibrated",
+      "n": 1468
+    },
+    {
+      "validity": "valid",
+      "n": 11230
+    }
+  ],
+  "rules": [],
+  "ignition": [
+    {
+      "physical_ignition_state": "NOT_INSTALLED",
+      "n": 2
+    }
+  ],
+  "gps_identity": [
+    {
+      "total": 14581,
+      "missing_vehicle": "857",
+      "missing_time": "0"
+    }
+  ],
+  "fuel_time": [
+    {
+      "total": 12752,
+      "missing_time": "12752",
+      "missing_vehicle": "27"
+    }
+  ],
+  "overlaps": [
+    {
+      "n": 0
+    }
+  ],
+  "columns": [
+    {
+      "TABLE_NAME": "alert_events",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_events",
+      "COLUMN_NAME": "rule_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_events",
+      "COLUMN_NAME": "device_event_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "alert_events",
+      "COLUMN_NAME": "fuel_event_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "alert_events",
+      "COLUMN_NAME": "geofence_event_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "alert_events",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "alert_events",
+      "COLUMN_NAME": "state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_events",
+      "COLUMN_NAME": "raised_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_events",
+      "COLUMN_NAME": "acknowledged_by",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "alert_events",
+      "COLUMN_NAME": "acknowledged_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "alert_events",
+      "COLUMN_NAME": "resolved_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "alert_events",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_events",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_notifications",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_notifications",
+      "COLUMN_NAME": "alert_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_notifications",
+      "COLUMN_NAME": "channel_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_notifications",
+      "COLUMN_NAME": "notification_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "alert_notifications",
+      "COLUMN_NAME": "state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_notifications",
+      "COLUMN_NAME": "attempts",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_notifications",
+      "COLUMN_NAME": "sent_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "alert_notifications",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_notifications",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_rules",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_rules",
+      "COLUMN_NAME": "name",
+      "COLUMN_TYPE": "varchar(120)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_rules",
+      "COLUMN_NAME": "event_type_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "alert_rules",
+      "COLUMN_NAME": "severity_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_rules",
+      "COLUMN_NAME": "configuration",
+      "COLUMN_TYPE": "longtext",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_rules",
+      "COLUMN_NAME": "version",
+      "COLUMN_TYPE": "bigint(20)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_rules",
+      "COLUMN_NAME": "enabled",
+      "COLUMN_TYPE": "tinyint(1)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_rules",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "alert_rules",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "audit_log",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "audit_log",
+      "COLUMN_NAME": "actor_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "audit_log",
+      "COLUMN_NAME": "actor_legacy",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "audit_log",
+      "COLUMN_NAME": "action",
+      "COLUMN_TYPE": "varchar(30)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "audit_log",
+      "COLUMN_NAME": "entity",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "audit_log",
+      "COLUMN_NAME": "entity_id",
+      "COLUMN_TYPE": "bigint(20)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "audit_log",
+      "COLUMN_NAME": "before_data",
+      "COLUMN_TYPE": "longtext",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "audit_log",
+      "COLUMN_NAME": "after_data",
+      "COLUMN_TYPE": "longtext",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "audit_log",
+      "COLUMN_NAME": "request_id",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "audit_log",
+      "COLUMN_NAME": "occurred_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "audit_log",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "audit_log",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_connection_logs",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_connection_logs",
+      "COLUMN_NAME": "sensor_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_connection_logs",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_connection_logs",
+      "COLUMN_NAME": "raw_message_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "ble_connection_logs",
+      "COLUMN_NAME": "event_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "ble_connection_logs",
+      "COLUMN_NAME": "received_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_connection_logs",
+      "COLUMN_NAME": "status",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_connection_logs",
+      "COLUMN_NAME": "source",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_connection_logs",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_connection_logs",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensors",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensors",
+      "COLUMN_NAME": "sensor_identifier",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensors",
+      "COLUMN_NAME": "mac",
+      "COLUMN_TYPE": "char(12)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "ble_sensors",
+      "COLUMN_NAME": "model",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensors",
+      "COLUMN_NAME": "is_active",
+      "COLUMN_TYPE": "tinyint(1)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensors",
+      "COLUMN_NAME": "deleted_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "ble_sensors",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensors",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_bindings",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_bindings",
+      "COLUMN_NAME": "sensor_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_bindings",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_bindings",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_bindings",
+      "COLUMN_NAME": "starts_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_bindings",
+      "COLUMN_NAME": "ends_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_bindings",
+      "COLUMN_NAME": "binding_source",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_bindings",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_bindings",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_status",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_status",
+      "COLUMN_NAME": "sensor_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_status",
+      "COLUMN_NAME": "telemetry_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_status",
+      "COLUMN_NAME": "last_received_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_status",
+      "COLUMN_NAME": "status",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_status",
+      "COLUMN_NAME": "stale_after_seconds",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_status",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "ble_sensor_status",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_events",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_events",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_events",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_events",
+      "COLUMN_NAME": "raw_message_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_events",
+      "COLUMN_NAME": "event_type_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_events",
+      "COLUMN_NAME": "severity_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_events",
+      "COLUMN_NAME": "event_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_events",
+      "COLUMN_NAME": "received_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_events",
+      "COLUMN_NAME": "raw_code",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_events",
+      "COLUMN_NAME": "raw_value",
+      "COLUMN_TYPE": "text",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_events",
+      "COLUMN_NAME": "source",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_events",
+      "COLUMN_NAME": "verification_state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_events",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_events",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_raw_messages",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_raw_messages",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_raw_messages",
+      "COLUMN_NAME": "legacy_id",
+      "COLUMN_TYPE": "bigint(20)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_raw_messages",
+      "COLUMN_NAME": "identifier_encrypted",
+      "COLUMN_TYPE": "varbinary(255)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_raw_messages",
+      "COLUMN_NAME": "message_type_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_raw_messages",
+      "COLUMN_NAME": "protocol_version",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_raw_messages",
+      "COLUMN_NAME": "payload",
+      "COLUMN_TYPE": "longblob",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_raw_messages",
+      "COLUMN_NAME": "payload_sha256",
+      "COLUMN_TYPE": "binary(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_raw_messages",
+      "COLUMN_NAME": "received_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_raw_messages",
+      "COLUMN_NAME": "device_time",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_raw_messages",
+      "COLUMN_NAME": "spool_receipt_id",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_raw_messages",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_raw_messages",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_status_logs",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_status_logs",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_status_logs",
+      "COLUMN_NAME": "raw_message_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_status_logs",
+      "COLUMN_NAME": "event_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_status_logs",
+      "COLUMN_NAME": "status_code_raw",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_status_logs",
+      "COLUMN_NAME": "decoded_status",
+      "COLUMN_TYPE": "longtext",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "device_status_logs",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "device_status_logs",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_acknowledgements",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_acknowledgements",
+      "COLUMN_NAME": "event_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_acknowledgements",
+      "COLUMN_NAME": "user_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_acknowledgements",
+      "COLUMN_NAME": "acknowledged_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_acknowledgements",
+      "COLUMN_NAME": "note",
+      "COLUMN_TYPE": "text",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "event_acknowledgements",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_acknowledgements",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_severities",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_severities",
+      "COLUMN_NAME": "code",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_severities",
+      "COLUMN_NAME": "rank",
+      "COLUMN_TYPE": "smallint(6)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_severities",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_severities",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_types",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_types",
+      "COLUMN_NAME": "code",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_types",
+      "COLUMN_NAME": "description",
+      "COLUMN_TYPE": "varchar(255)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_types",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "event_types",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibrations",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibrations",
+      "COLUMN_NAME": "fuel_sensor_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibrations",
+      "COLUMN_NAME": "tank_profile_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_calibrations",
+      "COLUMN_NAME": "revision",
+      "COLUMN_TYPE": "bigint(20)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibrations",
+      "COLUMN_NAME": "media",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibrations",
+      "COLUMN_NAME": "input_quantity",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibrations",
+      "COLUMN_NAME": "input_unit",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_calibrations",
+      "COLUMN_NAME": "output_unit",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibrations",
+      "COLUMN_NAME": "approval_state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibrations",
+      "COLUMN_NAME": "approved_by",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_calibrations",
+      "COLUMN_NAME": "effective_from",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_calibrations",
+      "COLUMN_NAME": "effective_to",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_calibrations",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibrations",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibration_points",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibration_points",
+      "COLUMN_NAME": "calibration_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibration_points",
+      "COLUMN_NAME": "input_value",
+      "COLUMN_TYPE": "decimal(16,6)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibration_points",
+      "COLUMN_NAME": "output_value",
+      "COLUMN_TYPE": "decimal(12,3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibration_points",
+      "COLUMN_NAME": "legacy_percent",
+      "COLUMN_TYPE": "decimal(5,2)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_calibration_points",
+      "COLUMN_NAME": "evidence",
+      "COLUMN_TYPE": "text",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_calibration_points",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_calibration_points",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_consumption_summaries",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_consumption_summaries",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_consumption_summaries",
+      "COLUMN_NAME": "period_start",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_consumption_summaries",
+      "COLUMN_NAME": "period_end",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_consumption_summaries",
+      "COLUMN_NAME": "consumed_l",
+      "COLUMN_TYPE": "decimal(14,3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_consumption_summaries",
+      "COLUMN_NAME": "distance_m",
+      "COLUMN_TYPE": "decimal(14,3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_consumption_summaries",
+      "COLUMN_NAME": "coverage_percent",
+      "COLUMN_TYPE": "decimal(5,2)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_consumption_summaries",
+      "COLUMN_NAME": "algorithm_version",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_consumption_summaries",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_consumption_summaries",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_events",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_events",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_events",
+      "COLUMN_NAME": "fuel_sensor_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_events",
+      "COLUMN_NAME": "start_reading_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_events",
+      "COLUMN_NAME": "end_reading_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_events",
+      "COLUMN_NAME": "event_type",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_events",
+      "COLUMN_NAME": "delta_l",
+      "COLUMN_TYPE": "decimal(12,3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_events",
+      "COLUMN_NAME": "event_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_events",
+      "COLUMN_NAME": "rule_version",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_events",
+      "COLUMN_NAME": "confidence",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_events",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_events",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_event_investigations",
+      "COLUMN_NAME": "event_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_event_investigations",
+      "COLUMN_NAME": "state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_event_investigations",
+      "COLUMN_NAME": "note",
+      "COLUMN_TYPE": "text",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_event_investigations",
+      "COLUMN_NAME": "receipt_number",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_event_investigations",
+      "COLUMN_NAME": "station_name",
+      "COLUMN_TYPE": "varchar(200)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_event_investigations",
+      "COLUMN_NAME": "receipt_liters",
+      "COLUMN_TYPE": "decimal(12,3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_event_investigations",
+      "COLUMN_NAME": "receipt_amount",
+      "COLUMN_TYPE": "decimal(16,2)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_event_investigations",
+      "COLUMN_NAME": "row_version",
+      "COLUMN_TYPE": "bigint(20)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_event_investigations",
+      "COLUMN_NAME": "updated_by",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_event_investigations",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "fuel_sensor_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "telemetry_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "calibration_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "reading_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "received_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "raw_measurement",
+      "COLUMN_TYPE": "decimal(16,6)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "raw_unit",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "fuel_liters",
+      "COLUMN_TYPE": "decimal(12,3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "fuel_percent",
+      "COLUMN_TYPE": "decimal(5,2)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "validity",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "invalid_reason",
+      "COLUMN_TYPE": "varchar(120)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_readings",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_sensors",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_sensors",
+      "COLUMN_NAME": "sensor_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_sensors",
+      "COLUMN_NAME": "tank_profile_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_sensors",
+      "COLUMN_NAME": "measurement_unit",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_sensors",
+      "COLUMN_NAME": "decoding_state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_sensors",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_sensors",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_tank_profiles",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_tank_profiles",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_tank_profiles",
+      "COLUMN_NAME": "name",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_tank_profiles",
+      "COLUMN_NAME": "capacity_l",
+      "COLUMN_TYPE": "decimal(12,3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_tank_profiles",
+      "COLUMN_NAME": "revision",
+      "COLUMN_TYPE": "bigint(20)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_tank_profiles",
+      "COLUMN_NAME": "effective_from",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_tank_profiles",
+      "COLUMN_NAME": "effective_to",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "fuel_tank_profiles",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "fuel_tank_profiles",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofences",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofences",
+      "COLUMN_NAME": "name",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofences",
+      "COLUMN_NAME": "shape",
+      "COLUMN_TYPE": "varchar(16)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofences",
+      "COLUMN_NAME": "center_lat",
+      "COLUMN_TYPE": "decimal(9,6)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "geofences",
+      "COLUMN_NAME": "center_lon",
+      "COLUMN_TYPE": "decimal(10,6)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "geofences",
+      "COLUMN_NAME": "radius_m",
+      "COLUMN_TYPE": "decimal(12,3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "geofences",
+      "COLUMN_NAME": "polygon_geojson",
+      "COLUMN_TYPE": "longtext",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "geofences",
+      "COLUMN_NAME": "is_active",
+      "COLUMN_TYPE": "tinyint(1)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofences",
+      "COLUMN_NAME": "row_version",
+      "COLUMN_TYPE": "bigint(20)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofences",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofences",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofence_events",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofence_events",
+      "COLUMN_NAME": "geofence_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofence_events",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofence_events",
+      "COLUMN_NAME": "position_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofence_events",
+      "COLUMN_NAME": "transition",
+      "COLUMN_TYPE": "varchar(16)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofence_events",
+      "COLUMN_NAME": "event_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofence_events",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofence_events",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofence_vehicle_assignments",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofence_vehicle_assignments",
+      "COLUMN_NAME": "geofence_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofence_vehicle_assignments",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofence_vehicle_assignments",
+      "COLUMN_NAME": "starts_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofence_vehicle_assignments",
+      "COLUMN_NAME": "ends_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "geofence_vehicle_assignments",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "geofence_vehicle_assignments",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_devices",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_devices",
+      "COLUMN_NAME": "imei",
+      "COLUMN_TYPE": "varchar(20)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_devices",
+      "COLUMN_NAME": "model_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_devices",
+      "COLUMN_NAME": "firmware_version",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_devices",
+      "COLUMN_NAME": "protocol_version",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_devices",
+      "COLUMN_NAME": "is_active",
+      "COLUMN_TYPE": "tinyint(1)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_devices",
+      "COLUMN_NAME": "deleted_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_devices",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_devices",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_command_logs",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_command_logs",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_command_logs",
+      "COLUMN_NAME": "requested_by",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_device_command_logs",
+      "COLUMN_NAME": "command_code",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_command_logs",
+      "COLUMN_NAME": "payload_redacted",
+      "COLUMN_TYPE": "text",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_command_logs",
+      "COLUMN_NAME": "state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_command_logs",
+      "COLUMN_NAME": "sent_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_device_command_logs",
+      "COLUMN_NAME": "acknowledged_raw_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_device_command_logs",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_command_logs",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_configurations",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_configurations",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_configurations",
+      "COLUMN_NAME": "version",
+      "COLUMN_TYPE": "bigint(20)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_configurations",
+      "COLUMN_NAME": "configuration",
+      "COLUMN_TYPE": "longtext",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_configurations",
+      "COLUMN_NAME": "applied_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_device_configurations",
+      "COLUMN_NAME": "confirmed_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_device_configurations",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_configurations",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_models",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_models",
+      "COLUMN_NAME": "manufacturer",
+      "COLUMN_TYPE": "varchar(80)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_models",
+      "COLUMN_NAME": "model",
+      "COLUMN_TYPE": "varchar(80)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_models",
+      "COLUMN_NAME": "protocol_family",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_models",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_models",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_status",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_status",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_status",
+      "COLUMN_NAME": "last_received_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_device_status",
+      "COLUMN_NAME": "connectivity",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_status",
+      "COLUMN_NAME": "last_raw_message_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_device_status",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_device_status",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "assignment_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "raw_message_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "sample_index",
+      "COLUMN_TYPE": "smallint(6)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "gps_time",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "received_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "device_send_time",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "latitude",
+      "COLUMN_TYPE": "decimal(10,7)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "longitude",
+      "COLUMN_TYPE": "decimal(11,7)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "speed_kmh",
+      "COLUMN_TYPE": "decimal(6,2)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "heading_deg",
+      "COLUMN_TYPE": "decimal(5,2)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "altitude_m",
+      "COLUMN_TYPE": "decimal(10,2)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "satellite_count",
+      "COLUMN_TYPE": "smallint(6)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "hdop",
+      "COLUMN_TYPE": "decimal(6,2)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "gnss_accuracy_raw",
+      "COLUMN_TYPE": "varchar(16)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "fix_status",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "validation_state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_positions",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_quality_logs",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_quality_logs",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_quality_logs",
+      "COLUMN_NAME": "position_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_quality_logs",
+      "COLUMN_NAME": "raw_message_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_quality_logs",
+      "COLUMN_NAME": "satellite_count",
+      "COLUMN_TYPE": "smallint(6)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_quality_logs",
+      "COLUMN_NAME": "hdop",
+      "COLUMN_TYPE": "decimal(6,2)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_quality_logs",
+      "COLUMN_NAME": "fix_status",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_quality_logs",
+      "COLUMN_NAME": "event_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "gps_quality_logs",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "gps_quality_logs",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "latest_fuel_readings",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "latest_fuel_readings",
+      "COLUMN_NAME": "fuel_sensor_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "latest_fuel_readings",
+      "COLUMN_NAME": "reading_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "latest_fuel_readings",
+      "COLUMN_NAME": "last_valid_reading_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "latest_fuel_readings",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "latest_fuel_readings",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "latest_positions",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "latest_positions",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "latest_positions",
+      "COLUMN_NAME": "position_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "latest_positions",
+      "COLUMN_NAME": "gps_time",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "latest_positions",
+      "COLUMN_NAME": "received_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "latest_positions",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "latest_positions",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "message_processing_keys",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "message_processing_keys",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "message_processing_keys",
+      "COLUMN_NAME": "message_key",
+      "COLUMN_TYPE": "binary(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "message_processing_keys",
+      "COLUMN_NAME": "canonical_raw_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "message_processing_keys",
+      "COLUMN_NAME": "parser_version",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "message_processing_keys",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "message_processing_keys",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_batches",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_batches",
+      "COLUMN_NAME": "source_schema",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_batches",
+      "COLUMN_NAME": "snapshot_reference",
+      "COLUMN_TYPE": "varchar(255)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_batches",
+      "COLUMN_NAME": "state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_batches",
+      "COLUMN_NAME": "source_watermarks",
+      "COLUMN_TYPE": "longtext",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_batches",
+      "COLUMN_NAME": "validation_report",
+      "COLUMN_TYPE": "longtext",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "migration_batches",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_batches",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_record_map",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_record_map",
+      "COLUMN_NAME": "batch_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_record_map",
+      "COLUMN_NAME": "source_table",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_record_map",
+      "COLUMN_NAME": "source_pk",
+      "COLUMN_TYPE": "varchar(128)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_record_map",
+      "COLUMN_NAME": "target_table",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_record_map",
+      "COLUMN_NAME": "target_pk",
+      "COLUMN_TYPE": "bigint(20)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "migration_record_map",
+      "COLUMN_NAME": "source_checksum",
+      "COLUMN_TYPE": "binary(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_record_map",
+      "COLUMN_NAME": "state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_record_map",
+      "COLUMN_NAME": "issue",
+      "COLUMN_TYPE": "text",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "migration_record_map",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "migration_record_map",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "network_status_logs",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "network_status_logs",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "network_status_logs",
+      "COLUMN_NAME": "raw_message_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "network_status_logs",
+      "COLUMN_NAME": "event_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "network_status_logs",
+      "COLUMN_NAME": "mcc",
+      "COLUMN_TYPE": "varchar(4)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "network_status_logs",
+      "COLUMN_NAME": "mnc",
+      "COLUMN_TYPE": "varchar(4)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "network_status_logs",
+      "COLUMN_NAME": "lac",
+      "COLUMN_TYPE": "varchar(8)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "network_status_logs",
+      "COLUMN_NAME": "cell_id",
+      "COLUMN_TYPE": "varchar(16)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "network_status_logs",
+      "COLUMN_NAME": "rssi",
+      "COLUMN_TYPE": "smallint(6)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "network_status_logs",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "network_status_logs",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "notifications",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "notifications",
+      "COLUMN_NAME": "user_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "notifications",
+      "COLUMN_NAME": "title",
+      "COLUMN_TYPE": "varchar(120)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "notifications",
+      "COLUMN_NAME": "body",
+      "COLUMN_TYPE": "varchar(1000)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "notifications",
+      "COLUMN_NAME": "target",
+      "COLUMN_TYPE": "varchar(200)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "notifications",
+      "COLUMN_NAME": "read_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "notifications",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "notifications",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "notification_channels",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "notification_channels",
+      "COLUMN_NAME": "user_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "notification_channels",
+      "COLUMN_NAME": "channel",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "notification_channels",
+      "COLUMN_NAME": "configuration_encrypted",
+      "COLUMN_TYPE": "blob",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "notification_channels",
+      "COLUMN_NAME": "enabled",
+      "COLUMN_TYPE": "tinyint(1)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "notification_channels",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "notification_channels",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "permissions",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "permissions",
+      "COLUMN_NAME": "code",
+      "COLUMN_TYPE": "varchar(80)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "permissions",
+      "COLUMN_NAME": "description",
+      "COLUMN_TYPE": "varchar(255)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "permissions",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "permissions",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_message_types",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_message_types",
+      "COLUMN_NAME": "family",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_message_types",
+      "COLUMN_NAME": "code",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_message_types",
+      "COLUMN_NAME": "supported",
+      "COLUMN_TYPE": "tinyint(1)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_message_types",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_message_types",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_parser_errors",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_parser_errors",
+      "COLUMN_NAME": "parse_log_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_parser_errors",
+      "COLUMN_NAME": "code",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_parser_errors",
+      "COLUMN_NAME": "field_path",
+      "COLUMN_TYPE": "varchar(120)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "protocol_parser_errors",
+      "COLUMN_NAME": "detail_redacted",
+      "COLUMN_TYPE": "text",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_parser_errors",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_parser_errors",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_parse_logs",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_parse_logs",
+      "COLUMN_NAME": "raw_message_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_parse_logs",
+      "COLUMN_NAME": "parser_version",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_parse_logs",
+      "COLUMN_NAME": "parse_status",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_parse_logs",
+      "COLUMN_NAME": "processing_status",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_parse_logs",
+      "COLUMN_NAME": "fields",
+      "COLUMN_TYPE": "longtext",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "protocol_parse_logs",
+      "COLUMN_NAME": "processed_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "protocol_parse_logs",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "protocol_parse_logs",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_jobs",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_jobs",
+      "COLUMN_NAME": "notification_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_jobs",
+      "COLUMN_NAME": "push_token_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_jobs",
+      "COLUMN_NAME": "state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_jobs",
+      "COLUMN_NAME": "attempts",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_jobs",
+      "COLUMN_NAME": "next_attempt",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_jobs",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_jobs",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_tokens",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_tokens",
+      "COLUMN_NAME": "user_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_tokens",
+      "COLUMN_NAME": "session_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_tokens",
+      "COLUMN_NAME": "token_hash",
+      "COLUMN_TYPE": "char(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_tokens",
+      "COLUMN_NAME": "token_encrypted",
+      "COLUMN_TYPE": "blob",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_tokens",
+      "COLUMN_NAME": "client_id",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_tokens",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "push_tokens",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "remote_output_commands",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "remote_output_commands",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "remote_output_commands",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "remote_output_commands",
+      "COLUMN_NAME": "requested_by",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "remote_output_commands",
+      "COLUMN_NAME": "serial",
+      "COLUMN_TYPE": "char(4)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "remote_output_commands",
+      "COLUMN_NAME": "request_key",
+      "COLUMN_TYPE": "char(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "remote_output_commands",
+      "COLUMN_NAME": "desired_active",
+      "COLUMN_TYPE": "tinyint(1)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "remote_output_commands",
+      "COLUMN_NAME": "state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "remote_output_commands",
+      "COLUMN_NAME": "sent_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "remote_output_commands",
+      "COLUMN_NAME": "acknowledged_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "remote_output_commands",
+      "COLUMN_NAME": "acknowledged_raw_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "remote_output_commands",
+      "COLUMN_NAME": "expires_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "remote_output_commands",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "remote_output_commands",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_jobs",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_jobs",
+      "COLUMN_NAME": "requested_by",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_jobs",
+      "COLUMN_NAME": "report_type",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_jobs",
+      "COLUMN_NAME": "filters",
+      "COLUMN_TYPE": "longtext",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_jobs",
+      "COLUMN_NAME": "state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_jobs",
+      "COLUMN_NAME": "artifact_path",
+      "COLUMN_TYPE": "varchar(255)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "report_jobs",
+      "COLUMN_NAME": "expires_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "report_jobs",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_jobs",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_schedules",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_schedules",
+      "COLUMN_NAME": "user_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_schedules",
+      "COLUMN_NAME": "report_type",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_schedules",
+      "COLUMN_NAME": "filters",
+      "COLUMN_TYPE": "longtext",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_schedules",
+      "COLUMN_NAME": "timezone",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_schedules",
+      "COLUMN_NAME": "schedule",
+      "COLUMN_TYPE": "varchar(120)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_schedules",
+      "COLUMN_NAME": "enabled",
+      "COLUMN_TYPE": "tinyint(1)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_schedules",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "report_schedules",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "roles",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "roles",
+      "COLUMN_NAME": "code",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "roles",
+      "COLUMN_NAME": "name",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "roles",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "roles",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "role_permissions",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "role_permissions",
+      "COLUMN_NAME": "role_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "role_permissions",
+      "COLUMN_NAME": "permission_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "role_permissions",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "role_permissions",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "sensor_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "fuel_sensor_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "quantity",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "capacity_l",
+      "COLUMN_TYPE": "decimal(12,3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "started_by",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "started_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "phase_started_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "phase_telemetry_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "empty_raw",
+      "COLUMN_TYPE": "decimal(14,3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "empty_telemetry_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "empty_evidence",
+      "COLUMN_TYPE": "longtext",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "full_raw",
+      "COLUMN_TYPE": "decimal(14,3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "full_telemetry_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "calibration_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "error_message",
+      "COLUMN_TYPE": "varchar(255)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_calibration_sessions",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_reported_names",
+      "COLUMN_NAME": "sensor_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_reported_names",
+      "COLUMN_NAME": "reported_name",
+      "COLUMN_TYPE": "varchar(80)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_reported_names",
+      "COLUMN_NAME": "reported_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_reported_names",
+      "COLUMN_NAME": "received_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_reported_names",
+      "COLUMN_NAME": "raw_message_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "sensor_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "binding_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "raw_message_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "accessory_index",
+      "COLUMN_TYPE": "smallint(6)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "sensor_time",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "received_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "accessory_type",
+      "COLUMN_TYPE": "smallint(6)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "accessory_model",
+      "COLUMN_TYPE": "smallint(6)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "append_mask",
+      "COLUMN_TYPE": "varchar(8)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "payload_hex",
+      "COLUMN_TYPE": "varchar(256)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "tilt_raw",
+      "COLUMN_TYPE": "smallint(6)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "fuel_height_raw",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "volume_raw",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "battery_mv",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "battery_percent",
+      "COLUMN_TYPE": "decimal(5,2)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "temperature_c",
+      "COLUMN_TYPE": "decimal(6,2)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "rssi",
+      "COLUMN_TYPE": "smallint(6)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "validation_state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "decoder_version",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sensor_telemetry",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sessions",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sessions",
+      "COLUMN_NAME": "user_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sessions",
+      "COLUMN_NAME": "token_hash",
+      "COLUMN_TYPE": "char(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sessions",
+      "COLUMN_NAME": "auth_version",
+      "COLUMN_TYPE": "bigint(20)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sessions",
+      "COLUMN_NAME": "expires_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sessions",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "sessions",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "stage_migration_steps",
+      "COLUMN_NAME": "version",
+      "COLUMN_TYPE": "varchar(128)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "stage_migration_steps",
+      "COLUMN_NAME": "step",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "stage_migration_steps",
+      "COLUMN_NAME": "checksum",
+      "COLUMN_TYPE": "char(64)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "tracking_geocode_cache",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_geocode_cache",
+      "COLUMN_NAME": "cell_key",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_geocode_cache",
+      "COLUMN_NAME": "name",
+      "COLUMN_TYPE": "varchar(200)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_geocode_cache",
+      "COLUMN_NAME": "address",
+      "COLUMN_TYPE": "varchar(1000)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_geocode_cache",
+      "COLUMN_NAME": "result_type",
+      "COLUMN_TYPE": "varchar(40)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_geocode_cache",
+      "COLUMN_NAME": "distance_m",
+      "COLUMN_TYPE": "double",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "tracking_geocode_cache",
+      "COLUMN_NAME": "expires_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_geocode_cache",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_geocode_cache",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_geocode_usage",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_geocode_usage",
+      "COLUMN_NAME": "usage_day",
+      "COLUMN_TYPE": "date",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_geocode_usage",
+      "COLUMN_NAME": "requests",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_geocode_usage",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_geocode_usage",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_places",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_places",
+      "COLUMN_NAME": "name",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_places",
+      "COLUMN_NAME": "latitude",
+      "COLUMN_TYPE": "decimal(9,6)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_places",
+      "COLUMN_NAME": "longitude",
+      "COLUMN_TYPE": "decimal(10,6)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_places",
+      "COLUMN_NAME": "radius_m",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_places",
+      "COLUMN_NAME": "row_version",
+      "COLUMN_TYPE": "bigint(20)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_places",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "tracking_places",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "start_position_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "end_position_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "started_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "ended_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "distance_m",
+      "COLUMN_TYPE": "decimal(14,3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "driving_seconds",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "stopped_seconds",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "max_speed_kmh",
+      "COLUMN_TYPE": "decimal(6,2)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "average_speed_kmh",
+      "COLUMN_TYPE": "decimal(6,2)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "calculation_version",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "confidence",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trips",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_events",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_events",
+      "COLUMN_NAME": "trip_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_events",
+      "COLUMN_NAME": "position_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "trip_events",
+      "COLUMN_NAME": "event_kind",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_events",
+      "COLUMN_NAME": "event_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_events",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_events",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_segments",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_segments",
+      "COLUMN_NAME": "trip_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_segments",
+      "COLUMN_NAME": "start_position_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_segments",
+      "COLUMN_NAME": "end_position_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_segments",
+      "COLUMN_NAME": "segment_kind",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_segments",
+      "COLUMN_NAME": "distance_m",
+      "COLUMN_TYPE": "decimal(14,3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_segments",
+      "COLUMN_NAME": "duration_seconds",
+      "COLUMN_TYPE": "int(11)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_segments",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "trip_segments",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "username",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "password_hash",
+      "COLUMN_TYPE": "varchar(255)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "password_algo",
+      "COLUMN_TYPE": "varchar(30)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "auth_version",
+      "COLUMN_TYPE": "bigint(20)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "is_active",
+      "COLUMN_TYPE": "tinyint(1)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "deleted_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "full_name",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "email",
+      "COLUMN_TYPE": "varchar(190)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "phone",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "job_title",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "department",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "row_version",
+      "COLUMN_TYPE": "bigint(20)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "password_changed_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "last_login_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "users",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "user_roles",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "user_roles",
+      "COLUMN_NAME": "user_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "user_roles",
+      "COLUMN_NAME": "role_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "user_roles",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "user_roles",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicles",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicles",
+      "COLUMN_NAME": "plate_number",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicles",
+      "COLUMN_NAME": "vehicle_name",
+      "COLUMN_TYPE": "varchar(120)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicles",
+      "COLUMN_NAME": "fleet_code",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicles",
+      "COLUMN_NAME": "vehicle_type_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicles",
+      "COLUMN_NAME": "physical_ignition_state",
+      "COLUMN_TYPE": "varchar(24)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicles",
+      "COLUMN_NAME": "deleted_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicles",
+      "COLUMN_NAME": "row_version",
+      "COLUMN_TYPE": "bigint(20)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicles",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicles",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "make_model",
+      "COLUMN_TYPE": "varchar(120)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "production_year",
+      "COLUMN_TYPE": "smallint(6)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "vin",
+      "COLUMN_TYPE": "varchar(60)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "engine_number",
+      "COLUMN_TYPE": "varchar(60)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "fuel_type",
+      "COLUMN_TYPE": "varchar(40)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "ownership",
+      "COLUMN_TYPE": "varchar(80)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "owner_name",
+      "COLUMN_TYPE": "varchar(120)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "color",
+      "COLUMN_TYPE": "varchar(60)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "transmission",
+      "COLUMN_TYPE": "varchar(60)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "seats",
+      "COLUMN_TYPE": "smallint(6)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "insurance_provider",
+      "COLUMN_TYPE": "varchar(120)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "insurance_policy",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "insurance_expiry",
+      "COLUMN_TYPE": "date",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "tax_expiry",
+      "COLUMN_TYPE": "date",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "registration_expiry",
+      "COLUMN_TYPE": "date",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "notes",
+      "COLUMN_TYPE": "text",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "photo_mime",
+      "COLUMN_TYPE": "varchar(20)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "photo_updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_assets",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_assignments",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_assignments",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_assignments",
+      "COLUMN_NAME": "device_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_assignments",
+      "COLUMN_NAME": "starts_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_assignments",
+      "COLUMN_NAME": "ends_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_assignments",
+      "COLUMN_NAME": "provenance",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_assignments",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_assignments",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_groups",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_groups",
+      "COLUMN_NAME": "name",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_groups",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_groups",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_group_members",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_group_members",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_group_members",
+      "COLUMN_NAME": "group_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_group_members",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_group_members",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_inventory",
+      "COLUMN_NAME": "vehicle_id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_inventory",
+      "COLUMN_NAME": "vehicle_code",
+      "COLUMN_TYPE": "varchar(64)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_inventory",
+      "COLUMN_NAME": "tank_capacity_l",
+      "COLUMN_TYPE": "decimal(12,3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_inventory",
+      "COLUMN_NAME": "photo",
+      "COLUMN_TYPE": "mediumblob",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_inventory",
+      "COLUMN_NAME": "photo_mime",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_inventory",
+      "COLUMN_NAME": "photo_updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "YES"
+    },
+    {
+      "TABLE_NAME": "vehicle_inventory",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_types",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "bigint(20) unsigned",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_types",
+      "COLUMN_NAME": "code",
+      "COLUMN_TYPE": "varchar(32)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_types",
+      "COLUMN_NAME": "name",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_types",
+      "COLUMN_NAME": "created_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    },
+    {
+      "TABLE_NAME": "vehicle_types",
+      "COLUMN_NAME": "updated_at",
+      "COLUMN_TYPE": "datetime(3)",
+      "IS_NULLABLE": "NO"
+    }
+  ],
+  "health_18087": {
+    "fuel_decoder": "raw_cfs300b_supported_units_unverified",
+    "queued": 0,
+    "schema": "v2",
+    "status": "ok"
+  },
+  "health_18089": {
+    "physical_ignition": "NOT_INSTALLED",
+    "read_only": false,
+    "schema": "v2",
+    "status": "ok"
+  }
+}

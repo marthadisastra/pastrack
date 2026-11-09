@@ -1,0 +1,2 @@
+﻿"plate_number","vehicle_name","fleet_code","device_model","device_identifier","movement_status","speed_kmh","physical_ignition_state","fuel_liters","fuel_percent","fuel_validity","sensor_status","ignition_status","ignition_source","ignition_reported_at","gps_time","device_last_received_at"
+"B 1307 KNQ","DT AXOR","FLT-003","GV30CEU","••••3110","OFFLINE","0.00","NOT_INSTALLED","2.703","2.25","valid","STALE","OFF","GTIGL","2026-11-03T11:01:09Z","2026-11-03T11:58:13Z","2026-11-03T11:58:14.382Z"

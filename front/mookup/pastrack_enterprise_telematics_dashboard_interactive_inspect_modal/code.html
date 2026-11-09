@@ -1,0 +1,1196 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_dashboard" name="shell-type">
+<title>PASTRACK Fleet Telematics OS - Master Layout</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+            slate: {
+              850: '#151e2e',
+              950: '#090d16'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Inter', sans-serif;
+      }
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .blueprint-grid {
+      background-size: 24px 24px;
+      background-image: 
+        linear-gradient(to right, rgba(226, 232, 240, 0.7) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(226, 232, 240, 0.7) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen">
+<svg aria-hidden="true" class="inline-defs-container" style="position:absolute;width:0;height:0;overflow:hidden"></svg>
+<!-- ============================================================== -->
+<!-- MAIN SHELL WRAPPER                                             -->
+<!-- ============================================================== -->
+<div class="flex-1 flex flex-col min-w-0 bg-slate-50 w-full min-h-screen">
+<!-- ============================================================== -->
+<!-- MAIN CONTENT AREA                                              -->
+<!-- ============================================================== -->
+<main class="flex-1 custom-scrollbar p-6 bg-slate-50 flex flex-col">
+<!-- Content Canvas Container -->
+<div class="w-full flex-1 flex flex-col gap-5">
+<!-- Header Section with Fleet Status Summary & Controls -->
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2.5">
+<h1 class="text-base font-bold text-slate-900 tracking-tight">Operations Telematics Dashboard</h1>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-blue-50 text-blue-700 border border-blue-200/80">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+          GV30CEU + CFS300B DUAL-LINK
+        </span>
+</div>
+<div class="flex flex-wrap items-center gap-2 text-xs text-slate-500 font-mono">
+<span class="">48 Monitored:</span>
+<span class="inline-flex items-center gap-1 font-semibold text-emerald-700"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>31 Moving</span>
+<span class="text-slate-300">•</span>
+<span class="inline-flex items-center gap-1 font-semibold text-cyan-600"><span class="w-2 h-2 rounded-full bg-cyan-500"></span>11 Idling</span>
+<span class="text-slate-300">•</span>
+<span class="inline-flex items-center gap-1 font-semibold text-slate-500"><span class="w-2 h-2 rounded-full bg-slate-400"></span>5 Parked</span>
+<span class="text-slate-300">•</span>
+<span class="inline-flex items-center gap-1 font-semibold text-rose-600"><span class="w-2 h-2 rounded-full bg-rose-600 animate-ping"></span>1 Offline Alert</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="inline-flex items-center rounded-lg border border-slate-200 bg-slate-50 p-0.5 text-xs font-medium">
+<button class="px-2.5 py-1 rounded-md bg-white text-blue-700 font-semibold shadow-sm border border-slate-200/60" type="button">Real-time Live</button>
+<button class="px-2.5 py-1 text-slate-600 hover:text-slate-900 transition-colors" type="button">12H</button>
+<button class="px-2.5 py-1 text-slate-600 hover:text-slate-900 transition-colors" type="button">24H</button>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-medium shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-slate-500">tune</span>
+<span class="">Filters</span>
+</button>
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-blue-50 border border-blue-200 text-blue-700 hover:bg-blue-100 text-xs font-medium transition-colors" title="Refresh Hardware Telemetry" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+</button>
+</div>
+</div>
+<!-- Top KPI Telemetry Cards (4 Metrics) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+<!-- KPI 1: Operational State -->
+<div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-semibold uppercase text-slate-500 tracking-wider">Fleet Operational State</span>
+<span class="w-7 h-7 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">local_shipping</span></span>
+</div>
+<div class="flex items-baseline gap-2 mb-1.5">
+<span class="text-2xl font-bold font-mono text-slate-900">48</span>
+<span class="text-xs text-slate-500 font-medium">Total Active Units</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden flex mb-2">
+<div class="bg-emerald-500 h-full" style="width: 64.5%" title="Moving (64.5%)"></div>
+<div class="bg-cyan-500 h-full" style="width: 23%" title="Idling (23%)"></div>
+<div class="bg-slate-400 h-full" style="width: 10.5%" title="Parked (10.5%)"></div>
+<div class="bg-rose-500 h-full" style="width: 2%" title="Offline (2%)"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-mono text-slate-500">
+<span class="text-emerald-700 font-semibold">31 Moving (64.5%)</span>
+<span class="">11 Idle • 5 Parked</span>
+</div>
+</div>
+<!-- KPI 2: Fuel Dynamic Volume (CFS300B BLE) -->
+<div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-semibold uppercase text-slate-500 tracking-wider">CFS300B BLE Fuel Tank</span>
+<span class="w-7 h-7 rounded-lg bg-cyan-50 text-cyan-700 flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">local_gas_station</span></span>
+</div>
+<div class="flex items-baseline gap-2 mb-1.5">
+<span class="text-2xl font-bold font-mono text-slate-900">14,820 <span class="text-base font-normal text-slate-500">L</span></span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded text-[10px] font-mono font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">86.4% AVG</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden mb-2">
+<div class="bg-cyan-600 h-full rounded-full" style="width: 86.4%"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-mono text-slate-500">
+<span class="">Avg Burn: <strong class="text-slate-800 font-semibold">28.2 L/100km</strong></span>
+<span class="text-emerald-700 font-semibold">0 Uncalibrated</span>
+</div>
+</div>
+<!-- KPI 3: Hardware Incidents (Queclink Gateway) -->
+<div class="bg-white p-4 rounded-xl border border-rose-200/80 shadow-sm flex flex-col justify-between bg-rose-50/20">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-semibold uppercase text-rose-700 tracking-wider">Hardware Telemetry Alerts</span>
+<span class="w-7 h-7 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">warning</span></span>
+</div>
+<div class="flex items-baseline gap-2 mb-1.5">
+<span class="text-2xl font-bold font-mono text-rose-600">3</span>
+<span class="text-xs font-semibold text-rose-700">Active Flagged Events</span>
+</div>
+<div class="flex items-center gap-1.5 text-[11px] font-mono text-slate-600 mb-2 truncate">
+<span class="px-1 rounded bg-rose-600 text-white font-bold text-[9px]">P1</span>
+<span class="truncate font-semibold text-rose-700">HAULER-04 Siphon Drop (-48.2L)</span>
+</div>
+<div class="flex items-center justify-between text-[11px] font-mono text-slate-500 border-t border-rose-100 pt-1.5">
+<span class="text-slate-700">1 Geofence Breach</span>
+<span class="text-slate-500">1 Probe Low RSSI</span>
+</div>
+</div>
+<!-- KPI 4: Gateway Connectivity & GNSS Fix -->
+<div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-semibold uppercase text-slate-500 tracking-wider">Gateway Ingestion SLA</span>
+<span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">satellite_alt</span></span>
+</div>
+<div class="flex items-baseline gap-2 mb-1.5">
+<span class="text-2xl font-bold font-mono text-slate-900">99.8%</span>
+<span class="text-xs font-mono text-emerald-700 font-semibold">GNSS 3D LOCKED</span>
+</div>
+<div class="flex items-center gap-2 mb-2 text-[11px] font-mono text-slate-600">
+<span class="">CSQ: <strong class="text-slate-800">27/31</strong></span>
+<span class="text-slate-300">•</span>
+<span class="">Avg Sats: <strong class="text-slate-800">14.2</strong></span>
+<span class="text-slate-300">•</span>
+<span class="">HDOP: <strong class="text-emerald-700">0.82</strong></span>
+</div>
+<div class="flex items-center justify-between text-[11px] font-mono text-slate-500 border-t border-slate-100 pt-1.5">
+<span class="text-emerald-700 font-semibold">Queclink GTFRI Protocol</span>
+<span class="text-slate-700">LTE Cat 1</span>
+</div>
+</div>
+</div>
+<!-- Middle Dual-Column Visual Section: Live Map + 24H Capacitive Fuel Run Chart -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+<!-- Left: Geospatial Vector Tracking Viewport (7 Cols) -->
+<div class="lg:col-span-7 bg-white rounded-xl border border-slate-200 shadow-sm flex flex-col overflow-hidden">
+<div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between bg-slate-50/70">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-blue-700 text-[18px]">map</span>
+<h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider font-mono">Geospatial Fleet Telematics Radar</h3>
+<span class="px-1.5 py-0.5 text-[9px] font-mono font-bold rounded bg-emerald-50 text-emerald-700 border border-emerald-200">LIVE VECTOR</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2 py-0.5 text-[11px] font-medium rounded bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 shadow-sm" type="button">Vector</button>
+<button class="px-2 py-0.5 text-[11px] font-medium rounded bg-transparent text-slate-500 hover:text-slate-800" type="button">Satellite</button>
+<div class="h-3 w-px bg-slate-200 mx-0.5"></div>
+<button class="p-1 rounded text-slate-500 hover:text-slate-800 hover:bg-slate-100" title="Toggle Geofences" type="button"><span class="material-symbols-outlined text-[16px]">fence</span></button>
+<button class="p-1 rounded text-slate-500 hover:text-slate-800 hover:bg-slate-100" title="Full Radar" type="button"><span class="material-symbols-outlined text-[16px]">fullscreen</span></button>
+</div>
+</div>
+<!-- Interactive Vector Visual Map Canvas -->
+<div class="relative h-72 w-full bg-slate-900 blueprint-grid overflow-hidden flex items-center justify-center">
+<!-- Stylized Map Roads / Grid Lines SVG -->
+<img alt="Real-time Satellite Fleet Map" class="absolute inset-0 w-full h-full object-cover rounded-lg opacity-90 filter contrast-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1nDdUaITGxvr4GQUn6rhxKT6q5U9jcXNl633x-MyJStuCqx8PR8NKU6ZZAUZtx6jNfJda7z93WKx_ubO5ReusqWuLQULFJdLC2gx6YXNaUU1WY42EXjDDGJLRXSoKdM3yoYDu0I6xRr4HpfcjS01rGJRFPh7sLCbngMXJJRjIOqk5ULjAOcB7i1RC-R_vkzui86l8D5yFfWy_5f1zvQ75oiQQ8KYlZW4FsDYs">
+<!-- Geofence Labels -->
+<div class="absolute top-6 left-28 px-2 py-0.5 rounded bg-blue-950/80 border border-blue-500/40 text-[10px] font-mono text-blue-300 font-medium backdrop-blur-sm">
+          ZONE: Tg. Priok Port Terminal
+        </div>
+<div class="absolute bottom-16 right-28 px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-500/40 text-[10px] font-mono text-emerald-300 font-medium backdrop-blur-sm">
+          ZONE: Cikarang Logistics Hub
+        </div>
+<!-- Vehicle Marker 1: HAULER-01 (Moving) -->
+<div class="absolute top-24 left-1/3 flex flex-col items-center cursor-pointer group" onclick="openInspectModal('HAULER-01')">
+<div class="relative flex items-center justify-center">
+<span class="animate-ping absolute h-6 w-6 rounded-full bg-emerald-400 opacity-75"></span>
+<div class="w-6 h-6 rounded-full bg-emerald-500 border-2 border-white shadow-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[13px]">navigation</span>
+</div>
+</div>
+<div class="mt-1 px-1.5 py-0.5 rounded bg-slate-900/90 border border-slate-700 text-[10px] font-mono text-white flex items-center gap-1 shadow-md">
+<span class="font-bold text-emerald-400">HAULER-01</span>
+<span class="text-slate-400">68 km/h</span>
+</div>
+</div>
+<!-- Vehicle Marker 2: HAULER-04 (P1 Alert - Siphon Incident) -->
+<div class="absolute top-16 right-1/4 flex flex-col items-center cursor-pointer group" onclick="openInspectModal('HAULER-04')">
+<div class="relative flex items-center justify-center">
+<span class="animate-ping absolute h-7 w-7 rounded-full bg-rose-500 opacity-80"></span>
+<div class="w-6 h-6 rounded-full bg-rose-600 border-2 border-white shadow-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+</div>
+</div>
+<div class="mt-1 px-2 py-0.5 rounded bg-rose-950/95 border border-rose-500 text-[10px] font-mono text-rose-200 flex items-center gap-1.5 shadow-lg">
+<span class="font-bold text-white">HAULER-04</span>
+<span class="text-rose-300">[P1 SIPHON]</span>
+<span class="text-white font-bold">0 km/h</span>
+</div>
+</div>
+<!-- Vehicle Marker 3: CRYOTANK-02 (Moving) -->
+<div class="absolute bottom-20 left-20 flex flex-col items-center cursor-pointer group" onclick="openInspectModal('CRYOTANK-02')">
+<div class="w-5 h-5 rounded-full bg-blue-600 border-2 border-white shadow flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[12px]">navigation</span>
+</div>
+<div class="mt-1 px-1.5 py-0.5 rounded bg-slate-900/80 border border-slate-700 text-[9px] font-mono text-slate-300 flex items-center gap-1">
+<span class="font-semibold text-blue-300">CRYOTANK-02</span>
+<span class="">54 km/h</span>
+</div>
+</div>
+<!-- Vehicle Marker 4: FLATBED-11 (Idle) -->
+<div class="absolute bottom-10 right-1/3 flex flex-col items-center cursor-pointer group" onclick="openInspectModal('FLATBED-11')">
+<div class="w-5 h-5 rounded-full bg-cyan-500 border-2 border-white shadow flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[12px]">pause</span>
+</div>
+<div class="mt-1 px-1.5 py-0.5 rounded bg-slate-900/80 border border-slate-700 text-[9px] font-mono text-slate-300 flex items-center gap-1">
+<span class="font-semibold text-cyan-300">FLATBED-11</span>
+<span class="">ACC IDLE</span>
+</div>
+</div>
+<!-- Map Controls Overlay -->
+<div class="absolute bottom-3 right-3 flex flex-col gap-1 bg-slate-800/90 border border-slate-700 rounded-md p-0.5 backdrop-blur-sm">
+<button class="w-6 h-6 rounded flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 text-xs font-mono font-bold" type="button">+</button>
+<div class="h-px w-full bg-slate-700"></div>
+<button class="w-6 h-6 rounded flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 text-xs font-mono font-bold" type="button">-</button>
+</div>
+<div class="absolute bottom-3 left-3 bg-slate-950/85 px-2 py-1 rounded border border-slate-800 text-[10px] font-mono text-slate-400 flex items-center gap-2 backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span class="">CENTROID: -6.2146°, 106.8451° • GTFRI 14:32:09</span>
+</div>
+</div>
+<!-- Map Footer Micro-Ticker -->
+<div class="px-4 py-2 border-t border-slate-100 bg-white flex items-center justify-between text-[11px] font-mono text-slate-500">
+<div class="flex items-center gap-2 truncate">
+<span class="font-bold text-slate-700">LAST QUECLINK PACKET:</span>
+<span class="text-blue-700 truncate">+RESP:GTFRI,1A0103,135790246811220,,0,0,1,1,68.2,142,12.4,106.8451,-6.2146,20250514143209...</span>
+</div>
+<span class="shrink-0 text-emerald-700 font-semibold">100% Ingested</span>
+</div>
+</div>
+<!-- Right: 24-Hour Continuous Capacitive Fuel Trend & Sensor Diagnostics (5 Cols) -->
+<div class="lg:col-span-5 bg-white rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between bg-slate-50/70">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-cyan-600 text-[18px]">ssid_chart</span>
+<h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider font-mono">CFS300B Dynamic Fuel Level (24H)</h3>
+</div>
+<span class="px-1.5 py-0.5 text-[9px] font-mono font-bold rounded bg-cyan-50 text-cyan-700 border border-cyan-200">KALMAN FILTER ON</span>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between">
+<!-- Mini Chart Banner & Incident Tag -->
+<div class="flex items-start justify-between gap-2 mb-2">
+<div>
+<div class="text-xs font-semibold text-slate-800">HAULER-04 Tank Profile</div>
+<div class="text-[11px] text-slate-500 font-mono">B 9844 UVD • 400L Primary Cylindrical Tank</div>
+</div>
+<div class="text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200 text-[10px] font-mono font-bold cursor-pointer" onclick="openInspectModal('HAULER-04')">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+              SIPHON: -48.2L @ 03:14 AM
+            </span>
+</div>
+</div>
+<!-- Stylized SVG Capacitive Fuel Curve -->
+<div class="relative w-full h-36 bg-slate-50 rounded-lg border border-slate-200/90 p-2 flex items-center justify-center overflow-hidden">
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 340 100">
+<defs>
+<linearGradient id="fuelGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0284c7" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#0284c7" stop-opacity="0.0"></stop>
+</linearGradient>
+</defs>
+<!-- Grid lines -->
+<line stroke="#e2e8f0" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="340" y1="25" y2="25"></line>
+<line stroke="#e2e8f0" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="340" y1="50" y2="50"></line>
+<line stroke="#e2e8f0" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="340" y1="75" y2="75"></line>
+<!-- Area Fill -->
+<polygon fill="url(#fuelGrad)" points="0,20 60,24 110,27 150,28 152,72 200,74 270,78 340,82 340,100 0,100"></polygon>
+<!-- Fuel Line (with steep drop at x=150-152) -->
+<polyline fill="none" points="0,20 60,24 110,27 150,28 152,72 200,74 270,78 340,82" stroke="#0284c7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<!-- Siphon marker pin -->
+<circle cx="152" cy="72" fill="#e11d48" r="4" stroke="#ffffff" stroke-width="2"></circle>
+<line stroke="#e11d48" stroke-dasharray="2 2" stroke-width="1" x1="152" x2="152" y1="10" y2="72"></line>
+</svg>
+<div class="absolute top-2 left-3 text-[9px] font-mono text-slate-400">400L (100%)</div>
+<div class="absolute bottom-2 left-3 text-[9px] font-mono text-slate-400">0L (Empty)</div>
+<div class="absolute top-2 right-3 text-[9px] font-mono text-rose-600 font-semibold bg-white/90 px-1 rounded border border-rose-200">ACC OFF Fuel Drainage</div>
+</div>
+<!-- Probe Hardware Health Diagnostics -->
+<div class="grid grid-cols-3 gap-2 pt-3 border-t border-slate-100 mt-3 text-left font-mono">
+<div class="p-2 rounded bg-slate-50 border border-slate-200/80">
+<div class="text-[9px] uppercase text-slate-400 font-semibold">Probe Battery</div>
+<div class="text-xs font-bold text-slate-800">3.65V <span class="text-[10px] text-emerald-600 font-medium">OK</span></div>
+<div class="text-[9px] text-slate-400">Li-SOCl2 Cell</div>
+</div>
+<div class="p-2 rounded bg-slate-50 border border-slate-200/80">
+<div class="text-[9px] uppercase text-slate-400 font-semibold">BLE 5.0 Signal</div>
+<div class="text-xs font-bold text-slate-800">-66 dBm</div>
+<div class="text-[9px] text-emerald-700 font-medium">Robust Link</div>
+</div>
+<div class="p-2 rounded bg-slate-50 border border-slate-200/80">
+<div class="text-[9px] uppercase text-slate-400 font-semibold">Zero-Point Drift</div>
+<div class="text-xs font-bold text-slate-800">+0.2 mm</div>
+<div class="text-[9px] text-slate-500 font-medium">Auto-Calib OK</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Section: Real-time Telemetry & Asset Surveillance Table -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm flex flex-col overflow-hidden">
+<!-- Table Header Controls -->
+<div class="px-4 py-3 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-slate-50/70">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-blue-700 text-[18px]">table_chart</span>
+<h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider font-mono">Active Vehicle Gateway Surveillance Matrix</h3>
+<span class="px-1.5 py-0.5 text-[10px] font-mono font-semibold rounded bg-slate-200/80 text-slate-700">5 of 48 Showing</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="relative text-xs">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-[14px] text-slate-400">filter_alt</span>
+<input class="pl-7 pr-3 py-1 rounded-md border border-slate-200 text-xs bg-white focus:outline-none focus:ring-1 focus:ring-blue-600" placeholder="Filter Vehicle / IMEI..." type="text">
+</div>
+<button class="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-medium rounded border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[14px]">file_download</span>
+<span class="">Export Log</span>
+</button>
+</div>
+</div>
+<!-- Table Content -->
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse text-xs font-mono">
+<thead>
+<tr class="border-b border-slate-200 bg-slate-50/90 text-slate-500 uppercase text-[10px] font-semibold tracking-wider select-none">
+<th class="py-2.5 px-3.5">Asset &amp; Vehicle Model</th>
+<th class="py-2.5 px-3">Queclink Gateway (IMEI / CSQ / Fix)</th>
+<th class="py-2.5 px-3">Ignition (DI1 / ACC)</th>
+<th class="py-2.5 px-3">Fuel CFS300B (Liter / % / BLE)</th>
+<th class="py-2.5 px-3">Velocity &amp; Geofence Corridor</th>
+<th class="py-2.5 px-3">Telemetry Status</th>
+<th class="py-2.5 px-3.5 text-right">Diagnostic</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 text-slate-700 font-sans">
+<!-- Row 1: HAULER-04 (P1 Alert Siphon) -->
+<tr class="hover:bg-rose-50/30 transition-colors bg-rose-50/15 cursor-pointer" onclick="openInspectModal('HAULER-04')">
+<td class="py-2.5 px-3.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-rose-600 animate-ping shrink-0"></span>
+<div>
+<div class="font-bold text-slate-900 font-mono">HAULER-04</div>
+<div class="text-[11px] text-slate-500 font-mono">B 9844 UVD • Freightliner Cascadia</div>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<div class="font-medium text-slate-800">864920041184912</div>
+<div class="text-slate-500 text-[10px]">LTE Cat 1 • CSQ 26/31 • 13 Sats (HDOP 0.91)</div>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 font-bold text-[10px] border border-slate-200">
+                ACC OFF (0.2V)
+              </span>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]"><div class="flex items-center justify-between gap-1"><div class="font-bold text-rose-600">124.8 L <span class="text-slate-500 font-normal">(31.2%)</span></div></div><div class="w-full bg-slate-200/80 h-1.5 rounded-full overflow-hidden my-1 max-w-[130px]"><div class="bg-rose-500 h-full rounded-full" style="width: 31.2%"></div></div><div class="text-[10px] text-slate-500">CFS300B #B4 • BLE -68 dBm • 31.4°C</div></td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<div class="font-semibold text-slate-800">0 km/h (Stationary)</div>
+<div class="text-[10px] text-slate-500 truncate max-w-[150px]">Rest Area KM 19 Eastbound</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-rose-100 text-rose-700 border border-rose-200">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+                [CRITICAL P1] Siphon -48.2L
+              </span>
+</td>
+<td class="py-2.5 px-3.5 text-right font-mono">
+<button class="btn-inspect px-2.5 py-1 rounded bg-white hover:bg-slate-100 border border-slate-200 text-blue-700 font-semibold text-[11px] shadow-sm transition-colors hover:border-blue-300" data-unit="HAULER-04" onclick="event.stopPropagation(); openInspectModal('HAULER-04')" type="button">
+                Inspect
+              </button>
+</td>
+</tr>
+<!-- Row 2: HAULER-01 (Normal Moving) -->
+<tr class="hover:bg-slate-50/80 transition-colors cursor-pointer" onclick="openInspectModal('HAULER-01')">
+<td class="py-2.5 px-3.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+<div>
+<div class="font-bold text-slate-900 font-mono">HAULER-01</div>
+<div class="text-[11px] text-slate-500 font-mono">B 9123 XYZ • Scania R500</div>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<div class="font-medium text-slate-800">864920041184301</div>
+<div class="text-slate-500 text-[10px]">LTE Cat 1 • CSQ 29/31 • 16 Sats (HDOP 0.74)</div>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-bold text-[10px] border border-emerald-200">
+                ACC ON (13.8V)
+              </span>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]"><div class="flex items-center justify-between gap-1"><div class="font-bold text-slate-800">342.0 L <span class="text-slate-500 font-normal">(85.5%)</span></div></div><div class="w-full bg-slate-200/80 h-1.5 rounded-full overflow-hidden my-1 max-w-[130px]"><div class="bg-emerald-500 h-full rounded-full" style="width: 85.5%"></div></div><div class="text-[10px] text-slate-500">CFS300B #A1 • BLE -64 dBm • 33.1°C</div></td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<div class="font-semibold text-emerald-700">68 km/h (Cruising)</div>
+<div class="text-[10px] text-slate-500 truncate max-w-[150px]">Tol Jakarta-Cikampek KM 42</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Normal Telemetry Stream
+              </span>
+</td>
+<td class="py-2.5 px-3.5 text-right font-mono">
+<button class="btn-inspect px-2.5 py-1 rounded bg-white hover:bg-slate-100 border border-slate-200 text-blue-700 font-semibold text-[11px] shadow-sm transition-colors hover:border-blue-300" data-unit="HAULER-01" onclick="event.stopPropagation(); openInspectModal('HAULER-01')" type="button">
+                Inspect
+              </button>
+</td>
+</tr>
+<!-- Row 3: CRYOTANK-02 (Normal Moving) -->
+<tr class="hover:bg-slate-50/80 transition-colors cursor-pointer" onclick="openInspectModal('CRYOTANK-02')">
+<td class="py-2.5 px-3.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-blue-600 shrink-0"></span>
+<div>
+<div class="font-bold text-slate-900 font-mono">CRYOTANK-02</div>
+<div class="text-[11px] text-slate-500 font-mono">B 9301 TKR • Volvo FH16</div>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<div class="font-medium text-slate-800">864920041189104</div>
+<div class="text-slate-500 text-[10px]">LTE Cat 1 • CSQ 25/31 • 15 Sats (HDOP 0.80)</div>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-bold text-[10px] border border-emerald-200">
+                ACC ON (14.1V)
+              </span>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]"><div class="flex items-center justify-between gap-1"><div class="font-bold text-slate-800">520.0 L <span class="text-slate-500 font-normal">(86.6%)</span></div></div><div class="w-full bg-slate-200/80 h-1.5 rounded-full overflow-hidden my-1 max-w-[130px]"><div class="bg-emerald-500 h-full rounded-full" style="width: 86.6%"></div></div><div class="text-[10px] text-slate-500">CFS300B #C2 • BLE -72 dBm • 30.8°C</div></td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<div class="font-semibold text-blue-700">54 km/h (Approaching)</div>
+<div class="text-[10px] text-slate-500 truncate max-w-[150px]">Tg. Priok Container Gate 3</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                Geofence Ingress Detected
+              </span>
+</td>
+<td class="py-2.5 px-3.5 text-right font-mono">
+<button class="btn-inspect px-2.5 py-1 rounded bg-white hover:bg-slate-100 border border-slate-200 text-blue-700 font-semibold text-[11px] shadow-sm transition-colors hover:border-blue-300" data-unit="CRYOTANK-02" onclick="event.stopPropagation(); openInspectModal('CRYOTANK-02')" type="button">
+                Inspect
+              </button>
+</td>
+</tr>
+<!-- Row 4: FLATBED-11 (Idle) -->
+<tr class="hover:bg-slate-50/80 transition-colors cursor-pointer" onclick="openInspectModal('FLATBED-11')">
+<td class="py-2.5 px-3.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
+<div>
+<div class="font-bold text-slate-900 font-mono">FLATBED-11</div>
+<div class="text-[11px] text-slate-500 font-mono">B 8812 AB • Mercedes Actros</div>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<div class="font-medium text-slate-800">864920041185523</div>
+<div class="text-slate-500 text-[10px]">LTE Cat 1 • CSQ 28/31 • 14 Sats (HDOP 0.85)</div>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-cyan-50 text-cyan-700 font-bold text-[10px] border border-cyan-200">
+                ACC ON (13.6V)
+              </span>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]"><div class="flex items-center justify-between gap-1"><div class="font-bold text-slate-800">298.0 L <span class="text-slate-500 font-normal">(66.2%)</span></div></div><div class="w-full bg-slate-200/80 h-1.5 rounded-full overflow-hidden my-1 max-w-[130px]"><div class="bg-cyan-500 h-full rounded-full" style="width: 66.2%"></div></div><div class="text-[10px] text-slate-500">CFS300B #D1 • BLE -70 dBm • 34.0°C</div></td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<div class="font-semibold text-cyan-600">0 km/h (Idling 22 min)</div>
+<div class="text-[10px] text-slate-500 truncate max-w-[150px]">Cikarang Dry Port Dock #6</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">
+<span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                Engine Idle Burn (1.8 L/h)
+              </span>
+</td>
+<td class="py-2.5 px-3.5 text-right font-mono">
+<button class="btn-inspect px-2.5 py-1 rounded bg-white hover:bg-slate-100 border border-slate-200 text-blue-700 font-semibold text-[11px] shadow-sm transition-colors hover:border-blue-300" data-unit="FLATBED-11" onclick="event.stopPropagation(); openInspectModal('FLATBED-11')" type="button">
+                Inspect
+              </button>
+</td>
+</tr>
+<!-- Row 5: VAN-COURIER-28 (Moving) -->
+<tr class="hover:bg-slate-50/80 transition-colors cursor-pointer" onclick="openInspectModal('VAN-COURIER-28')">
+<td class="py-2.5 px-3.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+<div>
+<div class="font-bold text-slate-900 font-mono">VAN-COURIER-28</div>
+<div class="text-[11px] text-slate-500 font-mono">B 4419 SLL • Isuzu Giga FVR</div>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<div class="font-medium text-slate-800">864920041187761</div>
+<div class="text-slate-500 text-[10px]">LTE Cat 1 • CSQ 27/31 • 14 Sats (HDOP 0.81)</div>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-bold text-[10px] border border-emerald-200">
+                ACC ON (13.9V)
+              </span>
+</td>
+<td class="py-2.5 px-3 font-mono text-[11px]"><div class="flex items-center justify-between gap-1"><div class="font-bold text-slate-800">185.0 L <span class="text-slate-500 font-normal">(92.5%)</span></div></div><div class="w-full bg-slate-200/80 h-1.5 rounded-full overflow-hidden my-1 max-w-[130px]"><div class="bg-emerald-500 h-full rounded-full" style="width: 92.5%"></div></div><div class="text-[10px] text-slate-500">CFS300B #F8 • BLE -66 dBm • 32.5°C</div></td>
+<td class="py-2.5 px-3 font-mono text-[11px]">
+<div class="font-semibold text-emerald-700">42 km/h (Urban Transit)</div>
+<div class="text-[10px] text-slate-500 truncate max-w-[150px]">Arterial Daan Mogot Barat</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Telemetry Healthy
+              </span>
+</td>
+<td class="py-2.5 px-3.5 text-right font-mono">
+<button class="btn-inspect px-2.5 py-1 rounded bg-white hover:bg-slate-100 border border-slate-200 text-blue-700 font-semibold text-[11px] shadow-sm transition-colors hover:border-blue-300" data-unit="VAN-COURIER-28" onclick="event.stopPropagation(); openInspectModal('VAN-COURIER-28')" type="button">
+                Inspect
+              </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- ============================================================== -->
+<!-- DIAGNOSTIC HARDWARE INSPECTION MODAL                           -->
+<!-- ============================================================== -->
+<div aria-labelledby="modal-asset-id" aria-modal="true" class="fixed inset-0 z-[9999] items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm select-none hidden" id="inspect-modal" onclick="handleBackdropClick(event)" role="dialog" style="display: none;">
+<div class="bg-white rounded-xl shadow-2xl border border-slate-200 w-full max-w-4xl max-h-[92vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150" onclick="event.stopPropagation()">
+<!-- Modal Header -->
+<div class="px-6 py-4 border-b border-slate-200 bg-slate-50/80 flex items-center justify-between">
+<div class="flex flex-col gap-3 w-full">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center border border-blue-200/60">
+<span class="material-symbols-outlined text-[20px]">memory</span>
+</div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<h2 class="text-base font-bold text-slate-900 font-mono" id="modal-asset-id">HAULER-04</h2>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-bold border bg-rose-100 text-rose-700 border-rose-200" id="modal-incident-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse"></span>
+<span id="modal-incident-text" class="">[CRITICAL P1] Siphon Anomaly (-48.2L)</span>
+</span>
+<span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200" id="modal-plate-tag">B 9844 UVD • Freightliner Cascadia</span>
+</div>
+<p class="text-xs text-slate-500 font-mono mt-0.5">Vehicle Telemetry Hardware Inspection • Queclink GV30CEU &amp; CFS300B BLE 5.0 Diagnostic Bus</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 flex items-center justify-center transition-colors" id="close-modal-btn" onclick="closeInspectModal()" title="Close modal" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Unit Switcher Tabs -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pt-2 border-t border-slate-200 gap-2">
+<div class="flex items-center gap-1.5 text-xs font-mono overflow-x-auto">
+<span class="text-slate-500 font-semibold text-[11px] uppercase mr-1 shrink-0">Select Unit:</span>
+<div class="inline-flex items-center rounded-lg border border-slate-200 bg-slate-100 p-0.5 gap-1 shrink-0" id="unit-switcher">
+<button class="px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-white text-blue-700 shadow-sm border border-slate-200/80 transition-colors" data-switcher="HAULER-04" onclick="openInspectModal('HAULER-04')" type="button">HAULER-04</button>
+<button class="px-2.5 py-1 rounded text-[11px] font-mono font-medium text-slate-600 hover:text-slate-900 transition-colors" data-switcher="HAULER-01" onclick="openInspectModal('HAULER-01')" type="button">HAULER-01</button>
+<button class="px-2.5 py-1 rounded text-[11px] font-mono font-medium text-slate-600 hover:text-slate-900 transition-colors" data-switcher="CRYOTANK-02" onclick="openInspectModal('CRYOTANK-02')" type="button">CRYOTANK-02</button>
+<button class="px-2.5 py-1 rounded text-[11px] font-mono font-medium text-slate-600 hover:text-slate-900 transition-colors" data-switcher="FLATBED-11" onclick="openInspectModal('FLATBED-11')" type="button">FLATBED-11</button>
+<button class="px-2.5 py-1 rounded text-[11px] font-mono font-medium text-slate-600 hover:text-slate-900 transition-colors" data-switcher="VAN-COURIER-28" onclick="openInspectModal('VAN-COURIER-28')" type="button">VAN-COURIER-28</button>
+</div>
+</div>
+<span class="text-[11px] font-mono text-emerald-600 font-semibold flex items-center gap-1 shrink-0">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            Queclink Direct Link Active
+          </span>
+</div>
+</div>
+</div>
+<!-- Modal Body -->
+<div class="p-6 overflow-y-auto custom-scrollbar flex flex-col gap-5 text-xs font-mono bg-slate-50/30">
+<!-- Incident / Status Banner -->
+<div class="p-4 rounded-xl bg-rose-50 border border-rose-200 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3" id="modal-banner-container">
+<div class="flex items-start gap-3">
+<span class="p-2 rounded-lg bg-rose-600 text-white shrink-0 flex items-center justify-center" id="modal-banner-icon"><span class="material-symbols-outlined text-[20px]">warning</span></span>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-1.5 py-0.5 rounded bg-rose-600 text-white font-bold text-[10px]" id="modal-banner-tag">P1 CRITICAL</span>
+<h4 class="text-xs font-bold text-rose-950 tracking-tight" id="modal-banner-title">RAPID FUEL DRAINAGE DETECTED WHILE ACC IS OFF</h4>
+<span class="text-[11px] text-rose-700 font-semibold" id="modal-banner-time">@ 03:14:22 UTC</span>
+</div>
+<p class="text-[11px] text-rose-800 font-sans mt-0.5 leading-relaxed" id="modal-banner-desc">CFS300B BLE capacitance sensor reported a sudden drop of 48.2 Liters over 180s without ignition trigger (DI1=0V). Suspected siphoning activity.</p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-2 font-mono text-[11px]">
+<span class="px-2.5 py-1 rounded-md bg-white border border-rose-200 text-rose-800 font-semibold shadow-sm" id="modal-banner-stat">ΔV: -48.2L • Speed: 0.0 km/h</span>
+</div>
+</div>
+<!-- 3 Hardware Telemetry Sub-panels -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+<!-- Panel 1: Gateway Queclink GV30CEU -->
+<div class="bg-white rounded-lg border border-slate-200 p-3.5 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-2 mb-2.5 border-b border-slate-100">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-blue-600 text-[18px]">router</span>
+<span class="font-bold text-slate-900">Queclink GV30CEU</span>
+</div>
+<span class="px-1.5 py-0.2 rounded text-[9px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200" id="modal-gw-status">ONLINE</span>
+</div>
+<div class="space-y-2 text-[11px]">
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">Gateway IMEI</span>
+<span class="font-bold text-slate-800" id="modal-imei">864920041184912</span>
+</div>
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">Firmware Build</span>
+<span class="text-slate-700 font-semibold">GV30CEU_R01A03V05</span>
+</div>
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">Cellular Signal (CSQ)</span>
+<span class="font-bold text-slate-800" id="modal-csq">26/31 <span class="text-emerald-600 text-[10px]">(-63 dBm)</span></span>
+</div>
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">GNSS 3D Positioning</span>
+<span class="font-bold text-emerald-700" id="modal-gnss">13 Sats • HDOP 0.91</span>
+</div>
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">Last Fixed Coordinates</span>
+<span class="font-medium text-slate-700" id="modal-coords">-6.2146°, 106.8451°</span>
+</div>
+</div>
+</div>
+<!-- Panel 2: Electrical & Power Rail -->
+<div class="bg-white rounded-lg border border-slate-200 p-3.5 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-2 mb-2.5 border-b border-slate-100">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-amber-600 text-[18px]">bolt</span>
+<span class="font-bold text-slate-900">Electrical &amp; Power Rail</span>
+</div>
+<span class="px-1.5 py-0.2 rounded text-[9px] font-semibold bg-blue-50 text-blue-700 border border-blue-200">24V SYSTEM</span>
+</div>
+<div class="space-y-2 text-[11px]">
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">Vehicle Main Battery</span>
+<span class="font-bold text-slate-800" id="modal-main-battery">24.2V DC <span class="text-emerald-600 text-[10px]">(Normal)</span></span>
+</div>
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">Backup LiPo Battery</span>
+<span class="font-bold text-slate-800">4.10V <span class="text-emerald-600 text-[10px]">(100% Charged)</span></span>
+</div>
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">Digital Input DI1 (Ignition)</span>
+<span class="font-bold px-1 py-0.5 rounded border inline-block text-slate-600 bg-slate-100 border-slate-200" id="modal-ignition">ACC OFF (0.2V DC)</span>
+</div>
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">Digital Output DO1 (Relay)</span>
+<span class="font-semibold text-slate-700" id="modal-relay-status">READY (Disarmed)</span>
+</div>
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">Chassis Ground Voltage</span>
+<span class="font-medium text-slate-700">0.02V (Clean Earth)</span>
+</div>
+</div>
+</div>
+<!-- Panel 3: CFS300B BLE Fuel Sensor -->
+<div class="bg-white rounded-lg border border-slate-200 p-3.5 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-2 mb-2.5 border-b border-slate-100">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-cyan-600 text-[18px]">water_drop</span>
+<span class="font-bold text-slate-900">CFS300B Fuel Sensor</span>
+</div>
+<span class="px-1.5 py-0.2 rounded text-[9px] font-semibold border bg-rose-50 text-rose-700 border-rose-200" id="modal-sensor-status">SIPHON EVENT FLAGGED</span>
+</div>
+<div class="space-y-2 text-[11px]">
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">BLE 5.0 MAC &amp; Probe SN</span>
+<span class="font-bold text-slate-800" id="modal-ble-mac">CFS300B #B4:72:9A:11</span>
+<span class="text-slate-500 text-[10px] block font-medium" id="modal-ble-rssi">Signal: -68 dBm (Good Link)</span>
+</div>
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">Current Tank Volume</span>
+<span class="font-bold text-sm text-rose-600" id="modal-volume">124.8 L <span class="text-[11px] text-slate-500 font-normal">(31.2% / 400L)</span></span>
+</div>
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">Raw Capacitance</span>
+<span class="font-medium text-slate-800" id="modal-capacitance">1,842 pF <span class="text-slate-400">(Air 820pF)</span></span>
+</div>
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">Probe Sensor Temp</span>
+<span class="font-semibold text-slate-800" id="modal-fuel-temp">31.4°C <span class="text-slate-400 text-[10px]">(Compensated)</span></span>
+</div>
+<div>
+<span class="text-slate-400 block text-[9px] uppercase font-semibold">Zero-Point Drift / Kalman</span>
+<span class="font-semibold text-emerald-700">+0.2 mm (Dampened)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Raw Hex Protocol Terminal -->
+<div class="bg-white rounded-lg border border-slate-200 p-4 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-600 text-[16px]">terminal</span>
+<span class="font-bold text-slate-900 uppercase tracking-wider text-[11px]">Queclink GTFRI Hex Telemetry Ingest Stream</span>
+</div>
+<span class="text-[10px] text-slate-400 font-normal">CRC16 Validated • Protocol: GTFRI / GTGEO</span>
+</div>
+<div class="bg-slate-900 rounded p-3 text-slate-200 font-mono text-[11px] leading-relaxed overflow-x-auto custom-scrollbar border border-slate-800">
+<div class="text-emerald-400 font-semibold mb-1">// Queclink Protocol Parser Output</div>
+<div class="text-blue-300 font-medium" id="modal-raw-packet">+RESP:GTFRI,1A0103,135790246811220,,0,0,1,1,0.0,0,12.4,106.84510,-6.21460,20250514143209,0460,0000,18F0,00021A4B,00,0000,0000,0000,0000,26,00,00$</div>
+<div class="mt-2 pt-2 border-t border-slate-800 grid grid-cols-2 md:grid-cols-4 gap-2 text-[10px] text-slate-400">
+<div class="">Msg Type: <span class="text-white font-semibold" id="modal-stream-type">GTFRI (Periodic Fix)</span></div>
+<div class="">Speed: <span class="text-white font-semibold" id="modal-stream-speed">0.0 km/h (Stationary)</span></div>
+<div class="">Ignition: <span class="font-semibold text-slate-300" id="modal-stream-acc">DI1=0 (ACC OFF)</span></div>
+<div class="">Main Rail: <span class="text-emerald-400 font-semibold" id="modal-stream-rail">24.2V DC Normal</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer Controls -->
+<div class="px-6 py-3.5 border-t border-slate-200 bg-white flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-xs">
+<div class="flex flex-wrap items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 font-semibold transition-colors" id="poll-ota-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">cell_tower</span>
+<span class="">Poll Diagnostics</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-rose-200 bg-rose-50 text-rose-700 hover:bg-rose-100 font-semibold transition-colors" id="relay-immobilizer-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">power_settings_new</span>
+<span class="">Trigger DO1 Fuel Immobilizer Relay</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 font-medium transition-colors" id="export-json-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span class="">Export Telemetry Log (CSV)</span>
+</button>
+</div>
+<button class="px-4 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-900 text-white font-semibold transition-colors shrink-0" id="close-modal-bottom-btn" onclick="closeInspectModal()" type="button">
+        Tutup / Dismiss
+      </button>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- INTERACTIVE CONTROLLER SCRIPT                                  -->
+<!-- ============================================================== -->
+<script>
+  // Complete Dataset for all monitored vehicles
+  const vehicleDataMap = {
+    'HAULER-04': {
+      asset: 'HAULER-04',
+      plate: 'B 9844 UVD • Freightliner Cascadia',
+      incidentBadge: '[CRITICAL P1] Siphon Anomaly (-48.2L)',
+      incidentClass: 'bg-rose-100 text-rose-700 border-rose-200',
+      bannerTheme: 'rose',
+      bannerTag: 'P1 CRITICAL',
+      bannerTitle: 'RAPID FUEL DRAINAGE DETECTED WHILE ACC IS OFF',
+      bannerTime: '@ 03:14:22 UTC',
+      bannerDesc: 'CFS300B BLE capacitance sensor reported a sudden drop of 48.2 Liters over 180s without ignition trigger (DI1=0V). Suspected siphoning activity.',
+      bannerStat: 'ΔV: -48.2L • Speed: 0.0 km/h',
+      bannerIcon: 'warning',
+      imei: '864920041184912',
+      csq: '26/31 <span class="text-emerald-600 text-[10px]">(-63 dBm)</span>',
+      ignition: 'ACC OFF (0.2V DC)',
+      ignitionClass: 'text-slate-600 bg-slate-100 border-slate-200',
+      mainBattery: '24.2V DC <span class="text-emerald-600 text-[10px]">(Normal)</span>',
+      gnss: '13 Sats • HDOP 0.91',
+      coords: '-6.2146°, 106.8451°',
+      bleMac: 'CFS300B #B4:72:9A:11',
+      capacitance: '1,842 pF <span class="text-slate-400">(Air 820pF)</span>',
+      volume: '124.8 L <span class="text-[11px] text-slate-500 font-normal">(31.2% / 400L)</span>',
+      volumeColor: 'text-rose-600',
+      fuelTemp: '31.4°C <span class="text-slate-400 text-[10px]">(Compensated)</span>',
+      rssi: 'Signal: -68 dBm (Good Link)',
+      sensorBadge: 'SIPHON EVENT FLAGGED',
+      sensorBadgeClass: 'bg-rose-50 text-rose-700 border-rose-200',
+      rawPacket: '+RESP:GTFRI,1A0103,135790246811220,,0,0,1,1,0.0,0,12.4,106.84510,-6.21460,20250514143209,0460,0000,18F0,00021A4B,00,0000,0000,0000,0000,26,00,00$',
+      speed: '0.0 km/h (Stationary)',
+      msgType: 'GTFRI (Periodic Fix)',
+      accStream: 'DI1=0 (ACC OFF)',
+      accStreamColor: 'text-slate-300'
+    },
+    'HAULER-01': {
+      asset: 'HAULER-01',
+      plate: 'B 9123 XYZ • Scania R500',
+      incidentBadge: 'Normal Telemetry Stream',
+      incidentClass: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+      bannerTheme: 'emerald',
+      bannerTag: 'TRANSIT NOMINAL',
+      bannerTitle: 'TELEMETRY BUS HEALTHY & STABLE CRUISE',
+      bannerTime: '@ 14:31:55 UTC',
+      bannerDesc: 'Queclink GV30CEU reporting high accuracy GNSS tracking. Scania powertrain running at 68.2 km/h. Fuel consumption consistent with steady highway burn.',
+      bannerStat: 'Speed: 68.2 km/h • HDOP: 0.74',
+      bannerIcon: 'check_circle',
+      imei: '864920041184301',
+      csq: '29/31 <span class="text-emerald-600 text-[10px]">(-57 dBm)</span>',
+      ignition: 'ACC ON (13.8V DC)',
+      ignitionClass: 'text-emerald-700 bg-emerald-50 border-emerald-200',
+      mainBattery: '27.4V DC <span class="text-emerald-600 text-[10px]">(Charging)</span>',
+      gnss: '16 Sats • HDOP 0.74',
+      coords: '-6.2581°, 107.0142°',
+      bleMac: 'CFS300B #A1:90:3F:82',
+      capacitance: '2,910 pF <span class="text-slate-400">(Air 820pF)</span>',
+      volume: '342.0 L <span class="text-[11px] text-slate-500 font-normal">(85.5% / 400L)</span>',
+      volumeColor: 'text-slate-800',
+      fuelTemp: '33.1°C <span class="text-slate-400 text-[10px]">(Compensated)</span>',
+      rssi: 'Signal: -64 dBm (Robust Link)',
+      sensorBadge: 'PROBE NOMINAL',
+      sensorBadgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+      rawPacket: '+RESP:GTFRI,1A0103,864920041184301,,0,0,1,1,68.2,142,13.8,107.0142,-6.2581,20250514143155,0460,0000,18F0,00045210,01,0000,0000,0000,0000,29,00,00$',
+      speed: '68.2 km/h (Cruising)',
+      msgType: 'GTFRI (Speed Fix)',
+      accStream: 'DI1=1 (ACC ON 13.8V)',
+      accStreamColor: 'text-emerald-400'
+    },
+    'CRYOTANK-02': {
+      asset: 'CRYOTANK-02',
+      plate: 'B 9301 TKR • Volvo FH16',
+      incidentBadge: 'Geofence Ingress Detected',
+      incidentClass: 'bg-blue-50 text-blue-700 border-blue-200',
+      bannerTheme: 'blue',
+      bannerTag: 'GEOFENCE INGRESS',
+      bannerTitle: 'ZONE ENTERED: TG. PRIOK PORT TERMINAL',
+      bannerTime: '@ 14:32:01 UTC',
+      bannerDesc: 'Queclink GTGEO event received. Vehicle approaching terminal gate corridor at 54.0 km/h. Tank volume intact at 520.0 Liters (86.6%), CFS300B probe calibrated.',
+      bannerStat: 'Speed: 54 km/h • HDOP: 0.80',
+      bannerIcon: 'radar',
+      imei: '864920041189104',
+      csq: '25/31 <span class="text-emerald-600 text-[10px]">(-65 dBm)</span>',
+      ignition: 'ACC ON (14.1V DC)',
+      ignitionClass: 'text-emerald-700 bg-emerald-50 border-emerald-200',
+      mainBattery: '28.1V DC <span class="text-emerald-600 text-[10px]">(Alternator Active)</span>',
+      gnss: '15 Sats • HDOP 0.80',
+      coords: '-6.1023°, 106.8834°',
+      bleMac: 'CFS300B #C2:11:08:44',
+      capacitance: '3,480 pF <span class="text-slate-400">(Air 820pF)</span>',
+      volume: '520.0 L <span class="text-[11px] text-slate-500 font-normal">(86.6% / 600L)</span>',
+      volumeColor: 'text-slate-800',
+      fuelTemp: '30.8°C <span class="text-slate-400 text-[10px]">(Compensated)</span>',
+      rssi: 'Signal: -72 dBm (Good Link)',
+      sensorBadge: 'GEOFENCE ACTIVE',
+      sensorBadgeClass: 'bg-blue-50 text-blue-700 border-blue-200',
+      rawPacket: '+RESP:GTGEO,1A0103,864920041189104,,0,0,1,1,54.0,210,14.1,106.8834,-6.1023,20250514143201,0460,0000,18F0,0005C210,01,0000,0000,0000,0000,25,00,00$',
+      speed: '54.0 km/h (Approaching)',
+      msgType: 'GTGEO (Geofence Ingress)',
+      accStream: 'DI1=1 (ACC ON 14.1V)',
+      accStreamColor: 'text-emerald-400'
+    },
+    'FLATBED-11': {
+      asset: 'FLATBED-11',
+      plate: 'B 8812 AB • Mercedes Actros',
+      incidentBadge: 'Engine Idle Burn (1.8 L/h)',
+      incidentClass: 'bg-cyan-50 text-cyan-700 border-cyan-200',
+      bannerTheme: 'cyan',
+      bannerTag: 'EXCESS IDLE',
+      bannerTitle: 'ENGINE IDLING FOR OVER 22 MINUTES IN PORT DOCK',
+      bannerTime: '@ 14:31:44 UTC',
+      bannerDesc: 'Queclink GTIDL event flagged. Stationary vehicle (0 km/h) with ignition ACC ON. Fuel consumption registered at nominal idle rate of 1.8 L/hr.',
+      bannerStat: 'Idle Duration: 22m • Speed: 0 km/h',
+      bannerIcon: 'hourglass_empty',
+      imei: '864920041185523',
+      csq: '28/31 <span class="text-emerald-600 text-[10px]">(-59 dBm)</span>',
+      ignition: 'ACC ON (13.6V DC)',
+      ignitionClass: 'text-cyan-700 bg-cyan-50 border-cyan-200',
+      mainBattery: '26.8V DC <span class="text-emerald-600 text-[10px]">(Normal)</span>',
+      gnss: '14 Sats • HDOP 0.85',
+      coords: '-6.3211°, 107.1520°',
+      bleMac: 'CFS300B #D1:84:EA:5C',
+      capacitance: '2,640 pF <span class="text-slate-400">(Air 820pF)</span>',
+      volume: '298.0 L <span class="text-[11px] text-slate-500 font-normal">(66.2% / 450L)</span>',
+      volumeColor: 'text-slate-800',
+      fuelTemp: '34.0°C <span class="text-slate-400 text-[10px]">(Compensated)</span>',
+      rssi: 'Signal: -70 dBm (Good Link)',
+      sensorBadge: 'IDLE CONSUMPTION',
+      sensorBadgeClass: 'bg-cyan-50 text-cyan-700 border-cyan-200',
+      rawPacket: '+RESP:GTIDL,1A0103,864920041185523,,0,0,1,1,0.0,0,13.6,107.1520,-6.3211,20250514143144,0460,0000,18F0,00032B10,01,0000,0000,0000,0000,28,00,00$',
+      speed: '0.0 km/h (Idling 22 min)',
+      msgType: 'GTIDL (Stationary Idle)',
+      accStream: 'DI1=1 (ACC ON 13.6V)',
+      accStreamColor: 'text-cyan-400'
+    },
+    'VAN-COURIER-28': {
+      asset: 'VAN-COURIER-28',
+      plate: 'B 4419 SLL • Isuzu Giga FVR',
+      incidentBadge: 'Telemetry Healthy',
+      incidentClass: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+      bannerTheme: 'emerald',
+      bannerTag: 'NORMAL DISPATCH',
+      bannerTitle: 'URBAN DELIVERY ROUTE NOMINAL',
+      bannerTime: '@ 14:32:02 UTC',
+      bannerDesc: 'Queclink Cat 1 packet received. Vehicle traversing Daan Mogot arterial corridor at 42.0 km/h. BLE sensor RSSI strong at -66 dBm, fuel tank 92.5% full.',
+      bannerStat: 'Speed: 42 km/h • HDOP: 0.81',
+      bannerIcon: 'local_shipping',
+      imei: '864920041187761',
+      csq: '27/31 <span class="text-emerald-600 text-[10px]">(-61 dBm)</span>',
+      ignition: 'ACC ON (13.9V DC)',
+      ignitionClass: 'text-emerald-700 bg-emerald-50 border-emerald-200',
+      mainBattery: '27.6V DC <span class="text-emerald-600 text-[10px]">(Healthy)</span>',
+      gnss: '14 Sats • HDOP 0.81',
+      coords: '-6.1620°, 106.7118°',
+      bleMac: 'CFS300B #F8:52:90:3A',
+      capacitance: '1,990 pF <span class="text-slate-400">(Air 820pF)</span>',
+      volume: '185.0 L <span class="text-[11px] text-slate-500 font-normal">(92.5% / 200L)</span>',
+      volumeColor: 'text-slate-800',
+      fuelTemp: '32.5°C <span class="text-slate-400 text-[10px]">(Compensated)</span>',
+      rssi: 'Signal: -66 dBm (Robust Link)',
+      sensorBadge: 'PROBE NOMINAL',
+      sensorBadgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+      rawPacket: '+RESP:GTFRI,1A0103,864920041187761,,0,0,1,1,42.0,88,13.9,106.7118,-6.1620,20250514143202,0460,0000,18F0,00028A14,01,0000,0000,0000,0000,27,00,00$',
+      speed: '42.0 km/h (Urban Transit)',
+      msgType: 'GTFRI (Periodic Fix)',
+      accStream: 'DI1=1 (ACC ON 13.9V)',
+      accStreamColor: 'text-emerald-400'
+    }
+  };
+
+  // Global functions exposed to window
+  window.openInspectModal = function(unitId) {
+    const modal = document.getElementById('inspect-modal');
+    if (!modal) return;
+
+    const data = vehicleDataMap[unitId] || vehicleDataMap['HAULER-04'];
+
+    // Update Header Identifiers
+    const assetIdEl = document.getElementById('modal-asset-id');
+    const plateTagEl = document.getElementById('modal-plate-tag');
+    const incidentBadgeEl = document.getElementById('modal-incident-badge');
+    const incidentTextEl = document.getElementById('modal-incident-text');
+
+    if (assetIdEl) assetIdEl.textContent = data.asset;
+    if (plateTagEl) plateTagEl.textContent = data.plate;
+    if (incidentTextEl) incidentTextEl.textContent = data.incidentBadge;
+    if (incidentBadgeEl) {
+      incidentBadgeEl.className = 'inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-bold border ' + data.incidentClass;
+    }
+
+    // Update Unit Switcher Buttons
+    const switchButtons = document.querySelectorAll('#unit-switcher button');
+    switchButtons.forEach(btn => {
+      const targetUnit = btn.getAttribute('data-switcher') || btn.textContent.trim();
+      if (targetUnit === data.asset) {
+        btn.className = 'px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-white text-blue-700 shadow-sm border border-slate-200/80 transition-colors';
+      } else {
+        btn.className = 'px-2.5 py-1 rounded text-[11px] font-mono font-medium text-slate-600 hover:text-slate-900 transition-colors';
+      }
+    });
+
+    // Update Banner
+    const bannerContainer = document.getElementById('modal-banner-container');
+    const bannerTag = document.getElementById('modal-banner-tag');
+    const bannerTitle = document.getElementById('modal-banner-title');
+    const bannerTime = document.getElementById('modal-banner-time');
+    const bannerDesc = document.getElementById('modal-banner-desc');
+    const bannerStat = document.getElementById('modal-banner-stat');
+    const bannerIcon = document.getElementById('modal-banner-icon');
+
+    if (bannerContainer) {
+      if (data.bannerTheme === 'rose') {
+        bannerContainer.className = 'p-4 rounded-xl bg-rose-50 border border-rose-200 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3';
+        if (bannerTag) bannerTag.className = 'px-1.5 py-0.5 rounded bg-rose-600 text-white font-bold text-[10px]';
+        if (bannerTitle) bannerTitle.className = 'text-xs font-bold text-rose-950 tracking-tight';
+        if (bannerTime) bannerTime.className = 'text-[11px] text-rose-700 font-semibold';
+        if (bannerDesc) bannerDesc.className = 'text-[11px] text-rose-800 font-sans mt-0.5 leading-relaxed';
+        if (bannerStat) bannerStat.className = 'px-2.5 py-1 rounded-md bg-white border border-rose-200 text-rose-800 font-semibold shadow-sm';
+        if (bannerIcon) bannerIcon.className = 'p-2 rounded-lg bg-rose-600 text-white shrink-0 flex items-center justify-center';
+      } else if (data.bannerTheme === 'blue') {
+        bannerContainer.className = 'p-4 rounded-xl bg-blue-50 border border-blue-200 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3';
+        if (bannerTag) bannerTag.className = 'px-1.5 py-0.5 rounded bg-blue-600 text-white font-bold text-[10px]';
+        if (bannerTitle) bannerTitle.className = 'text-xs font-bold text-blue-950 tracking-tight';
+        if (bannerTime) bannerTime.className = 'text-[11px] text-blue-700 font-semibold';
+        if (bannerDesc) bannerDesc.className = 'text-[11px] text-blue-800 font-sans mt-0.5 leading-relaxed';
+        if (bannerStat) bannerStat.className = 'px-2.5 py-1 rounded-md bg-white border border-blue-200 text-blue-800 font-semibold shadow-sm';
+        if (bannerIcon) bannerIcon.className = 'p-2 rounded-lg bg-blue-600 text-white shrink-0 flex items-center justify-center';
+      } else if (data.bannerTheme === 'cyan') {
+        bannerContainer.className = 'p-4 rounded-xl bg-cyan-50 border border-cyan-200 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3';
+        if (bannerTag) bannerTag.className = 'px-1.5 py-0.5 rounded bg-cyan-600 text-white font-bold text-[10px]';
+        if (bannerTitle) bannerTitle.className = 'text-xs font-bold text-cyan-950 tracking-tight';
+        if (bannerTime) bannerTime.className = 'text-[11px] text-cyan-700 font-semibold';
+        if (bannerDesc) bannerDesc.className = 'text-[11px] text-cyan-800 font-sans mt-0.5 leading-relaxed';
+        if (bannerStat) bannerStat.className = 'px-2.5 py-1 rounded-md bg-white border border-cyan-200 text-cyan-800 font-semibold shadow-sm';
+        if (bannerIcon) bannerIcon.className = 'p-2 rounded-lg bg-cyan-600 text-white shrink-0 flex items-center justify-center';
+      } else {
+        bannerContainer.className = 'p-4 rounded-xl bg-emerald-50 border border-emerald-200 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3';
+        if (bannerTag) bannerTag.className = 'px-1.5 py-0.5 rounded bg-emerald-600 text-white font-bold text-[10px]';
+        if (bannerTitle) bannerTitle.className = 'text-xs font-bold text-emerald-950 tracking-tight';
+        if (bannerTime) bannerTime.className = 'text-[11px] text-emerald-700 font-semibold';
+        if (bannerDesc) bannerDesc.className = 'text-[11px] text-emerald-800 font-sans mt-0.5 leading-relaxed';
+        if (bannerStat) bannerStat.className = 'px-2.5 py-1 rounded-md bg-white border border-emerald-200 text-emerald-800 font-semibold shadow-sm';
+        if (bannerIcon) bannerIcon.className = 'p-2 rounded-lg bg-emerald-600 text-white shrink-0 flex items-center justify-center';
+      }
+    }
+
+    if (bannerTag) bannerTag.textContent = data.bannerTag;
+    if (bannerTitle) bannerTitle.textContent = data.bannerTitle;
+    if (bannerTime) bannerTime.textContent = data.bannerTime;
+    if (bannerDesc) bannerDesc.textContent = data.bannerDesc;
+    if (bannerStat) bannerStat.textContent = data.bannerStat;
+    if (bannerIcon) bannerIcon.innerHTML = '<span class="material-symbols-outlined text-[20px]">' + data.bannerIcon + '</span>';
+
+    // Update Hardware Sub-Panels
+    const imeiEl = document.getElementById('modal-imei');
+    const csqEl = document.getElementById('modal-csq');
+    const gnssEl = document.getElementById('modal-gnss');
+    const coordsEl = document.getElementById('modal-coords');
+    const ignitionEl = document.getElementById('modal-ignition');
+    const mainBatteryEl = document.getElementById('modal-main-battery');
+    const bleMacEl = document.getElementById('modal-ble-mac');
+    const bleRssiEl = document.getElementById('modal-ble-rssi');
+    const volumeEl = document.getElementById('modal-volume');
+    const capEl = document.getElementById('modal-capacitance');
+    const fuelTempEl = document.getElementById('modal-fuel-temp');
+    const sensorStatusEl = document.getElementById('modal-sensor-status');
+
+    if (imeiEl) imeiEl.textContent = data.imei;
+    if (csqEl) csqEl.innerHTML = data.csq;
+    if (gnssEl) gnssEl.textContent = data.gnss;
+    if (coordsEl) coordsEl.textContent = data.coords;
+    if (mainBatteryEl) mainBatteryEl.innerHTML = data.mainBattery;
+
+    if (ignitionEl) {
+      ignitionEl.textContent = data.ignition;
+      ignitionEl.className = 'font-bold px-1 py-0.5 rounded border inline-block ' + data.ignitionClass;
+    }
+
+    if (bleMacEl) bleMacEl.textContent = data.bleMac;
+    if (bleRssiEl) bleRssiEl.textContent = data.rssi;
+    if (volumeEl) {
+      volumeEl.className = 'font-bold text-sm ' + data.volumeColor;
+      volumeEl.innerHTML = data.volume;
+    }
+    if (capEl) capEl.innerHTML = data.capacitance;
+    if (fuelTempEl) fuelTempEl.innerHTML = data.fuelTemp;
+
+    if (sensorStatusEl) {
+      sensorStatusEl.className = 'px-1.5 py-0.2 rounded text-[9px] font-semibold border ' + data.sensorBadgeClass;
+      sensorStatusEl.textContent = data.sensorBadge;
+    }
+
+    // Update Raw Stream Terminal
+    const rawPacketEl = document.getElementById('modal-raw-packet');
+    const streamSpeedEl = document.getElementById('modal-stream-speed');
+    const streamTypeEl = document.getElementById('modal-stream-type');
+    const streamAccEl = document.getElementById('modal-stream-acc');
+
+    if (rawPacketEl) rawPacketEl.textContent = data.rawPacket;
+    if (streamSpeedEl) streamSpeedEl.textContent = data.speed;
+    if (streamTypeEl) streamTypeEl.textContent = data.msgType;
+    if (streamAccEl) {
+      streamAccEl.textContent = data.accStream;
+      streamAccEl.className = 'font-semibold ' + data.accStreamColor;
+    }
+
+    // Display modal
+    modal.classList.remove('hidden');
+    modal.style.display = 'flex';
+  };
+
+  window.closeInspectModal = function() {
+    const modal = document.getElementById('inspect-modal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.style.display = 'none';
+    }
+  };
+
+  window.handleBackdropClick = function(event) {
+    if (event.target && event.target.id === 'inspect-modal') {
+      window.closeInspectModal();
+    }
+  };
+
+  // Wire events safely after DOM load
+  document.addEventListener('DOMContentLoaded', function() {
+    // Escape key closes modal
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        window.closeInspectModal();
+      }
+    });
+
+    // Wire all elements with class .btn-inspect
+    const inspectBtns = document.querySelectorAll('.btn-inspect');
+    inspectBtns.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const unit = this.getAttribute('data-unit') || 'HAULER-04';
+        window.openInspectModal(unit);
+      });
+    });
+
+    // Wire actions in modal
+    const pollBtn = document.getElementById('poll-ota-btn');
+    if (pollBtn) {
+      pollBtn.addEventListener('click', function() {
+        const orig = pollBtn.innerHTML;
+        pollBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">sync</span><span>Polling Queclink OTA...</span>';
+        setTimeout(function() {
+          pollBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-emerald-600">done</span><span>Packet Ingested OK</span>';
+          setTimeout(function() { pollBtn.innerHTML = orig; }, 1800);
+        }, 800);
+      });
+    }
+
+    const relayBtn = document.getElementById('relay-immobilizer-btn');
+    if (relayBtn) {
+      relayBtn.addEventListener('click', function() {
+        const confirmAction = confirm('Send Queclink AT command: AT+GTOUT=1 to cut fuel circuit relay?');
+        if (confirmAction) {
+          const orig = relayBtn.innerHTML;
+          relayBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">sync</span><span>Transmitting Command...</span>';
+          setTimeout(function() {
+            relayBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-rose-700">lock</span><span>DO1 Immobilizer ARMED</span>';
+            const relayStatus = document.getElementById('modal-relay-status');
+            if (relayStatus) {
+              relayStatus.textContent = 'ACTIVE / CUT CIRCUIT (DO1=1)';
+              relayStatus.className = 'font-bold text-rose-600';
+            }
+          }, 900);
+        }
+      });
+    }
+
+    const exportBtn = document.getElementById('export-json-btn');
+    if (exportBtn) {
+      exportBtn.addEventListener('click', function() {
+        const orig = exportBtn.innerHTML;
+        exportBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-blue-600">check</span><span>Log Exported (CSV)</span>';
+        setTimeout(function() { exportBtn.innerHTML = orig; }, 1600);
+      });
+    }
+  });
+</script>
+
+
+</body></html>

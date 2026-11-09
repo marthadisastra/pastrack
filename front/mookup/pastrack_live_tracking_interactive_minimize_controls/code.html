@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head></head><body class="antialiased h-screen w-screen overflow-hidden flex bg-slate-100 text-slate-900"><svg aria-hidden="true" class="inline-defs-container" style="position:absolute;width:0;height:0;overflow:hidden"></svg>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PASTRACK Fleet Core - Fuel Monitoring Telematics</title>
+<!-- Material Symbols & Inter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#faf8ff",
+            "surface-container-high": "#e2e7ff",
+            "surface-dim": "#d2d9f4",
+            "outline": "#747686",
+            "secondary": "#006a61",
+            "primary-container": "#1d4ed8",
+            "primary-fixed-dim": "#b7c4ff",
+            "inverse-primary": "#b7c4ff",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#006194",
+            "secondary-fixed": "#89f5e7",
+            "surface-container-lowest": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed": "#001d31",
+            "on-primary-fixed": "#001551",
+            "inverse-on-surface": "#eef0ff",
+            "secondary-container": "#86f2e4",
+            "on-surface-variant": "#434655",
+            "surface-bright": "#faf8ff",
+            "tertiary": "#004870",
+            "outline-variant": "#c4c5d7",
+            "surface-variant": "#dae2fd",
+            "on-secondary-fixed": "#00201d",
+            "on-error": "#ffffff",
+            "surface-tint": "#2151da",
+            "on-primary-fixed-variant": "#0039b5",
+            "surface-container": "#eaedff",
+            "on-tertiary-container": "#b2d9ff",
+            "inverse-surface": "#283044",
+            "surface-container-low": "#f2f3ff",
+            "on-tertiary-fixed-variant": "#004b73",
+            "tertiary-fixed-dim": "#93ccff",
+            "tertiary-fixed": "#cce5ff",
+            "error": "#ba1a1a",
+            "surface": "#faf8ff",
+            "on-primary-container": "#cad3ff",
+            "secondary-fixed-dim": "#6bd8cb",
+            "on-surface": "#131b2e",
+            "surface-container-highest": "#dae2fd",
+            "on-primary": "#ffffff",
+            "primary": "#0037b0",
+            "on-secondary-container": "#006f66",
+            "on-background": "#131b2e",
+            "primary-fixed": "#dce1ff",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#005049"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            mono: ["'JetBrains Mono'", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+    }
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+    }
+    .glass-sub {
+      background: rgba(248, 250, 252, 0.75);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+  </style>
+<meta content="web_blank" name="shell-type"/>
+<!-- FULL-SCREEN MAP CANVAS (100% SCREEN HERO) -->
+<div class="relative w-full h-full overflow-hidden select-none bg-slate-200">
+<!-- SATELLITE & VECTOR GIS MAP BASE LAYER -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-700 ease-out scale-100" data-alt="High resolution precision satellite aerial orthophoto map of an expansive intermodal container port terminal and coastal highway logistics corridor. Intricate industrial docks, container stacks, arterial viaducts, coastal shipping channels, and crisply defined multi-lane freeway interchanges bathed in crisp morning daylight with geometric road vector networks and marine logistics infrastructures." id="mapViewport" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDY-v2-ac-NbcG7KBEgeJcPgGKd2qba0MCP6p9pOi0RsetcAWSZi3eYupzKjR04tLzh0EIOghXMpCth0l3Li3FnHpLExC8xXEffZkf82-Cgue1Gd6CTrnFykMtpAtZhMUvNuaaUUqcMjc7z69ihh_8vSH252eFgM1U0ypcboeFGpQtsQs-Fd5VJN0I9Y0FBgu5niwEzuDkR9av_0iLtfDyuBcRfbqoXGUn58YHG"); transform: scale(0.94) translate(0px, 0px);'>
+<!-- SUBTLE CLEAN VIGNETTE OVERLAY -->
+<div class="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-slate-900/10 pointer-events-none"></div>
+<!-- VECTOR SVG OVERLAYS: GEOFENCES & BREADCRUMBS -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="10" id="diagonalHatchLight" patterntransform="rotate(45 0 0)" patternunits="userSpaceOnUse" width="10">
+<line stroke="#0284c7" stroke-opacity="0.3" stroke-width="1.5" x1="0" x2="0" y1="0" y2="10"></line>
+</pattern>
+</defs>
+<!-- Geofence 1: Tg. Priok Port Container Zone -->
+<polygon class="transition-opacity duration-300" fill="url(#diagonalHatchLight)" id="gf-port" points="120,180 290,140 380,260 320,490 140,510 90,360"></polygon>
+<polygon fill="#0284c7" fill-opacity="0.06" points="120,180 290,140 380,260 320,490 140,510 90,360" stroke="#0284c7" stroke-dasharray="5,4" stroke-width="2"></polygon>
+<!-- Geofence 2: Cikarang Logistics Hub -->
+<polygon fill="#2563eb" fill-opacity="0.05" id="gf-logistics" points="680,310 940,290 1020,440 910,560 690,520" stroke="#2563eb" stroke-dasharray="5,4" stroke-width="2"></polygon>
+<!-- ACTIVE BREADCRUMB TRAIL FOR HAULER-01 -->
+<g id="trailHauler01" style="opacity: 1;">
+<polyline fill="none" points="410,580 442,540 488,485 530,442 575,395 620,358 668,318" stroke="#0284c7" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.8" stroke-width="3.5"></polyline>
+<polyline fill="none" points="410,580 442,540 488,485 530,442 575,395 620,358 668,318" stroke="#38bdf8" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.35" stroke-width="8"></polyline>
+<!-- Breadcrumb GPS Ping dots -->
+<circle cx="442" cy="540" fill="#0284c7" r="3.5" stroke="#ffffff" stroke-width="1.5"></circle>
+<circle cx="488" cy="485" fill="#0284c7" r="3.5" stroke="#ffffff" stroke-width="1.5"></circle>
+<circle cx="530" cy="442" fill="#0284c7" r="3.5" stroke="#ffffff" stroke-width="1.5"></circle>
+<circle cx="575" cy="395" fill="#0284c7" r="3.5" stroke="#ffffff" stroke-width="1.5"></circle>
+<circle cx="620" cy="358" fill="#0284c7" r="4" stroke="#ffffff" stroke-width="1.5"></circle>
+</g>
+</svg>
+<!-- GEOFENCE LABELS (Clean Light Badges) -->
+<div class="absolute top-[170px] left-[140px] px-2.5 py-1 rounded-md glass-card shadow-sm pointer-events-none border border-sky-200">
+<span class="text-[11px] font-semibold text-sky-800 flex items-center gap-1 font-mono tracking-tight">
+<span class="material-symbols-outlined text-[13px] text-sky-600">share_location</span>
+        GF-01 :: TG. PRIOK PORT CONTAINER ZONE
+      </span>
+</div>
+<div class="absolute top-[320px] left-[730px] px-2.5 py-1 rounded-md glass-card shadow-sm pointer-events-none border border-blue-200">
+<span class="text-[11px] font-semibold text-blue-800 flex items-center gap-1 font-mono tracking-tight">
+<span class="material-symbols-outlined text-[13px] text-blue-600">crop_square</span>
+        GF-02 :: CIKARANG LOGISTICS HUB
+      </span>
+</div>
+<!-- MAP VEHICLE PINS (LIGHT THEMED, HIGH-CONTRAST) -->
+<!-- VEHICLE 1: HAULER-01 (ACTIVE SELECTED) -->
+<div class="absolute top-[305px] left-[655px] -translate-x-1/2 -translate-y-1/2 cursor-pointer group z-20 transition-transform duration-200 hover:scale-110" id="pin-HAULER-01" onclick="selectUnit('HAULER-01')">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-12 h-12 rounded-full bg-blue-500/20 animate-ping"></div>
+<div class="relative w-8 h-8 rounded-full bg-blue-600 text-white shadow-md flex items-center justify-center border-2 border-white">
+<span class="material-symbols-outlined text-base transform rotate-45" style="font-variation-settings: 'FILL' 1;">navigation</span>
+</div>
+<!-- Light Badge Callout -->
+<div class="absolute -bottom-6 whitespace-nowrap bg-white/95 backdrop-blur px-2 py-0.5 rounded shadow border border-slate-200/80 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+<span class="text-[11px] font-bold text-slate-800 font-mono">HAULER-01</span>
+<span class="text-[10px] font-semibold text-slate-500 font-mono">68 km/h</span>
+</div>
+</div>
+</div>
+<!-- VEHICLE 2: HAULER-04 (CRITICAL SIPHON ALERT) -->
+<div class="absolute top-[230px] left-[260px] -translate-x-1/2 -translate-y-1/2 cursor-pointer group z-20 transition-transform duration-200 hover:scale-110" id="pin-HAULER-04" onclick="selectUnit('HAULER-04')">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-12 h-12 rounded-full bg-rose-500/25 animate-pulse"></div>
+<div class="relative w-8 h-8 rounded-full bg-rose-600 text-white shadow-md flex items-center justify-center border-2 border-white">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="absolute -bottom-6 whitespace-nowrap bg-rose-50 text-rose-700 px-2 py-0.5 rounded shadow border border-rose-200 flex items-center gap-1 font-mono">
+<span class="text-[11px] font-bold">HAULER-04</span>
+<span class="text-[10px] font-bold text-rose-600">SIPHON ALERT</span>
+</div>
+</div>
+</div>
+<!-- VEHICLE 3: CRYOTANK-02 (MOVING) -->
+<div class="absolute top-[440px] left-[310px] -translate-x-1/2 -translate-y-1/2 cursor-pointer group z-10 transition-transform duration-200 hover:scale-110" id="pin-CRYOTANK-02" onclick="selectUnit('CRYOTANK-02')">
+<div class="relative flex items-center justify-center">
+<div class="relative w-7 h-7 rounded-full bg-indigo-600 text-white shadow-sm flex items-center justify-center border-2 border-white">
+<span class="material-symbols-outlined text-sm transform -rotate-12" style="font-variation-settings: 'FILL' 1;">navigation</span>
+</div>
+<div class="absolute -bottom-5 whitespace-nowrap bg-white/95 backdrop-blur px-1.5 py-0.2 rounded shadow-sm border border-slate-200/80 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-indigo-600"></span>
+<span class="text-[10px] font-bold text-slate-800 font-mono">CRYOTANK-02</span>
+<span class="text-[9px] text-slate-500 font-mono">54 km/h</span>
+</div>
+</div>
+</div>
+<!-- VEHICLE 4: FLATBED-11 (IDLING) -->
+<div class="absolute top-[480px] left-[780px] -translate-x-1/2 -translate-y-1/2 cursor-pointer group z-10 transition-transform duration-200 hover:scale-110" id="pin-FLATBED-11" onclick="selectUnit('FLATBED-11')">
+<div class="relative flex items-center justify-center">
+<div class="relative w-7 h-7 rounded-full bg-amber-500 text-white shadow-sm flex items-center justify-center border-2 border-white">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">pause</span>
+</div>
+<div class="absolute -bottom-5 whitespace-nowrap bg-white/95 backdrop-blur px-1.5 py-0.2 rounded shadow-sm border border-slate-200/80 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+<span class="text-[10px] font-bold text-slate-800 font-mono">FLATBED-11</span>
+<span class="text-[9px] text-amber-700 font-mono">IDLE 22m</span>
+</div>
+</div>
+</div>
+<!-- VEHICLE 5: VAN-COURIER-28 (MOVING) -->
+<div class="absolute top-[160px] left-[520px] -translate-x-1/2 -translate-y-1/2 cursor-pointer group z-10 transition-transform duration-200 hover:scale-110" id="pin-VAN-COURIER-28" onclick="selectUnit('VAN-COURIER-28')">
+<div class="relative flex items-center justify-center">
+<div class="relative w-7 h-7 rounded-full bg-teal-600 text-white shadow-sm flex items-center justify-center border-2 border-white">
+<span class="material-symbols-outlined text-sm transform rotate-90" style="font-variation-settings: 'FILL' 1;">navigation</span>
+</div>
+<div class="absolute -bottom-5 whitespace-nowrap bg-white/95 backdrop-blur px-1.5 py-0.2 rounded shadow-sm border border-slate-200/80 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
+<span class="text-[10px] font-bold text-slate-800 font-mono">VAN-28</span>
+<span class="text-[9px] text-slate-500 font-mono">42 km/h</span>
+</div>
+</div>
+</div>
+</div>
+<!-- FLOATING TOP COMPACT CONTROLS & KPI STRIP (LIGHT GLASS) -->
+<header class="absolute top-3 left-3 right-3 z-30 flex items-center justify-between gap-3 pointer-events-none">
+<!-- BRAND & VIEW SWITCHER -->
+<div class="flex items-center gap-2.5 glass-card px-3 py-1.5 rounded-xl pointer-events-auto border border-white/60">
+<div class="flex items-center gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></div>
+<span class="text-sm font-extrabold tracking-tight text-blue-900 font-mono">PASTRACK</span>
+<span class="text-[10px] font-semibold text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200">LIVE CORE</span>
+</div>
+<div class="h-4 w-px bg-slate-200"></div>
+<div class="flex items-center bg-slate-100/90 p-0.5 rounded-lg border border-slate-200/60">
+<button class="px-2 py-0.5 rounded-md text-xs font-semibold hover:text-slate-900 transition-colors flex items-center gap-1 bg-white text-blue-700 shadow-xs" id="btnOverviewMode" onclick="setMode('overview')">
+<span class="material-symbols-outlined text-xs">hub</span>
+          Overview
+        </button>
+<button class="px-2 py-0.5 rounded-md text-xs font-semibold border border-slate-200/50 transition-colors flex items-center gap-1 text-slate-600" id="btnLockMode" onclick="setMode('locked')">
+<span class="material-symbols-outlined text-xs">my_location</span>
+          Lock-On
+        </button>
+</div>
+</div>
+<!-- CENTER KPI TELEMETRY STRIP (CONCISE TECHNICAL PILLS) -->
+<div class="hidden md:flex items-center gap-1.5 glass-card px-2.5 py-1 rounded-xl pointer-events-auto border border-white/60">
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-slate-50 border border-slate-200/60 text-[11px] font-mono font-medium text-slate-700">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="">INGESTION:</span>
+<span class="font-bold text-slate-900">18ms</span>
+</div>
+<button class="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-blue-50 border border-blue-200/60 text-[11px] font-mono font-semibold text-blue-800 hover:bg-blue-100 transition-colors" onclick="filterCategory('moving')">
+<span class="material-symbols-outlined text-xs text-blue-600">navigation</span>
+<span class="">31 Moving</span>
+</button>
+<button class="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-amber-50 border border-amber-200/60 text-[11px] font-mono font-semibold text-amber-800 hover:bg-amber-100 transition-colors" onclick="filterCategory('idle')">
+<span class="material-symbols-outlined text-xs text-amber-600">timer</span>
+<span class="">11 Idle</span>
+</button>
+<button class="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-slate-100 border border-slate-200/60 text-[11px] font-mono font-semibold text-slate-600 hover:bg-slate-200 transition-colors" onclick="filterCategory('parked')">
+<span class="material-symbols-outlined text-xs text-slate-500">local_parking</span>
+<span class="">5 Parked</span>
+</button>
+<button class="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-rose-50 border border-rose-300 text-[11px] font-mono font-bold text-rose-700 hover:bg-rose-100 transition-colors" onclick="filterCategory('alert')">
+<span class="material-symbols-outlined text-xs text-rose-600">warning</span>
+<span class="">1 Alert</span>
+</button>
+</div>
+<!-- QUICK SEARCH & PROTOCOL BADGE -->
+<div class="flex items-center gap-2 glass-card px-2.5 py-1.5 rounded-xl pointer-events-auto border border-white/60">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2 text-slate-400 text-sm">search</span>
+<input class="bg-slate-50 text-slate-900 text-xs font-mono rounded-lg pl-7 pr-2.5 py-1 w-44 placeholder:text-slate-400 border border-slate-200 focus:outline-none focus:border-blue-500 focus:bg-white transition-all" id="unitSearchInput" onkeyup="filterUnits(this.value)" placeholder="Search Unit / IMEI..." type="text"/>
+</div>
+<div class="h-4 w-px bg-slate-200"></div>
+<span class="text-[10px] font-semibold text-slate-500 font-mono hidden lg:inline">LTE Cat 1 • BLE 5.0</span>
+</div>
+</header>
+<!-- FLOATING RESTORE PILL FOR LEFT FLEET ROSTER (WHEN MINIMIZED) -->
+<button class="hidden absolute top-16 left-3 z-30 glass-card px-3 py-2 rounded-xl border border-white/80 shadow-lg flex items-center gap-2 text-slate-800 hover:text-blue-700 hover:bg-white transition-all duration-200 cursor-pointer group active:scale-95" id="dockExpandBtn" onclick="toggleDockCollapse()">
+<span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+<span class="material-symbols-outlined text-base text-blue-600">menu_open</span>
+<span class="text-xs font-mono font-bold tracking-tight">FLEET ROSTER (5)</span>
+<span class="text-[10px] font-mono font-semibold text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200">RESTORE</span>
+</button>
+<!-- FLOATING LEFT VEHICLE SELECTOR DOCK (COMPACT, TRANSLUCENT) -->
+<aside class="absolute top-16 left-3 bottom-12 w-72 z-20 flex flex-col glass-card rounded-xl overflow-hidden transition-all duration-300 border border-white/60 shadow-lg" id="fleetDock">
+<!-- DOCK HEADER -->
+<div class="px-3 py-2 bg-slate-50/80 border-b border-slate-200/70 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-blue-700 text-sm">alt_route</span>
+<span class="text-xs font-bold text-slate-800">FLEET ROSTER</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-[10px] font-semibold text-slate-600 bg-white border border-slate-200 px-1.5 py-0.2 rounded">5 MONITORED</span>
+<button class="w-6 h-6 rounded flex items-center justify-center text-slate-500 hover:text-blue-700 hover:bg-blue-50 border border-transparent hover:border-blue-200 transition-colors cursor-pointer" id="btnMinimizeDock" onclick="toggleDockCollapse()" title="Minimize Fleet Roster">
+<span class="material-symbols-outlined text-sm">dock_to_left</span>
+</button>
+</div>
+</div>
+<!-- FILTER BUTTONS PILL -->
+<div class="p-1.5 border-b border-slate-200/60 bg-white/50 flex gap-1">
+<button class="flex-1 py-1 rounded-md text-[10px] font-bold bg-blue-600 text-white shadow-xs transition-colors" onclick="filterCategory('all')">ALL (5)</button>
+<button class="flex-1 py-1 rounded-md text-[10px] font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors" onclick="filterCategory('moving')">MOVING</button>
+<button class="flex-1 py-1 rounded-md text-[10px] font-bold bg-rose-50 text-rose-700 hover:bg-rose-100 transition-colors" onclick="filterCategory('alert')">ALERT (1)</button>
+</div>
+<!-- VEHICLE LIST -->
+<div class="flex-1 overflow-y-auto p-1.5 space-y-1" id="unitCardList">
+<!-- CARD 1: HAULER-01 -->
+<div class="unit-card p-2 rounded-lg border shadow-xs cursor-pointer transition-all hover:border-blue-400 bg-blue-50/90 border-blue-200" id="card-HAULER-01" onclick="selectUnit('HAULER-01')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-blue-600"></span>
+<span class="text-xs font-bold text-slate-900 font-mono">HAULER-01</span>
+<span class="text-[10px] font-semibold text-slate-500">B 9123 XYZ</span>
+</div>
+<span class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-blue-600 text-white font-mono">LOCKED</span>
+</div>
+<div class="flex items-center justify-between text-[11px] font-mono text-slate-600 mt-1">
+<span class="">68 km/h • 042°</span>
+<span class="text-blue-800 font-bold">342L (85.5%)</span>
+</div>
+<div class="w-full bg-slate-200 h-1 rounded mt-1.5 overflow-hidden">
+<div class="bg-blue-600 h-full rounded" style="width: 85.5%;"></div>
+</div>
+<div class="flex items-center justify-between text-[9px] font-mono text-slate-400 mt-1">
+<span class="">Queclink GV30CEU</span>
+<span class="">CSQ 29/31</span>
+</div>
+</div>
+<!-- CARD 2: HAULER-04 (P1 ALERT) -->
+<div class="unit-card p-2 rounded-lg border shadow-xs cursor-pointer transition-all hover:bg-white bg-white/70 border-slate-200/80" id="card-HAULER-04" onclick="selectUnit('HAULER-04')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-rose-600 animate-ping"></span>
+<span class="text-xs font-bold text-rose-700 font-mono">HAULER-04</span>
+<span class="text-[10px] font-semibold text-slate-500">B 9844 UVD</span>
+</div>
+<span class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-rose-600 text-white font-mono">P1 ALERT</span>
+</div>
+<div class="flex items-center justify-between text-[11px] font-mono mt-1">
+<span class="text-slate-500">0 km/h • ACC OFF</span>
+<span class="text-rose-600 font-bold">-48.2L Siphon</span>
+</div>
+<div class="w-full bg-slate-200 h-1 rounded mt-1.5 overflow-hidden">
+<div class="bg-rose-600 h-full rounded" style="width: 32%;"></div>
+</div>
+<div class="flex items-center justify-between text-[9px] font-mono text-rose-600 font-semibold mt-1">
+<span class="">Tanjung Priok Gate 3</span>
+<span class="">03m ago</span>
+</div>
+</div>
+<!-- CARD 3: CRYOTANK-02 -->
+<div class="unit-card p-2 rounded-lg border shadow-xs cursor-pointer transition-all hover:bg-white bg-white/70 border-slate-200/80" id="card-CRYOTANK-02" onclick="selectUnit('CRYOTANK-02')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-indigo-600"></span>
+<span class="text-xs font-bold text-slate-900 font-mono">CRYOTANK-02</span>
+<span class="text-[10px] font-semibold text-slate-500">B 9301 TKR</span>
+</div>
+<span class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-indigo-100 text-indigo-700 font-mono">MOVING</span>
+</div>
+<div class="flex items-center justify-between text-[11px] font-mono text-slate-600 mt-1">
+<span class="">54 km/h • 178°</span>
+<span class="text-indigo-700 font-bold">520L (86.6%)</span>
+</div>
+<div class="w-full bg-slate-200 h-1 rounded mt-1.5 overflow-hidden">
+<div class="bg-indigo-600 h-full rounded" style="width: 86.6%;"></div>
+</div>
+<div class="flex items-center justify-between text-[9px] font-mono text-slate-400 mt-1">
+<span class="">Volvo FH16 Tanker</span>
+<span class="">HDOP 0.68</span>
+</div>
+</div>
+<!-- CARD 4: FLATBED-11 -->
+<div class="unit-card p-2 rounded-lg border shadow-xs cursor-pointer transition-all hover:bg-white bg-white/70 border-slate-200/80" id="card-FLATBED-11" onclick="selectUnit('FLATBED-11')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span class="text-xs font-bold text-slate-900 font-mono">FLATBED-11</span>
+<span class="text-[10px] font-semibold text-slate-500">B 8812 AB</span>
+</div>
+<span class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 font-mono">IDLE</span>
+</div>
+<div class="flex items-center justify-between text-[11px] font-mono text-slate-600 mt-1">
+<span class="">0 km/h • Idle 22m</span>
+<span class="text-slate-800 font-bold">298L (66.2%)</span>
+</div>
+<div class="w-full bg-slate-200 h-1 rounded mt-1.5 overflow-hidden">
+<div class="bg-amber-500 h-full rounded" style="width: 66.2%;"></div>
+</div>
+<div class="flex items-center justify-between text-[9px] font-mono text-slate-400 mt-1">
+<span class="">Cikarang Dry Port</span>
+<span class="">Burn 1.4 L/h</span>
+</div>
+</div>
+<!-- CARD 5: VAN-COURIER-28 -->
+<div class="unit-card p-2 rounded-lg border shadow-xs cursor-pointer transition-all hover:bg-white bg-white/70 border-slate-200/80" id="card-VAN-COURIER-28" onclick="selectUnit('VAN-COURIER-28')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-teal-600"></span>
+<span class="text-xs font-bold text-slate-900 font-mono">VAN-28</span>
+<span class="text-[10px] font-semibold text-slate-500">B 4419 SLL</span>
+</div>
+<span class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-teal-100 text-teal-800 font-mono">MOVING</span>
+</div>
+<div class="flex items-center justify-between text-[11px] font-mono text-slate-600 mt-1">
+<span class="">42 km/h • 270°</span>
+<span class="text-teal-800 font-bold">185L (92.5%)</span>
+</div>
+<div class="w-full bg-slate-200 h-1 rounded mt-1.5 overflow-hidden">
+<div class="bg-teal-600 h-full rounded" style="width: 92.5%;"></div>
+</div>
+<div class="flex items-center justify-between text-[9px] font-mono text-slate-400 mt-1">
+<span class="">Isuzu Giga Urban</span>
+<span class="">CSQ 30/31</span>
+</div>
+</div>
+</div>
+<!-- DOCK FOOTER -->
+<div class="px-2.5 py-1.5 bg-slate-50/90 border-t border-slate-200/70 flex items-center justify-between text-[10px] font-mono text-slate-500">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+        Queclink Sync Active
+      </span>
+<button class="hover:text-blue-700 transition-colors" onclick="toggleDockCollapse()" title="Minimize Fleet Roster">
+<span class="material-symbols-outlined text-xs">dock_to_left</span>
+</button>
+</div>
+</aside>
+<!-- FLOATING RESTORE PILL FOR RIGHT HUD (WHEN MINIMIZED) -->
+<button class="hidden absolute top-16 right-3 z-30 glass-card px-3 py-2 rounded-xl border border-white/80 shadow-lg flex items-center gap-2 text-slate-800 hover:text-blue-700 hover:bg-white transition-all duration-200 cursor-pointer group active:scale-95" id="hudExpandBtn" onclick="toggleHudCollapse()">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="material-symbols-outlined text-base text-blue-600">dock_to_left</span>
+<span class="text-xs font-mono font-bold tracking-tight" id="hudCollapsedLabel">HAULER-01 HUD</span>
+<span class="text-[10px] font-mono font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">LIVE RESTORE</span>
+</button>
+<!-- FLOATING RIGHT TELEMETRY HUD (STREAMLINED, COMPACT LIGHT GLASS) -->
+<aside class="absolute top-16 right-3 bottom-12 w-80 z-20 flex flex-col glass-card rounded-xl overflow-hidden transition-all duration-300 border border-white/60 shadow-lg" id="telemetryHud">
+<!-- HUD HEADER -->
+<div class="px-3.5 bg-slate-50/80 border-b border-slate-200/70 flex items-center justify-between py-2">
+<div class="flex items-center gap-1.5 min-w-0 flex-1">
+<span class="text-xs font-extrabold text-slate-900 font-mono shrink-0" id="hudUnitId">HAULER-01</span>
+<span class="text-[9px] font-bold text-slate-600 bg-white border border-slate-200 px-1 py-0.2 rounded font-mono shrink-0" id="hudUnitPlate">B 9123 XYZ</span>
+<span class="text-slate-300 text-xs shrink-0">•</span>
+<span class="text-[10px] font-mono text-slate-500 truncate" id="hudUnitChassis">Scania R500 • GV30CEU Queclink Lock</span>
+</div>
+<div class="shrink-0 ml-1 flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-50 border border-emerald-200 text-[9px] font-mono font-bold text-emerald-700" id="hudGnssStatus">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>3D FIX
+    </span>
+<button class="w-6 h-6 rounded flex items-center justify-center text-slate-500 hover:text-blue-700 hover:bg-blue-50 border border-transparent hover:border-blue-200 transition-colors cursor-pointer" id="btnMinimizeHud" onclick="toggleHudCollapse()" title="Minimize Telemetry HUD">
+<span class="material-symbols-outlined text-sm">dock_to_right</span>
+</button>
+</div>
+</div>
+<!-- HUD STREAM MODULES -->
+<div class="flex-1 overflow-y-auto p-2.5 space-y-2">
+<!-- MODULE 1: KINETICS & IGNITION -->
+<div class="glass-sub p-2 rounded-lg space-y-1.5">
+<div class="flex items-center justify-between text-[10px] font-mono text-slate-500 font-semibold uppercase">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-blue-600">speed</span>
+            KINETICS &amp; POWER
+          </span>
+<span class="" id="hudHdop">HDOP 0.74</span>
+</div>
+<div class="grid grid-cols-3 gap-1.5 text-center">
+<div class="bg-white p-1.5 rounded border border-slate-200/70">
+<span class="block text-[9px] font-mono text-slate-400">SPEED</span>
+<span class="text-sm font-extrabold text-blue-700 font-mono" id="hudSpeed">68.0</span>
+<span class="block text-[8px] font-mono text-slate-400">km/h</span>
+</div>
+<div class="bg-white p-1.5 rounded border border-slate-200/70">
+<span class="block text-[9px] font-mono text-slate-400">HEADING</span>
+<span class="text-sm font-extrabold text-slate-800 font-mono" id="hudAzimuth">042°</span>
+<span class="block text-[8px] font-mono text-slate-400">NE Vector</span>
+</div>
+<div class="bg-white p-1.5 rounded border border-slate-200/70">
+<span class="block text-[9px] font-mono text-slate-400">ALTITUDE</span>
+<span class="text-sm font-extrabold text-slate-800 font-mono" id="hudAltitude">48</span>
+<span class="block text-[8px] font-mono text-slate-400">meters</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-white px-2 py-1 rounded border border-slate-200/70 text-[10px] font-mono">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-emerald-600">bolt</span>
+<span class="text-slate-600">DI1 ACC:</span>
+<span class="font-bold text-emerald-700 bg-emerald-50 px-1 rounded border border-emerald-200" id="hudAccStatus">ACC ON</span>
+</div>
+<span class="text-slate-500" id="hudVoltage">13.8V</span>
+</div>
+</div>
+<!-- MODULE 2: CFS300B WIRELESS BLE FUEL PROBE -->
+<div class="glass-sub p-2 rounded-lg space-y-1.5">
+<div class="flex items-center justify-between text-[10px] font-mono">
+<span class="font-semibold text-slate-500 flex items-center gap-1 uppercase">
+<span class="material-symbols-outlined text-xs text-sky-600">local_gas_station</span>
+            CFS300B BLE FUEL
+          </span>
+<span class="px-1.5 py-0.2 rounded bg-sky-50 text-sky-700 font-mono font-bold text-[9px] border border-sky-200">BLE 5.0 LIVE</span>
+</div>
+<!-- Volume Callout -->
+<div class="bg-white p-2 rounded border border-slate-200/70">
+<div class="flex items-baseline justify-between font-mono">
+<div>
+<span class="text-xl font-extrabold text-blue-900" id="hudFuelLiters">342.0</span>
+<span class="text-xs text-slate-400 font-semibold"> / 400 L</span>
+</div>
+<span class="text-base font-extrabold text-blue-600" id="hudFuelPct">85.5%</span>
+</div>
+<div class="w-full bg-slate-100 h-1.5 rounded mt-1.5 overflow-hidden">
+<div class="bg-blue-600 h-full rounded transition-all duration-500" id="hudFuelBar" style="width: 85.5%;"></div>
+</div>
+<div class="flex items-center justify-between mt-1.5 pt-1 border-t border-slate-100 text-[9px] font-mono text-slate-500">
+<span class="">Kalman Filter: Active (±0.2L)</span>
+<span class="" id="hudPermittivity">ε: 2.14 pF</span>
+</div>
+</div>
+<!-- Probe Sub-Metrics Grid -->
+<div class="grid grid-cols-2 gap-1.5 font-mono text-[10px]">
+<div class="bg-white p-1.5 rounded border border-slate-200/70">
+<span class="text-[9px] text-slate-400 block">Burn Rate</span>
+<span class="font-bold text-slate-800" id="hudBurnRate">27.8 L/100km</span>
+</div>
+<div class="bg-white p-1.5 rounded border border-slate-200/70">
+<span class="text-[9px] text-slate-400 block">Probe Temp</span>
+<span class="font-bold text-slate-800" id="hudProbeTemp">28.4 °C</span>
+</div>
+<div class="bg-white p-1.5 rounded border border-slate-200/70">
+<span class="text-[9px] text-slate-400 block">Li-SOCl2 Batt</span>
+<span class="font-bold text-blue-700" id="hudProbeBatt">3.65V (Nom)</span>
+</div>
+<div class="bg-white p-1.5 rounded border border-slate-200/70">
+<span class="text-[9px] text-slate-400 block">Sensor RSSI</span>
+<span class="font-bold text-emerald-700" id="hudBleRssi">-66 dBm</span>
+</div>
+</div>
+</div>
+<!-- MODULE 3: QUECLINK HARDWARE GATEWAY DIAGNOSTICS -->
+<div class="glass-sub p-2 rounded-lg space-y-1 font-mono text-[10px]">
+<div class="flex items-center justify-between text-slate-500 uppercase font-semibold">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-slate-600">router</span>
+            GV30CEU DIAGNOSTIC
+          </span>
+<span class="text-blue-700 font-bold">CSQ 29/31</span>
+</div>
+<div class="bg-white p-1.5 rounded border border-slate-200/70 space-y-1">
+<div class="flex justify-between">
+<span class="text-slate-400">IMEI:</span>
+<span class="text-slate-700 font-semibold" id="hudImei">864920041184301</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-400">Firmware:</span>
+<span class="text-slate-600" id="hudFw">R01A03V05</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-400">LiPo Backup:</span>
+<span class="text-emerald-700 font-bold" id="hudLipo">4.12V (100%)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-400">DO1 Relay:</span>
+<span class="text-slate-700 font-semibold" id="hudRelayState">DISENGAGED</span>
+</div>
+</div>
+</div>
+<!-- ACTIONS STRIP -->
+<div class="space-y-1.5 pt-0.5">
+<div class="grid grid-cols-2 gap-1.5">
+<button class="py-1.5 px-2 rounded-md bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition-colors text-xs font-semibold flex items-center justify-center gap-1 shadow-xs" onclick="recenterMapTarget()">
+<span class="material-symbols-outlined text-xs">center_focus_strong</span>
+            Recenter
+          </button>
+<button class="py-1.5 px-2 rounded-md bg-white border border-slate-200 hover:bg-blue-50 transition-colors text-xs font-semibold flex items-center justify-center gap-1 shadow-xs text-blue-700" id="btnToggleTrail" onclick="toggleBreadcrumbTrail()">
+<span class="material-symbols-outlined text-xs">timeline</span>
+            Trail (24h)
+          </button>
+</div>
+<button class="w-full py-1.5 px-2 rounded-md bg-rose-600 text-white hover:bg-rose-700 transition-colors text-xs font-bold flex items-center justify-center gap-1 shadow-xs" onclick="openImmobilizerModal()">
+<span class="material-symbols-outlined text-xs">lock</span>
+          DO1 Cutoff Relay
+        </button>
+</div>
+</div>
+<!-- HUD FOOTER -->
+<div class="px-2 py-1 bg-slate-50/90 border-t border-slate-200/70 text-center text-[9px] font-mono text-slate-400 uppercase tracking-tight">
+      HARDWARE TELEMETRY • ZERO IDENTITY EXPOSURE
+    </div>
+</aside>
+<!-- FLOATING MAP CONTROLS (BOTTOM RIGHT) -->
+<div class="absolute bottom-12 right-3 z-20 flex flex-col gap-1 glass-card p-1 rounded-lg border border-white/60">
+<button class="w-7 h-7 rounded bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 flex items-center justify-center transition-colors shadow-xs" onclick="zoomMap(1)" title="Zoom In">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+<button class="w-7 h-7 rounded bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 flex items-center justify-center transition-colors shadow-xs" onclick="zoomMap(-1)" title="Zoom Out">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<div class="w-full h-px bg-slate-200 my-0.5"></div>
+<button class="w-7 h-7 rounded bg-white hover:bg-slate-100 text-blue-700 border border-slate-200 flex items-center justify-center transition-colors shadow-xs" id="btnGfToggle" onclick="toggleGeofenceLayer()" title="Toggle Geofences">
+<span class="material-symbols-outlined text-sm">layers</span>
+</button>
+</div>
+<!-- FLOATING BOTTOM RAW PACKET FEED (STREAMLINED LIGHT GLASS) -->
+<footer class="absolute bottom-2 left-3 right-3 z-20 h-8 glass-card rounded-lg px-3 flex items-center justify-between font-mono text-[11px] border border-white/60">
+<div class="flex items-center gap-2 overflow-hidden">
+<div class="flex items-center gap-1 text-blue-700 whitespace-nowrap font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+        RAW GV300:
+      </div>
+<div class="text-slate-600 truncate text-[10px]" id="rawLogFeed">+RESP:GTFRI,1A0103,864920041184301,PASTRACK01,0,0,1,1,68.0,042,48.2,106.8791,-6.1022,20250228084219,0460,0000,18F0,0289,00,85.5,342.0,28.4,3.65,27.8,01,13.8,4.12$</div>
+</div>
+<div class="hidden sm:flex items-center gap-3 text-slate-500 whitespace-nowrap text-[10px]">
+<span class="">LOSS: <strong class="text-blue-700 font-bold">0.00%</strong></span>
+<span class="">BUFFER: <strong class="text-slate-800 font-bold">SYNCED</strong></span>
+<span class="bg-slate-100 border border-slate-200 px-1.5 py-0.2 rounded font-semibold text-slate-600">GV300 PROTOCOL</span>
+</div>
+</footer>
+<!-- MODAL: IMMOBILIZER CONFIRMATION (LIGHT CLEAN DIALOG) -->
+<div class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4 hidden" id="modalImmobilizer">
+<div class="bg-white rounded-xl shadow-2xl max-w-sm w-full p-5 space-y-3.5 border border-slate-200">
+<div class="flex items-center gap-2.5 text-rose-600">
+<div class="w-9 h-9 rounded-full bg-rose-50 text-rose-600 border border-rose-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">warning</span>
+</div>
+<div>
+<h3 class="text-sm font-bold text-slate-900">DO1 Cutoff Relay Interlock</h3>
+<p class="text-[11px] text-slate-500">Severs fuel pump powerline relay</p>
+</div>
+</div>
+<div class="bg-slate-50 p-2.5 rounded-lg font-mono text-[11px] space-y-1 text-slate-600 border border-slate-200">
+<div class="flex justify-between">
+<span class="text-slate-400">TARGET:</span>
+<span class="text-slate-900 font-bold" id="modalTargetUnit">HAULER-01 (B 9123 XYZ)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-400">IMEI:</span>
+<span class="text-slate-800" id="modalTargetImei">864920041184301</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-400">COMMAND:</span>
+<span class="text-blue-700 font-bold">AT+GTCFG=gv30,1,1,,,DO1,1$</span>
+</div>
+</div>
+<p class="text-xs text-slate-500 leading-relaxed">
+        Transmitting remote DO1 ignition trigger over LTE Cat 1. Vehicle will be safely locked.
+      </p>
+<div class="flex items-center justify-end gap-2 pt-1">
+<button class="px-3 py-1.5 rounded-md bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors" onclick="closeImmobilizerModal()">
+          Cancel
+        </button>
+<button class="px-3 py-1.5 rounded-md bg-rose-600 text-white font-semibold text-xs hover:bg-rose-700 transition-colors flex items-center gap-1" onclick="executeImmobilizerCommand()">
+<span class="material-symbols-outlined text-xs">lock</span>
+          Transmit Cutoff
+        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- CLIENT JAVASCRIPT -->
+<script>
+  const fleetDatabase = {
+    'HAULER-01': {
+      plate: 'B 9123 XYZ',
+      chassis: 'Scania R500 • GV30CEU Queclink Lock',
+      speed: '68.0',
+      azimuth: '042°',
+      altitude: '48',
+      acc: 'ACC ON',
+      voltage: '13.8V',
+      liters: '342.0',
+      capacity: '400',
+      pct: '85.5%',
+      burnRate: '27.8 L/100km',
+      probeTemp: '28.4 °C',
+      probeBatt: '3.65V (Nom)',
+      bleRssi: '-66 dBm',
+      hdop: 'HDOP 0.74',
+      sats: '3D FIX (16 Sats)',
+      imei: '864920041184301',
+      fw: 'R01A03V05',
+      lipo: '4.12V (100%)',
+      relay: 'DISENGAGED',
+      packet: '+RESP:GTFRI,1A0103,864920041184301,PASTRACK01,0,0,1,1,68.0,042,48.2,106.8791,-6.1022,20250228084219,0460,0000,18F0,0289,00,85.5,342.0,28.4,3.65,27.8,01,13.8,4.12$'
+    },
+    'HAULER-04': {
+      plate: 'B 9844 UVD',
+      chassis: 'Freightliner Cascadia • P1 Warning Mode',
+      speed: '0.0',
+      azimuth: '180°',
+      altitude: '12',
+      acc: 'ACC OFF',
+      voltage: '12.2V',
+      liters: '128.0',
+      capacity: '400',
+      pct: '32.0%',
+      burnRate: '0.0 L/100km',
+      probeTemp: '31.2 °C',
+      probeBatt: '3.61V (Nom)',
+      bleRssi: '-72 dBm',
+      hdop: 'HDOP 0.81',
+      sats: '3D FIX (14 Sats)',
+      imei: '864920047712903',
+      fw: 'R01A03V05',
+      lipo: '4.08V (Armed)',
+      relay: 'READY',
+      packet: '+RESP:GTALM,1A0103,864920047712903,HAULER04,SIPHON_P1,0,0,0,0,0.0,180,12.0,106.8654,-6.1098,20250228084002,0460,0000,18F0,0112,00,32.0,128.0,31.2,3.61,0.0,00,12.2,4.08$'
+    },
+    'CRYOTANK-02': {
+      plate: 'B 9301 TKR',
+      chassis: 'Volvo FH16 High-Capacity • GV30CEU Lock',
+      speed: '54.0',
+      azimuth: '178°',
+      altitude: '24',
+      acc: 'ACC ON',
+      voltage: '14.1V',
+      liters: '520.0',
+      capacity: '600',
+      pct: '86.6%',
+      burnRate: '31.2 L/100km',
+      probeTemp: '27.1 °C',
+      probeBatt: '3.66V (Nom)',
+      bleRssi: '-61 dBm',
+      hdop: 'HDOP 0.68',
+      sats: '3D FIX (18 Sats)',
+      imei: '864920049921445',
+      fw: 'R01A03V05',
+      lipo: '4.15V (100%)',
+      relay: 'DISENGAGED',
+      packet: '+RESP:GTFRI,1A0103,864920049921445,CRYO02,0,0,1,1,54.0,178,24.1,106.8710,-6.1154,20250228084221,0460,0000,18F0,0402,00,86.6,520.0,27.1,3.66,31.2,01,14.1,4.15$'
+    },
+    'FLATBED-11': {
+      plate: 'B 8812 AB',
+      chassis: 'Mercedes Actros 2640 • Idling Station',
+      speed: '0.0',
+      azimuth: '090°',
+      altitude: '32',
+      acc: 'ACC ON (Idle)',
+      voltage: '13.6V',
+      liters: '298.0',
+      capacity: '450',
+      pct: '66.2%',
+      burnRate: '1.4 L/h (Idle)',
+      probeTemp: '29.0 °C',
+      probeBatt: '3.64V (Nom)',
+      bleRssi: '-68 dBm',
+      hdop: 'HDOP 0.72',
+      sats: '3D FIX (15 Sats)',
+      imei: '864920042398110',
+      fw: 'R01A03V05',
+      lipo: '4.10V (Armed)',
+      relay: 'DISENGAGED',
+      packet: '+RESP:GTFRI,1A0103,864920042398110,FLAT11,0,0,1,1,0.0,090,32.0,106.8920,-6.1240,20250228084218,0460,0000,18F0,0198,00,66.2,298.0,29.0,3.64,1.4,01,13.6,4.10$'
+    },
+    'VAN-COURIER-28': {
+      plate: 'B 4419 SLL',
+      chassis: 'Isuzu Giga Urban • Fleet Link',
+      speed: '42.0',
+      azimuth: '270°',
+      altitude: '18',
+      acc: 'ACC ON',
+      voltage: '13.9V',
+      liters: '185.0',
+      capacity: '200',
+      pct: '92.5%',
+      burnRate: '14.2 L/100km',
+      probeTemp: '26.8 °C',
+      probeBatt: '3.67V (Nom)',
+      bleRssi: '-59 dBm',
+      hdop: 'HDOP 0.65',
+      sats: '3D FIX (19 Sats)',
+      imei: '864920046630018',
+      fw: 'R01A03V05',
+      lipo: '4.16V (100%)',
+      relay: 'DISENGAGED',
+      packet: '+RESP:GTFRI,1A0103,864920046630018,VAN28,0,0,1,1,42.0,270,18.5,106.8833,-6.0988,20250228084222,0460,0000,18F0,0312,00,92.5,185.0,26.8,3.67,14.2,01,13.9,4.16$'
+    }
+  };
+
+  let activeUnitKey = 'HAULER-01';
+  let currentZoom = 1;
+  let geofenceVisible = true;
+  let trailVisible = true;
+
+  function toggleDockCollapse() {
+    const dock = document.getElementById('fleetDock');
+    const expandBtn = document.getElementById('dockExpandBtn');
+    if (!dock || !expandBtn) return;
+    
+    const isHidden = dock.classList.contains('hidden');
+    if (isHidden) {
+      dock.classList.remove('hidden');
+      expandBtn.classList.add('hidden');
+    } else {
+      dock.classList.add('hidden');
+      expandBtn.classList.remove('hidden');
+    }
+  }
+
+  function toggleHudCollapse() {
+    const hud = document.getElementById('telemetryHud');
+    const expandBtn = document.getElementById('hudExpandBtn');
+    if (!hud || !expandBtn) return;
+    
+    const isHidden = hud.classList.contains('hidden');
+    if (isHidden) {
+      hud.classList.remove('hidden');
+      expandBtn.classList.add('hidden');
+    } else {
+      hud.classList.add('hidden');
+      expandBtn.classList.remove('hidden');
+      const label = document.getElementById('hudCollapsedLabel');
+      if (label) label.textContent = activeUnitKey + ' HUD';
+    }
+  }
+
+  function selectUnit(unitId) {
+    const data = fleetDatabase[unitId];
+    if (!data) return;
+    activeUnitKey = unitId;
+
+    document.getElementById('hudUnitId').textContent = unitId;
+    document.getElementById('hudUnitPlate').textContent = data.plate;
+    document.getElementById('hudUnitChassis').textContent = data.chassis;
+    document.getElementById('hudSpeed').textContent = data.speed;
+    document.getElementById('hudAzimuth').textContent = data.azimuth;
+    document.getElementById('hudAltitude').textContent = data.altitude;
+    document.getElementById('hudAccStatus').textContent = data.acc;
+    document.getElementById('hudVoltage').textContent = data.voltage;
+    document.getElementById('hudFuelLiters').textContent = data.liters;
+    document.getElementById('hudFuelPct').textContent = data.pct;
+    document.getElementById('hudFuelBar').style.width = data.pct;
+    document.getElementById('hudBurnRate').textContent = data.burnRate;
+    document.getElementById('hudProbeTemp').textContent = data.probeTemp;
+    document.getElementById('hudProbeBatt').textContent = data.probeBatt;
+    document.getElementById('hudBleRssi').textContent = data.bleRssi;
+    document.getElementById('hudHdop').textContent = data.hdop;
+    document.getElementById('hudGnssStatus').innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>' + data.sats;
+    document.getElementById('hudImei').textContent = data.imei;
+    document.getElementById('hudFw').textContent = data.fw;
+    document.getElementById('hudLipo').textContent = data.lipo;
+    document.getElementById('hudRelayState').textContent = data.relay;
+    document.getElementById('rawLogFeed').textContent = data.packet;
+
+    const collapsedLabel = document.getElementById('hudCollapsedLabel');
+    if (collapsedLabel) collapsedLabel.textContent = unitId + ' HUD';
+
+    document.querySelectorAll('.unit-card').forEach(card => {
+      card.classList.remove('bg-blue-50/90', 'border-blue-200');
+      card.classList.add('bg-white/70', 'border-slate-200/80');
+    });
+    const activeCard = document.getElementById('card-' + unitId);
+    if (activeCard) {
+      activeCard.classList.remove('bg-white/70', 'border-slate-200/80');
+      activeCard.classList.add('bg-blue-50/90', 'border-blue-200');
+    }
+
+    document.getElementById('modalTargetUnit').textContent = unitId + ' (' + data.plate + ')';
+    document.getElementById('modalTargetImei').textContent = data.imei;
+  }
+
+  function setMode(mode) {
+    const btnOverview = document.getElementById('btnOverviewMode');
+    const btnLock = document.getElementById('btnLockMode');
+    const map = document.getElementById('mapViewport');
+
+    if (mode === 'overview') {
+      btnOverview.classList.add('bg-white', 'text-blue-700', 'shadow-xs');
+      btnOverview.classList.remove('text-slate-600');
+      btnLock.classList.remove('bg-white', 'text-blue-700', 'shadow-xs');
+      btnLock.classList.add('text-slate-600');
+      map.style.transform = 'scale(0.94) translate(0px, 0px)';
+    } else {
+      btnLock.classList.add('bg-white', 'text-blue-700', 'shadow-xs');
+      btnLock.classList.remove('text-slate-600');
+      btnOverview.classList.remove('bg-white', 'text-blue-700', 'shadow-xs');
+      btnOverview.classList.add('text-slate-600');
+      map.style.transform = 'scale(1) translate(0px, 0px)';
+    }
+  }
+
+  function recenterMapTarget() {
+    const map = document.getElementById('mapViewport');
+    map.style.transform = 'scale(1.12) translate(-30px, -15px)';
+    setTimeout(() => {
+      map.style.transform = 'scale(1) translate(0, 0)';
+    }, 800);
+  }
+
+  function toggleBreadcrumbTrail() {
+    trailVisible = !trailVisible;
+    const trail = document.getElementById('trailHauler01');
+    const btn = document.getElementById('btnToggleTrail');
+    if (trail) {
+      trail.style.opacity = trailVisible ? '1' : '0';
+    }
+    if (btn) {
+      btn.classList.toggle('text-blue-700', trailVisible);
+      btn.classList.toggle('text-slate-400', !trailVisible);
+    }
+  }
+
+  function zoomMap(delta) {
+    currentZoom = Math.min(Math.max(currentZoom + (delta * 0.15), 0.8), 1.6);
+    document.getElementById('mapViewport').style.transform = 'scale(' + currentZoom + ')';
+  }
+
+  function toggleGeofenceLayer() {
+    geofenceVisible = !geofenceVisible;
+    const gf1 = document.getElementById('gf-port');
+    const gf2 = document.getElementById('gf-logistics');
+    const btn = document.getElementById('btnGfToggle');
+    if (gf1 && gf2) {
+      gf1.style.opacity = geofenceVisible ? '1' : '0';
+      gf2.style.opacity = geofenceVisible ? '1' : '0';
+    }
+    if (btn) {
+      btn.classList.toggle('text-blue-700', geofenceVisible);
+      btn.classList.toggle('text-slate-400', !geofenceVisible);
+    }
+  }
+
+  function filterUnits(term) {
+    const query = term.toLowerCase();
+    const cards = document.querySelectorAll('.unit-card');
+    cards.forEach(card => {
+      const txt = card.innerText.toLowerCase();
+      card.style.display = txt.includes(query) ? 'block' : 'none';
+    });
+  }
+
+  function filterCategory(type) {
+    const cards = document.querySelectorAll('.unit-card');
+    cards.forEach(card => {
+      if (type === 'all') {
+        card.style.display = 'block';
+      } else if (type === 'moving') {
+        const isMoving = card.innerText.includes('km/h') && !card.innerText.includes('0 km/h');
+        card.style.display = isMoving ? 'block' : 'none';
+      } else if (type === 'idle') {
+        const isIdle = card.innerText.includes('IDLE') || card.innerText.includes('Idle');
+        card.style.display = isIdle ? 'block' : 'none';
+      } else if (type === 'alert') {
+        const isAlert = card.innerText.includes('ALERT');
+        card.style.display = isAlert ? 'block' : 'none';
+      }
+    });
+  }
+
+  function openImmobilizerModal() {
+    document.getElementById('modalImmobilizer').classList.remove('hidden');
+  }
+
+  function closeImmobilizerModal() {
+    document.getElementById('modalImmobilizer').classList.add('hidden');
+  }
+
+  function executeImmobilizerCommand() {
+    alert('GATEWAY COMMAND SENT [GV30CEU]: DO1 Output Pin High. Safety ignition interlock engaged for ' + activeUnitKey);
+    closeImmobilizerModal();
+  }
+</script>
+</body></html>

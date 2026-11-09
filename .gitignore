@@ -1,0 +1,17 @@
+.env
+pastrack
+pastrack-linux-amd64
+spool/
+*.log
+
+.local/
+
+scripts/design/node_modules/
+node_modules/
+front/node_modules/
+web/node_modules/
+front/dist/
+web/dist/
+tmp/
+*.sock
+*.sqlite

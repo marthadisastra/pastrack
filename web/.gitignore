@@ -1,0 +1,13 @@
+.env
+pastrack-web
+.local-access.txt
+pastrack-web.next
+pastrack-web.users.next
+pastrack-web.dense.next
+pastrack-web.tracking.next
+pastrack-web.realtime.next
+pastrack-web.mvc.next
+pastrack-web.feedback.next
+node_modules/
+pastrack-web.places.next
+pastrack-web.geo.next

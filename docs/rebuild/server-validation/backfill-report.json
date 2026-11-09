@@ -1,0 +1,82 @@
+{
+  "restore_counts_verified": true,
+  "raw_byte_parity": true,
+  "report": [
+    {
+      "source_table": "device_events",
+      "state": "migrated",
+      "n": 96
+    },
+    {
+      "source_table": "device_fuel_sensors",
+      "state": "migrated",
+      "n": 1
+    },
+    {
+      "source_table": "device_raw_messages",
+      "state": "migrated",
+      "n": 2971
+    },
+    {
+      "source_table": "fuel_calibration_points",
+      "state": "migrated",
+      "n": 2
+    },
+    {
+      "source_table": "gps_devices",
+      "state": "migrated",
+      "n": 1
+    },
+    {
+      "source_table": "gps_positions",
+      "state": "migrated",
+      "n": 428
+    },
+    {
+      "source_table": "pastrack_audit_log",
+      "state": "migrated",
+      "n": 36
+    },
+    {
+      "source_table": "tracking_geocode_cache",
+      "state": "migrated",
+      "n": 79
+    },
+    {
+      "source_table": "tracking_geocode_usage",
+      "state": "migrated",
+      "n": 3
+    },
+    {
+      "source_table": "vehicles",
+      "state": "migrated",
+      "n": 1
+    },
+    {
+      "source_table": "vehicle_assets",
+      "state": "migrated",
+      "n": 1
+    },
+    {
+      "source_table": "web_notifications",
+      "state": "migrated",
+      "n": 1
+    },
+    {
+      "source_table": "web_push_tokens",
+      "state": "quarantined",
+      "n": 1
+    },
+    {
+      "source_table": "web_sessions",
+      "state": "migrated",
+      "n": 2
+    },
+    {
+      "source_table": "web_users",
+      "state": "migrated",
+      "n": 1
+    }
+  ],
+  "live_services_changed": false
+}

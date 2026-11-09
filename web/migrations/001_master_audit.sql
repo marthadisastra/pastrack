@@ -1,0 +1,14 @@
+ALTER TABLE vehicles ADD COLUMN IF NOT EXISTS deleted_at DATETIME(3) NULL, ADD COLUMN IF NOT EXISTS row_version BIGINT UNSIGNED NOT NULL DEFAULT 1;
+ALTER TABLE gps_devices ADD COLUMN IF NOT EXISTS deleted_at DATETIME(3) NULL, ADD COLUMN IF NOT EXISTS row_version BIGINT UNSIGNED NOT NULL DEFAULT 1;
+CREATE TABLE IF NOT EXISTS pastrack_audit_log (
+ id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ occurred_at DATETIME(3) NOT NULL,
+ actor VARCHAR(100) NOT NULL,
+ action VARCHAR(30) NOT NULL,
+ entity VARCHAR(40) NOT NULL,
+ entity_id BIGINT UNSIGNED NULL,
+ before_data LONGTEXT NULL CHECK (before_data IS NULL OR JSON_VALID(before_data)),
+ after_data LONGTEXT NULL CHECK (after_data IS NULL OR JSON_VALID(after_data)),
+ request_id VARCHAR(64) NOT NULL,
+ KEY idx_audit_time (occurred_at), KEY idx_audit_entity (entity,entity_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

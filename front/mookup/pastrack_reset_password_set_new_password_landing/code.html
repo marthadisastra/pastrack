@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.bg-dot-pattern{background-image:radial-gradient(rgba(116,118,134,0.18) 1px,transparent 1px);background-size:24px 24px;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-container":"#86f2e4","on-tertiary":"#ffffff","on-secondary":"#ffffff","surface-tint":"#2151da","surface-dim":"#d2d9f4","primary":"#0037b0","surface-container":"#eaedff","inverse-on-surface":"#eef0ff","on-primary":"#ffffff","tertiary":"#004870","error":"#ba1a1a","on-primary-fixed-variant":"#0039b5","surface-container-lowest":"#ffffff","surface":"#faf8ff","on-tertiary-container":"#b2d9ff","surface-container-high":"#e2e7ff","on-primary-container":"#cad3ff","tertiary-fixed":"#cce5ff","on-secondary-container":"#006f66","primary-fixed-dim":"#b7c4ff","on-secondary-fixed-variant":"#005049","error-container":"#ffdad6","on-background":"#131b2e","on-tertiary-fixed":"#001d31","on-surface-variant":"#434655","secondary-fixed":"#89f5e7","on-error-container":"#93000a","on-error":"#ffffff","secondary":"#006a61","on-surface":"#131b2e","outline":"#747686","surface-variant":"#dae2fd","surface-bright":"#faf8ff","secondary-fixed-dim":"#6bd8cb","tertiary-container":"#006194","inverse-primary":"#b7c4ff","tertiary-fixed-dim":"#93ccff","surface-container-highest":"#dae2fd","background":"#faf8ff","inverse-surface":"#283044","primary-container":"#1d4ed8","on-secondary-fixed":"#00201d","on-tertiary-fixed-variant":"#004b73","surface-container-low":"#f2f3ff","on-primary-fixed":"#001551","outline-variant":"#c4c5d7","primary-fixed":"#dce1ff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter-mobile":"0.75rem","margin-desktop":"2rem","space-lg":"1.5rem","gutter-desktop":"1.5rem","gutter":"1rem","margin-mobile":"1rem","margin":"1.5rem","space-xs":"0.25rem","space-xl":"2rem","space-md":"1rem","space-sm":"0.5rem"},"fontFamily":{"display-lg":["Inter"],"headline-sm":["Inter"],"body-lg":["Inter"],"display-lg-mobile":["Inter"],"body-sm":["Inter"],"headline-md":["Inter"],"label-lg":["Inter"],"headline-lg":["Inter"],"body-md":["Inter"],"label-md":["Inter"],"data-mono":["Inter"],"label-sm":["Inter"]},"fontSize":{"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.005em","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.015em","fontWeight":"500"}],"data-mono":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col justify-between relative bg-dot-pattern antialiased selection:bg-primary-container selection:text-on-primary"><header class="w-full px-margin-mobile md:px-margin-desktop pt-space-lg flex items-center justify-between z-10"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm font-bold tracking-tight shadow-[0_1px_8px_rgba(0,0,0,0.04)]">P</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface uppercase">PASTRACK</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Fleet Telematics OS</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-low text-on-surface text-label-sm font-label-sm shadow-[0_1px_2px_rgba(15,23,42,0.04)]"><span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span><span class="font-data-mono text-data-mono">FIPS 140-2</span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-low text-on-surface text-label-sm font-label-sm shadow-[0_1px_2px_rgba(15,23,42,0.04)]"><span class="material-symbols-outlined text-[14px] text-primary-container">lock</span><span class="font-data-mono text-data-mono">TLS 1.3 ENC</span></div></div></header><main class="w-full flex-1 flex flex-col items-center justify-center px-margin-mobile py-space-xl z-10"><div class="flex flex-col w-full">
+<div class="w-full max-w-5xl mx-auto flex flex-col gap-space-lg">
+<div class="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md bg-surface-container-low px-space-md py-space-sm rounded-xl shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container">shield_lock</span>
+<div class="flex flex-col sm:flex-row sm:items-center gap-x-space-sm gap-y-0.5">
+<span class="font-label-md text-label-md text-on-surface">DISPATCH SECURITY ENCLAVE</span>
+<span class="hidden sm:inline text-outline-variant font-label-md text-label-md">/</span>
+<span class="font-data-mono text-data-mono text-on-surface-variant">NODE::US-EAST-4A_GATEWAY</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-stretch md:self-auto justify-between md:justify-end">
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-secondary-container text-on-secondary-container font-data-mono text-data-mono shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span>TOKEN ACTIVE • EXPIRES IN <span id="token-countdown">11:42</span> MIN</span>
+</div>
+<div class="hidden lg:flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm px-space-xs py-1 bg-surface rounded">
+<span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span>
+<span>SHA-256 HMAC VERIFIED</span>
+</div>
+</div>
+</div>
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-md md:p-space-xl flex flex-col gap-space-lg relative overflow-hidden">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm tracking-wider uppercase">Security Credential Update</span>
+<span class="text-outline-variant font-label-sm text-label-sm">•</span>
+<span class="font-data-mono text-data-mono text-on-surface-variant">REQ_ID: #TK-88912-FLT</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">Set New Password</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Create a resilient, enterprise-compliant security key for dispatcher account <span class="font-data-mono text-data-mono text-on-surface font-semibold bg-surface-container-low px-1.5 py-0.5 rounded">dispatcher@enterprise-fleet.com</span>.
+            </p>
+</div>
+<form class="flex flex-col gap-space-lg" id="password-form" onsubmit="event.preventDefault(); handleSubmit();">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1" for="new-password">
+<span>New Password</span>
+<span class="text-error">*</span>
+</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="strength-meter-label">STRENGTH: LOW</span>
+</div>
+<div class="relative flex items-center">
+<input autocomplete="new-password" class="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface px-space-md py-space-sm rounded-lg font-data-mono text-data-mono placeholder:text-outline-variant outline-none shadow-sm transition-all pr-12 focus:shadow-md" id="new-password" oninput="handlePasswordInput(this.value)" placeholder="Enter 12+ characters" type="password"/>
+<button aria-label="Toggle password visibility" class="absolute right-space-sm p-1 text-on-surface-variant hover:text-on-surface transition-colors" onclick="togglePasswordVisibility('new-password', this)" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+<div class="w-full grid grid-cols-4 gap-1.5 pt-1">
+<div class="h-1 rounded bg-surface-container-highest transition-colors duration-200" id="bar-1"></div>
+<div class="h-1 rounded bg-surface-container-highest transition-colors duration-200" id="bar-2"></div>
+<div class="h-1 rounded bg-surface-container-highest transition-colors duration-200" id="bar-3"></div>
+<div class="h-1 rounded bg-surface-container-highest transition-colors duration-200" id="bar-4"></div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Complexity Matrix (Telematics Standard)</span>
+<span class="font-data-mono text-data-mono text-on-surface-variant" id="req-summary">0 / 5 Satisfied</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs pt-1 font-body-sm text-body-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant transition-colors" id="rule-len">
+<span class="material-symbols-outlined text-[16px] text-outline">radio_button_unchecked</span>
+<span>Minimum 12 characters</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant transition-colors" id="rule-case">
+<span class="material-symbols-outlined text-[16px] text-outline">radio_button_unchecked</span>
+<span>Uppercase &amp; lowercase letters</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant transition-colors" id="rule-num">
+<span class="material-symbols-outlined text-[16px] text-outline">radio_button_unchecked</span>
+<span>At least 1 numerical digit (0-9)</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant transition-colors" id="rule-sym">
+<span class="material-symbols-outlined text-[16px] text-outline">radio_button_unchecked</span>
+<span>Special character (@, #, $, %, etc.)</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant transition-colors sm:col-span-2" id="rule-hist">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span class="text-secondary font-medium">Distinct from previous 5 password rotations</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1" for="confirm-password">
+<span>Confirm New Password</span>
+<span class="text-error">*</span>
+</label>
+<div class="hidden items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm" id="match-status">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Passwords match</span>
+</div>
+<div class="hidden items-center gap-1 px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm" id="mismatch-status">
+<span class="material-symbols-outlined text-[14px]">close</span>
+<span>Mismatch detected</span>
+</div>
+</div>
+<div class="relative flex items-center">
+<input autocomplete="new-password" class="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface px-space-md py-space-sm rounded-lg font-data-mono text-data-mono placeholder:text-outline-variant outline-none shadow-sm transition-all pr-12 focus:shadow-md" id="confirm-password" oninput="handleConfirmInput(this.value)" placeholder="Re-enter your password" type="password"/>
+<button aria-label="Toggle confirm password visibility" class="absolute right-space-sm p-1 text-on-surface-variant hover:text-on-surface transition-colors" onclick="togglePasswordVisibility('confirm-password', this)" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex items-start gap-space-sm shadow-sm">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary-container accent-primary-container focus:ring-0 cursor-pointer" id="terminate-sessions" type="checkbox"/>
+<label class="flex flex-col cursor-pointer" for="terminate-sessions">
+<span class="font-label-md text-label-md text-on-surface">Terminate active vehicle telemetry sessions</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Force logs out all paired dispatcher tablets, yard terminals, and active CAN-bus bridge monitors immediately.
+                </span>
+</label>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<a class="order-2 sm:order-1 font-label-md text-label-md text-on-surface-variant hover:text-on-surface flex items-center gap-space-xs py-space-sm px-space-md rounded transition-colors" href="#signin">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Cancel &amp; Return to Sign In</span>
+</a>
+<button class="order-1 sm:order-2 w-full sm:w-auto px-space-xl py-space-sm rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary transition-all flex items-center justify-center gap-space-sm disabled:opacity-50 disabled:cursor-not-allowed" id="submit-btn" type="submit">
+<span>Update Password &amp; Access Fleet</span>
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+</button>
+</div>
+</form>
+<div class="hidden absolute inset-0 bg-surface-container-lowest/95 backdrop-blur-sm flex-col items-center justify-center gap-space-md p-space-xl z-20" id="submitting-overlay">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="animate-spin w-16 h-16 text-primary-container" fill="none" viewbox="0 0 24 24">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" fill="currentColor"></path>
+</svg>
+<span class="material-symbols-outlined absolute text-primary-container text-[20px]">sync_lock</span>
+</div>
+<div class="flex flex-col items-center text-center gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">Rotating Session Keys</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
+                Generating ephemeral cryptographic tokens and invalidating legacy vehicle bridge sessions...
+              </p>
+<div class="font-data-mono text-data-mono text-primary-container mt-2">
+                REKEY::CAN_BUS_SALT_OK
+              </div>
+</div>
+</div>
+<div class="hidden absolute inset-0 bg-surface-container-lowest flex-col items-center justify-center gap-space-lg p-space-xl z-30" id="success-overlay">
+<div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[36px]">verified</span>
+</div>
+<div class="flex flex-col items-center text-center gap-space-xs max-w-md">
+<span class="px-space-sm py-0.5 rounded bg-secondary text-on-secondary font-label-sm text-label-sm uppercase">Credential Rotation Complete</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">Credentials Synchronized</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Your dispatch console key has been rotated and pushed to active telematics relay hubs. You will be redirected to the operational cockpit in seconds.
+              </p>
+</div>
+<div class="w-full max-w-xs bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-2 font-data-mono text-data-mono text-on-surface-variant">
+<div class="flex items-center justify-between text-body-sm">
+<span>NEW CREDENTIAL DIGEST</span>
+<span class="text-secondary font-semibold">VALID</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span>GATEWAY SYNC STATUS</span>
+<span class="text-on-surface">98/98 ONLINE</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<button class="px-space-lg py-space-sm rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow hover:bg-primary transition-all flex items-center gap-space-xs" onclick="window.location.reload()" type="button">
+<span>Launch Fleet Dashboard Now</span>
+<span class="material-symbols-outlined text-[16px]">speed</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary">developer_mode</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Dev State Inspector • Interactive Sandbox</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">v2.4.9-PROD</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-space-xs">
+<button class="px-2 py-1.5 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-bright font-label-sm text-label-sm text-left truncate shadow-sm" onclick="setScenario('default')" type="button">
+              1. Default Form
+            </button>
+<button class="px-2 py-1.5 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-bright font-label-sm text-label-sm text-left truncate shadow-sm" onclick="setScenario('valid')" type="button">
+              2. Strong Validated
+            </button>
+<button class="px-2 py-1.5 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-bright font-label-sm text-label-sm text-left truncate shadow-sm" onclick="setScenario('mismatch')" type="button">
+              3. Mismatch Error
+            </button>
+<button class="px-2 py-1.5 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-bright font-label-sm text-label-sm text-left truncate shadow-sm" onclick="setScenario('submitting')" type="button">
+              4. Submitting Keys
+            </button>
+<button class="px-2 py-1.5 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-bright font-label-sm text-label-sm text-left truncate shadow-sm col-span-2 sm:col-span-1" onclick="setScenario('success')" type="button">
+              5. Success Modal
+            </button>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-primary-container">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Telematics Compliance</span>
+</div>
+<div class="flex flex-col gap-space-sm text-body-sm text-body-sm text-on-surface-variant">
+<p>
+              In accordance with <strong class="text-on-surface">NIST SP 800-63B</strong> (Digital Identity Guidelines) and <strong class="text-on-surface">SOC 2 Type II</strong> zero-trust framework:
+            </p>
+<ul class="flex flex-col gap-2 pt-1 font-body-sm text-body-sm">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check</span>
+<span>Entropy enforcement with automated breach dictionary filtering.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check</span>
+<span>Automatic invalidation of stale OAuth refresh bearer tokens across remote telematics gateways.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check</span>
+<span>Vehicle CAN-bus gateways will conduct mutual TLS (mTLS) handshake within 15 seconds.</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant uppercase">Cryptographic Engine</span>
+<span class="text-primary-container font-data-mono text-data-mono">Argon2id v13</span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant uppercase">HSM Security Level</span>
+<span class="text-secondary font-data-mono text-data-mono">FIPS 140-2 Level 3</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">hub</span>
+<span class="font-headline-sm text-headline-sm">Telemetry Network Lock</span>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Updating dispatcher credentials immediately triggers a fleet-wide telemetry sync event for connected assets in transit.
+          </p>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between p-space-xs rounded bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary-container">local_shipping</span>
+<span class="font-label-sm text-label-sm text-on-surface">Class-8 Heavy Haulers</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">54 Linked</span>
+</div>
+<div class="flex items-center justify-between p-space-xs rounded bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary-container">electric_car</span>
+<span class="font-label-sm text-label-sm text-on-surface">Urban EV Vans</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">32 Linked</span>
+</div>
+<div class="flex items-center justify-between p-space-xs rounded bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary-container">warehouse</span>
+<span class="font-label-sm text-label-sm text-on-surface">Regional Yard Relays</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">12 Active</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Session Lease: 8 Hours</span>
+<span class="font-data-mono text-data-mono">GEO_IP: 198.51.100.44</span>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-xl p-space-md flex items-center gap-space-sm shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-[24px]">support_agent</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Need operational clearance?</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Contact Dispatch NOC at <span class="font-data-mono text-data-mono text-primary-container font-semibold">+1 (800) 555-PAST</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let secondsRemaining = 702; // 11:42
+  const countdownEl = document.getElementById('token-countdown');
+
+  setInterval(() => {
+    if (secondsRemaining > 0) {
+      secondsRemaining--;
+      const mins = Math.floor(secondsRemaining / 60);
+      const secs = secondsRemaining % 60;
+      if (countdownEl) {
+        countdownEl.innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      }
+    }
+  }, 1000);
+
+  function togglePasswordVisibility(inputId, button) {
+    const input = document.getElementById(inputId);
+    const icon = button.querySelector('.material-symbols-outlined');
+    if (!input || !icon) return;
+    
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.innerText = 'visibility_off';
+    } else {
+      input.type = 'password';
+      icon.innerText = 'visibility';
+    }
+  }
+
+  function evaluatePassword(pwd) {
+    const rules = {
+      len: pwd.length >= 12,
+      case: /[A-Z]/.test(pwd) && /[a-z]/.test(pwd),
+      num: /[0-9]/.test(pwd),
+      sym: /[^A-Za-z0-9]/.test(pwd),
+      hist: true
+    };
+    return rules;
+  }
+
+  function updateRuleView(elementId, satisfied) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    const icon = el.querySelector('.material-symbols-outlined');
+    if (satisfied) {
+      el.classList.remove('text-on-surface-variant');
+      el.classList.add('text-secondary', 'font-medium');
+      if (icon) {
+        icon.innerText = 'check_circle';
+        icon.classList.remove('text-outline');
+        icon.classList.add('text-secondary');
+      }
+    } else {
+      el.classList.add('text-on-surface-variant');
+      el.classList.remove('text-secondary', 'font-medium');
+      if (icon) {
+        icon.innerText = 'radio_button_unchecked';
+        icon.classList.add('text-outline');
+        icon.classList.remove('text-secondary');
+      }
+    }
+  }
+
+  function updateStrengthMeters(count) {
+    const bars = [
+      document.getElementById('bar-1'),
+      document.getElementById('bar-2'),
+      document.getElementById('bar-3'),
+      document.getElementById('bar-4')
+    ];
+    const strengthLabel = document.getElementById('strength-meter-label');
+
+    bars.forEach(b => {
+      b.className = 'h-1 rounded bg-surface-container-highest transition-colors duration-200';
+    });
+
+    if (count <= 1) {
+      if (bars[0]) bars[0].className = 'h-1 rounded bg-error transition-colors duration-200';
+      if (strengthLabel) {
+        strengthLabel.innerText = 'STRENGTH: WEAK';
+        strengthLabel.className = 'font-label-sm text-label-sm text-error';
+      }
+    } else if (count === 2 || count === 3) {
+      if (bars[0]) bars[0].className = 'h-1 rounded bg-primary-container transition-colors duration-200';
+      if (bars[1]) bars[1].className = 'h-1 rounded bg-primary-container transition-colors duration-200';
+      if (strengthLabel) {
+        strengthLabel.innerText = 'STRENGTH: MODERATE';
+        strengthLabel.className = 'font-label-sm text-label-sm text-primary-container';
+      }
+    } else if (count >= 4) {
+      bars.forEach(b => {
+        b.className = 'h-1 rounded bg-secondary transition-colors duration-200';
+      });
+      if (strengthLabel) {
+        strengthLabel.innerText = 'STRENGTH: ENTERPRISE GRADE';
+        strengthLabel.className = 'font-label-sm text-label-sm text-secondary font-semibold';
+      }
+    }
+  }
+
+  function handlePasswordInput(val) {
+    const rules = evaluatePassword(val);
+    updateRuleView('rule-len', rules.len);
+    updateRuleView('rule-case', rules.case);
+    updateRuleView('rule-num', rules.num);
+    updateRuleView('rule-sym', rules.sym);
+
+    let satisfiedCount = 0;
+    if (rules.len) satisfiedCount++;
+    if (rules.case) satisfiedCount++;
+    if (rules.num) satisfiedCount++;
+    if (rules.sym) satisfiedCount++;
+    if (rules.hist) satisfiedCount++;
+
+    const summaryEl = document.getElementById('req-summary');
+    if (summaryEl) {
+      summaryEl.innerText = `${satisfiedCount} / 5 Satisfied`;
+    }
+
+    updateStrengthMeters(satisfiedCount - 1);
+    checkMatch();
+  }
+
+  function handleConfirmInput(val) {
+    checkMatch();
+  }
+
+  function checkMatch() {
+    const pwd = document.getElementById('new-password').value;
+    const confirm = document.getElementById('confirm-password').value;
+    const matchEl = document.getElementById('match-status');
+    const mismatchEl = document.getElementById('mismatch-status');
+
+    if (!confirm) {
+      matchEl.classList.add('hidden');
+      matchEl.classList.remove('flex');
+      mismatchEl.classList.add('hidden');
+      mismatchEl.classList.remove('flex');
+      return;
+    }
+
+    if (pwd === confirm) {
+      matchEl.classList.remove('hidden');
+      matchEl.classList.add('flex');
+      mismatchEl.classList.add('hidden');
+      mismatchEl.classList.remove('flex');
+    } else {
+      matchEl.classList.add('hidden');
+      matchEl.classList.remove('flex');
+      mismatchEl.classList.remove('hidden');
+      mismatchEl.classList.add('flex');
+    }
+  }
+
+  function handleSubmit() {
+    const submittingOverlay = document.getElementById('submitting-overlay');
+    const successOverlay = document.getElementById('success-overlay');
+    
+    submittingOverlay.classList.remove('hidden');
+    submittingOverlay.classList.add('flex');
+
+    setTimeout(() => {
+      submittingOverlay.classList.add('hidden');
+      submittingOverlay.classList.remove('flex');
+      successOverlay.classList.remove('hidden');
+      successOverlay.classList.add('flex');
+    }, 1800);
+  }
+
+  function setScenario(type) {
+    const newPwd = document.getElementById('new-password');
+    const confPwd = document.getElementById('confirm-password');
+    const submittingOverlay = document.getElementById('submitting-overlay');
+    const successOverlay = document.getElementById('success-overlay');
+
+    submittingOverlay.classList.add('hidden');
+    submittingOverlay.classList.remove('flex');
+    successOverlay.classList.add('hidden');
+    successOverlay.classList.remove('flex');
+
+    if (type === 'default') {
+      newPwd.value = '';
+      confPwd.value = '';
+      handlePasswordInput('');
+      checkMatch();
+    } else if (type === 'valid') {
+      newPwd.value = 'PasTrack!99Gate#X';
+      confPwd.value = 'PasTrack!99Gate#X';
+      handlePasswordInput('PasTrack!99Gate#X');
+      checkMatch();
+    } else if (type === 'mismatch') {
+      newPwd.value = 'PasTrack!99Gate#X';
+      confPwd.value = 'DifferentKey2026!';
+      handlePasswordInput('PasTrack!99Gate#X');
+      checkMatch();
+    } else if (type === 'submitting') {
+      newPwd.value = 'PasTrack!99Gate#X';
+      confPwd.value = 'PasTrack!99Gate#X';
+      handlePasswordInput('PasTrack!99Gate#X');
+      checkMatch();
+      submittingOverlay.classList.remove('hidden');
+      submittingOverlay.classList.add('flex');
+    } else if (type === 'success') {
+      newPwd.value = 'PasTrack!99Gate#X';
+      confPwd.value = 'PasTrack!99Gate#X';
+      handlePasswordInput('PasTrack!99Gate#X');
+      checkMatch();
+      successOverlay.classList.remove('hidden');
+      successOverlay.classList.add('flex');
+    }
+  }
+</script></main><footer class="w-full px-margin-mobile md:px-margin-desktop pb-space-lg pt-space-md z-10"><div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-body-sm text-body-sm"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary"></span><span>Operational Grid: Nodes Active</span><span class="text-outline-variant">•</span><span>Security Level 4</span></div><div class="text-center sm:text-right"><p>© 2026 PASTRACK Telematics Inc. All rights reserved. Enterprise Fleet Systems.</p></div></div></footer></body></html>

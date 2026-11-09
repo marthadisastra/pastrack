@@ -1,0 +1,239 @@
+;
+; Module Name : mdiagusb.inf
+;
+; Description : This file contains a Diag device
+;
+; Language : English (32bit and 64bit)
+;
+; Copyright (c) ASR International Ltd.
+
+
+[Version]
+Signature="$Windows NT$"
+Class=USB
+;ClassGuid={4D36E97E-E325-11CE-BFC1-08002BE10318}
+ClassGuid= {36fc9e60-C465-11CF-8056-444553540000}
+Provider=%ProviderName%
+DriverVer=02/03/2021,2.0.2.0
+CatalogFile.NTx86 = MDiagUSB\mdiagusb_i386.cat
+CatalogFile.NTamd64 = MDiagUSB\mdiagusb_amd64.cat
+
+
+;--------- Manufacturer and Models Sections ----------------------------------
+
+[Manufacturer]
+%MfgName%=Marvell, NTx86, NTamd64
+
+
+
+;------------------------------------NTx86------------------------------------
+[Marvell.NTx86]
+
+
+;Add for ASR mobilephone product
+;diag,acm,adb
+%ADiagUSBOnComposite%=icatusb_DDI, USB\VID_2ecc&PID_2100&MI_00
+;diag,acm,debug,adb
+%ADiagUSBOnComposite%=icatusb_DDI, USB\VID_2ecc&PID_2101&MI_00
+;diag,acm
+%ADiagUSBOnComposite%=icatusb_DDI, USB\VID_2ecc&PID_2102&MI_00
+;rndis,diag,acm,debug,adb
+%ADiagUSBOnComposite%=icatusb_DDI, USB\VID_2ecc&PID_2103&MI_02
+
+;Add for ASR data product
+;rndis,acm,diag,adb,sulog
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_3010&MI_04
+;acm,diag,adb,sulog
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_3011&MI_02
+;rndis,acm,diag,sulog,adb
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_3012&MI_04
+;rndis,acm,acm,sulog,adb
+;
+;rndis,acm,acm,adb,sulog
+;
+;rndis,acm,acm,diag,adb,sulog
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_3015&MI_06
+;rndis,acm,acm,diag,sulog,adb
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_3016&MI_06
+;acm
+;
+;acm,diag,sulog,adb
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_3018&MI_02
+;acm,acm,diag,sulog,adb
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_3019&MI_04
+;acm,acm,diag,adb,sulog
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_301A&MI_04
+;acm,acm,sulog,adb
+;
+;acm,acm,adb,sulog
+;
+;rndis,generic,generic,generic
+;
+;acm,generic,generic,generic
+;
+;generic,generic,generic,generic
+;
+
+;zte
+;rndis,acm,diag,adb
+%MDiagUSBOnComposite_zte%=icatusb_DDI, USB\VID_19D2&PID_1489&MI_04
+;acm,diag
+%MDiagUSBOnComposite_zte%=icatusb_DDI, USB\VID_19D2&PID_1490&MI_02
+
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_1286&PID_4E30&MI_00
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_0BB4&PID_4E4D&MI_03
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_0BB4&PID_4E4A&MI_04
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_1286&PID_4E31&MI_02
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_1286&PID_4E3C&MI_00
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_1286&PID_4E2C&MI_00
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_0BB4&PID_4E4E&MI_00
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_1286&PID_4E28&MI_04
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_0BB4&PID_4E49&MI_00
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_1286&PID_4E38&MI_04
+
+
+;------------------------------------NTamd64------------------------------------
+[Marvell.NTamd64]
+
+;Add for ASR mobilephone product
+;diag,acm,adb
+%ADiagUSBOnComposite%=icatusb_DDI, USB\VID_2ecc&PID_2100&MI_00
+;diag,acm,debug,adb
+%ADiagUSBOnComposite%=icatusb_DDI, USB\VID_2ecc&PID_2101&MI_00
+;diag,acm
+%ADiagUSBOnComposite%=icatusb_DDI, USB\VID_2ecc&PID_2102&MI_00
+;rndis,diag,acm,debug,adb
+%ADiagUSBOnComposite%=icatusb_DDI, USB\VID_2ecc&PID_2103&MI_02
+
+;Add for ASR data product
+;rndis,acm,diag,adb,sulog
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_3010&MI_04
+;acm,diag,adb,sulog
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_3011&MI_02
+;rndis,acm,diag,sulog,adb
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_3012&MI_04
+;rndis,acm,acm,sulog,adb
+;
+;rndis,acm,acm,adb,sulog
+;
+;rndis,acm,acm,diag,adb,sulog
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_3015&MI_06
+;rndis,acm,acm,diag,sulog,adb
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_3016&MI_06
+;acm
+;
+;acm,diag,sulog,adb
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_3018&MI_02
+;acm,acm,diag,sulog,adb
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_3019&MI_04
+;acm,acm,diag,adb,sulog
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_2ECC&PID_301A&MI_04
+;acm,acm,sulog,adb
+;
+;acm,acm,adb,sulog
+;
+;rndis,generic,generic,generic
+;
+;acm,generic,generic,generic
+;
+;generic,generic,generic,generic
+;
+
+;zte
+;rndis,acm,diag,adb
+%MDiagUSBOnComposite_zte%=icatusb_DDI, USB\VID_19D2&PID_1489&MI_04
+;acm,diag
+%MDiagUSBOnComposite_zte%=icatusb_DDI, USB\VID_19D2&PID_1490&MI_02
+
+
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_1286&PID_4E30&MI_00
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_0BB4&PID_4E4D&MI_03
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_0BB4&PID_4E4A&MI_04
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_1286&PID_4E31&MI_02
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_1286&PID_4E3C&MI_00
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_1286&PID_4E2C&MI_00
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_0BB4&PID_4E4E&MI_00
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_1286&PID_4E28&MI_04
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_0BB4&PID_4E49&MI_00
+%MDiagUSBOnComposite%=icatusb_DDI, USB\VID_1286&PID_4E38&MI_04
+
+
+;--------- SourceDiskNames and SourceDiskFiles Section -----------------------
+
+; These sections identify source disks and files for installation.  They are
+; shown here as an example, but commented out.
+
+[SourceDisksNames.x86]
+1 = %InsDisk%,Disk1,,\MDiagUSB\i386
+
+[SourceDisksNames.amd64]
+1 = %InsDisk%,Disk1,,\MDiagUSB\amd64
+
+[SourceDisksFiles]
+mdiagusb.sys = 1,,
+
+;--------- DestinationDirs Section -------------------------------------------
+
+[DestinationDirs]
+Files_Driver = 10,System32\Drivers
+
+; --------- Windows NT -----------------
+
+
+; --------- Manitoba 4000 -----------------
+
+[icatusb_DDI.NT]
+CopyFiles=Files_Driver
+AddReg=icatusb_NT_AddReg
+
+[icatusb_DDI.NT.Services]
+Addservice = mdiagusb, 0x00000002, CommonAddService
+
+[icatusb_DDI.NT.HW]
+AddReg=icatusb.ClassGuidAddReg
+
+[icatusb.ClassGuidAddReg]
+;0C6DE300-4B24-4110-969C-C9AA785F9C53
+HKR,,"Guid",%REG_BINARY%, 00,E3,6D,0C,24,4B,10,41,96,9C,C9,AA,78,5F,9C,53
+HKR,,"Config",%REG_DWORD%, 1
+HKR,,"Version",%REG_DWORD%, 1
+
+[icatusb_NT_AddReg]
+
+
+; --------- AddService (common) -------------
+
+[CommonAddService]
+DisplayName    = %SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\mdiagusb.sys
+
+
+; --------- Files (common) -------------
+
+[Files_Driver]
+mdiagusb.sys
+
+;--------- Strings Section ---------------------------------------------------
+
+[Strings]
+;
+; Non-Localizable Strings
+;
+
+REG_SZ         = 0x00000000
+REG_MULTI_SZ   = 0x00010000
+REG_EXPAND_SZ  = 0x00020000
+REG_BINARY     = 0x00000001
+REG_DWORD      = 0x00010001
+
+MfgName="Queclink"
+ProviderName="Queclink HeFei Branch"
+SvcDesc="USB Diag driver"
+InsDisk="Queclink USB Diag Installtion Disk"
+; Diag device name on single CP DKB or WB(TTC) Diag device name On DSDT DKB
+MDiagUSBOnComposite = "Queclink DIAG USB Device"
+ADiagUSBOnComposite = "Queclink DIAG USB Device"
+MDiagUSBOnComposite_zte = "ZTE Diag USB Interface"

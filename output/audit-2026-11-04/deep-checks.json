@@ -1,0 +1,213 @@
+[
+  {
+    "id": "global-account-keyboard",
+    "status": "fail",
+    "details": "Enter pada avatar role=button tidak membuka menu akun",
+    "environment": "live"
+  },
+  {
+    "id": "global-account-menu",
+    "status": "ui-pass",
+    "details": [
+      "Profil saya",
+      "Notifikasi",
+      "Audit log",
+      "Keluar"
+    ],
+    "environment": "live"
+  },
+  {
+    "id": "global-profile",
+    "status": "ui-pass",
+    "details": "Dialog profil terbuka",
+    "environment": "live"
+  },
+  {
+    "id": "fuel-spa-delegation",
+    "status": "fail",
+    "details": {
+      "playbackMoves": true,
+      "toast": "Belum ada data atau konfigurasi tervalidasi untuk aksi ❚❚ Pause."
+    },
+    "environment": "live"
+  },
+  {
+    "id": "fuel-play-pause",
+    "status": "pass",
+    "details": "Waktu bergerak dan tombol beralih Play/Pause pada 721 pembacaan kendaraan terpilih.",
+    "environment": "live"
+  },
+  {
+    "id": "fuel-event-focus",
+    "status": "pass",
+    "details": "↗ 0 km/h · -6.46289, 107.81485 | Sensor 1746: 244,15 L (61,04 %) | ⚠ EVT-1 · -40 L",
+    "environment": "live"
+  },
+  {
+    "id": "fuel-investigation-dialog",
+    "status": "ui-pass",
+    "details": {
+      "fields": 2
+    },
+    "environment": "live"
+  },
+  {
+    "id": "fuel-bap-download",
+    "status": "pass",
+    "details": {
+      "bytes": 1542,
+      "filename": "BAP-Fuel-EVT-1.html",
+      "correctVehicle": true
+    },
+    "environment": "live"
+  },
+  {
+    "id": "fuel-map-tooltip",
+    "status": "unverified",
+    "details": {
+      "tooltip": []
+    },
+    "environment": "live"
+  },
+  {
+    "id": "trip-history-scope",
+    "status": "pass",
+    "details": "721 titik GPS · 2 perjalanan · Pilih perjalanan atau tekan Play.",
+    "environment": "live"
+  },
+  {
+    "id": "trip-journey-playback",
+    "status": "pass",
+    "details": "Putar per perjalanan, waktu berjalan dan Pause teruji.",
+    "environment": "live"
+  },
+  {
+    "id": "live-tracking-mobile-width",
+    "status": "fail",
+    "details": {
+      "viewport": 390,
+      "offenders": [
+        {
+          "tag": "DIV",
+          "className": "flex flex-wrap items-center gap-space-md",
+          "right": 616.203125,
+          "width": 592.203125
+        },
+        {
+          "tag": "DIV",
+          "className": "flex items-center gap-space-xs overflow-x-auto py-0.5",
+          "right": 616.203125,
+          "width": 592.203125
+        },
+        {
+          "tag": "BUTTON",
+          "className": "px-space-sm py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-xs text-label-xs flex items-center gap-1 transition-colors",
+          "right": 397.515625,
+          "width": 158
+        },
+        {
+          "tag": "BUTTON",
+          "className": "px-space-sm py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-xs text-label-xs flex items-center gap-1 transition-colors",
+          "right": 500.109375,
+          "width": 98.59375
+        },
+        {
+          "tag": "SPAN",
+          "className": "w-2 h-2 rounded-full bg-slate-400",
+          "right": 417.515625,
+          "width": 8
+        },
+        {
+          "tag": "SPAN",
+          "className": "",
+          "right": 454.859375,
+          "width": 33.34375
+        },
+        {
+          "tag": "SPAN",
+          "className": "px-1.5 py-0.2 rounded-full bg-surface-container font-data-tabular",
+          "right": 492.109375,
+          "width": 33.25
+        },
+        {
+          "tag": "BUTTON",
+          "className": "px-space-sm py-1 rounded-full bg-error-container text-on-error-container font-label-xs text-label-xs flex items-center gap-1 shadow-sm animate-pulse",
+          "right": 616.203125,
+          "width": 112.09375
+        },
+        {
+          "tag": "SPAN",
+          "className": "w-2 h-2 rounded-full bg-error",
+          "right": 517.203125,
+          "width": 5.09375
+        },
+        {
+          "tag": "SPAN",
+          "className": "font-bold",
+          "right": 570.609375,
+          "width": 49.40625
+        },
+        {
+          "tag": "SPAN",
+          "className": "px-1.5 py-0.2 rounded-full bg-error text-on-error font-data-tabular font-bold",
+          "right": 608.203125,
+          "width": 33.59375
+        }
+      ]
+    },
+    "environment": "live"
+  },
+  {
+    "id": "vehicle-create-persist",
+    "status": "pass",
+    "details": {
+      "count": 1
+    },
+    "environment": "local"
+  },
+  {
+    "id": "report-csv",
+    "status": "pass",
+    "details": {
+      "status": 200,
+      "bytes": 79956,
+      "signatureValid": true,
+      "layoutVerified": false
+    },
+    "environment": "local"
+  },
+  {
+    "id": "report-xlsx",
+    "status": "pass",
+    "details": {
+      "status": 200,
+      "bytes": 59570,
+      "signatureValid": true,
+      "layoutVerified": false
+    },
+    "environment": "local"
+  },
+  {
+    "id": "report-pdf",
+    "status": "pass",
+    "details": {
+      "status": 200,
+      "bytes": 144696,
+      "signatureValid": true,
+      "layoutVerified": false
+    },
+    "environment": "local"
+  },
+  {
+    "id": "live-js-errors",
+    "status": "fail",
+    "details": [
+      {
+        "message": "Cannot read properties of undefined (reading '_leaflet_pos')",
+        "stack": "TypeError: Cannot read properties of undefined (reading '_leaflet_pos')\n    at Pe (https://toko.azlaundry.my.id/assets/leaflet.js:5:21430)\n    at e._getMapPanePos (https://toko.azlaundry.my.id/assets/leaflet.js:5:43374)\n    at e._getNewPixelOrigin (https://toko.azlaundry.my.id/assets/leaflet.js:5:43731)\n    at e._move (https://toko.azlaundry.my.id/assets/leaflet.js:5:40075)\n    at e._onZoomTransitionEnd (https://toko.azlaundry.my.id/assets/leaflet.js:5:47344)",
+        "url": "https://toko.azlaundry.my.id/#live-tracking"
+      }
+    ],
+    "environment": "live"
+  }
+]

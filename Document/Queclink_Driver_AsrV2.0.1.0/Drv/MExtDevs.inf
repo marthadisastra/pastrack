@@ -1,0 +1,332 @@
+; This inf supports all external devices for development and test
+; It included Sulog, NewIMLT, CMT devices' drivers
+
+[Version]
+Signature = "$Windows NT$"
+Class = USB
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+Provider = %ProviderName%
+DriverVer=02/03/2021,1.2.0.0
+CatalogFile.NTx86   = WinUSB\MExtDevs_i386.cat
+CatalogFile.NTamd64 = WinUSB\MExtDevs_amd64.cat
+
+[Manufacturer]
+%MfgName% = MarvellHw,NTx86,NTamd64
+
+
+
+;------------------------------------NTx86------------------------------------
+[MarvellHw.NTx86]
+; CMT Device
+%DeviceDesc_CMT%=MarvellHwCMT.Install, USB\VID_8086&PID_1240
+; NewIMLT Device
+%DeviceDesc_IMLT%=MarvellHwIMLT.Install, USB\VID_8086&PID_1140
+%DeviceDesc_IMLT%=MarvellHwIMLT.Install, USB\VID_8086&PID_2222
+
+;Add for ASR mobile phone product
+;diag,acm,adb
+;
+;diag,acm,sulog,adb
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ecc&PID_2101&MI_03
+;diag,acm
+;
+;rndis,diag,acm,sulog,adb
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ecc&PID_2103&MI_05
+
+;Add for ASR data product
+;rndis,acm,diag,adb,sulog,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3010&MI_06
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3010&MI_07
+;acm,diag,adb,sulog,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3011&MI_04
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3011&MI_05
+;rndis,acm,diag,sulog,adb,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3012&MI_05
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3012&MI_07
+;rndis,acm,acm,sulog,adb,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3013&MI_06
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3013&MI_08
+;rndis,acm,acm,adb,sulog,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3014&MI_07
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3014&MI_08
+;rndis,acm,acm,diag,adb,sulog,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3015&MI_08
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3015&MI_09
+;rndis,acm,acm,diag,sulog,adb,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3016&MI_07
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3016&MI_09
+;acm
+
+;acm,diag,sulog,adb,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3018&MI_03
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3018&MI_05
+;acm,acm,diag,sulog,adb,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3019&MI_05
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3019&MI_07
+;acm,acm,diag,adb,sulog,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_301A&MI_06
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_301A&MI_07
+;acm,acm,sulog,adb,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_301B&MI_04
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_301B&MI_06
+;acm,acm,adb,sulog,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_301C&MI_05
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_301C&MI_06
+;rndis,generic,generic,generic
+;
+;acm,generic,generic,generic
+;
+;generic,generic,generic,generic
+;
+
+;digrf
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3020
+;sulog
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3021
+;sulog,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3022&MI_00
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3022&MI_01
+
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_1286&PID_4E28&MI_05
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_1286&PID_4E31&MI_06
+
+;------------------------------------NTamd64------------------------------------
+[MarvellHw.NTamd64]
+; CMT Device
+%DeviceDesc_CMT%=MarvellHwCMT.Install, USB\VID_8086&PID_1240
+; NewIMLT Device
+%DeviceDesc_IMLT%=MarvellHwIMLT.Install, USB\VID_8086&PID_1140
+%DeviceDesc_IMLT%=MarvellHwIMLT.Install, USB\VID_8086&PID_2222
+
+;Add for ASR mobile phone product
+;diag,acm,adb
+;
+;diag,acm,sulog,adb
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ecc&PID_2101&MI_03
+;diag,acm
+;
+;rndis,diag,acm,sulog,adb
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ecc&PID_2103&MI_05
+
+;Add for ASR data product
+;rndis,acm,diag,adb,sulog,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3010&MI_06
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3010&MI_07
+;acm,diag,adb,sulog,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3011&MI_04
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3011&MI_05
+;rndis,acm,diag,sulog,adb,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3012&MI_05
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3012&MI_07
+;rndis,acm,acm,sulog,adb,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3013&MI_06
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3013&MI_08
+;rndis,acm,acm,adb,sulog,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3014&MI_07
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3014&MI_08
+;rndis,acm,acm,diag,adb,sulog,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3015&MI_08
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3015&MI_09
+;rndis,acm,acm,diag,sulog,adb,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3016&MI_07
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3016&MI_09
+;acm
+
+;acm,diag,sulog,adb,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3018&MI_03
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3018&MI_05
+;acm,acm,diag,sulog,adb,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3019&MI_05
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3019&MI_07
+;acm,acm,diag,adb,sulog,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_301A&MI_06
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_301A&MI_07
+;acm,acm,sulog,adb,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_301B&MI_04
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_301B&MI_06
+;acm,acm,adb,sulog,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_301C&MI_05
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_301C&MI_06
+;rndis,generic,generic,generic
+;
+;acm,generic,generic,generic
+;
+;generic,generic,generic,generic
+;
+
+;digrf
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3020
+;sulog
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3021
+;sulog,digrf
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_2ECC&PID_3022&MI_00
+%DeviceDesc_Digrf%=ASRDigRF.Install, USB\VID_2ECC&PID_3022&MI_01
+
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_1286&PID_4E28&MI_05
+%DeviceDesc_Sulog%=MarvellHwSulog.Install, USB\VID_1286&PID_4E31&MI_06
+
+; ================== Sulog Installation ==================
+[MarvellHwSulog.Install.nt]
+Include=winusb.inf
+Needs=WINUSB.NT
+
+[MarvellHwSulog.Install.nt.Services]
+Include=winusb.inf
+AddService=WINUSB,0x00000002,WinUSB_Sulog_ServiceInstall
+
+[WinUSB_Sulog_ServiceInstall]
+DisplayName = %WinUSB_Sulog_SvcDesc%
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+ServiceBinary   = %12%\winusb.sys
+
+[MarvellHwSulog.Install.nt.Wdf]
+KmdfService = WINUSB, WinUSB.Install
+
+[MarvellHwSulog.Install.nt.HW]
+AddReg=Sulog_AddReg
+
+[Sulog_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{569EBE67-7817-4A94-8962-EA37CF6F20C1}"
+
+[MarvellHwSulog.Install.nt.CoInstallers]
+AddReg=CoInstallers_AddReg
+CopyFiles=CoInstallers_CopyFiles
+
+; ================== DigRF Installation ==================
+[ASRDigRF.Install.nt]
+Include=winusb.inf
+Needs=WINUSB.NT
+
+[ASRDigRF.Install.nt.Services]
+Include=winusb.inf
+AddService=WINUSB,0x00000002,WinUSB_DigRF_ServiceInstall
+
+[WinUSB_DigRF_ServiceInstall]
+DisplayName = %WinUSB_DigRF_SvcDesc%
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+ServiceBinary   = %12%\winusb.sys
+
+[ASRDigRF.Install.nt.Wdf]
+KmdfService = WINUSB, WinUSB.Install
+
+[ASRDigRF.Install.nt.HW]
+AddReg=DigRF_AddReg
+
+[DigRF_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{C49B9BAB-A5C3-4271-BE6F-D3E1D88D92FB}
+
+[ASRDigRF.Install.nt.CoInstallers]
+AddReg=CoInstallers_AddReg
+CopyFiles=CoInstallers_CopyFiles
+
+; ================= NewIMLT Installation =================
+[MarvellHwIMLT.Install.nt]
+Include=winusb.inf
+Needs=WINUSB.NT
+
+[MarvellHwIMLT.Install.nt.Services]
+Include=winusb.inf
+AddService=WINUSB,0x00000002,WinUSB_IMLT_ServiceInstall
+
+[WinUSB_IMLT_ServiceInstall]
+DisplayName = %WinUSB_IMLT_SvcDesc%
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+ServiceBinary   = %12%\winusb.sys
+
+[MarvellHwIMLT.Install.nt.Wdf]
+KmdfService = WINUSB, WinUSB.Install
+
+[MarvellHwIMLT.Install.nt.HW]
+AddReg=IMLT_AddReg
+
+[IMLT_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{D5F232BB-EC9C-4ca4-B424-98DC9EE7DC9C}"
+
+[MarvellHwIMLT.Install.nt.CoInstallers]
+AddReg=CoInstallers_AddReg
+CopyFiles=CoInstallers_CopyFiles
+
+; =================== CMT Installation ===================
+[MarvellHwCMT.Install.nt]
+Include=winusb.inf
+Needs=WINUSB.NT
+
+[MarvellHwCMT.Install.nt.Services]
+Include=winusb.inf
+AddService=WINUSB,0x00000002,WinUSB_CMT_ServiceInstall
+
+[WinUSB_CMT_ServiceInstall]
+DisplayName = %WinUSB_CMT_SvcDesc%
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+ServiceBinary   = %12%\winusb.sys
+
+[MarvellHwCMT.Install.nt.Wdf]
+KmdfService = WINUSB, WinUSB.Install
+
+[MarvellHwCMT.Install.nt.HW]
+AddReg=CMT_AddReg
+
+[CMT_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{26CF650C-A3A1-4773-A8E9-747A27D2E84E}"
+HKR,,DeviceIdleEnabled,0x00010001,1
+HKR,,DeviceIdleIgnoreWakeEnable,0x00010001,1
+HKR,,DefaultIdleState,0x00010001,1
+HKR,,DefaultIdleTimeout,0x00010001,20000
+HKR,,UserSetDeviceIdleEnabled,0x00010001,1
+HKR,,SystemWakeEnabled,0x00010001,1
+
+[MarvellHwCMT.Install.nt.CoInstallers]
+AddReg=CoInstallers_AddReg
+CopyFiles=CoInstallers_CopyFiles
+
+; =========== Universal =================
+[WinUSB.Install]
+KmdfLibraryVersion=1.9
+
+[CoInstallers_AddReg]
+HKR,,CoInstallers32,0x00010000,"WdfCoInstaller01009.dll,WdfCoInstaller","WinUSBCoInstaller.dll"
+
+[CoInstallers_CopyFiles]
+WinUSBCoInstaller.dll
+WdfCoInstaller01009.dll
+
+[DestinationDirs]
+DefaultDestDir=12
+CoInstallers_CopyFiles=11
+
+; ================= Source Media Section =====================
+[SourceDisksNames]
+1 = %DISK_NAME%,,,\WinUSB\i386
+2 = %DISK_NAME%,,,\WinUSB\amd64
+
+[SourceDisksFiles.x86]
+WinUSBCoInstaller.dll  = 1
+WdfCoInstaller01009.dll=1
+
+[SourceDisksFiles.amd64]
+WinUSBCoInstaller.dll  = 2
+WdfCoInstaller01009.dll=2
+
+; =================== Strings ===================
+[Strings]
+MfgName				= "Queclink"
+ProviderName		= "Queclink HeFei Branch"
+WinUSB_Sulog_SvcDesc= "Queclink WinUSB Sulog Devices Driver"
+WinUSB_DigRF_SvcDesc= "Queclink WinUSB DigRF Devices Driver"
+WinUSB_IMLT_SvcDesc	= "Queclink WinUSB IMLT Devices Driver"
+WinUSB_CMT_SvcDesc	= "Queclink WinUSB CMT Devices Driver"
+DISK_NAME			= "Queclink Install Disk"
+; Specifice device name
+DeviceDesc_CMT		= "Queclink CMT Device"
+DeviceDesc_IMLT		= "Queclink IMLT Device"
+DeviceDesc_Sulog	= "Queclink Sulog Device"
+DeviceDesc_Sulog_asr	= "Queclink Sulog Device"
+DeviceDesc_Digrf	=	"Queclink DigRF Device"

@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PASTRACK Fleet Core - Fuel Monitoring Telematics</title>
+<!-- Material Symbols & Inter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-low": "#f8fafc",
+            "on-secondary-fixed-variant": "#005049",
+            "secondary-fixed-dim": "#6bd8cb",
+            "surface-variant": "#f1f5f9",
+            "surface-tint": "#1d4ed8",
+            "tertiary": "#0284c7",
+            "on-tertiary-fixed": "#001d31",
+            "on-background": "#0f172a",
+            "on-primary-fixed-variant": "#0039b5",
+            "secondary-container": "#ccfbf1",
+            "surface-container-lowest": "#ffffff",
+            "background": "#f8fafc",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#f8fafc",
+            "surface-dim": "#f1f5f9",
+            "inverse-primary": "#93c5fd",
+            "surface": "#ffffff",
+            "outline": "#94a3b8",
+            "on-secondary-container": "#0f766e",
+            "tertiary-fixed-dim": "#93ccff",
+            "on-secondary": "#ffffff",
+            "surface-container-high": "#e2e8f0",
+            "inverse-surface": "#1e293b",
+            "primary-fixed-dim": "#bfdbfe",
+            "on-surface-variant": "#64748b",
+            "on-tertiary-container": "#0369a1",
+            "secondary-fixed": "#99f6e4",
+            "primary": "#1d4ed8",
+            "secondary": "#0d9488",
+            "primary-container": "#dbeafe",
+            "tertiary-container": "#e0f2fe",
+            "on-tertiary-fixed-variant": "#004b73",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#00201d",
+            "on-surface": "#0f172a",
+            "surface-bright": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#001551",
+            "error-container": "#fee2e2",
+            "error": "#dc2626",
+            "outline-variant": "#e2e8f0",
+            "surface-container": "#f1f5f9",
+            "primary-fixed": "#dbeafe",
+            "on-error-container": "#991b1b",
+            "tertiary-fixed": "#bae6fd",
+            "surface-container-highest": "#cbd5e1",
+            "on-primary-container": "#1e40af"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            mono: ["'JetBrains Mono'", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+<meta content="web_blank" name="shell-type"/></head>
+<body class="antialiased min-h-screen flex bg-background text-on-surface">
+<!-- MAIN VIEWPORT CONTAINER -->
+<div class="flex-1 flex flex-col min-w-0 w-full">
+<!-- MAIN INTERFACE BODY -->
+<main class="p-5 lg:p-6 space-y-5 flex-1 bg-slate-50/60"><div class="flex flex-col w-full max-w-[1600px] mx-auto">
+<!-- Compact Redesigned Header: Single sleek bar & high-density layout -->
+<header class="bg-white border border-slate-200/80 rounded-xl px-4 py-3 mb-5 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+<nav class="flex items-center gap-1.5 text-xs font-medium text-slate-500">
+<span>Fleet Management</span>
+<span class="material-symbols-outlined text-[14px] text-slate-400">chevron_right</span>
+<span>Vehicles</span>
+<span class="material-symbols-outlined text-[14px] text-slate-400">chevron_right</span>
+</nav>
+<div class="flex items-center gap-2.5">
+<h1 class="text-base font-bold text-slate-900 tracking-tight flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">build_circle</span>
+        Vehicles: Maintenance &amp; Work Orders
+      </h1>
+<span class="hidden sm:inline-block h-3.5 w-px bg-slate-200"></span>
+<p class="hidden sm:inline-block text-xs text-slate-500">
+        Queclink GNSS ODO &amp; DI1 Run-Hours Sync
+      </p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<!-- Telematics Badges -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-slate-600 font-sans font-medium text-[11px]">GNSS ODO SYNC:</span>
+<strong class="font-semibold text-emerald-700">±0.12%</strong>
+<span class="text-[10px] text-slate-400">CEU</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-teal-50 border border-teal-200 text-xs text-teal-800 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+<span class="text-slate-600 font-sans font-medium text-[11px]">CFS300B:</span>
+<strong class="font-semibold text-teal-700">6/6</strong>
+<span class="text-[10px] text-slate-400">BLE 5.0 Synced</span>
+</div>
+<!-- Action Buttons Group -->
+<div class="inline-flex items-center rounded-lg shadow-sm border border-slate-200 p-0.5 bg-slate-50 ml-1">
+<button class="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-slate-700 hover:text-slate-900 hover:bg-white rounded transition" type="button">
+<span class="material-symbols-outlined text-[15px] text-slate-500">download</span>
+        Export PM Audit
+      </button>
+<button class="inline-flex items-center gap-1 px-3 py-1 text-xs font-semibold bg-primary text-white hover:bg-blue-700 rounded shadow-xs transition" id="btn-open-modal" type="button">
+<span class="material-symbols-outlined text-[15px]">add</span>
+        + Schedule Maintenance
+      </button>
+</div>
+</div>
+</header>
+<!-- Top KPI Overview Metric Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
+<!-- Card 1 -->
+<div class="p-4 rounded-xl bg-white border border-slate-200 text-slate-900 shadow-xs relative overflow-hidden flex flex-col justify-between hover:border-slate-300 transition">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">Active Work Orders</span>
+<span class="text-2xl font-bold text-slate-900 mt-1 block">4 Units</span>
+</div>
+<span class="p-2 rounded-lg bg-blue-50 text-primary border border-blue-100 material-symbols-outlined text-[22px]">car_repair</span>
+</div>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+<span class="font-medium text-slate-600">Bays 01, 02, 03 Active</span>
+<span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200/60">2 Parts Queued</span>
+</div>
+</div>
+<!-- Card 2: Maintenance Overdue -->
+<div class="p-4 rounded-xl bg-red-50/70 border border-red-200 text-slate-900 shadow-xs relative overflow-hidden flex flex-col justify-between hover:border-red-300 transition">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] font-semibold text-red-600 uppercase tracking-wider block">Maintenance Overdue</span>
+<span class="text-2xl font-bold text-red-700 mt-1 block">2 Units</span>
+</div>
+<span class="p-2 rounded-lg bg-red-100 text-red-600 border border-red-200 material-symbols-outlined text-[22px]">warning</span>
+</div>
+<div class="mt-3 pt-2.5 border-t border-red-100 flex items-center justify-between text-xs">
+<span class="font-semibold text-red-700">+1,420 km / +48 hrs delta</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-red-600 text-white shadow-xs">Hold Active</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-4 rounded-xl bg-white border border-slate-200 text-slate-900 shadow-xs relative overflow-hidden flex flex-col justify-between hover:border-slate-300 transition">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">Upcoming Services (14D)</span>
+<span class="text-2xl font-bold text-slate-900 mt-1 block">7 Units</span>
+</div>
+<span class="p-2 rounded-lg bg-teal-50 text-teal-700 border border-teal-100 material-symbols-outlined text-[22px]">event_upcoming</span>
+</div>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+<span class="font-medium text-slate-600">Nearest trigger in 380 km</span>
+<span class="text-xs font-semibold px-2 py-0.5 rounded bg-teal-50 text-teal-700 border border-teal-200/60">Pre-Booked</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="p-4 rounded-xl bg-white border border-slate-200 text-slate-900 shadow-xs relative overflow-hidden flex flex-col justify-between hover:border-slate-300 transition">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">Telematics PM Compliance</span>
+<span class="text-2xl font-bold text-slate-900 mt-1 block">95.8%</span>
+</div>
+<span class="p-2 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-100 material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+<span class="font-medium text-slate-600">Queclink ODO &amp; ACC Ignition</span>
+<span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200/60">Automated Sync</span>
+</div>
+</div>
+</section>
+<!-- Navigation Tabs & Toolbar Filter Control -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-3">
+<!-- Tab Controls -->
+<div class="inline-flex p-1 bg-slate-100 border border-slate-200 rounded-lg">
+<button class="px-3.5 py-1.5 rounded-md text-xs font-semibold transition bg-white text-primary shadow-xs border border-slate-200/70" id="tab-btn-active" type="button">
+    Active &amp; Upcoming Schedules (9)
+  </button>
+<button class="px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-slate-900 transition" id="tab-btn-history" type="button">
+    Past Service History (38)
+  </button>
+</div>
+<!-- Filter & Search Controls -->
+<div class="flex flex-wrap items-center gap-2">
+<div class="relative min-w-[240px]">
+<span class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-[17px]">search</span>
+</span>
+<input class="w-full pl-8 pr-3 py-1.5 text-xs bg-white text-slate-900 border border-slate-200 rounded-md focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none placeholder-slate-400" id="filter-search-input" placeholder="Search Unit ID, Plate, WO #..." type="text"/>
+</div>
+<select class="px-2.5 py-1.5 text-xs bg-white text-slate-700 border border-slate-200 rounded-md focus:border-primary focus:outline-none" id="filter-scope-select">
+<option value="">All Service Scopes</option>
+<option value="Engine">Engine &amp; Powertrain</option>
+<option value="Lubricants">Lubricants &amp; Filters</option>
+<option value="Brakes">Brakes &amp; Pneumatics</option>
+<option value="CFS300B">CFS300B Fuel Probe Re-Zero</option>
+</select>
+<select class="px-2.5 py-1.5 text-xs bg-white text-slate-700 border border-slate-200 rounded-md focus:border-primary focus:outline-none" id="filter-status-select">
+<option value="">All Statuses</option>
+<option value="OVERDUE">Overdue (Critical)</option>
+<option value="IN WORKSHOP">In Workshop</option>
+<option value="DUE SOON">Due Soon</option>
+<option value="SCHEDULED">Scheduled</option>
+</select>
+<button class="p-1.5 bg-white border border-slate-200 text-slate-500 hover:text-slate-800 hover:bg-slate-50 rounded-md transition" id="btn-reset-filters" title="Reset Filters" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+</button>
+</div>
+</div>
+<!-- TAB 1 CONTENT: ACTIVE & UPCOMING MAINTENANCE ROSTER -->
+<section class="flex flex-col gap-4" id="panel-tab-active">
+<div class="rounded-xl bg-white border border-slate-200 shadow-xs overflow-x-auto">
+<table class="w-full text-left" id="active-maintenance-table">
+<thead class="bg-slate-50 border-b border-slate-200 text-slate-600 text-[11px] font-semibold uppercase tracking-wider">
+<tr>
+<th class="px-4 py-3">Asset Identity</th>
+<th class="px-4 py-3">Work Order &amp; Scope</th>
+<th class="px-4 py-3">Trigger Logic &amp; Odo/ACC Accumulation</th>
+<th class="px-4 py-3">Hardware Telemetry Health</th>
+<th class="px-4 py-3">Depot Bay &amp; Cost</th>
+<th class="px-4 py-3">Status</th>
+<th class="px-4 py-3 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 text-xs text-slate-700">
+<!-- Row 1: Overdue -->
+<tr class="hover:bg-slate-50/70 transition">
+<td class="px-4 py-3">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 text-[11px] font-bold rounded bg-red-100 text-red-700 border border-red-200">HAULER-01</span>
+<div>
+<span class="font-mono font-bold block text-slate-900">B 9844 TQ</span>
+<span class="text-[11px] text-slate-500">Scania R500 Heavy Puller</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-0.5">
+<div class="flex items-center gap-1.5">
+<span class="font-mono font-semibold text-primary">#WO-8821</span>
+<span class="text-xs text-slate-900 font-semibold">50k Major Lubricants &amp; Filters</span>
+</div>
+<p class="text-[11px] text-slate-500">Engine 15W-40, Dual Coalescing Filter, Air Dryer Cartridge</p>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="w-52 space-y-1">
+<div class="flex justify-between text-[11px] font-mono">
+<span class="font-semibold text-slate-700">51,420 / 50,000 km</span>
+<span class="text-red-600 font-bold">+1,420 km</span>
+</div>
+<div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
+<div class="bg-red-500 h-1.5 rounded-full" style="width: 100%;"></div>
+</div>
+<span class="text-[10px] text-slate-500 block">Queclink GV30CEU GNSS Accumulation</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-1 font-mono text-[11px]">
+<div class="flex items-center gap-2">
+<span class="text-slate-500">GV30CEU:</span>
+<span class="text-slate-900 font-semibold">27.8V Main</span>
+<span class="text-teal-700 font-semibold">4.12V LiPo</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-slate-500">CFS300B:</span>
+<span class="text-slate-900 font-semibold">3.65V</span>
+<span class="text-teal-700 font-semibold">-66 dBm (Stable)</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px]">
+<span class="font-semibold block text-slate-900">Tj. Priok Central Depot</span>
+<span class="text-slate-500">Bay 02 • Est. $840.00</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold bg-red-100 text-red-700 border border-red-200">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-red-600"></span>
+OVERDUE
+</span>
+</td>
+<td class="px-4 py-3 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-slate-500 hover:text-primary hover:bg-slate-100 transition" title="Inspect Hardware Telemetry" type="button">
+<span class="material-symbols-outlined text-[17px]">sensors</span>
+</button>
+<button class="px-2.5 py-1 rounded text-xs bg-red-600 text-white font-semibold hover:bg-red-700 transition shadow-xs" type="button">
+Dispatch Bay
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: In Workshop -->
+<tr class="hover:bg-slate-50/70 transition">
+<td class="px-4 py-3">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 text-[11px] font-bold rounded bg-blue-100 text-blue-700 border border-blue-200">CRYOTANK-02</span>
+<div>
+<span class="font-mono font-bold block text-slate-900">B 9310 KXA</span>
+<span class="text-[11px] text-slate-500">Volvo FH16 Cryogenic</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-0.5">
+<div class="flex items-center gap-1.5">
+<span class="font-mono font-semibold text-primary">#WO-8819</span>
+<span class="text-xs text-slate-900 font-semibold">CFS300B Fuel Probe Re-Zero &amp; Baffles</span>
+</div>
+<p class="text-[11px] text-slate-500">Capacitive Probe Recalibration (Li-SOCl2 Fresh Cell, Zero-Trim)</p>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="w-52 space-y-1">
+<div class="flex justify-between text-[11px] font-mono">
+<span class="font-semibold text-primary">3,200 / 3,200 ACC hrs</span>
+<span class="text-primary font-bold">100% In Bay</span>
+</div>
+<div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full" style="width: 100%;"></div>
+</div>
+<span class="text-[10px] text-slate-500 block">DI1 Ignition Run-Hours Trigger</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-1 font-mono text-[11px]">
+<div class="flex items-center gap-2">
+<span class="text-slate-500">GV30CEU:</span>
+<span class="text-slate-900 font-semibold">28.1V Main</span>
+<span class="text-teal-700 font-semibold">4.18V LiPo</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-slate-500">CFS300B:</span>
+<span class="text-slate-900 font-semibold">3.66V</span>
+<span class="text-teal-700 font-semibold">-58 dBm (Strong)</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px]">
+<span class="font-semibold block text-slate-900">Cikarang Telematics Bay 01</span>
+<span class="text-slate-500">Technician Assigned • $320.00</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-100 text-blue-800 border border-blue-200">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+IN WORKSHOP
+</span>
+</td>
+<td class="px-4 py-3 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-slate-500 hover:text-primary hover:bg-slate-100 transition" title="Inspect Hardware Telemetry" type="button">
+<span class="material-symbols-outlined text-[17px]">sensors</span>
+</button>
+<button class="px-2.5 py-1 rounded text-xs bg-teal-600 text-white font-semibold hover:bg-teal-700 transition shadow-xs" type="button">
+Complete WO
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Due Soon -->
+<tr class="hover:bg-slate-50/70 transition">
+<td class="px-4 py-3">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 text-[11px] font-bold rounded bg-slate-100 text-slate-700 border border-slate-200">HAULER-04</span>
+<div>
+<span class="font-mono font-bold block text-slate-900">B 9182 UV</span>
+<span class="text-[11px] text-slate-500">Freightliner Cascadia 126</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-0.5">
+<div class="flex items-center gap-1.5">
+<span class="font-mono font-semibold text-primary">#WO-8825</span>
+<span class="text-xs text-slate-900 font-semibold">Brake Diaphragms &amp; Air Lines</span>
+</div>
+<p class="text-[11px] text-slate-500">Type 30/30 Spring Brake Chambers, Quick Release Valves</p>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="w-52 space-y-1">
+<div class="flex justify-between text-[11px] font-mono">
+<span class="font-semibold text-slate-700">74,620 / 75,000 km</span>
+<span class="text-teal-700 font-bold">Remains 380 km</span>
+</div>
+<div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
+<div class="bg-teal-500 h-1.5 rounded-full" style="width: 98%;"></div>
+</div>
+<span class="text-[10px] text-slate-500 block">Queclink GV30CEU GNSS Accumulation</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-1 font-mono text-[11px]">
+<div class="flex items-center gap-2">
+<span class="text-slate-500">GV30CEU:</span>
+<span class="text-slate-900 font-semibold">27.4V Main</span>
+<span class="text-teal-700 font-semibold">4.09V LiPo</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-slate-500">CFS300B:</span>
+<span class="text-slate-900 font-semibold">3.64V</span>
+<span class="text-teal-700 font-semibold">-62 dBm (Stable)</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px]">
+<span class="font-semibold block text-slate-900">Tj. Priok Central Depot</span>
+<span class="text-slate-500">Bay 03 Pre-booked • $610.00</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold bg-teal-100 text-teal-800 border border-teal-200">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-teal-600"></span>
+DUE SOON
+</span>
+</td>
+<td class="px-4 py-3 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-slate-500 hover:text-primary hover:bg-slate-100 transition" title="Inspect Hardware Telemetry" type="button">
+<span class="material-symbols-outlined text-[17px]">sensors</span>
+</button>
+<button class="px-2.5 py-1 rounded text-xs bg-slate-100 text-slate-800 border border-slate-200 font-semibold hover:bg-slate-200 transition" type="button">
+Confirm Bay
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Scheduled -->
+<tr class="hover:bg-slate-50/70 transition">
+<td class="px-4 py-3">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 text-[11px] font-bold rounded bg-slate-100 text-slate-700 border border-slate-200">FLATBED-11</span>
+<div>
+<span class="font-mono font-bold block text-slate-900">B 9044 KL</span>
+<span class="text-[11px] text-slate-500">Hino 500 Heavy Freight</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-0.5">
+<div class="flex items-center gap-1.5">
+<span class="font-mono font-semibold text-primary">#WO-8830</span>
+<span class="text-xs text-slate-900 font-semibold">Wheel Bearing &amp; Hub Oil Seals</span>
+</div>
+<p class="text-[11px] text-slate-500">Front &amp; Rear Axle Hub Bearing Repack, Synthetic Gear Oil 80W-90</p>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="w-52 space-y-1">
+<div class="flex justify-between text-[11px] font-mono">
+<span class="font-semibold text-slate-700">57,200 / 60,000 km</span>
+<span class="text-slate-500 font-medium">Remains 2,800 km</span>
+</div>
+<div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
+<div class="bg-blue-400 h-1.5 rounded-full" style="width: 82%;"></div>
+</div>
+<span class="text-[10px] text-slate-500 block">Queclink GV30CEU GNSS Accumulation</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-1 font-mono text-[11px]">
+<div class="flex items-center gap-2">
+<span class="text-slate-500">GV30CEU:</span>
+<span class="text-slate-900 font-semibold">27.9V Main</span>
+<span class="text-teal-700 font-semibold">4.15V LiPo</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-slate-500">CFS300B:</span>
+<span class="text-slate-900 font-semibold">3.65V</span>
+<span class="text-teal-700 font-semibold">-60 dBm (Stable)</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px]">
+<span class="font-semibold block text-slate-900">Marunda Logistics Yard</span>
+<span class="text-slate-500">Scheduled 24 Feb • $450.00</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+SCHEDULED
+</span>
+</td>
+<td class="px-4 py-3 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-slate-500 hover:text-primary hover:bg-slate-100 transition" title="Inspect Hardware Telemetry" type="button">
+<span class="material-symbols-outlined text-[17px]">sensors</span>
+</button>
+<button class="px-2.5 py-1 rounded text-xs bg-slate-100 text-slate-800 border border-slate-200 font-semibold hover:bg-slate-200 transition" type="button">
+Edit Plan
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Overdue -->
+<tr class="hover:bg-slate-50/70 transition">
+<td class="px-4 py-3">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 text-[11px] font-bold rounded bg-red-100 text-red-700 border border-red-200">VAN-28</span>
+<div>
+<span class="font-mono font-bold block text-slate-900">B 9201 PK</span>
+<span class="text-[11px] text-slate-500">Isuzu Hilux Cargo</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-0.5">
+<div class="flex items-center gap-1.5">
+<span class="font-mono font-semibold text-primary">#WO-8815</span>
+<span class="text-xs text-slate-900 font-semibold">DI1 ACC Engine 2,500hr Cycle</span>
+</div>
+<p class="text-[11px] text-slate-500">Injectors Ultrasonic Cleaning, Fuel Rail Pressure Relief Valve</p>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="w-52 space-y-1">
+<div class="flex justify-between text-[11px] font-mono">
+<span class="font-semibold text-slate-700">2,548 / 2,500 hrs</span>
+<span class="text-red-600 font-bold">+48 hrs</span>
+</div>
+<div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
+<div class="bg-red-500 h-1.5 rounded-full" style="width: 100%;"></div>
+</div>
+<span class="text-[10px] text-slate-500 block">DI1 Ignition Run-Hours Trigger</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-1 font-mono text-[11px]">
+<div class="flex items-center gap-2">
+<span class="text-slate-500">GV30CEU:</span>
+<span class="text-slate-900 font-semibold">13.8V Main</span>
+<span class="text-teal-700 font-semibold">4.08V LiPo</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-slate-500">CFS300B:</span>
+<span class="text-slate-900 font-semibold">3.62V</span>
+<span class="text-teal-700 font-semibold">-68 dBm (Stable)</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px]">
+<span class="font-semibold block text-slate-900">Cikarang Telematics Bay</span>
+<span class="text-slate-500">Dispatch Hold • $380.00</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold bg-red-100 text-red-700 border border-red-200">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-red-600"></span>
+OVERDUE
+</span>
+</td>
+<td class="px-4 py-3 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-slate-500 hover:text-primary hover:bg-slate-100 transition" title="Inspect Hardware Telemetry" type="button">
+<span class="material-symbols-outlined text-[17px]">sensors</span>
+</button>
+<button class="px-2.5 py-1 rounded text-xs bg-red-600 text-white font-semibold hover:bg-red-700 transition shadow-xs" type="button">
+Dispatch Bay
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Scheduled -->
+<tr class="hover:bg-slate-50/70 transition">
+<td class="px-4 py-3">
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 text-[11px] font-bold rounded bg-slate-100 text-slate-700 border border-slate-200">TANKER-07</span>
+<div>
+<span class="font-mono font-bold block text-slate-900">B 9553 ZT</span>
+<span class="text-[11px] text-slate-500">Scania P360 Bitumen Tanker</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-0.5">
+<div class="flex items-center gap-1.5">
+<span class="font-mono font-semibold text-primary">#WO-8832</span>
+<span class="text-xs text-slate-900 font-semibold">GV30CEU Wiring Harness &amp; Probe Zero</span>
+</div>
+<p class="text-[11px] text-slate-500">Main Harness Insulation Check, DI1 Fuse 2A Verification</p>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="w-52 space-y-1">
+<div class="flex justify-between text-[11px] font-mono">
+<span class="font-semibold text-slate-700">91,200 / 95,000 km</span>
+<span class="text-slate-500 font-medium">Remains 3,800 km</span>
+</div>
+<div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
+<div class="bg-blue-300 h-1.5 rounded-full" style="width: 75%;"></div>
+</div>
+<span class="text-[10px] text-slate-500 block">Queclink GV30CEU GNSS Accumulation</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-1 font-mono text-[11px]">
+<div class="flex items-center gap-2">
+<span class="text-slate-500">GV30CEU:</span>
+<span class="text-slate-900 font-semibold">27.7V Main</span>
+<span class="text-teal-700 font-semibold">4.16V LiPo</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-slate-500">CFS300B:</span>
+<span class="text-slate-900 font-semibold">3.65V</span>
+<span class="text-teal-700 font-semibold">-59 dBm (Strong)</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px]">
+<span class="font-semibold block text-slate-900">Tj. Priok Central Depot</span>
+<span class="text-slate-500">Scheduled 28 Feb • $290.00</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+SCHEDULED
+</span>
+</td>
+<td class="px-4 py-3 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-slate-500 hover:text-primary hover:bg-slate-100 transition" title="Inspect Hardware Telemetry" type="button">
+<span class="material-symbols-outlined text-[17px]">sensors</span>
+</button>
+<button class="px-2.5 py-1 rounded text-xs bg-slate-100 text-slate-800 border border-slate-200 font-semibold hover:bg-slate-200 transition" type="button">
+Edit Plan
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- TAB 2 CONTENT: PAST SERVICE HISTORY (COMPREHENSIVE ARCHIVE) -->
+<section class="hidden flex-col gap-4" id="panel-tab-history">
+<div class="rounded-xl bg-white border border-slate-200 shadow-xs overflow-x-auto">
+<table class="w-full text-left" id="history-maintenance-table">
+<thead class="bg-slate-50 border-b border-slate-200 text-slate-600 text-[11px] font-semibold uppercase tracking-wider">
+<tr>
+<th class="px-4 py-3">Completed Date</th>
+<th class="px-4 py-3">Asset &amp; Odo at Service</th>
+<th class="px-4 py-3">Service Scope &amp; Actions Performed</th>
+<th class="px-4 py-3">Hardware Serviced</th>
+<th class="px-4 py-3">Workshop &amp; Lead Tech</th>
+<th class="px-4 py-3">Audit &amp; Cost</th>
+<th class="px-4 py-3 text-right">Verification</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 text-xs text-slate-700">
+<!-- History Row 1 -->
+<tr class="hover:bg-slate-50/70 transition">
+<td class="px-4 py-3">
+<span class="font-mono font-medium block text-slate-900">12 Feb 2026</span>
+<span class="text-[11px] text-slate-500">09:14 UTC</span>
+</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 text-[11px] font-bold rounded bg-slate-100 text-slate-700 border border-slate-200">HAULER-04</span>
+<div>
+<span class="font-mono font-bold block text-slate-900">B 9182 UV</span>
+<span class="text-[11px] font-mono text-slate-500">70,000 km recorded</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-0.5">
+<span class="font-semibold text-slate-900 block">Engine Oil 15W-40 &amp; Dual Fuel Filters</span>
+<p class="text-[11px] text-slate-500">Lubricant change, cartridge spin-on replacement, air pre-cleaner blown</p>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px] font-mono text-slate-600 space-y-0.5">
+<span>GV30CEU Odo Interval Reset</span>
+<span class="block text-teal-700">CFS300B Zero Calibrated (3.65V)</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px]">
+<span class="font-semibold block text-slate-900">Tj. Priok Central Depot</span>
+<span class="font-mono text-slate-500">Tech ID: #TECH-4092</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px]">
+<span class="font-semibold block text-slate-900">$540.00</span>
+<span class="font-mono text-primary cursor-pointer hover:underline">INV-2026-9921</span>
+</div>
+</td>
+<td class="px-4 py-3 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+Passed QC
+</span>
+</td>
+</tr>
+<!-- History Row 2 -->
+<tr class="hover:bg-slate-50/70 transition">
+<td class="px-4 py-3">
+<span class="font-mono font-medium block text-slate-900">04 Jan 2026</span>
+<span class="text-[11px] text-slate-500">14:30 UTC</span>
+</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 text-[11px] font-bold rounded bg-slate-100 text-slate-700 border border-slate-200">CRYOTANK-02</span>
+<div>
+<span class="font-mono font-bold block text-slate-900">B 9310 KXA</span>
+<span class="text-[11px] font-mono text-slate-500">2,800 ACC hrs</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-0.5">
+<span class="font-semibold text-slate-900 block">CFS300B Battery Replacement &amp; Seal Ring</span>
+<p class="text-[11px] text-slate-500">Fresh Li-SOCl2 3.65V cell, IP68 probe o-ring flange seated &amp; sealed</p>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px] font-mono text-slate-600 space-y-0.5">
+<span>GV30CEU FW v3.12.08 Flashed</span>
+<span class="block text-teal-700">CFS300B BLE Key Re-paired</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px]">
+<span class="font-semibold block text-slate-900">Cikarang Telematics Bay</span>
+<span class="font-mono text-slate-500">Tech ID: #TECH-1184</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px]">
+<span class="font-semibold block text-slate-900">$220.00</span>
+<span class="font-mono text-primary cursor-pointer hover:underline">INV-2026-9810</span>
+</div>
+</td>
+<td class="px-4 py-3 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+Passed QC
+</span>
+</td>
+</tr>
+<!-- History Row 3 -->
+<tr class="hover:bg-slate-50/70 transition">
+<td class="px-4 py-3">
+<span class="font-mono font-medium block text-slate-900">28 Nov 2025</span>
+<span class="text-[11px] text-slate-500">11:15 UTC</span>
+</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 text-[11px] font-bold rounded bg-slate-100 text-slate-700 border border-slate-200">FLATBED-11</span>
+<div>
+<span class="font-mono font-bold block text-slate-900">B 9044 KL</span>
+<span class="text-[11px] font-mono text-slate-500">50,000 km recorded</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="space-y-0.5">
+<span class="font-semibold text-slate-900 block">Brake Linings &amp; Air Chamber Diaphragm</span>
+<p class="text-[11px] text-slate-500">Full rear tandem brake lining friction kits, pressure test 8.5 bar</p>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px] font-mono text-slate-600 space-y-0.5">
+<span>GV30CEU Main Power Cable Checked</span>
+<span class="block text-teal-700">Backup LiPo Verified (4.16V)</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px]">
+<span class="font-semibold block text-slate-900">Marunda Logistics Yard</span>
+<span class="font-mono text-slate-500">Tech ID: #TECH-5520</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="text-[11px]">
+<span class="font-semibold block text-slate-900">$790.00</span>
+<span class="font-mono text-primary cursor-pointer hover:underline">INV-2025-9502</span>
+</div>
+</td>
+<td class="px-4 py-3 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+Passed QC
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Depot Service Bays & Hardware Health Lower Widgets -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-5">
+<!-- Widget 1: Queclink Gateway Roster -->
+<div class="p-4 rounded-xl bg-white border border-slate-200 text-slate-900 shadow-xs">
+<div class="flex items-center justify-between pb-2.5 mb-3 border-b border-slate-100">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">router</span>
+<h3 class="text-sm font-bold text-slate-900">Queclink Gateway Roster</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">ALL ONLINE</span>
+</div>
+<div class="space-y-2.5">
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500">Main Power Ingestion</span>
+<span class="font-mono font-semibold text-slate-900">27.6V Avg DC (24V System)</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500">Internal Backup LiPo</span>
+<span class="font-mono font-semibold text-teal-700">4.15V Avg (Optimal)</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500">Cellular Signal Strength</span>
+<span class="font-mono font-semibold text-slate-900">LTE CSQ 28/31</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500">GNSS Lock Precision</span>
+<span class="font-mono font-semibold text-blue-700">12 Sats • HDOP 0.8</span>
+</div>
+</div>
+</div>
+<!-- Widget 2: CFS300B BLE 5.0 Fuel Probes -->
+<div class="p-4 rounded-xl bg-white border border-slate-200 text-slate-900 shadow-xs">
+<div class="flex items-center justify-between pb-2.5 mb-3 border-b border-slate-100">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-600 text-[20px]">sensors</span>
+<h3 class="text-sm font-bold text-slate-900">CFS300B BLE 5.0 Probes</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-teal-50 text-teal-700 border border-teal-200">6 CALIBRATED</span>
+</div>
+<div class="space-y-2.5">
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500">Internal Li-SOCl2 Cell</span>
+<span class="font-mono font-semibold text-slate-900">&gt; 3.61V (All Safe)</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500">Zero-Point Frequency Deviation</span>
+<span class="font-mono font-semibold text-teal-700">±0.4 Hz Tolerance</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500">BLE 5.0 Beaconing RSSI</span>
+<span class="font-mono font-semibold text-slate-900">-64 dBm Avg In-Tank</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500">Capacitive Resolution</span>
+<span class="font-mono font-semibold text-blue-700">0.1 mm Level Accuracy</span>
+</div>
+</div>
+</div>
+<!-- Widget 3: Depot Service Bays Occupancy -->
+<div class="p-4 rounded-xl bg-white border border-slate-200 text-slate-900 shadow-xs">
+<div class="flex items-center justify-between pb-2.5 mb-3 border-b border-slate-100">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">garage</span>
+<h3 class="text-sm font-bold text-slate-900">Depot Bays Occupancy</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200">3 / 6 SLOTS OCCUPIED</span>
+</div>
+<div class="space-y-2">
+<div class="p-2 rounded-lg bg-slate-50 border border-slate-200/80 flex items-center justify-between text-xs">
+<div>
+<span class="font-bold text-slate-900">Bay 01 (Cikarang)</span>
+<span class="text-slate-500 text-[11px] block">CFS300B Cal Bench</span>
+</div>
+<span class="px-2 py-0.5 rounded font-mono font-semibold text-[11px] bg-blue-100 text-blue-800 border border-blue-200">CRYOTANK-02 Active</span>
+</div>
+<div class="p-2 rounded-lg bg-slate-50 border border-slate-200/80 flex items-center justify-between text-xs">
+<div>
+<span class="font-bold text-slate-900">Bay 02 (Tj. Priok)</span>
+<span class="text-slate-500 text-[11px] block">Heavy Engine Pit</span>
+</div>
+<span class="px-2 py-0.5 rounded font-mono font-semibold text-[11px] bg-red-100 text-red-700 border border-red-200">HAULER-01 Awaiting</span>
+</div>
+<div class="p-2 rounded-lg bg-slate-50 border border-slate-200/80 flex items-center justify-between text-xs">
+<div>
+<span class="font-bold text-slate-900">Bay 03 (Tj. Priok)</span>
+<span class="text-slate-500 text-[11px] block">Pneumatic &amp; Brake Pit</span>
+</div>
+<span class="px-2 py-0.5 rounded font-mono font-semibold text-[11px] bg-teal-100 text-teal-800 border border-teal-200">HAULER-04 Reserved</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Modal Dialog: Schedule Vehicle Maintenance -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-xs hidden" id="modal-schedule-pm">
+<div class="w-full max-w-2xl bg-white text-slate-900 rounded-xl shadow-xl border border-slate-200 overflow-hidden animate-fadeIn">
+<!-- Modal Header -->
+<div class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+<div>
+<h2 class="text-base font-bold text-slate-900">Schedule Preventive Maintenance</h2>
+<span class="text-xs text-slate-500">Work Order Provisioning &amp; Telematics Trigger Configuration</span>
+</div>
+<button class="p-1 rounded text-slate-500 hover:text-slate-800 hover:bg-slate-200 transition" id="btn-close-modal" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<form class="p-5 space-y-4" id="form-schedule-maintenance">
+<!-- Step 1: Asset Selection -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold uppercase tracking-wider text-slate-500" for="select-vehicle-asset">1. Select Target Fleet Asset</label>
+<select class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 text-slate-900 rounded-md focus:border-primary focus:outline-none" id="select-vehicle-asset">
+<option value="HAULER-01">HAULER-01 • Scania R500 (B 9844 TQ)</option>
+<option value="CRYOTANK-02">CRYOTANK-02 • Volvo FH16 (B 9310 KXA)</option>
+<option value="HAULER-04">HAULER-04 • Freightliner Cascadia (B 9182 UV)</option>
+<option value="FLATBED-11">FLATBED-11 • Hino 500 (B 9044 KL)</option>
+<option value="VAN-28">VAN-28 • Isuzu Hilux Cargo (B 9201 PK)</option>
+<option value="TANKER-07">TANKER-07 • Scania P360 (B 9553 ZT)</option>
+</select>
+<div class="p-2.5 rounded-md bg-slate-100 border border-slate-200 text-xs font-mono text-slate-600 flex items-center justify-between" id="asset-telemetry-preview">
+<span>Live Queclink Odo: <strong class="text-slate-900 font-semibold">51,420 km</strong></span>
+<span>DI1 Run-Hours: <strong class="text-slate-900 font-semibold">3,410 hrs</strong></span>
+<span class="text-teal-700 font-semibold">Probe: 3.65V Stable</span>
+</div>
+</div>
+<!-- Step 2: Trigger Logic -->
+<div class="space-y-2">
+<label class="block text-xs font-semibold uppercase tracking-wider text-slate-500">2. Automated Trigger Mechanism</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+<label class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100/70 transition cursor-pointer flex flex-col justify-between">
+<div class="flex items-center gap-2">
+<input checked="" class="text-primary focus:ring-0 text-xs" name="trigger_type" type="radio" value="odometer"/>
+<span class="text-xs font-semibold text-slate-900">GNSS Odometer</span>
+</div>
+<input class="mt-2 px-2 py-1 text-xs font-mono bg-white text-slate-900 border border-slate-200 rounded focus:outline-none w-full" placeholder="Target km (e.g. 60000)" type="number" value="60000"/>
+</label>
+<label class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100/70 transition cursor-pointer flex flex-col justify-between">
+<div class="flex items-center gap-2">
+<input class="text-primary focus:ring-0 text-xs" name="trigger_type" type="radio" value="hours"/>
+<span class="text-xs font-semibold text-slate-900">ACC Run-Hours</span>
+</div>
+<input class="mt-2 px-2 py-1 text-xs font-mono bg-white text-slate-900 border border-slate-200 rounded focus:outline-none w-full" placeholder="Target hrs (e.g. 3500)" type="number" value="3500"/>
+</label>
+<label class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100/70 transition cursor-pointer flex flex-col justify-between">
+<div class="flex items-center gap-2">
+<input class="text-primary focus:ring-0 text-xs" name="trigger_type" type="radio" value="calendar"/>
+<span class="text-xs font-semibold text-slate-900">Calendar Due</span>
+</div>
+<input class="mt-2 px-2 py-1 text-xs font-mono bg-white text-slate-900 border border-slate-200 rounded focus:outline-none w-full" type="date" value="2026-03-01"/>
+</label>
+</div>
+</div>
+<!-- Step 3: Work Order Scope & Checklist -->
+<div class="space-y-2">
+<label class="block text-xs font-semibold uppercase tracking-wider text-slate-500">3. Work Order Scope &amp; Parts Checklist</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+<label class="flex items-center gap-2 p-2 rounded-md bg-slate-50 border border-slate-200 hover:bg-slate-100 cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-0 text-xs" type="checkbox"/>
+<span class="text-slate-800">Engine Oil 15W-40 &amp; Microfilters</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-md bg-slate-50 border border-slate-200 hover:bg-slate-100 cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-0 text-xs" type="checkbox"/>
+<span class="text-slate-800">CFS300B Probe Re-Zero &amp; Baffles</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-md bg-slate-50 border border-slate-200 hover:bg-slate-100 cursor-pointer">
+<input class="rounded text-primary focus:ring-0 text-xs" type="checkbox"/>
+<span class="text-slate-800">Brake System Pneumatic Valves</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-md bg-slate-50 border border-slate-200 hover:bg-slate-100 cursor-pointer">
+<input class="rounded text-primary focus:ring-0 text-xs" type="checkbox"/>
+<span class="text-slate-800">Wheel Bearing Repack &amp; Hub Seals</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-md bg-slate-50 border border-slate-200 hover:bg-slate-100 cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-0 text-xs" type="checkbox"/>
+<span class="text-slate-800">GV30CEU Battery &amp; DI1 ACC Wiring</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-md bg-slate-50 border border-slate-200 hover:bg-slate-100 cursor-pointer">
+<input class="rounded text-primary focus:ring-0 text-xs" type="checkbox"/>
+<span class="text-slate-800">Transmission Oil &amp; Differential Flush</span>
+</label>
+</div>
+</div>
+<!-- Step 4: Facility & Priority -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<div class="space-y-1">
+<label class="block text-xs font-semibold uppercase tracking-wider text-slate-500" for="select-facility">Assigned Depot Bay</label>
+<select class="w-full px-2.5 py-1.5 text-xs bg-slate-50 border border-slate-200 text-slate-900 rounded-md focus:border-primary focus:outline-none" id="select-facility">
+<option value="TjPriok">Tj. Priok Central Bay 02</option>
+<option value="Cikarang">Cikarang Telematics Bay 01</option>
+<option value="Marunda">Marunda Logistics Yard</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="block text-xs font-semibold uppercase tracking-wider text-slate-500" for="select-priority">Priority Level</label>
+<select class="w-full px-2.5 py-1.5 text-xs bg-slate-50 border border-slate-200 text-slate-900 rounded-md focus:border-primary focus:outline-none" id="select-priority">
+<option value="Standard">Standard Pre-Book</option>
+<option value="High">High Priority (Near Threshold)</option>
+<option value="Hold">Immediate Dispatch Hold</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="block text-xs font-semibold uppercase tracking-wider text-slate-500" for="input-budget">Estimated USD Cost</label>
+<input class="w-full px-2.5 py-1.5 text-xs font-mono bg-slate-50 border border-slate-200 text-slate-900 rounded-md focus:border-primary focus:outline-none" id="input-budget" type="number" value="450"/>
+</div>
+</div>
+<!-- Modal Footer Actions -->
+<div class="pt-3.5 flex items-center justify-end gap-2.5 border-t border-slate-200">
+<button class="px-4 py-1.5 text-xs font-medium rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition" id="btn-cancel-modal" type="button">
+Cancel
+</button>
+<button class="px-4 py-1.5 text-xs font-semibold rounded-md bg-primary text-white hover:bg-blue-700 transition shadow-xs" type="submit">
+Create &amp; Dispatch Work Order
+</button>
+</div>
+</form>
+</div>
+</div>
+<script>
+    (function() {
+      // 1. Tab Switching Logic
+      const tabBtnActive = document.getElementById('tab-btn-active');
+      const tabBtnHistory = document.getElementById('tab-btn-history');
+      const panelActive = document.getElementById('panel-tab-active');
+      const panelHistory = document.getElementById('panel-tab-history');
+
+      tabBtnActive.addEventListener('click', () => {
+        panelActive.classList.remove('hidden');
+        panelHistory.classList.add('hidden');
+        tabBtnActive.className = 'px-3.5 py-1.5 rounded-md text-xs font-semibold transition bg-white text-primary shadow-xs border border-slate-200/70';
+        tabBtnHistory.className = 'px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-slate-900 transition';
+      });
+
+      tabBtnHistory.addEventListener('click', () => {
+        panelHistory.classList.remove('hidden');
+        panelActive.classList.add('hidden');
+        tabBtnHistory.className = 'px-3.5 py-1.5 rounded-md text-xs font-semibold transition bg-white text-primary shadow-xs border border-slate-200/70';
+        tabBtnActive.className = 'px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-slate-900 transition';
+      });
+
+      // 2. Interactive Schedule Modal Dialog Logic
+      const modal = document.getElementById('modal-schedule-pm');
+      const btnOpenModal = document.getElementById('btn-open-modal');
+      const btnCloseModal = document.getElementById('btn-close-modal');
+      const btnCancelModal = document.getElementById('btn-cancel-modal');
+      const formSchedule = document.getElementById('form-schedule-maintenance');
+
+      function openModal() {
+        modal.classList.remove('hidden');
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+      }
+
+      btnOpenModal.addEventListener('click', openModal);
+      btnCloseModal.addEventListener('click', closeModal);
+      btnCancelModal.addEventListener('click', closeModal);
+
+      // Close modal on backdrop click
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Asset preview dynamic simulation in modal
+      const selectAsset = document.getElementById('select-vehicle-asset');
+      const telemetryPreview = document.getElementById('asset-telemetry-preview');
+
+      const assetMetrics = {
+        'HAULER-01': { odo: '51,420 km', hrs: '3,410 hrs', probe: '3.65V Stable' },
+        'CRYOTANK-02': { odo: '48,190 km', hrs: '3,200 hrs', probe: '3.66V Strong' },
+        'HAULER-04': { odo: '74,620 km', hrs: '4,890 hrs', probe: '3.64V Stable' },
+        'FLATBED-11': { odo: '57,200 km', hrs: '3,780 hrs', probe: '3.65V Stable' },
+        'VAN-28': { odo: '38,900 km', hrs: '2,548 hrs', probe: '3.62V Stable' },
+        'TANKER-07': { odo: '91,200 km', hrs: '5,820 hrs', probe: '3.65V Strong' }
+      };
+
+      selectAsset.addEventListener('change', (e) => {
+        const data = assetMetrics[e.target.value] || assetMetrics['HAULER-01'];
+        telemetryPreview.innerHTML = `
+          <span>Live Queclink Odo: <strong class="text-slate-900 font-semibold">${data.odo}</strong></span>
+          <span>DI1 Run-Hours: <strong class="text-slate-900 font-semibold">${data.hrs}</strong></span>
+          <span class="text-teal-700 font-semibold">Probe: ${data.probe}</span>
+        `;
+      });
+
+      formSchedule.addEventListener('submit', (e) => {
+        e.preventDefault();
+        closeModal();
+      });
+
+      // 3. Client-side Table Filtering
+      const searchInput = document.getElementById('filter-search-input');
+      const scopeSelect = document.getElementById('filter-scope-select');
+      const statusSelect = document.getElementById('filter-status-select');
+      const resetBtn = document.getElementById('btn-reset-filters');
+      const activeRows = document.querySelectorAll('#active-maintenance-table tbody tr');
+
+      function filterActiveTable() {
+        const query = searchInput.value.toLowerCase().trim();
+        const scope = scopeSelect.value.toLowerCase();
+        const status = statusSelect.value.toUpperCase();
+
+        activeRows.forEach(row => {
+          const text = row.innerText.toLowerCase();
+          const matchQuery = !query || text.includes(query);
+          const matchScope = !scope || text.includes(scope);
+          const matchStatus = !status || row.innerText.toUpperCase().includes(status);
+
+          if (matchQuery && matchScope && matchStatus) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      }
+
+      searchInput.addEventListener('input', filterActiveTable);
+      scopeSelect.addEventListener('change', filterActiveTable);
+      statusSelect.addEventListener('change', filterActiveTable);
+
+      resetBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        scopeSelect.value = '';
+        statusSelect.value = '';
+        filterActiveTable();
+      });
+    })();
+  </script>
+</div></main>
+</div>
+</body></html>

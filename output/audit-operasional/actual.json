@@ -1,0 +1,68 @@
+{
+  "inventory": {
+    "vehicles": 1,
+    "latestValidSample": "2026-11-03T11:58:13Z"
+  },
+  "trips/history": {
+    "day": "2026-11-03",
+    "status": 200,
+    "positions": 642,
+    "trips": 1
+  },
+  "fuel/events/workspace": {
+    "day": "2026-11-03",
+    "status": 200,
+    "positions": 642,
+    "events": 0,
+    "readings": 1743,
+    "validLiters": 1690
+  },
+  "tripUI": "642 titik GPS · 1 perjalanan · Pilih perjalanan atau tekan Play.",
+  "tripPlayback": true,
+  "fuelUI": "Sinkronisasi: 4 Nov 2026, 12.08.07 WIB · 1743 pembacaan · 642 titik GPS",
+  "fuelGraph": 29,
+  "fuel/analytics": {
+    "status": 200,
+    "sampleRows": 0
+  },
+  "geofences": {
+    "status": 200,
+    "sampleRows": 0
+  },
+  "alerts/events": {
+    "status": 200,
+    "sampleRows": 0
+  },
+  "reports": {
+    "status": 200,
+    "sampleRows": 0
+  },
+  "notifications": {
+    "status": 200,
+    "sampleRows": 1
+  },
+  "devices": {
+    "status": 200,
+    "sampleRows": 1
+  },
+  "sensors": {
+    "status": 200,
+    "sampleRows": 1
+  },
+  "gps/quality": {
+    "status": 200,
+    "sampleRows": 50
+  },
+  "devices/connectivity": {
+    "status": 200,
+    "sampleRows": 50
+  },
+  "devices/data-activity": {
+    "status": 200,
+    "sampleRows": 50
+  },
+  "devices/raw-messages": {
+    "status": 200,
+    "sampleRows": 50
+  }
+}

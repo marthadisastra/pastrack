@@ -1,0 +1,5 @@
+'use strict';
+importScripts('/assets/firebase-app-compat.js','/assets/firebase-messaging-compat.js','/assets/firebase-config.js');
+firebase.initializeApp(self.pastrackFirebaseConfig);
+firebase.messaging().onBackgroundMessage(payload=>{const d=payload.data||{};if(d.type==='data_changed')return clients.matchAll({type:'window',includeUncontrolled:true}).then(list=>{for(const client of list)client.postMessage({type:'pastrack-data-changed'})});return self.registration.showNotification(d.title||'Pastrack',{body:d.body||'',tag:d.notification_id||undefined,data:{url:d.url||'/#notifications'}})});
+self.addEventListener('notificationclick',event=>{event.notification.close();const url=new URL(event.notification.data?.url||'/#notifications',self.location.origin);if(url.origin!==self.location.origin)return;event.waitUntil(clients.matchAll({type:'window',includeUncontrolled:true}).then(async list=>{for(const client of list){if(new URL(client.url).origin===url.origin){await client.navigate(url.href);return client.focus()}}return clients.openWindow(url.href)}))});

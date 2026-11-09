@@ -1,0 +1,121 @@
+[
+  {
+    "route": "fleet-dashboard",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "vehicles",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "live-tracking",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "trip-history",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "geofences",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "fuel-monitoring",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "fuel-analytics",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "fuel-events",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "gps-quality",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "device-connectivity",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "data-activity",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "raw-protocol-logs",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "alert-center",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "reports",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "device-management",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "sensor-management",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  },
+  {
+    "route": "user-management",
+    "failed": [],
+    "errors": [],
+    "uiErrors": [],
+    "iconLoaded": true
+  }
+]

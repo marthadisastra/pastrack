@@ -1,0 +1,1294 @@
+[
+  {
+    "route": "fleet-dashboard",
+    "readyMs": 1092,
+    "apis": [
+      "/api/v1/me",
+      "/api/v1/vehicles",
+      "/api/v1/fleet/live"
+    ],
+    "resources": [
+      {
+        "path": "/assets/fonts.css",
+        "ms": 72,
+        "bytes": 626,
+        "decoded": 1162
+      },
+      {
+        "path": "/assets/stitch-utilities.css",
+        "ms": 87,
+        "bytes": 11848,
+        "decoded": 66357
+      },
+      {
+        "path": "/assets/stitch-export.css",
+        "ms": 28,
+        "bytes": 494,
+        "decoded": 194
+      },
+      {
+        "path": "/assets/leaflet.css",
+        "ms": 73,
+        "bytes": 3888,
+        "decoded": 14806
+      },
+      {
+        "path": "/assets/stitch-resources.js",
+        "ms": 27,
+        "bytes": 1328,
+        "decoded": 3479
+      },
+      {
+        "path": "/assets/stitch.css",
+        "ms": 72,
+        "bytes": 4981,
+        "decoded": 17554
+      },
+      {
+        "path": "/assets/leaflet.js",
+        "ms": 122,
+        "bytes": 43494,
+        "decoded": 147552
+      },
+      {
+        "path": "/assets/fuel-player.js",
+        "ms": 27,
+        "bytes": 3341,
+        "decoded": 8880
+      },
+      {
+        "path": "/assets/fuel-events.js",
+        "ms": 71,
+        "bytes": 9473,
+        "decoded": 25432
+      },
+      {
+        "path": "/assets/operational-register.js",
+        "ms": 71,
+        "bytes": 3675,
+        "decoded": 9112
+      },
+      {
+        "path": "/assets/fuel-events.css",
+        "ms": 72,
+        "bytes": 3728,
+        "decoded": 14541
+      },
+      {
+        "path": "/assets/trip-history.js",
+        "ms": 72,
+        "bytes": 4569,
+        "decoded": 11534
+      },
+      {
+        "path": "/assets/stitch.js",
+        "ms": 98,
+        "bytes": 36268,
+        "decoded": 119499
+      },
+      {
+        "path": "/assets/fonts/inter-700.woff2",
+        "ms": 226,
+        "bytes": 112688,
+        "decoded": 112388
+      },
+      {
+        "path": "/assets/fonts/symbols-400.woff2",
+        "ms": 226,
+        "bytes": 323780,
+        "decoded": 323480
+      },
+      {
+        "path": "/assets/fonts/inter-500.woff2",
+        "ms": 288,
+        "bytes": 111744,
+        "decoded": 111444
+      },
+      {
+        "path": "/assets/fonts/inter-600.woff2",
+        "ms": 361,
+        "bytes": 112268,
+        "decoded": 111968
+      },
+      {
+        "path": "/assets/fonts/inter-400.woff2",
+        "ms": 423,
+        "bytes": 108712,
+        "decoded": 108412
+      },
+      {
+        "path": "/assets/layout/fleet_overview.json",
+        "ms": 371,
+        "bytes": 4519,
+        "decoded": 25945
+      },
+      {
+        "path": "/api/v1/me",
+        "ms": 372,
+        "bytes": 398,
+        "decoded": 98
+      },
+      {
+        "path": "/api/v1/vehicles",
+        "ms": 372,
+        "bytes": 1200,
+        "decoded": 2576
+      },
+      {
+        "path": "/api/v1/fleet/live",
+        "ms": 189,
+        "bytes": 1158,
+        "decoded": 2489
+      },
+      {
+        "path": "/favicon.ico",
+        "ms": 23,
+        "bytes": 319,
+        "decoded": 19
+      }
+    ]
+  },
+  {
+    "route": "device-management",
+    "readyMs": 1119,
+    "apis": [
+      "/api/v1/me",
+      "/api/v1/vehicles",
+      "/api/v1/devices"
+    ],
+    "resources": [
+      {
+        "path": "/assets/fonts.css",
+        "ms": 57,
+        "bytes": 626,
+        "decoded": 1162
+      },
+      {
+        "path": "/assets/stitch-utilities.css",
+        "ms": 70,
+        "bytes": 11848,
+        "decoded": 66357
+      },
+      {
+        "path": "/assets/leaflet.css",
+        "ms": 124,
+        "bytes": 3888,
+        "decoded": 14806
+      },
+      {
+        "path": "/assets/stitch-export.css",
+        "ms": 147,
+        "bytes": 494,
+        "decoded": 194
+      },
+      {
+        "path": "/assets/trip-history.js",
+        "ms": 119,
+        "bytes": 4569,
+        "decoded": 11534
+      },
+      {
+        "path": "/assets/stitch.css",
+        "ms": 121,
+        "bytes": 4981,
+        "decoded": 17554
+      },
+      {
+        "path": "/assets/fuel-events.js",
+        "ms": 123,
+        "bytes": 9473,
+        "decoded": 25432
+      },
+      {
+        "path": "/assets/fuel-player.js",
+        "ms": 124,
+        "bytes": 3341,
+        "decoded": 8880
+      },
+      {
+        "path": "/assets/stitch-resources.js",
+        "ms": 124,
+        "bytes": 1328,
+        "decoded": 3479
+      },
+      {
+        "path": "/assets/leaflet.js",
+        "ms": 151,
+        "bytes": 43494,
+        "decoded": 147552
+      },
+      {
+        "path": "/assets/fuel-events.css",
+        "ms": 113,
+        "bytes": 3728,
+        "decoded": 14541
+      },
+      {
+        "path": "/assets/stitch.js",
+        "ms": 113,
+        "bytes": 36268,
+        "decoded": 119499
+      },
+      {
+        "path": "/assets/operational-register.js",
+        "ms": 114,
+        "bytes": 3675,
+        "decoded": 9112
+      },
+      {
+        "path": "/assets/fonts/inter-700.woff2",
+        "ms": 265,
+        "bytes": 112688,
+        "decoded": 112388
+      },
+      {
+        "path": "/assets/fonts/symbols-400.woff2",
+        "ms": 365,
+        "bytes": 323780,
+        "decoded": 323480
+      },
+      {
+        "path": "/assets/fonts/inter-500.woff2",
+        "ms": 436,
+        "bytes": 111744,
+        "decoded": 111444
+      },
+      {
+        "path": "/assets/fonts/inter-400.woff2",
+        "ms": 110,
+        "bytes": 108712,
+        "decoded": 108412
+      },
+      {
+        "path": "/assets/fonts/inter-600.woff2",
+        "ms": 508,
+        "bytes": 112268,
+        "decoded": 111968
+      },
+      {
+        "path": "/api/v1/me",
+        "ms": 481,
+        "bytes": 398,
+        "decoded": 98
+      },
+      {
+        "path": "/api/v1/vehicles",
+        "ms": 482,
+        "bytes": 1198,
+        "decoded": 2575
+      },
+      {
+        "path": "/api/v1/devices",
+        "ms": 54,
+        "bytes": 772,
+        "decoded": 472
+      }
+    ]
+  },
+  {
+    "route": "fuel-events",
+    "readyMs": 1416,
+    "apis": [
+      "/api/v1/me",
+      "/api/v1/vehicles",
+      "/api/v1/fleet/live",
+      "/api/v1/fuel/events/workspace"
+    ],
+    "resources": [
+      {
+        "path": "/assets/fonts.css",
+        "ms": 52,
+        "bytes": 626,
+        "decoded": 1162
+      },
+      {
+        "path": "/assets/stitch-utilities.css",
+        "ms": 52,
+        "bytes": 11848,
+        "decoded": 66357
+      },
+      {
+        "path": "/assets/stitch-export.css",
+        "ms": 157,
+        "bytes": 494,
+        "decoded": 194
+      },
+      {
+        "path": "/assets/leaflet.css",
+        "ms": 277,
+        "bytes": 3888,
+        "decoded": 14806
+      },
+      {
+        "path": "/assets/stitch.css",
+        "ms": 149,
+        "bytes": 4981,
+        "decoded": 17554
+      },
+      {
+        "path": "/assets/stitch-resources.js",
+        "ms": 277,
+        "bytes": 1328,
+        "decoded": 3479
+      },
+      {
+        "path": "/assets/leaflet.js",
+        "ms": 338,
+        "bytes": 43494,
+        "decoded": 147552
+      },
+      {
+        "path": "/assets/fuel-player.js",
+        "ms": 143,
+        "bytes": 3341,
+        "decoded": 8880
+      },
+      {
+        "path": "/assets/operational-register.js",
+        "ms": 52,
+        "bytes": 3675,
+        "decoded": 9112
+      },
+      {
+        "path": "/assets/trip-history.js",
+        "ms": 110,
+        "bytes": 4569,
+        "decoded": 11534
+      },
+      {
+        "path": "/assets/fuel-events.js",
+        "ms": 123,
+        "bytes": 9473,
+        "decoded": 25432
+      },
+      {
+        "path": "/assets/fuel-events.css",
+        "ms": 157,
+        "bytes": 3728,
+        "decoded": 14541
+      },
+      {
+        "path": "/assets/stitch.js",
+        "ms": 277,
+        "bytes": 36268,
+        "decoded": 119499
+      },
+      {
+        "path": "/assets/fonts/inter-500.woff2",
+        "ms": 269,
+        "bytes": 111744,
+        "decoded": 111444
+      },
+      {
+        "path": "/assets/fonts/symbols-400.woff2",
+        "ms": 688,
+        "bytes": 323780,
+        "decoded": 323480
+      },
+      {
+        "path": "/assets/fonts/inter-700.woff2",
+        "ms": 749,
+        "bytes": 112688,
+        "decoded": 112388
+      },
+      {
+        "path": "/assets/fonts/inter-600.woff2",
+        "ms": 852,
+        "bytes": 112268,
+        "decoded": 111968
+      },
+      {
+        "path": "/assets/fonts/inter-400.woff2",
+        "ms": 862,
+        "bytes": 108712,
+        "decoded": 108412
+      },
+      {
+        "path": "/api/v1/me",
+        "ms": 787,
+        "bytes": 398,
+        "decoded": 98
+      },
+      {
+        "path": "/api/v1/vehicles",
+        "ms": 787,
+        "bytes": 1200,
+        "decoded": 2576
+      },
+      {
+        "path": "/api/v1/fleet/live",
+        "ms": 124,
+        "bytes": 1158,
+        "decoded": 2489
+      },
+      {
+        "path": "/api/v1/fuel/events/workspace",
+        "ms": 17,
+        "bytes": 602,
+        "decoded": 302
+      }
+    ]
+  },
+  {
+    "route": "fleet-dashboard",
+    "readyMs": 1964,
+    "apis": [
+      "/api/v1/me",
+      "/api/v1/vehicles",
+      "/api/v1/fleet/live"
+    ],
+    "resources": [
+      {
+        "path": "/assets/fonts.css",
+        "ms": 50,
+        "bytes": 626,
+        "decoded": 1162
+      },
+      {
+        "path": "/assets/stitch-utilities.css",
+        "ms": 20,
+        "bytes": 11848,
+        "decoded": 66357
+      },
+      {
+        "path": "/assets/stitch-export.css",
+        "ms": 27,
+        "bytes": 494,
+        "decoded": 194
+      },
+      {
+        "path": "/assets/leaflet.css",
+        "ms": 26,
+        "bytes": 3888,
+        "decoded": 14806
+      },
+      {
+        "path": "/assets/fuel-player.js",
+        "ms": 25,
+        "bytes": 3341,
+        "decoded": 8880
+      },
+      {
+        "path": "/assets/stitch-resources.js",
+        "ms": 48,
+        "bytes": 1328,
+        "decoded": 3479
+      },
+      {
+        "path": "/assets/stitch.css",
+        "ms": 49,
+        "bytes": 4981,
+        "decoded": 17554
+      },
+      {
+        "path": "/assets/leaflet.js",
+        "ms": 69,
+        "bytes": 43494,
+        "decoded": 147552
+      },
+      {
+        "path": "/assets/trip-history.js",
+        "ms": 36,
+        "bytes": 4569,
+        "decoded": 11534
+      },
+      {
+        "path": "/assets/operational-register.js",
+        "ms": 48,
+        "bytes": 3675,
+        "decoded": 9112
+      },
+      {
+        "path": "/assets/stitch.js",
+        "ms": 48,
+        "bytes": 36268,
+        "decoded": 119499
+      },
+      {
+        "path": "/assets/fuel-events.js",
+        "ms": 49,
+        "bytes": 9473,
+        "decoded": 25432
+      },
+      {
+        "path": "/assets/fuel-events.css",
+        "ms": 49,
+        "bytes": 3728,
+        "decoded": 14541
+      },
+      {
+        "path": "/assets/fonts/symbols-400.woff2",
+        "ms": 539,
+        "bytes": 323780,
+        "decoded": 323480
+      },
+      {
+        "path": "/assets/fonts/inter-700.woff2",
+        "ms": 958,
+        "bytes": 112688,
+        "decoded": 112388
+      },
+      {
+        "path": "/assets/fonts/inter-500.woff2",
+        "ms": 1255,
+        "bytes": 111744,
+        "decoded": 111444
+      },
+      {
+        "path": "/assets/fonts/inter-600.woff2",
+        "ms": 1448,
+        "bytes": 112268,
+        "decoded": 111968
+      },
+      {
+        "path": "/assets/fonts/inter-400.woff2",
+        "ms": 1684,
+        "bytes": 108712,
+        "decoded": 108412
+      },
+      {
+        "path": "/assets/layout/fleet_overview.json",
+        "ms": 1650,
+        "bytes": 4519,
+        "decoded": 25945
+      },
+      {
+        "path": "/api/v1/me",
+        "ms": 1650,
+        "bytes": 398,
+        "decoded": 98
+      },
+      {
+        "path": "/api/v1/vehicles",
+        "ms": 1650,
+        "bytes": 1200,
+        "decoded": 2575
+      },
+      {
+        "path": "/api/v1/fleet/live",
+        "ms": 133,
+        "bytes": 1158,
+        "decoded": 2489
+      }
+    ]
+  },
+  {
+    "route": "device-management",
+    "readyMs": 1828,
+    "apis": [
+      "/api/v1/me",
+      "/api/v1/vehicles",
+      "/api/v1/devices"
+    ],
+    "resources": [
+      {
+        "path": "/assets/fonts.css",
+        "ms": 42,
+        "bytes": 626,
+        "decoded": 1162
+      },
+      {
+        "path": "/assets/stitch-export.css",
+        "ms": 82,
+        "bytes": 494,
+        "decoded": 194
+      },
+      {
+        "path": "/assets/leaflet.css",
+        "ms": 83,
+        "bytes": 3888,
+        "decoded": 14806
+      },
+      {
+        "path": "/assets/stitch-utilities.css",
+        "ms": 83,
+        "bytes": 11848,
+        "decoded": 66357
+      },
+      {
+        "path": "/assets/stitch.css",
+        "ms": 83,
+        "bytes": 4981,
+        "decoded": 17554
+      },
+      {
+        "path": "/assets/operational-register.js",
+        "ms": 145,
+        "bytes": 3675,
+        "decoded": 9112
+      },
+      {
+        "path": "/assets/stitch.js",
+        "ms": 145,
+        "bytes": 36268,
+        "decoded": 119499
+      },
+      {
+        "path": "/assets/fuel-events.js",
+        "ms": 195,
+        "bytes": 9473,
+        "decoded": 25432
+      },
+      {
+        "path": "/assets/stitch-resources.js",
+        "ms": 195,
+        "bytes": 1328,
+        "decoded": 3479
+      },
+      {
+        "path": "/assets/fuel-player.js",
+        "ms": 196,
+        "bytes": 3341,
+        "decoded": 8880
+      },
+      {
+        "path": "/assets/leaflet.js",
+        "ms": 261,
+        "bytes": 43494,
+        "decoded": 147552
+      },
+      {
+        "path": "/assets/trip-history.js",
+        "ms": 286,
+        "bytes": 4569,
+        "decoded": 11534
+      },
+      {
+        "path": "/assets/fuel-events.css",
+        "ms": 83,
+        "bytes": 3728,
+        "decoded": 14541
+      },
+      {
+        "path": "/assets/fonts/symbols-400.woff2",
+        "ms": 1003,
+        "bytes": 323780,
+        "decoded": 323480
+      },
+      {
+        "path": "/assets/fonts/inter-700.woff2",
+        "ms": 1076,
+        "bytes": 112688,
+        "decoded": 112388
+      },
+      {
+        "path": "/assets/fonts/inter-500.woff2",
+        "ms": 1076,
+        "bytes": 111744,
+        "decoded": 111444
+      },
+      {
+        "path": "/assets/fonts/inter-600.woff2",
+        "ms": 1192,
+        "bytes": 112268,
+        "decoded": 111968
+      },
+      {
+        "path": "/assets/fonts/inter-400.woff2",
+        "ms": 1347,
+        "bytes": 108712,
+        "decoded": 108412
+      },
+      {
+        "path": "/api/v1/me",
+        "ms": 1136,
+        "bytes": 398,
+        "decoded": 98
+      },
+      {
+        "path": "/api/v1/vehicles",
+        "ms": 1136,
+        "bytes": 1201,
+        "decoded": 2576
+      },
+      {
+        "path": "/api/v1/devices",
+        "ms": 27,
+        "bytes": 772,
+        "decoded": 472
+      }
+    ]
+  },
+  {
+    "route": "fuel-events",
+    "readyMs": 1058,
+    "apis": [
+      "/api/v1/me",
+      "/api/v1/vehicles",
+      "/api/v1/fleet/live",
+      "/api/v1/fuel/events/workspace"
+    ],
+    "resources": [
+      {
+        "path": "/assets/fonts.css",
+        "ms": 32,
+        "bytes": 626,
+        "decoded": 1162
+      },
+      {
+        "path": "/assets/stitch-export.css",
+        "ms": 62,
+        "bytes": 494,
+        "decoded": 194
+      },
+      {
+        "path": "/assets/stitch-utilities.css",
+        "ms": 63,
+        "bytes": 11848,
+        "decoded": 66357
+      },
+      {
+        "path": "/assets/leaflet.css",
+        "ms": 63,
+        "bytes": 3888,
+        "decoded": 14806
+      },
+      {
+        "path": "/assets/stitch.css",
+        "ms": 63,
+        "bytes": 4981,
+        "decoded": 17554
+      },
+      {
+        "path": "/assets/stitch-resources.js",
+        "ms": 63,
+        "bytes": 1328,
+        "decoded": 3479
+      },
+      {
+        "path": "/assets/fuel-player.js",
+        "ms": 91,
+        "bytes": 3341,
+        "decoded": 8880
+      },
+      {
+        "path": "/assets/leaflet.js",
+        "ms": 109,
+        "bytes": 43494,
+        "decoded": 147552
+      },
+      {
+        "path": "/assets/fuel-events.css",
+        "ms": 63,
+        "bytes": 3728,
+        "decoded": 14541
+      },
+      {
+        "path": "/assets/fuel-events.js",
+        "ms": 88,
+        "bytes": 9473,
+        "decoded": 25432
+      },
+      {
+        "path": "/assets/trip-history.js",
+        "ms": 104,
+        "bytes": 4569,
+        "decoded": 11534
+      },
+      {
+        "path": "/assets/operational-register.js",
+        "ms": 104,
+        "bytes": 3675,
+        "decoded": 9112
+      },
+      {
+        "path": "/assets/stitch.js",
+        "ms": 140,
+        "bytes": 36268,
+        "decoded": 119499
+      },
+      {
+        "path": "/assets/fonts/symbols-400.woff2",
+        "ms": 420,
+        "bytes": 323780,
+        "decoded": 323480
+      },
+      {
+        "path": "/assets/fonts/inter-700.woff2",
+        "ms": 142,
+        "bytes": 112688,
+        "decoded": 112388
+      },
+      {
+        "path": "/assets/fonts/inter-500.woff2",
+        "ms": 491,
+        "bytes": 111744,
+        "decoded": 111444
+      },
+      {
+        "path": "/assets/fonts/inter-600.woff2",
+        "ms": 567,
+        "bytes": 112268,
+        "decoded": 111968
+      },
+      {
+        "path": "/assets/fonts/inter-400.woff2",
+        "ms": 584,
+        "bytes": 108712,
+        "decoded": 108412
+      },
+      {
+        "path": "/api/v1/me",
+        "ms": 498,
+        "bytes": 398,
+        "decoded": 98
+      },
+      {
+        "path": "/api/v1/vehicles",
+        "ms": 498,
+        "bytes": 1200,
+        "decoded": 2576
+      },
+      {
+        "path": "/api/v1/fleet/live",
+        "ms": 100,
+        "bytes": 1159,
+        "decoded": 2489
+      },
+      {
+        "path": "/api/v1/fuel/events/workspace",
+        "ms": 11,
+        "bytes": 603,
+        "decoded": 303
+      }
+    ]
+  },
+  {
+    "route": "fleet-dashboard",
+    "readyMs": 954,
+    "apis": [
+      "/api/v1/me",
+      "/api/v1/vehicles",
+      "/api/v1/fleet/live",
+      "/api/v1/fleet/overview",
+      "/api/v1/fleet/activity"
+    ],
+    "resources": [
+      {
+        "path": "/assets/fonts.css",
+        "ms": 13,
+        "bytes": 626,
+        "decoded": 1162
+      },
+      {
+        "path": "/assets/stitch-export.css",
+        "ms": 14,
+        "bytes": 494,
+        "decoded": 194
+      },
+      {
+        "path": "/assets/stitch-utilities.css",
+        "ms": 24,
+        "bytes": 11848,
+        "decoded": 66357
+      },
+      {
+        "path": "/assets/stitch.css",
+        "ms": 16,
+        "bytes": 4981,
+        "decoded": 17554
+      },
+      {
+        "path": "/assets/leaflet.css",
+        "ms": 45,
+        "bytes": 3888,
+        "decoded": 14806
+      },
+      {
+        "path": "/assets/leaflet.js",
+        "ms": 45,
+        "bytes": 43494,
+        "decoded": 147552
+      },
+      {
+        "path": "/assets/operational-register.js",
+        "ms": 46,
+        "bytes": 3675,
+        "decoded": 9112
+      },
+      {
+        "path": "/assets/fuel-events.js",
+        "ms": 45,
+        "bytes": 9473,
+        "decoded": 25432
+      },
+      {
+        "path": "/assets/stitch.js",
+        "ms": 59,
+        "bytes": 36268,
+        "decoded": 119499
+      },
+      {
+        "path": "/assets/fuel-events.css",
+        "ms": 61,
+        "bytes": 3728,
+        "decoded": 14541
+      },
+      {
+        "path": "/assets/fuel-player.js",
+        "ms": 61,
+        "bytes": 3341,
+        "decoded": 8880
+      },
+      {
+        "path": "/assets/trip-history.js",
+        "ms": 62,
+        "bytes": 4569,
+        "decoded": 11534
+      },
+      {
+        "path": "/assets/stitch-resources.js",
+        "ms": 62,
+        "bytes": 1328,
+        "decoded": 3479
+      },
+      {
+        "path": "/assets/fonts/symbols-400.woff2",
+        "ms": 186,
+        "bytes": 323780,
+        "decoded": 323480
+      },
+      {
+        "path": "/assets/fonts/inter-700.woff2",
+        "ms": 203,
+        "bytes": 112688,
+        "decoded": 112388
+      },
+      {
+        "path": "/assets/fonts/inter-500.woff2",
+        "ms": 277,
+        "bytes": 111744,
+        "decoded": 111444
+      },
+      {
+        "path": "/assets/fonts/inter-400.woff2",
+        "ms": 323,
+        "bytes": 108712,
+        "decoded": 108412
+      },
+      {
+        "path": "/assets/fonts/inter-600.woff2",
+        "ms": 388,
+        "bytes": 112268,
+        "decoded": 111968
+      },
+      {
+        "path": "/assets/layout/fleet_overview.json",
+        "ms": 373,
+        "bytes": 4519,
+        "decoded": 25945
+      },
+      {
+        "path": "/api/v1/me",
+        "ms": 373,
+        "bytes": 398,
+        "decoded": 98
+      },
+      {
+        "path": "/api/v1/vehicles",
+        "ms": 373,
+        "bytes": 1199,
+        "decoded": 2576
+      },
+      {
+        "path": "/api/v1/fleet/live",
+        "ms": 99,
+        "bytes": 1156,
+        "decoded": 2489
+      },
+      {
+        "path": "/api/v1/fleet/overview",
+        "ms": 111,
+        "bytes": 670,
+        "decoded": 370
+      },
+      {
+        "path": "/api/v1/fleet/activity",
+        "ms": 23,
+        "bytes": 612,
+        "decoded": 1344
+      }
+    ]
+  },
+  {
+    "route": "device-management",
+    "readyMs": 928,
+    "apis": [
+      "/api/v1/me",
+      "/api/v1/vehicles",
+      "/api/v1/devices"
+    ],
+    "resources": [
+      {
+        "path": "/assets/fonts.css",
+        "ms": 29,
+        "bytes": 626,
+        "decoded": 1162
+      },
+      {
+        "path": "/assets/stitch-utilities.css",
+        "ms": 18,
+        "bytes": 11848,
+        "decoded": 66357
+      },
+      {
+        "path": "/assets/stitch-export.css",
+        "ms": 15,
+        "bytes": 494,
+        "decoded": 194
+      },
+      {
+        "path": "/assets/leaflet.css",
+        "ms": 28,
+        "bytes": 3888,
+        "decoded": 14806
+      },
+      {
+        "path": "/assets/stitch.css",
+        "ms": 35,
+        "bytes": 4981,
+        "decoded": 17554
+      },
+      {
+        "path": "/assets/stitch-resources.js",
+        "ms": 47,
+        "bytes": 1328,
+        "decoded": 3479
+      },
+      {
+        "path": "/assets/leaflet.js",
+        "ms": 52,
+        "bytes": 43494,
+        "decoded": 147552
+      },
+      {
+        "path": "/assets/fuel-events.js",
+        "ms": 45,
+        "bytes": 9473,
+        "decoded": 25432
+      },
+      {
+        "path": "/assets/trip-history.js",
+        "ms": 46,
+        "bytes": 4569,
+        "decoded": 11534
+      },
+      {
+        "path": "/assets/fuel-player.js",
+        "ms": 46,
+        "bytes": 3341,
+        "decoded": 8880
+      },
+      {
+        "path": "/assets/fuel-events.css",
+        "ms": 28,
+        "bytes": 3728,
+        "decoded": 14541
+      },
+      {
+        "path": "/assets/stitch.js",
+        "ms": 44,
+        "bytes": 36268,
+        "decoded": 119499
+      },
+      {
+        "path": "/assets/operational-register.js",
+        "ms": 45,
+        "bytes": 3675,
+        "decoded": 9112
+      },
+      {
+        "path": "/assets/fonts/symbols-400.woff2",
+        "ms": 233,
+        "bytes": 323780,
+        "decoded": 323480
+      },
+      {
+        "path": "/assets/fonts/inter-700.woff2",
+        "ms": 298,
+        "bytes": 112688,
+        "decoded": 112388
+      },
+      {
+        "path": "/assets/fonts/inter-500.woff2",
+        "ms": 298,
+        "bytes": 111744,
+        "decoded": 111444
+      },
+      {
+        "path": "/assets/fonts/inter-600.woff2",
+        "ms": 365,
+        "bytes": 112268,
+        "decoded": 111968
+      },
+      {
+        "path": "/assets/fonts/inter-400.woff2",
+        "ms": 434,
+        "bytes": 108712,
+        "decoded": 108412
+      },
+      {
+        "path": "/api/v1/me",
+        "ms": 402,
+        "bytes": 398,
+        "decoded": 98
+      },
+      {
+        "path": "/api/v1/vehicles",
+        "ms": 402,
+        "bytes": 1202,
+        "decoded": 2576
+      },
+      {
+        "path": "/api/v1/devices",
+        "ms": 12,
+        "bytes": 772,
+        "decoded": 472
+      }
+    ]
+  },
+  {
+    "route": "fuel-events",
+    "readyMs": 984,
+    "apis": [
+      "/api/v1/me",
+      "/api/v1/vehicles",
+      "/api/v1/fleet/live",
+      "/api/v1/fuel/events/workspace"
+    ],
+    "resources": [
+      {
+        "path": "/assets/fonts.css",
+        "ms": 45,
+        "bytes": 626,
+        "decoded": 1162
+      },
+      {
+        "path": "/assets/stitch-utilities.css",
+        "ms": 26,
+        "bytes": 11848,
+        "decoded": 66357
+      },
+      {
+        "path": "/assets/leaflet.css",
+        "ms": 44,
+        "bytes": 3888,
+        "decoded": 14806
+      },
+      {
+        "path": "/assets/stitch-export.css",
+        "ms": 45,
+        "bytes": 494,
+        "decoded": 194
+      },
+      {
+        "path": "/assets/stitch.css",
+        "ms": 45,
+        "bytes": 4981,
+        "decoded": 17554
+      },
+      {
+        "path": "/assets/operational-register.js",
+        "ms": 45,
+        "bytes": 3675,
+        "decoded": 9112
+      },
+      {
+        "path": "/assets/fuel-player.js",
+        "ms": 45,
+        "bytes": 3341,
+        "decoded": 8880
+      },
+      {
+        "path": "/assets/trip-history.js",
+        "ms": 48,
+        "bytes": 4569,
+        "decoded": 11534
+      },
+      {
+        "path": "/assets/stitch-resources.js",
+        "ms": 64,
+        "bytes": 1328,
+        "decoded": 3479
+      },
+      {
+        "path": "/assets/fuel-events.js",
+        "ms": 64,
+        "bytes": 9473,
+        "decoded": 25432
+      },
+      {
+        "path": "/assets/leaflet.js",
+        "ms": 68,
+        "bytes": 43494,
+        "decoded": 147552
+      },
+      {
+        "path": "/assets/fuel-events.css",
+        "ms": 25,
+        "bytes": 3728,
+        "decoded": 14541
+      },
+      {
+        "path": "/assets/stitch.js",
+        "ms": 83,
+        "bytes": 36268,
+        "decoded": 119499
+      },
+      {
+        "path": "/assets/fonts/symbols-400.woff2",
+        "ms": 193,
+        "bytes": 323780,
+        "decoded": 323480
+      },
+      {
+        "path": "/assets/fonts/inter-700.woff2",
+        "ms": 292,
+        "bytes": 112688,
+        "decoded": 112388
+      },
+      {
+        "path": "/assets/fonts/inter-500.woff2",
+        "ms": 394,
+        "bytes": 111744,
+        "decoded": 111444
+      },
+      {
+        "path": "/assets/fonts/inter-600.woff2",
+        "ms": 527,
+        "bytes": 112268,
+        "decoded": 111968
+      },
+      {
+        "path": "/assets/fonts/inter-400.woff2",
+        "ms": 546,
+        "bytes": 108712,
+        "decoded": 108412
+      },
+      {
+        "path": "/api/v1/me",
+        "ms": 499,
+        "bytes": 398,
+        "decoded": 98
+      },
+      {
+        "path": "/api/v1/vehicles",
+        "ms": 499,
+        "bytes": 1201,
+        "decoded": 2576
+      },
+      {
+        "path": "/api/v1/fleet/live",
+        "ms": 150,
+        "bytes": 1156,
+        "decoded": 2489
+      },
+      {
+        "path": "/api/v1/fuel/events/workspace",
+        "ms": 40,
+        "bytes": 603,
+        "decoded": 303
+      }
+    ]
+  }
+]

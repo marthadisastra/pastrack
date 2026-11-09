@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "ext.socket.queclink.gtfri",
+  "name": "Raw Telemetry Socket Inspector",
+  "version": "1.2.0",
+  "kind": "extension",
+  "icon": "terminal",
+  "description": "Live hex payload decoder for Queclink +RESP:GTFRI protocol packets.",
+  "minCore": "4.8.0",
+  "coreMajor": 4,
+  "dependencies": ["core.gis.tracker"],
+  "paths": ["/telemetry"],
+  "permissions": ["telemetry.view"],
+  "topics": ["telemetry.raw"],
+  "config": [
+    {
+      "key": "bufferLimit",
+      "label": "Retained packet limit",
+      "type": "number",
+      "min": 10,
+      "max": 1000,
+      "default": 100
+    }
+  ],
+  "entry": null
+}

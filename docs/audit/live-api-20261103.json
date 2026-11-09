@@ -1,0 +1,301 @@
+{
+  "checked_at": "2026-11-03T14:40:10.045897+07:00",
+  "scope": "authenticated read-only live API; no business mutations",
+  "results": [
+    {
+      "path": "fleet/live",
+      "status": 200,
+      "rows_returned": 1,
+      "has_more": false,
+      "sample": [
+        {
+          "fix_status": "valid",
+          "gps_time": "2026-11-02T10:52:44Z",
+          "hdop": "1.00",
+          "heading_deg": "347.00",
+          "id": 1,
+          "latitude": "-6.1337890",
+          "longitude": "106.8723210",
+          "movement_status": "STALE",
+          "physical_ignition_state": "NOT_INSTALLED",
+          "plate_number": "B 1307 KNQ",
+          "received_at": "2026-11-03T06:23:29.821Z",
+          "satellite_count": 19,
+          "speed_kmh": "0.00",
+          "vehicle_name": "DT AXOR"
+        }
+      ]
+    },
+    {
+      "path": "vehicles",
+      "status": 200,
+      "rows_returned": 1,
+      "has_more": false
+    },
+    {
+      "path": "trips",
+      "status": 200,
+      "rows_returned": 0,
+      "has_more": false
+    },
+    {
+      "path": "gps/positions",
+      "status": 200,
+      "rows_returned": 200,
+      "has_more": true,
+      "sample": [
+        {
+          "altitude_m": "96.20",
+          "device_id": 8,
+          "fix_status": "valid",
+          "gps_time": "2026-11-02T10:52:44Z",
+          "hdop": "1.00",
+          "heading_deg": "347.00",
+          "id": 39662,
+          "latitude": "-6.1337890",
+          "longitude": "106.8723210",
+          "received_at": "2026-11-03T06:23:29.821Z",
+          "satellite_count": 19,
+          "speed_kmh": "0.00",
+          "validation_state": "validated",
+          "vehicle_id": 1
+        }
+      ]
+    },
+    {
+      "path": "geofences",
+      "status": 200,
+      "rows_returned": 0,
+      "has_more": false
+    },
+    {
+      "path": "fuel/readings",
+      "status": 200,
+      "rows_returned": 200,
+      "has_more": true,
+      "sample": [
+        {
+          "battery_percent": "100.00",
+          "calibration_id": 4,
+          "device_id": 8,
+          "fuel_height_raw": 4699,
+          "fuel_liters": "112.618",
+          "fuel_percent": "93.85",
+          "fuel_sensor_id": 1,
+          "id": 244,
+          "invalid_reason": null,
+          "raw_measurement": "4699.000000",
+          "raw_unit": "fuel_height_raw",
+          "reading_at": null,
+          "received_at": "2026-11-03T06:23:29.821Z",
+          "temperature_c": "27.00",
+          "tilt_raw": 4,
+          "validity": "valid",
+          "vehicle_id": 1,
+          "volume_raw": 469
+        }
+      ]
+    },
+    {
+      "path": "fuel/analytics",
+      "status": 200,
+      "rows_returned": 0,
+      "has_more": false
+    },
+    {
+      "path": "fuel/events",
+      "status": 200,
+      "rows_returned": 0,
+      "has_more": false
+    },
+    {
+      "path": "gps/quality",
+      "status": 200,
+      "rows_returned": 200,
+      "has_more": true
+    },
+    {
+      "path": "devices/connectivity",
+      "status": 200,
+      "rows_returned": 2,
+      "has_more": false
+    },
+    {
+      "path": "devices/data-activity",
+      "status": 200,
+      "rows_returned": 200,
+      "has_more": true
+    },
+    {
+      "path": "devices/raw-messages",
+      "status": 200,
+      "rows_returned": 200,
+      "has_more": true
+    },
+    {
+      "path": "alerts/events",
+      "status": 200,
+      "rows_returned": 0,
+      "has_more": false
+    },
+    {
+      "path": "reports",
+      "status": 200,
+      "rows_returned": 0,
+      "has_more": false
+    },
+    {
+      "path": "devices",
+      "status": 200,
+      "rows_returned": 1,
+      "has_more": false
+    },
+    {
+      "path": "device-models",
+      "status": 200,
+      "rows_returned": 1,
+      "has_more": false
+    },
+    {
+      "path": "sensors",
+      "status": 200,
+      "rows_returned": 1,
+      "has_more": false,
+      "sample": [
+        {
+          "capacity_l": "120.000",
+          "decoding_state": "calibrated_raw_signal",
+          "fuel_height_raw": 4699,
+          "id": 1,
+          "identifier": "\u2022\u2022\u2022\u20228774",
+          "is_active": 1,
+          "model": "CFS300B",
+          "plate_number": "B 1307 KNQ",
+          "received_at": "2026-11-03T06:23:29.821Z",
+          "vehicle_id": 1,
+          "volume_raw": 469
+        }
+      ]
+    },
+    {
+      "path": "calibrations",
+      "status": 200,
+      "rows_returned": 2,
+      "has_more": false
+    },
+    {
+      "path": "tank-profiles",
+      "status": 200,
+      "rows_returned": 2,
+      "has_more": false
+    },
+    {
+      "path": "users",
+      "status": 200,
+      "rows_returned": 1,
+      "has_more": false
+    },
+    {
+      "path": "sensor-telemetry",
+      "status": 200,
+      "rows_returned": 200,
+      "has_more": true
+    },
+    {
+      "path": "event-types",
+      "status": 200,
+      "rows_returned": 0,
+      "has_more": false
+    },
+    {
+      "path": "event-severities",
+      "status": 200,
+      "rows_returned": 0,
+      "has_more": false
+    },
+    {
+      "path": "geofence-assignments",
+      "status": 200,
+      "rows_returned": 0,
+      "has_more": false
+    },
+    {
+      "path": "events",
+      "status": 200,
+      "rows_returned": 96,
+      "has_more": false
+    },
+    {
+      "path": "notifications",
+      "status": 200,
+      "rows_returned": 1,
+      "has_more": false
+    },
+    {
+      "path": "audit",
+      "status": 200,
+      "rows_returned": 42,
+      "has_more": false
+    },
+    {
+      "path": "fleet/overview",
+      "status": 200,
+      "rows_returned": 1,
+      "has_more": false
+    },
+    {
+      "path": "fleet/activity",
+      "status": 200,
+      "rows_returned": 50,
+      "has_more": true
+    },
+    {
+      "path": "trips/summary",
+      "status": 200,
+      "rows_returned": 1,
+      "has_more": false
+    },
+    {
+      "path": "vehicles/1",
+      "status": 200,
+      "rows_returned": 1,
+      "has_more": false
+    },
+    {
+      "path": "vehicles/1/positions",
+      "status": 200,
+      "rows_returned": 200,
+      "has_more": true
+    },
+    {
+      "path": "vehicles/1/trips",
+      "status": 200,
+      "rows_returned": 0,
+      "has_more": false
+    },
+    {
+      "path": "vehicles/1/fuel",
+      "status": 200,
+      "rows_returned": 200,
+      "has_more": true
+    },
+    {
+      "path": "vehicles/1/devices",
+      "status": 200,
+      "rows_returned": 1,
+      "has_more": false
+    },
+    {
+      "path": "vehicles/1/calibrations",
+      "status": 200,
+      "rows_returned": 1,
+      "has_more": false
+    },
+    {
+      "path": "sensors/1/quick-calibration",
+      "status": 200,
+      "rows_returned": 1,
+      "has_more": false
+    }
+  ]
+}

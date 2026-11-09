@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Propsales</title>
+	<!-- Favicon dasar -->
+	<link rel="icon" type="image/png" sizes="16x16" href="https://propsales.pacificgardenpuri.co.id/assets/favicon/favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://propsales.pacificgardenpuri.co.id/assets/favicon/favicon-32x32.png">
+	<link rel="shortcut icon" href="https://propsales.pacificgardenpuri.co.id/assets/favicon/favicon.ico">
+	
+	<!-- Android -->
+	<link rel="icon" type="image/png" sizes="192x192" href="https://propsales.pacificgardenpuri.co.id/assets/favicon/android-chrome-192x192.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="https://propsales.pacificgardenpuri.co.id/assets/favicon/android-chrome-512x512.png">
+	
+	<!-- Apple -->
+	<link rel="apple-touch-icon" href="https://propsales.pacificgardenpuri.co.id/assets/favicon/apple-touch-icon.png">
+	
+	<!-- Manifest (untuk PWA) -->
+	<link rel="manifest" href="https://propsales.pacificgardenpuri.co.id/assets/favicon/site.webmanifest">
+</head>
+<body class="easyui-layout">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Propsales</title>
+    <link rel="stylesheet" type="text/css" href="https://propsales.pacificgardenpuri.co.id/assets/easyui/themes/custom/easyui.css?p=20261109113718">
+    <link rel="stylesheet" type="text/css" href="https://propsales.pacificgardenpuri.co.id/assets/easyui/themes/icon.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://propsales.pacificgardenpuri.co.id/assets/bootstrap/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://propsales.pacificgardenpuri.co.id/assets/css/mystyle.css?p=20261109113718">
+	<link rel="stylesheet" type="text/css" href="https://propsales.pacificgardenpuri.co.id/assets/css/default.css?p=20261109113718">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
+    <!-- <link rel="stylesheet" href="https://propsales.pacificgardenpuri.co.id/assets/plugins/fontawesome/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
+
+    <script type="text/javascript" src="https://propsales.pacificgardenpuri.co.id/assets/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="https://propsales.pacificgardenpuri.co.id/assets/easyui/jquery.easyui.min.js"></script>
+    <script src="https://propsales.pacificgardenpuri.co.id/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://propsales.pacificgardenpuri.co.id/assets/function.js?p=20261109113718"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="https://propsales.pacificgardenpuri.co.id/assets/bootstrap/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://propsales.pacificgardenpuri.co.id/assets/plugins/autoNumeric.js"></script>
+    <!-- <script src="https://propsales.pacificgardenpuri.co.id/assets/plugins/jquery_repeater.js"></script> -->
+    <script src="https://propsales.pacificgardenpuri.co.id/assets/js/global.js"></script>
+
+
+
+    <style>
+        .swal2-popup {
+            position: fixed !important;
+            top: 100px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+        }
+
+        .swal2-custom-popup {
+            width: 400px;
+            padding: 20px;
+            z-index: 9999 !important;
+        }
+
+        .swal2-custom-title {
+            font-size: 18px;
+        }
+
+        .swal2-custom-content {
+            font-size: 16px;
+        }
+
+        .swal2-custom-confirm-button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #819560;
+            color: #fff;
+            border-radius: 5px;
+            width: 132px;
+        }
+
+        .swal2-custom-confirm-button:hover {
+            background-color: #A3B97D;
+        }
+    </style>
+
+    </head>
+
+<body>
+<!-- <div data-options="region:'north',border:false" style="height:20px;" class="header">
+
+    <div  class="hmenu">
+    </div>
+</div> -->
+
+<style>
+	#searchMenu{
+		border-radius:6px;
+	}
+	.tabs-with-icon{
+		padding-left:0px !important;
+	}
+	#dropdownMenu a:hover{
+		border-radius: 6px !important;
+		background-color: #ffffffcc !important;
+		color:blue !important;
+	}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div data-options="region:'center'">
+    <div style="background-color: black;color:white;" class="easyui-layout" data-options="fit:true">
+        <div class="sidebar" data-options="region:'west',collapsed:true" title="PROPSALES" style="width:13%;background: var(--warna1) !important;">
+            <div>
+                <div class="m-2 position-relative" style="position: relative;">
+					<div class="m-2 d-flex justify-content-between align-items-center" style="display: flex; align-items: center; position: relative;">
+	
+					<div id="section_profile" style="position: relative; display: flex; align-items: center; gap: 8px;">
+						<img src="https://sso.indopasifik.co.id//assets/img/avatar-2.svg" alt="Profile"
+							style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; cursor: pointer;"
+							onclick="toggleDropdown()" class="avatarDropdown" title="Resita Nursechan">
+						
+							<span style="color:white; font-size:14px; line-height:1;cursor: pointer;" onclick="toggleDropdown()" title="Resita Nursechan">Resita</span>
+
+						<div id="dropdownMenu" style="
+							display: none;
+							position: absolute;
+							top: 100%;
+							right: 0;
+							left:8px;
+							background-color: #ffffffcc;
+							border-radius: 6px;
+							box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+							z-index: 999;
+							min-width: 150px;
+							margin-top: 6px;
+						">
+							<a href="javascript:void(0)" onclick="openProfile('https://sso.indopasifik.co.id/?tkn=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ3ZWJzZWMiLCJhdWQiOiJ3ZWJzZWMiLCJpYXQiOjE3OTQxOTg4MjMsIm5iZiI6MTc5NDE5ODgyMywiZXhwIjoxNzk0Mjg1MjIzLCJkYXRhIjp7ImlkIjoiMTI2IiwidXNlcm5hbWUiOiJyZXNpdGEiLCJlbWFpbCI6InJlc2l0YUBpbmRvcGFzaWZpay5pZCIsIm5hbWEiOiJSZXNpdGEgTnVyc2VjaGFuIiwicm9sZSI6IiIsImlkX2RlcGFydGVtZW4iOiIxNCIsIm5vX2hwIjoiMDg3ODk2Mzk5MzMwIiwiaWRfamFiYXRhbiI6IjEiLCJuYW1hX2phYmF0YW4iOiJTdGFmIiwiaG9tZXBhZ2UiOiJlc3RhdGUiLCJpZF9hcHBzIjoiMTQiLCJwaW4iOiJiNTljNjdiZjE5NmE0NzU4MTkxZTQyZjc2NjcwY2ViYSIsIm5hbWFfZGVwYXJ0ZW1lbiI6IkFkbWluIFNhbGVzIiwidXJ1dF9qYWJhdGFuIjoiMSJ9fQ.fyyqgbf4cTdkX_1dH2bJ3lnERuogV6ScCFzFyDZz_Gw&app=bDDLXtRhVV44Rf4qrOswxVRNS2l5eUM0cWxlUHBxekJtQnlVbXc9PQ&id=5767d16ceb30fd25751c2e15380cbd20')" 
+							style="display: block; padding: 10px; color: black; text-decoration: none;">My Profile</a>
+						</div>
+					</div>
+
+
+					<a href="javascript:void(0)" onclick="logout()" title="Logout">
+						<i class="fa fa-sign-out" aria-hidden="true" style="color: white; font-size: 20px; margin-left: 10px;"></i>
+					</a>
+
+				</div>
+
+				</div>
+
+				<div style="padding:8px;">
+					<input id="searchMenu"
+						class="easyui-textbox"
+						data-options="
+								prompt:'Search Menu',
+								icons:[{
+									iconCls:'icon-search',
+									handler:function(e){
+										var value = $('#searchMenu').textbox('getValue');
+										filterMenu(value);
+									}
+								}]
+						"
+						style="width:100%;">
+				</div>
+
+				<div id="menu"></div>
+            </div>
+        </div>
+        <div data-options="region:'center'" style="overflow: hidden;">
+            <div id="tabs" class="easyui-tabs" style="width:100%;height:100%;">
+                <div title="Home" style="padding:10px;">
+                                            <link rel="stylesheet" type="text/css" href="https://propsales.pacificgardenpuri.co.id/assets/css/st_serah_terima.css?v=20261109113718">
+<script src="https://propsales.pacificgardenpuri.co.id/assets/js/st_serah_terima.js?v=20261109113718"></script>
+<style>
+    .st-dashboard {
+        --olive: #617048;
+        --olive-dark: #4e5e3a;
+        --navy: #002b49;
+        --ink: #243247;
+        --muted: #7b8795;
+        --line: #e3e8ee;
+        --bg: #f5f6f3;
+        background: var(--bg);
+        min-height: calc(100vh - 64px);
+        padding: 16px 20px 36px;
+        color: var(--ink);
+        font-family: Poppins, Arial, sans-serif
+    }
+
+    .st-dashboard * {
+        box-sizing: border-box
+    }
+
+    .st-hero,
+    .st-panel {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        box-shadow: 0 2px 9px rgba(0, 43, 73, .05)
+    }
+
+    .st-hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 18px 20px;
+        border-left: 4px solid var(--olive)
+    }
+
+    .st-eyebrow {
+        color: var(--olive);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase
+    }
+
+    .st-hero h5 {
+        margin: 4px 0 0;
+        color: var(--navy);
+        font-size: 18px;
+        line-height: 1.2 font-weight: 700
+    }
+
+    .st-hero p {
+        margin: 5px 0 0;
+        color: var(--muted);
+        font-size: 12px
+    }
+
+    .st-actions {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap;
+        justify-content: flex-end
+    }
+
+    .st-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        min-height: 33px;
+        padding: 7px 12px;
+        border: 1px solid #ccd6df;
+        border-radius: 4px;
+        background: #fff;
+        color: var(--navy);
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer
+    }
+
+    .st-btn-primary {
+        border-color: var(--olive);
+        background: var(--olive);
+        color: #fff
+    }
+
+    .st-btn-primary:hover {
+        background: var(--olive-dark);
+        color: #fff
+    }
+
+    .st-btn:disabled {
+        opacity: .6;
+        cursor: wait
+    }
+
+    .st-kpis {
+        display: grid;
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+        gap: 7px;
+        margin-top: 12px
+    }
+
+    .st-kpi {
+        position: relative;
+        min-height: 92px;
+        padding: 11px 9px 9px;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 6px
+    }
+
+    .st-kpi:before {
+        content: \"\";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--kpi-color, var(--olive))
+    }
+
+    .st-kpi-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 3px;
+        color: #718096;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.3
+    }
+
+    .st-kpi-top i {
+        color: var(--kpi-color, var(--olive));
+        font-size: 13px
+    }
+
+    .st-kpi-value {
+        display: block;
+        margin: 10px 0 5px;
+        color: var(--navy);
+        font-size: 21px;
+        line-height: 1;
+        font-weight: 800
+    }
+
+    .st-kpi-hint {
+        display: block;
+        overflow: hidden;
+        color: #91a0b2;
+        font-size: 12px;
+        text-overflow: ellipsis;
+        white-space: nowrap
+    }
+
+    .tone-navy {
+        --kpi-color: var(--navy)
+    }
+
+    .tone-orange {
+        --kpi-color: #d58b2a
+    }
+
+    .tone-red {
+        --kpi-color: #c95d56
+    }
+
+    .tone-purple {
+        --kpi-color: #7a6a9f
+    }
+
+    .tone-green {
+        --kpi-color: #5f9362
+    }
+
+    .tone-blue {
+        --kpi-color: #5b8eaa
+    }
+
+    .tone-cyan {
+        --kpi-color: #4f9589
+    }
+
+    .tone-amber {
+        --kpi-color: #b58a42
+    }
+
+    .tone-teal {
+        --kpi-color: #4f9589
+    }
+
+    .st-panel {
+        margin-top: 12px;
+        padding: 14px
+    }
+
+    .st-panel-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 11px
+    }
+
+    .st-panel-title {
+        color: var(--navy);
+        font-size: 12px;
+        font-weight: 800
+    }
+
+    .st-panel-title i {
+        margin-right: 5px;
+        color: var(--olive)
+    }
+
+    .st-panel-meta {
+        color: #76869b;
+        font-size: 12px;
+        font-weight: 600
+    }
+
+    .st-pipeline {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(0, 1fr))
+    }
+
+    .st-stage {
+        position: relative;
+        min-height: 82px;
+        padding: 9px 8px 7px 12px;
+        border-left: 1px solid #edf0f4
+    }
+
+    .st-stage:first-child {
+        border-left: 0
+    }
+
+    .st-stage:not(:last-child):after {
+        content: \"\";
+        position: absolute;
+        right: -6px;
+        top: 30px;
+        width: 12px;
+        height: 1px;
+        background: #c9d5e3
+    }
+
+    .st-stage-number {
+        display: inline-flex;
+        width: 21px;
+        height: 21px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #edf1e8;
+        color: var(--olive-dark);
+        font-size: 12px;
+        font-weight: 800
+    }
+
+    .st-stage-label {
+        display: block;
+        min-height: 26px;
+        margin-top: 6px;
+        color: #344b66;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.3
+    }
+
+    .st-stage-count {
+        color: var(--stage-color, var(--olive));
+        font-size: 16px
+    }
+
+    .st-stage-meta {
+        color: #92a0b2;
+        font-size: 12px;
+        text-transform: uppercase
+    }
+
+    .stage-orange {
+        --stage-color: #d58b2a
+    }
+
+    .stage-cyan {
+        --stage-color: #4f9589
+    }
+
+    .stage-indigo {
+        --stage-color: #66759f
+    }
+
+    .stage-teal {
+        --stage-color: #4f9589
+    }
+
+    .stage-green {
+        --stage-color: #5f9362
+    }
+
+    .stage-blue {
+        --stage-color: #5b8eaa
+    }
+
+    .st-filter {
+        padding: 13px 14px 11px;
+        background: #fbfcfa;
+        border-color: #dbe2d5
+    }
+
+    .st-filter-title {
+        margin-bottom: 9px;
+        color: var(--olive-dark);
+        font-size: 12px;
+        font-weight: 800
+    }
+
+    .st-filter-grid {
+        display: grid;
+        grid-template-columns: minmax(220px, 2fr) repeat(4, minmax(110px, 1fr)) auto;
+        gap: 7px;
+        align-items: end
+    }
+
+    .st-field label {
+        display: block;
+        margin-bottom: 4px;
+        color: #718096;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase
+    }
+
+    .st-field input,
+    .st-field select {
+        width: 100%;
+        height: 32px;
+        padding: 5px 8px;
+        border: 1px solid #d9e2ed;
+        border-radius: 4px;
+        outline: none;
+        background: #fff;
+        color: #3b506a;
+        font-family: inherit;
+        font-size: 12px
+    }
+
+    .st-field input:focus,
+    .st-field select:focus {
+        border-color: var(--olive);
+        box-shadow: 0 0 0 2px rgba(97, 112, 72, .12)
+    }
+
+    .st-filter-actions {
+        display: flex;
+        gap: 6px
+    }
+
+    .st-active-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        min-height: 20px;
+        margin-top: 8px;
+        color: #8a99aa;
+        font-size: 12px
+    }
+
+    .st-chip {
+        display: inline-flex;
+        padding: 4px 7px;
+        border-radius: 10px;
+        background: #e8ede2;
+        color: var(--olive-dark)
+    }
+
+    .st-empty {
+        display: flex;
+        min-height: 95px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 4px;
+        color: #8b99a9;
+        font-size: 12px;
+        text-align: center
+    }
+
+    .st-empty i {
+        color: #b4c2d1;
+        font-size: 25px
+    }
+
+    .st-results.is-hidden,
+    .st-empty.is-hidden {
+        display: none
+    }
+
+    .st-table-wrap {
+        overflow-x: auto
+    }
+
+    .st-grid {
+        width: 100%;
+        min-width: 1180px;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 12px
+    }
+
+    .st-grid th {
+        padding: 8px 7px;
+        border-top: 1px solid #e7edf4;
+        border-bottom: 1px solid #e7edf4;
+        background: #f6f8fb;
+        color: #7b899a;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        white-space: nowrap
+    }
+
+    .st-grid td {
+        padding: 9px 7px;
+        border-bottom: 1px solid #edf1f5;
+        color: #354a63;
+        vertical-align: middle;
+        white-space: nowrap
+    }
+
+    .st-grid tbody tr {
+        cursor: pointer
+    }
+
+    .st-grid tbody tr:hover {
+        background: #f5f7f2
+    }
+
+    .st-unit {
+        color: var(--olive-dark);
+        font-weight: 800
+    }
+
+    .st-sub {
+        display: block;
+        margin-top: 2px;
+        color: #97a4b3;
+        font-size: 12px
+    }
+
+    .st-customer {
+        color: #344b66;
+        font-weight: 700
+    }
+
+    .st-progress {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-weight: 700
+    }
+
+    .st-progress:after {
+        content: \"\";
+        display: block;
+        width: 25px;
+        height: 3px;
+        border-radius: 3px;
+        background: #5f9362
+    }
+
+    .st-progress.warn:after {
+        background: #d58b2a
+    }
+
+    .st-progress.low:after {
+        background: #c95d56
+    }
+
+    .st-badge {
+        display: inline-flex;
+        min-width: 52px;
+        justify-content: center;
+        padding: 4px 6px;
+        border-radius: 3px;
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase
+    }
+
+    .badge-success {
+        color: #3c7046;
+        background: #e1f0df
+    }
+
+    .badge-warning {
+        color: #8b641f;
+        background: #fff1cf
+    }
+
+    .badge-danger {
+        color: #9d4e48;
+        background: #ffe3de
+    }
+
+    .badge-info {
+        color: #426e87;
+        background: #e1edf1
+    }
+
+    .badge-muted {
+        color: #68788b;
+        background: #edf1f5
+    }
+
+    .st-pagination {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5px;
+        margin-top: 10px
+    }
+
+    .st-page-info {
+        margin-right: 4px;
+        color: #7b899a;
+        font-size: 12px
+    }
+
+    .st-page {
+        min-width: 27px;
+        height: 27px;
+        padding: 3px 7px;
+        border: 1px solid #d4dee7;
+        border-radius: 3px;
+        background: #fff;
+        color: var(--navy);
+        font-size: 12px;
+        cursor: pointer
+    }
+
+    .st-page.active,
+    .st-page:hover {
+        border-color: var(--olive);
+        background: #eef2eb
+    }
+
+    .st-drawer-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 1040;
+        background: rgba(0, 43, 73, .38)
+    }
+
+    .st-drawer-backdrop.is-open {
+        display: block
+    }
+
+    .st-drawer {
+        position: fixed;
+        top: 0;
+        right: -460px;
+        z-index: 1050;
+        display: flex;
+        width: min(460px, calc(100vw - 18px));
+        height: 100vh;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: -10px 0 30px rgba(0, 43, 73, .18);
+        transition: right .22s ease
+    }
+
+    .st-drawer.is-open {
+        right: 0
+    }
+
+    .st-drawer-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 20px;
+        background: var(--olive);
+        color: #fff
+    }
+
+    .st-drawer-head h2 {
+        margin: 0;
+        font-size: 17px
+    }
+
+    .st-drawer-head p {
+        margin: 5px 0 0;
+        color: #e3eadb;
+        font-size: 12px
+    }
+
+    .st-drawer-close {
+        border: 0;
+        background: transparent;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer
+    }
+
+    .st-drawer-body {
+        overflow: auto;
+        padding: 18px
+    }
+
+    .st-drawer-alert {
+        padding: 11px;
+        border-left: 3px solid #d58b2a;
+        border-radius: 4px;
+        background: #fff7df;
+        color: #77561f;
+        font-size: 12px;
+        line-height: 1.5
+    }
+
+    .st-drawer-section {
+        margin-top: 18px
+    }
+
+    .st-drawer-section h3 {
+        margin: 0 0 9px;
+        color: var(--navy);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: .04em
+    }
+
+    .st-drawer-kv {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px
+    }
+
+    .st-drawer-kv div {
+        padding: 9px;
+        border-radius: 4px;
+        background: #f7f9fc
+    }
+
+    .st-drawer-kv small {
+        display: block;
+        color: #8493a4;
+        font-size: 12px
+    }
+
+    .st-drawer-kv strong {
+        display: block;
+        margin-top: 3px;
+        color: #304c6a;
+        font-size: 12px
+    }
+
+    .st-journey-item {
+        position: relative;
+        padding: 0 0 15px 26px;
+        border-left: 2px solid #dbe5ef;
+        font-size: 12px
+    }
+
+    .st-journey-item:last-child {
+        padding-bottom: 0;
+        border-left-color: transparent
+    }
+
+    .st-journey-item:before {
+        content: \"\";
+        position: absolute;
+        left: -6px;
+        top: 1px;
+        width: 10px;
+        height: 10px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        background: #5f9362;
+        box-shadow: 0 0 0 1px #5f9362
+    }
+
+    .st-journey-item.pending:before {
+        background: #d58b2a;
+        box-shadow: 0 0 0 1px #d58b2a
+    }
+
+    .st-journey-item.blocked:before {
+        background: #c95d56;
+        box-shadow: 0 0 0 1px #c95d56
+    }
+
+    .st-journey-title {
+        color: #314a66;
+        font-weight: 800
+    }
+
+    .st-journey-meta {
+        display: block;
+        margin-top: 3px;
+        color: #8b99a9;
+        font-size: 12px
+    }
+
+    @media(max-width:1500px) {
+        .st-kpis {
+            grid-template-columns: repeat(8, minmax(0, 1fr))
+        }
+
+        .st-pipeline {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            row-gap: 8px
+        }
+
+        .st-stage:nth-child(5) {
+            border-left: 0
+        }
+
+        .st-stage:nth-child(4):after,
+        .st-stage:nth-child(8):after {
+            display: none
+        }
+
+        .st-filter-grid {
+            grid-template-columns: minmax(220px, 2fr) repeat(2, minmax(130px, 1fr))
+        }
+
+        .st-filter-actions {
+            grid-column: span 3;
+            justify-content: flex-end
+        }
+    }
+
+    @media(max-width:760px) {
+        .st-dashboard {
+            padding: 10px
+        }
+
+        .st-hero {
+            align-items: flex-start;
+            flex-direction: column
+        }
+
+        .st-actions {
+            justify-content: flex-start
+        }
+
+        .st-kpis {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .st-pipeline {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .st-stage:nth-child(odd) {
+            border-left: 0
+        }
+
+        .st-stage:after {
+            display: none !important
+        }
+
+        .st-filter-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .st-filter-actions {
+            grid-column: span 2
+        }
+
+        .st-filter-actions .st-btn {
+            flex: 1
+        }
+    }
+</style>
+<div class="st-dashboard" id="stDashboard">
+    <section class="st-hero">
+        <div>
+            <div class="st-eyebrow"><i class="bi bi-grid-1x2-fill"></i> Estate / Serah Terima</div>
+            <h5>Dashboard Serah Terima</h5>
+            <p>Monitoring kesiapan dan progres serah terima unit berdasarkan kontrak aktif.</p>
+        </div>
+        <div class="st-actions"><button type="button" class="st-btn" id="stRefresh"><i class="bi bi-arrow-repeat"></i> Refresh Status</button><button type="button" class="st-btn st-btn-primary" id="stSchedule"><i class="bi bi-plus-circle"></i> Buat Jadwal ST</button></div>
+    </section>
+    <section class="st-kpis" aria-label="Ringkasan KPI Serah Terima"><article class="st-kpi tone-navy">
+                <div class="st-kpi-top"><span>Total Unit Kontrak Aktif</span><i class="bi bi-building"></i></div><strong class="st-kpi-value">73</strong><span class="st-kpi-hint">Sumber kontrak aktif</span>
+            </article><article class="st-kpi tone-orange">
+                <div class="st-kpi-top"><span>Menunggu Project</span><i class="bi bi-tools"></i></div><strong class="st-kpi-value">73</strong><span class="st-kpi-hint">Project clearance</span>
+            </article><article class="st-kpi tone-red">
+                <div class="st-kpi-top"><span>Menunggu Finance</span><i class="bi bi-wallet2"></i></div><strong class="st-kpi-value">0</strong><span class="st-kpi-hint">Finance clearance</span>
+            </article><article class="st-kpi tone-purple">
+                <div class="st-kpi-top"><span>Menunggu Approval</span><i class="bi bi-person-check"></i></div><strong class="st-kpi-value">0</strong><span class="st-kpi-hint">Pengajuan khusus</span>
+            </article><article class="st-kpi tone-green">
+                <div class="st-kpi-top"><span>Memenuhi Syarat</span><i class="bi bi-patch-check"></i></div><strong class="st-kpi-value">0</strong><span class="st-kpi-hint">Siap dijadwalkan</span>
+            </article><article class="st-kpi tone-blue">
+                <div class="st-kpi-top"><span>Jadwal</span><i class="bi bi-calendar-check"></i></div><strong class="st-kpi-value">0</strong><span class="st-kpi-hint">Undangan aktif</span>
+            </article><article class="st-kpi tone-cyan">
+                <div class="st-kpi-top"><span>Pemeriksaan</span><i class="bi bi-clipboard-check"></i></div><strong class="st-kpi-value">0</strong><span class="st-kpi-hint">Sedang dilaksanakan</span>
+            </article><article class="st-kpi tone-amber">
+                <div class="st-kpi-top"><span>Pengaduan Dibuka</span><i class="bi bi-exclamation-triangle"></i></div><strong class="st-kpi-value">0</strong><span class="st-kpi-hint">Perlu tindak lanjut</span>
+            </article><article class="st-kpi tone-purple">
+                <div class="st-kpi-top"><span>Menunggu BAST</span><i class="bi bi-file-earmark-text"></i></div><strong class="st-kpi-value">0</strong><span class="st-kpi-hint">Belum tandatangan</span>
+            </article><article class="st-kpi tone-teal">
+                <div class="st-kpi-top"><span>Selesai</span><i class="bi bi-check2-circle"></i></div><strong class="st-kpi-value">0</strong><span class="st-kpi-hint">Finalisasi ST</span>
+            </article></section>
+    <section class="st-panel">
+        <div class="st-panel-head">
+            <div class="st-panel-title"><i class="bi bi-diagram-3-fill"></i> Alur Pipeline Serah Terima Unit <span class="st-panel-meta">(End-to-End)</span></div><span class="st-panel-meta"></span>
+        </div>
+        <div class="st-pipeline"><div class="st-stage stage-blue"><span class="st-stage-number">1</span><span class="st-stage-label">Persetujuan s</span><strong class="st-stage-count">0</strong> <span class="st-stage-meta">SIAP</span></div><div class="st-stage stage-cyan"><span class="st-stage-number">2</span><span class="st-stage-label">Penyelesaian Keuangan</span><strong class="st-stage-count">0</strong> <span class="st-stage-meta">DISETUJUI</span></div><div class="st-stage stage-orange"><span class="st-stage-number">3</span><span class="st-stage-label">Pengajuan Khusus</span><strong class="st-stage-count">0</strong> <span class="st-stage-meta">DITINJAU</span></div><div class="st-stage stage-indigo"><span class="st-stage-number">4</span><span class="st-stage-label">Kelayakan ST</span><strong class="st-stage-count">0</strong> <span class="st-stage-meta">MEMENUHI SYARAT</span></div><div class="st-stage stage-blue"><span class="st-stage-number">5</span><span class="st-stage-label">Penjadwalan</span><strong class="st-stage-count">0</strong> <span class="st-stage-meta">BOOKED</span></div><div class="st-stage stage-teal"><span class="st-stage-number">6</span><span class="st-stage-label">Pelaksanaan</span><strong class="st-stage-count">0</strong> <span class="st-stage-meta">PEMERIKSAAN</span></div><div class="st-stage stage-green"><span class="st-stage-number">7</span><span class="st-stage-label">BAST</span><strong class="st-stage-count">0</strong> <span class="st-stage-meta">MENUNGGU</span></div><div class="st-stage stage-green"><span class="st-stage-number">8</span><span class="st-stage-label">Selesai</span><strong class="st-stage-count">0</strong> <span class="st-stage-meta">SELESAI</span></div></div>
+    </section>
+    <section class="st-panel st-filter">
+        <div class="st-filter-title"><i class="bi bi-funnel-fill"></i> Filter Pencarian Serah Terima</div>
+        <form id="stSearchForm" class="st-filter-grid">
+            <div class="st-field"><label for="stSearch">Project / Blok / Unit / Customer / No. Kontrak</label><input id="stSearch" name="q" type="search" placeholder="Cari project, blok, unit, customer, atau no. kontrak"></div>
+            <div class="st-field"><label for="stStatus">Status ST</label><select id="stStatus" name="status">
+                    <option value="">Semua Status</option>
+                    <option>IN CLEARANCE</option>
+                    <option>WAITING ELIGIBILITY</option>
+                    <option>ELIGIBLE</option>
+                    <option>SCHEDULED</option>
+                    <option>COMPLETED</option>
+                </select></div>
+            <div class="st-field"><label for="stJenis">Jenis ST</label><select id="stJenis" name="jenis_st">
+                    <option value="">Semua Jenis</option>
+                    <option>NORMAL</option>
+                    <option>EARLY_ST</option>
+                    <option>BORROW_USE</option>
+                    <option>PROGRESS</option>
+                </select></div>
+            <div class="st-field"><label for="stFrom">Kontrak Dari</label><input id="stFrom" name="period_from" type="date"></div>
+            <div class="st-field"><label for="stTo">Kontrak Sampai</label><input id="stTo" name="period_to" type="date"></div>
+            <div class="st-filter-actions"><button class="st-btn" type="button" id="stReset">Reset</button><button class="st-btn st-btn-primary" type="submit"><i class="bi bi-search"></i> Cari</button></div>
+        </form>
+        <div id="stActiveFilters" class="st-active-filters" hidden></div>
+    </section>
+    <section class="st-panel">
+        <div class="st-panel-head">
+            <div class="st-panel-title"><i class="bi bi-table"></i> Daftar Kesiapan Unit | <span id="stResultCount" class="st-panel-meta">Belum dicari</span></div>
+            <div class="st-panel-meta">Klik baris untuk membuka detail pada tab aplikasi</div>
+        </div>
+        <div id="stEmptyState" class="st-empty"><i class="bi bi-hourglass-split"></i><span>Memuat unit aktif dengan nomor kontrak...</span></div>
+        <div id="stResults" class="st-results is-hidden">
+            <div class="st-table-wrap">
+                <table class="st-grid">
+                    <thead>
+                        <tr>
+                            <th>Unit</th>
+                            <th>Customer</th>
+                            <th>No. Kontrak</th>
+                            <th>PPJB Final</th>
+                            <th>Construction %</th>
+                            <th>Payment %</th>
+                            <th>Project</th>
+                            <th>Finance</th>
+                            <th>Approval</th>
+                            <th>Eligibility</th>
+                            <th>Jadwal ST</th>
+                            <th>Complaint</th>
+                            <th>BAST</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stTableBody"></tbody>
+                </table>
+            </div>
+            <div id="stPagination" class="st-pagination"></div>
+        </div>
+    </section>
+</div>
+<script>
+    (function() {
+        var form = document.getElementById('stSearchForm'),
+            body = document.getElementById('stTableBody'),
+            empty = document.getElementById('stEmptyState'),
+            results = document.getElementById('stResults'),
+            count = document.getElementById('stResultCount'),
+            pager = document.getElementById('stPagination'),
+            active = document.getElementById('stActiveFilters'),
+            page = 1,
+            pageSize = 20,
+            searched = false;
+        var gridUrl = "https:\/\/propsales.pacificgardenpuri.co.id\/C_serah_terima\/gridDashboard",
+            detailPageUrl = "https:\/\/propsales.pacificgardenpuri.co.id\/C_serah_terima\/detail",
+            schedulePageUrl = "https:\/\/propsales.pacificgardenpuri.co.id\/C_jadwal_st";
+
+        function esc(value) {
+            return String(value == null ? '' : value).replace(/[&<>'"]/g, function(c) {
+                return {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    "'": '&#039;',
+                    '"': '&quot;'
+                } [c];
+            });
+        }
+
+        function val(value, fallback) {
+            return value === null || value === undefined || value === '' ? (fallback || '-') : value;
+        }
+
+        function badge(text, tone) {
+            return '<span class=\"st-badge badge-' + (tone || 'muted') + '\">' + esc(val(text)) + '</span>';
+        }
+
+        function tone(text) {
+            var value = String(text || '').toUpperCase();
+            if (value.indexOf('READY') >= 0 || value.indexOf('CLEAR') >= 0 || value.indexOf('ELIGIBLE') >= 0 || value.indexOf('COMPLETED') >= 0 || value.indexOf('SIGNED') >= 0 || value.indexOf('DONE') >= 0 || value.indexOf('APPROVED') >= 0) return 'success';
+            if (value.indexOf('PENDING') >= 0 || value.indexOf('WAITING') >= 0 || value.indexOf('NOT_') >= 0 || value.indexOf('OPEN') >= 0) return 'warning';
+            if (value.indexOf('FAILED') >= 0 || value.indexOf('BLOCK') >= 0 || value.indexOf('IN CLEARANCE') >= 0) return 'danger';
+            return 'info';
+        }
+
+        function progress(number) {
+            if (number === null || number === undefined || number === '') return badge('0%', 'muted');
+            var n = parseFloat(number),
+                c = n < 95 ? ' low' : (n < 100 ? ' warn' : '');
+            return '<span class=\"st-progress' + c + '\">' + esc(n.toFixed(2).replace(/\\.00$/, '')) + '%</span>';
+        }
+
+        function formatDate(value) {
+            return stUi.formatDateTime(value);
+        }
+
+        function schedule(row) {
+            return row.scheduled_start ? formatDate(row.scheduled_start) : badge('Belum dijadwalkan', 'muted');
+        }
+
+        function renderRows(rows) {
+            body.innerHTML = rows.length ? rows.map(function(r) {
+                var unitLabel = val(r.unit_display || r.kode_unit || r.nama_unit || r.no_unit);
+                var unitMeta = val(r.unit_meta || r.nama_unit || r.blok_unit || r.no_unit);
+                var finalPpjbUploaded = Number(r.ppjb_final_uploaded) > 0;
+                var finalPpjbInfo = finalPpjbUploaded && r.ppjb_final_file ? '<span class=\"st-sub\">' + esc(r.ppjb_final_file) + '</span>' : (finalPpjbUploaded && r.ppjb_final_uploaded_at ? '<span class=\"st-sub\">' + esc(stUi.formatDateTime(r.ppjb_final_uploaded_at)) + '</span>' : '');
+                return '<tr data-kontrak=\"' + esc(r.id_kontrak) + '\" data-unit=\"' + esc(r.id_unit) + '\" data-unit-label=\"' + esc(unitLabel) + '\"><td><span class=\"st-unit\">' + esc(unitLabel) + '</span><span class=\"st-sub\">' + esc(unitMeta) + '</span></td><td><span class=\"st-customer\">' + esc(val(r.nama_lengkap)) + '</span><span class=\"st-sub\">' + esc(val(r.nohp)) + '</span></td><td>' + esc(val(r.no_kontrak)) + '<span class=\"st-sub\">' + esc(stUi.formatDateTime(r.tgl_kontrak)) + '</span></td><td>' + badge(finalPpjbUploaded ? 'SUDAH UPLOAD' : 'BELUM UPLOAD', finalPpjbUploaded ? 'success' : 'warning') + finalPpjbInfo + '</td><td>' + progress(r.construction_progress) + '</td><td>' + progress(r.payment_percentage_snapshot) + '</td><td>' + badge(r.project_clearance || 'PENDING', tone(r.project_clearance)) + '</td><td>' + badge(r.finance_clearance || 'PENDING', tone(r.finance_clearance)) + '</td><td>' + badge(r.approval_status || 'NOT_REQUIRED', tone(r.approval_status)) + '</td><td>' + badge(r.eligibility_status || 'NOT_EVALUATED', tone(r.eligibility_status)) + '</td><td>' + schedule(r) + '</td><td>' + badge(r.complaint_open > 0 ? r.complaint_open + ' OPEN' : 'NIHIL', r.complaint_open > 0 ? 'warning' : 'muted') + '</td><td>' + badge(r.bast_signed_count > 0 ? 'SIGNED' : (r.bast_ready_count > 0 ? 'READY' : 'PENDING'), r.bast_signed_count > 0 ? 'success' : 'warning') + '</td><td>' + badge(r.dashboard_status, tone(r.dashboard_status)) + '</td><td><button class=\"st-btn\" type=\"button\" data-open=\"1\" title=\"Buka detail pada tab aplikasi\"><i class=\"bi bi-box-arrow-up-right\"></i></button></td></tr>';
+            }).join('') : '<tr><td colspan=\"15\"><div class=\"st-empty\">Tidak ada unit aktif dengan nomor kontrak yang cocok dengan filter.</div></td></tr>';
+        }
+
+        function queryData(targetPage) {
+            page = targetPage || 1;
+            var data = {};
+            $(form).serializeArray().forEach(function(item) {
+                data[item.name] = item.value;
+            });
+            data.page = page;
+            data.rows = pageSize;
+            var button = form.querySelector('[type=\"submit\"]');
+            button.disabled = true;
+            button.innerHTML = '<i class=\"bi bi-arrow-repeat\"></i> Memuat...';
+            $.ajax({
+                url: gridUrl,
+                type: 'POST',
+                data: data,
+                dataType: 'json'
+            }).done(function(response) {
+                if (!response || response.status !== true) {
+                    renderRows([]);
+                    count.textContent = 'Gagal memuat';
+                    return;
+                }
+                searched = true;
+                empty.classList.add('is-hidden');
+                results.classList.remove('is-hidden');
+                renderRows(response.rows || []);
+                count.textContent = (response.total || 0) + ' unit';
+                renderFilters();
+                renderPager(response.total || 0);
+            }).fail(function() {
+                renderRows([]);
+                count.textContent = 'Gagal memuat';
+            }).always(function() {
+                button.disabled = false;
+                button.innerHTML = '<i class=\"bi bi-search\"></i> Cari';
+            });
+        }
+
+        function renderFilters() {
+            var labels = {
+                    q: 'Pencarian',
+                    status: 'Status',
+                    jenis_st: 'Jenis ST',
+                    period_from: 'Dari',
+                    period_to: 'Sampai'
+                },
+                chips = [];
+            Object.keys(labels).forEach(function(key) {
+                var field = form.elements[key];
+                if (field && field.value) chips.push('<span class=\"st-chip\">' + labels[key] + ': ' + esc(field.value) + '</span>');
+            });
+            active.innerHTML = chips.length ? '<span>Pencarian aktif:</span> ' + chips.join(' ') : '';
+            active.hidden = !chips.length;
+        }
+
+        function renderPager(total) {
+            var pages = Math.ceil(total / pageSize),
+                html = '<span class=\"st-page-info\">Halaman ' + (pages ? page : 0) + ' / ' + pages + '</span>';
+            if (pages > 1) {
+                html += '<button class=\"st-page\" data-page=\"' + Math.max(1, page - 1) + '\" ' + (page === 1 ? 'disabled' : '') + '>&lsaquo;</button>';
+                for (var i = 1; i <= pages && i <= 7; i++) html += '<button class=\"st-page ' + (i === page ? 'active' : '') + '\" data-page=\"' + i + '\">' + i + '</button>';
+                html += '<button class=\"st-page\" data-page=\"' + Math.min(pages, page + 1) + '\" ' + (page === pages ? 'disabled' : '') + '>&rsaquo;</button>';
+            }
+            pager.innerHTML = html;
+        }
+
+        function openDetailTab(idKontrak, idUnit, unitLabel) {
+            var title = 'Detail ' + val(unitLabel, 'Unit') + ' #' + idKontrak + ' (Unit ' + idUnit + ')';
+            // The application keeps detail pages in iframe tabs. Add a per-click
+            // nonce so an already-open tab cannot keep showing its previous unit.
+            var url = detailPageUrl + '?id_kontrak=' + encodeURIComponent(idKontrak) + '&id_unit=' + encodeURIComponent(idUnit) + '&_detail_refresh=' + Date.now();
+            var tab = {
+                url: url,
+                text: title,
+                selected: false
+            };
+            if (window.parent && typeof window.parent.openTab === 'function') {
+                window.parent.openTab(tab);
+            } else {
+                window.location.href = url;
+            }
+        }
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            queryData(1);
+        });
+        document.getElementById('stReset').addEventListener('click', function() {
+            form.reset();
+            active.hidden = true;
+            queryData(1);
+        });
+        document.getElementById('stRefresh').addEventListener('click', function() {
+            queryData(searched ? page : 1);
+        });
+        document.getElementById('stSchedule').addEventListener('click', function() {
+            var tab = {
+                url: schedulePageUrl,
+                text: 'Jadwal ST'
+            };
+            if (window.parent && typeof window.parent.openTab === 'function') {
+                window.parent.openTab(tab);
+            } else {
+                window.location.href = schedulePageUrl;
+            }
+        });
+        body.addEventListener('click', function(event) {
+            var row = event.target.closest('tr[data-kontrak]');
+            if (row) openDetailTab(row.getAttribute('data-kontrak'), row.getAttribute('data-unit'), row.getAttribute('data-unit-label'));
+        });
+        pager.addEventListener('click', function(event) {
+            var pageButton = event.target.closest('[data-page]');
+            if (pageButton && !pageButton.disabled) queryData(Number(pageButton.getAttribute('data-page')));
+        });
+        queryData(1);
+    })();
+</script>
+                                    </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+$('#searchMenu').textbox({
+    inputEvents: $.extend({}, $.fn.textbox.defaults.inputEvents, {
+        keyup: function(e){
+            var keyword = $(this).val().toLowerCase();
+            filterMenu(keyword);
+        }
+    })
+});
+
+
+function filterMenu(keyword){
+    var nodes = $('#menu').tree('getChildren');
+
+    $.each(nodes, function(i,node){
+        var text = node.text.toLowerCase();
+
+        if(text.indexOf(keyword) >= 0){
+            $(node.target).show();
+
+            // buka parent
+            var parent = $('#menu').tree('getParent', node.target);
+            while(parent){
+                $('#menu').tree('expand', parent.target);
+                $(parent.target).show();
+                parent = $('#menu').tree('getParent', parent.target);
+            }
+
+        }else{
+            $(node.target).hide();
+        }
+    });
+}
+function toggleDropdown() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+	if (!$(this).contains(event.target) && !dropdown.contains(event.target)) {
+		dropdown.style.display = "none";
+	}
+}
+</script>
+
+<style>
+	#dropdownMenu a:hover {
+		background-color: #444;
+	}
+    .header {
+        background: #23232B;
+        color: #fff;
+        direction: ltr;
+    }
+
+    .combo-panel panel-body panel-body-noheader {
+        background-color: #23232B !important;
+    }
+
+    .panel combo-p panel-htop {
+        background-color: #23232B !important;
+
+    }
+
+    .tabs {
+        background: var(--warna1);
+    }
+
+    .header .navbar {
+        margin-bottom: 0;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .header a,
+    .header a:hover {
+        color: #fff;
+        line-height: 50px;
+    }
+
+    .header .content {
+        padding: 0.5em 4.5%;
+    }
+
+    .content {
+        padding: 2em;
+        padding-left: 5%;
+        padding-right: 5%;
+        max-width: 1230px;
+        margin: 0 auto;
+    }
+
+    .hmenu {
+        width: 900px;
+        margin: 0 auto;
+        font-size: 22px;
+    }
+
+    .foot {
+        text-align: center;
+        font-size: 12px;
+        height: 20px;
+        padding: 5px;
+    }
+
+    .left {
+        width: 5px;
+        background-color: #23232B;
+    }
+
+    .menu {
+        color: white;
+    }
+     html,body{
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+</style>
+
+<script>
+    function logout() {
+        // Redirect ke fungsi logout di controller
+        window.location.href = 'https://propsales.pacificgardenpuri.co.id/C_login/logout';
+    }
+    $(function() {
+        var data = [{
+            text: 'Item1',
+            iconCls: 'icon-sum',
+            state: 'open',
+            children: [{
+                text: 'Option1'
+            }, {
+                text: 'Option2'
+            }, {
+                text: 'Option3',
+                children: [{
+                    text: 'Option31'
+                }, {
+                    text: 'Option32'
+                }]
+            }]
+        }, {
+            text: 'Item2',
+            iconCls: 'icon-more',
+            children: [{
+                text: 'Option4'
+            }, {
+                text: 'Option5'
+            }, {
+                text: 'Option6'
+            }]
+        }];
+        $('#menu').tree({
+            url: 'https://propsales.pacificgardenpuri.co.id/C_menu/get',
+            loadFilter: function(data) {
+                // console.log(data)
+                if (data.d) {
+                    return data.d;
+                } else {
+                    return data;
+                }
+            },
+            onLoadSuccess: function() {
+                $('#menu').tree('collapseAll');
+            },
+            onClick: function(node) {
+                // alert(node.url);
+                openTab(node);
+                // alert(node.attributes.url);  // alert node text property when clicked
+            }
+        });
+    })
+
+    // function adjust
+    function adjustIframeHeight(iframe) {
+        setTimeout(function() {
+            var contentHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+            console.log(contentHeight);
+            iframe.style.height = 800 + 'px';
+        }, 100);
+    }
+
+	function closeTab(node){
+		$('#tabs').tabs('close', node);
+	}
+    function reloadTab(text){
+        $("#tabs").tabs('select',text);
+        
+        var frameID = "propsalesFrame"+text.toLowerCase().replace(/\s/g, '');
+        document.getElementById(frameID).contentWindow.location.reload();
+    }
+      function clearFileInput(ctrl) {
+  try {
+    ctrl.value = null;
+  } catch(ex) { }
+  if (ctrl.value) {
+    ctrl.parentNode.replaceChild(ctrl.cloneNode(true), ctrl);
+  }
+}
+    function openTab(node){
+        if(node.url==undefined){
+            return;
+        }
+        if($("#tabs").tabs("exists",node.text)){
+            $("#tabs").tabs("select",node.text);
+        }else{
+            var frameID = "propsalesFrame"+node.text.toLowerCase().replace(/\s/g, '');
+            var content = "<iframe  id='"+frameID+"'  frameborder=0 style='width:100%; height:860px; overflow:hidden;' scrolling='yes' src='" + node.url + "' onload='adjustIframeHeight(this)'></iframe>";
+
+            $("#tabs").tabs("add",{
+                title:node.text,
+                iconCls:node.iconCls,
+                closable:true,
+                content:content,
+                selected: node.selected? false : true,
+				tools:[{
+					iconCls:'icon-mini-refresh',
+					handler:function(){
+						reloadTab(node.text);
+					}
+				}]
+            });
+        }
+    }
+
+    function alert_success(node) {
+        $.messager.alert({
+            title: '&nbsp;',
+            msg: '<div style="text-align: center;"><img src="https://propsales.pacificgardenpuri.co.id//assets/icon/check_mark.png" style="display: block; margin: 0 auto; width: 70px; height: 70px;"/><div style="font-size:20px;" class="mt-1">'+node.title+'</div><span style="font-size:10px;">'+node.msg+'</span></div>', // Tambahkan sumber gambar dan teks
+            showType: 'fade',
+            buttons: [],
+            style: {
+                right: '',
+                bottom: ''
+            }
+        });
+       
+    }
+
+    function openTab_inside(node) {
+        if (node.url == undefined) {
+            return;
+        }
+        if ($("#tabs").tabs("exists", node.text)) {
+            $("#tabs").tabs("select", node.text);
+        } else {
+            // console.log("open tab inside");
+            var content = "<iframe frameborder=0  style='width:100%;' src='" + node.url + "'></iframe>"
+            $("#tabs").tabs("add", {
+                title: node.text,
+                iconCls: node.iconCls,
+                closable: true,
+                content: content
+            });
+        }
+    }
+
+	function openProfile(url){
+		var title = 'Profile';
+		if($("#tabs").tabs("exists",title)){
+			$("#tabs").tabs("select",title);
+		}else{
+			var frameID = "sso";
+			// scrolling='no'
+			var content="<iframe id='"+frameID+"' frameborder=0  style='width:100%;height:100%' src='"+url+"'></iframe>"
+			$("#tabs").tabs("add",{
+				title:'Profile',
+				iconCls:'user-men',
+				closable:true,
+				content:content,
+				tools:[{
+					iconCls:'icon-mini-refresh',
+					handler:function(){
+						reloadTabProfile(frameID);
+					}
+				}]
+			});
+		}
+	}
+
+	function reloadTabProfile(frameID){
+		document.getElementById(frameID).contentWindow.location.reload();
+	}
+
+
+
+    function toggle() {
+        var opts = $('#menu').tree('options');
+        $('#menu').tree(opts.collapsed ? 'expand' : 'collapse');
+        opts = $('#menu').tree('options');
+        $('#menu').tree('resize', {
+            width: opts.collapsed ? 60 : 200
+        })
+    }
+
+    function collapseAll() {
+        $('#menu').tree('collapseAll');
+    }
+
+    function expandAll() {
+        $('#menu').tree('expandAll');
+    }
+</script>
+
+</body>
+</html>

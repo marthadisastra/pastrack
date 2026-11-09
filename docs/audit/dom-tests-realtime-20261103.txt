@@ -1,0 +1,118 @@
+TAP version 13
+# Subtest: sidebar matches all 17 exported menu entries in exact order, with no developer-only extras
+ok 1 - sidebar matches all 17 exported menu entries in exact order, with no developer-only extras
+  ---
+  duration_ms: 133.5995
+  type: 'test'
+  ...
+# Subtest: all 21 source layouts are packaged, preserving original table headers
+ok 2 - all 21 source layouts are packaged, preserving original table headers
+  ---
+  duration_ms: 261.9965
+  type: 'test'
+  ...
+# Subtest: all primary menus navigate to their own imported source and load empty real-data states without JS errors
+ok 3 - all primary menus navigate to their own imported source and load empty real-data states without JS errors
+  ---
+  duration_ms: 626.685709
+  type: 'test'
+  ...
+# Subtest: vehicle detail subroutes use distinct exported layouts
+ok 4 - vehicle detail subroutes use distinct exported layouts
+  ---
+  duration_ms: 207.094291
+  type: 'test'
+  ...
+# Subtest: runtime does not display exported demo plates or claim a 100% telemetry enrollment
+ok 5 - runtime does not display exported demo plates or claim a 100% telemetry enrollment
+  ---
+  duration_ms: 35.539584
+  type: 'test'
+  ...
+# Subtest: untrusted row labels are text, missing values stay N/A, and physical ignition stays NOT_INSTALLED
+ok 6 - untrusted row labels are text, missing values stay N/A, and physical ignition stays NOT_INSTALLED
+  ---
+  duration_ms: 47.781083
+  type: 'test'
+  ...
+# Subtest: keyset pagination and exported search filter call APIs, errors are visible
+ok 7 - keyset pagination and exported search filter call APIs, errors are visible
+  ---
+  duration_ms: 400.406625
+  type: 'test'
+  ...
+# Subtest: register unit uses the existing mutation API and preserves the exported action location
+ok 8 - register unit uses the existing mutation API and preserves the exported action location
+  ---
+  duration_ms: 60.277875
+  type: 'test'
+  ...
+# Subtest: unsupported hardware controls remain visibly disabled with an explicit reason
+ok 9 - unsupported hardware controls remain visibly disabled with an explicit reason
+  ---
+  duration_ms: 31.237916
+  type: 'test'
+  ...
+# Subtest: initial dashboard also has the full inactive text/icon color state
+ok 10 - initial dashboard also has the full inactive text/icon color state
+  ---
+  duration_ms: 6.1925
+  type: 'test'
+  ...
+# Subtest: legacy Register Unit directs users to gateway vehicle linking
+ok 11 - legacy Register Unit directs users to gateway vehicle linking
+  ---
+  duration_ms: 60.685917
+  type: 'test'
+  ...
+# Subtest: Trip History uses an inclusive WIB date range and rejects reversed dates
+ok 12 - Trip History uses an inclusive WIB date range and rejects reversed dates
+  ---
+  duration_ms: 62.815417
+  type: 'test'
+  ...
+# Subtest: vehicle trip date range is retained when selecting a different vehicle
+ok 13 - vehicle trip date range is retained when selecting a different vehicle
+  ---
+  duration_ms: 83.924542
+  type: 'test'
+  ...
+# Subtest: Device Management connects a GPS through the vehicle selection dialog
+ok 14 - Device Management connects a GPS through the vehicle selection dialog
+  ---
+  duration_ms: 60.93475
+  type: 'test'
+  ...
+# Subtest: Sensor Management captures live Empty and Full, resumes draft, and saves capacity
+ok 15 - Sensor Management captures live Empty and Full, resumes draft, and saves capacity
+  ---
+  duration_ms: 98.630083
+  type: 'test'
+  ...
+# Subtest: stale sensor data is visible but cannot be captured
+ok 16 - stale sensor data is visible but cannot be captured
+  ---
+  duration_ms: 51.091208
+  type: 'test'
+  ...
+# Subtest: Fuel Monitoring omits tank specifications while retaining liters and percent columns
+ok 17 - Fuel Monitoring omits tank specifications while retaining liters and percent columns
+  ---
+  duration_ms: 44.977458
+  type: 'test'
+  ...
+# Subtest: realtime patches retain rows and unchanged cells without fetching or reloading the page
+ok 18 - realtime patches retain rows and unchanged cells without fetching or reloading the page
+  ---
+  duration_ms: 48.22475
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2701.30925

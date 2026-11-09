@@ -1,0 +1,13 @@
+# Pengumpulan titik kalibrasi CFS300B
+
+Perangkat saat ini: GV30CEU IMEI `861252080093110`, sensor yang teramati `E04E7A648774`. Isi satu lembar per sensor/tangki jika kendaraan memiliki lebih dari satu tangki. Gunakan [template CSV](fuel-calibration-template.csv); waktu dicatat dalam WIB sehingga laporan `GTERI` di database dapat dicocokkan otomatis.
+
+1. Catat kapasitas dan bentuk tangki, jenis BBM, jumlah tangki, serta ID CFS300B pada setiap tangki. Periksa apakah tangki dan probe sudah dipasang sesuai petunjuk pemasangan dari pemasok.
+2. Parkir di permukaan datar. Catat volume awal yang **diketahui secara independen** (misalnya dari pengukuran tangki atau kondisi kosong terukur). Jika volume awal tidak diketahui, tulis kosong; jumlah liter dari pengisian hanya memberi selisih, belum volume absolut.
+3. Catat waktu WIB dan volume sebelum pengisian. Tambah BBM dengan volume terukur dari dispenser. Setelah pembacaan stabil, catat waktu WIB, jumlah liter ditambah, dan volume total yang diketahui. Ulangi pada beberapa tingkat volume, terutama dekat kosong dan penuh. Untuk tangki tidak beraturan, kumpulkan lebih banyak titik pada bagian yang bentuknya berubah.
+4. Jangan menebak volume dari angka dalam `GTERI`. Identitas sensor sudah terbaca, tetapi posisi field tinggi/level serta satuannya belum diverifikasi untuk CFS300B pada GV30CEU. Diperlukan dokumen protokol GV30CEU/CFS300B dari Queclink/pemasok, atau pengujian terkontrol yang mencocokkan perubahan field dengan volume terukur.
+5. Setelah titik dan format field terverifikasi, buat tabel kalibrasi monoton per sensor: nilai mentah/tinggi → liter. Uji dengan pengisian lain yang tidak digunakan saat membuat tabel. Tampilkan liter di aplikasi hanya jika sampel terbaru dan hasil validasi tersedia.
+
+[Datasheet resmi CFS300B](https://www.queclink.com/wp-content/uploads/2025/10/ENCFS300B-datasheet-250818.pdf) menjelaskan bahwa sensor menggunakan BLE/iBeacon, resolusi 0,1 mm, dan kemiringan dipakai untuk membantu kalibrasi. Datasheet tersebut tidak mendefinisikan susunan field `GTERI` yang diperlukan untuk konversi liter.
+
+Uji galon air pada 2 November 2026 dicatat terpisah di [hasil uji air](cfs300b-water-test-2026-11-02.csv). Dua perkiraan **tinggi air**, sekitar 15% dan 75%, memperlihatkan perubahan field heksadesimal yang konsisten di beberapa laporan. Bagian dua-byte pertama berubah dari `0x0908` (2312) ke `0x0AF1` (2801); bagian berikutnya dari `0x00E7` (231) ke `0x0118` (280). Keduanya merupakan **kandidat pembacaan**, belum field resmi yang tervalidasi. Kalibrasi air ini tidak dipakai untuk persentase atau liter BBM pada tangki kendaraan.

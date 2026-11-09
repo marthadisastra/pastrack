@@ -1,0 +1,5793 @@
+[
+  {
+    "route": "fleet-dashboard",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 25
+        },
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 12,
+          "max": 14,
+          "count": 2
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 3
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 12
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 36
+        },
+        "small": {
+          "min": 10,
+          "max": 10.4,
+          "count": 19
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 1503,
+          "width": 2048
+        }
+      ],
+      "unnamedButtons": [
+        "add",
+        "remove"
+      ],
+      "smallTargets": 1
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 25
+        },
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 12,
+          "max": 14,
+          "count": 2
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 3
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 12
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 36
+        },
+        "small": {
+          "min": 10,
+          "max": 10.4,
+          "count": 19
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md text-label-md shadow-sm transition-colors flex items-center gap-1.5 shrink-0 dashboard-chip-inactive",
+          "right": 475,
+          "width": 104
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 438,
+          "width": 40
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 rounded-full bg-surface-container font-data-tabular text-[11px]",
+          "right": 463,
+          "width": 19
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-3 py-1.5 rounded-full bg-surface-container-lowest text-error hover:bg-error-container font-label-md text-label-md shadow-sm transition-colors flex items-center gap-1.5 shrink-0 dashboard-chip-inactive",
+          "right": 623,
+          "width": 141
+        },
+        {
+          "tag": "SPAN",
+          "classes": "w-2 h-2 rounded-full bg-error animate-ping",
+          "right": 505,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 585,
+          "width": 78
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 rounded-full bg-error-container text-on-error-container font-data-tabular text-[11px] font-bold",
+          "right": 611,
+          "width": 20
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 554,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 554,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 554,
+          "width": 256
+        },
+        {
+          "tag": "svg",
+          "classes": "",
+          "right": 617,
+          "width": 844
+        },
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left border-collapse",
+          "right": 1075,
+          "width": 1063
+        }
+      ],
+      "unnamedButtons": [
+        "add",
+        "remove"
+      ],
+      "smallTargets": 1
+    }
+  },
+  {
+    "route": "vehicles",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 3
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 16
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 1
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 12
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 36
+        },
+        "small": {
+          "min": 10,
+          "max": 10.4,
+          "count": 16
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left border-collapse",
+          "right": 1410,
+          "width": 1138
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 1410,
+          "width": 1138
+        },
+        {
+          "tag": "TR",
+          "classes": "h-9 bg-surface-container text-on-surface-variant font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 1410,
+          "width": 1138
+        },
+        {
+          "tag": "TH",
+          "classes": "pr-space-lg pl-space-sm py-2 text-right",
+          "right": 1410,
+          "width": 145
+        },
+        {
+          "tag": "TBODY",
+          "classes": "divide-y-0 font-body-sm text-body-sm",
+          "right": 1410,
+          "width": 1138
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 1410,
+          "width": 1138
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 1410,
+          "width": 145
+        },
+        {
+          "tag": "DIV",
+          "classes": "vehicle-row-actions",
+          "right": 1398,
+          "width": 121
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "vehicle-action-chip vehicle-action-edit",
+          "right": 1398,
+          "width": 46
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 1410,
+          "width": 1138
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 1410,
+          "width": 145
+        },
+        {
+          "tag": "DIV",
+          "classes": "vehicle-row-actions",
+          "right": 1398,
+          "width": 121
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 3
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 16
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 1
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 12
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 36
+        },
+        "small": {
+          "min": 10,
+          "max": 10.4,
+          "count": 16
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left border-collapse",
+          "right": 1154,
+          "width": 1138
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 1154,
+          "width": 1138
+        },
+        {
+          "tag": "TR",
+          "classes": "h-9 bg-surface-container text-on-surface-variant font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 1154,
+          "width": 1138
+        },
+        {
+          "tag": "TH",
+          "classes": "px-space-sm py-2",
+          "right": 446,
+          "width": 96
+        },
+        {
+          "tag": "TH",
+          "classes": "px-space-sm py-2",
+          "right": 552,
+          "width": 106
+        },
+        {
+          "tag": "TH",
+          "classes": "px-space-sm py-2 text-right",
+          "right": 621,
+          "width": 70
+        },
+        {
+          "tag": "TH",
+          "classes": "px-space-sm py-2",
+          "right": 692,
+          "width": 70
+        },
+        {
+          "tag": "TH",
+          "classes": "px-space-sm py-2",
+          "right": 770,
+          "width": 78
+        },
+        {
+          "tag": "TH",
+          "classes": "px-space-sm py-2",
+          "right": 852,
+          "width": 82
+        },
+        {
+          "tag": "TH",
+          "classes": "pr-space-lg pl-space-sm py-2 text-right",
+          "right": 1009,
+          "width": 157
+        },
+        {
+          "tag": "TH",
+          "classes": "pr-space-lg pl-space-sm py-2 text-right",
+          "right": 1154,
+          "width": 145
+        },
+        {
+          "tag": "TBODY",
+          "classes": "divide-y-0 font-body-sm text-body-sm",
+          "right": 1154,
+          "width": 1138
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    }
+  },
+  {
+    "route": "live-tracking",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "button": {
+          "min": 11,
+          "max": 11,
+          "count": 9
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 5
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 616,
+      "overflow": true,
+      "fonts": {
+        "button": {
+          "min": 11,
+          "max": 11,
+          "count": 9
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "DIV",
+          "classes": "flex flex-wrap items-center gap-space-md",
+          "right": 616,
+          "width": 592
+        },
+        {
+          "tag": "DIV",
+          "classes": "flex items-center gap-space-xs overflow-x-auto py-0.5",
+          "right": 616,
+          "width": 592
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-space-sm py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-xs text-label-xs flex items-center gap-1 transition-colors",
+          "right": 398,
+          "width": 158
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-space-sm py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-xs text-label-xs flex items-center gap-1 transition-colors",
+          "right": 500,
+          "width": 99
+        },
+        {
+          "tag": "SPAN",
+          "classes": "w-2 h-2 rounded-full bg-slate-400",
+          "right": 418,
+          "width": 8
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 455,
+          "width": 33
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 rounded-full bg-surface-container font-data-tabular",
+          "right": 492,
+          "width": 33
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-space-sm py-1 rounded-full bg-error-container text-on-error-container font-label-xs text-label-xs flex items-center gap-1 shadow-sm animate-pulse",
+          "right": 616,
+          "width": 112
+        },
+        {
+          "tag": "SPAN",
+          "classes": "w-2 h-2 rounded-full bg-error",
+          "right": 517,
+          "width": 5
+        },
+        {
+          "tag": "SPAN",
+          "classes": "font-bold",
+          "right": 571,
+          "width": 49
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 rounded-full bg-error text-on-error font-data-tabular font-bold",
+          "right": 608,
+          "width": 34
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 1939,
+          "width": 4096
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 7
+    }
+  },
+  {
+    "route": "trip-history",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "small": {
+          "min": 10,
+          "max": 11,
+          "count": 8
+        },
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 8
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 4
+        },
+        "button": {
+          "min": 12,
+          "max": 13,
+          "count": 5
+        },
+        "h2": {
+          "min": 16,
+          "max": 16,
+          "count": 2
+        },
+        "th": {
+          "min": 12,
+          "max": 12,
+          "count": 7
+        },
+        "td": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 1454,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 1454,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 1454,
+          "width": 256
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "small": {
+          "min": 10,
+          "max": 11,
+          "count": 8
+        },
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 8
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 4
+        },
+        "button": {
+          "min": 12,
+          "max": 13,
+          "count": 5
+        },
+        "h2": {
+          "min": 16,
+          "max": 16,
+          "count": 2
+        },
+        "th": {
+          "min": 12,
+          "max": 12,
+          "count": 7
+        },
+        "td": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 582,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 582,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 582,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 838,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 838,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 838,
+          "width": 256
+        },
+        {
+          "tag": "TABLE",
+          "classes": "",
+          "right": 581,
+          "width": 568
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 581,
+          "width": 568
+        },
+        {
+          "tag": "TR",
+          "classes": "",
+          "right": 581,
+          "width": 568
+        },
+        {
+          "tag": "TH",
+          "classes": "",
+          "right": 469,
+          "width": 118
+        },
+        {
+          "tag": "TH",
+          "classes": "",
+          "right": 531,
+          "width": 62
+        },
+        {
+          "tag": "TH",
+          "classes": "",
+          "right": 581,
+          "width": 50
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    }
+  },
+  {
+    "route": "geofences",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 25
+        },
+        "p": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 6
+        },
+        "td": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 4
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 25
+        },
+        "p": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 6
+        },
+        "td": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-medium shrink-0 transition-colors flex items-center gap-1",
+          "right": 492,
+          "width": 145
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-error font-medium shrink-0 transition-colors flex items-center gap-1",
+          "right": 660,
+          "width": 161
+        },
+        {
+          "tag": "SPAN",
+          "classes": "w-2 h-2 rounded-full bg-error animate-pulse",
+          "right": 518,
+          "width": 8
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 1067,
+          "width": 2048
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 555,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 555,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 555,
+          "width": 256
+        },
+        {
+          "tag": "svg",
+          "classes": "",
+          "right": 400,
+          "width": 410
+        },
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left font-data-tabular text-data-tabular",
+          "right": 451,
+          "width": 415
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 451,
+          "width": 415
+        },
+        {
+          "tag": "TR",
+          "classes": "bg-surface-container text-tertiary font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 451,
+          "width": 415
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2 px-3 rounded-r text-right",
+          "right": 451,
+          "width": 62
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 4
+    }
+  },
+  {
+    "route": "fuel-monitoring",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 13,
+          "max": 13,
+          "count": 10
+        },
+        "button": {
+          "min": 11,
+          "max": 12,
+          "count": 73
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 9
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 450
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 350
+        },
+        "h3": {
+          "min": 18,
+          "max": 18,
+          "count": 2
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left font-body-sm text-body-sm whitespace-nowrap",
+          "right": 1389,
+          "width": 1101
+        },
+        {
+          "tag": "THEAD",
+          "classes": "bg-surface-container-low text-on-surface-variant font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 1389,
+          "width": 1101
+        },
+        {
+          "tag": "TR",
+          "classes": "",
+          "right": 1389,
+          "width": 1101
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md text-center",
+          "right": 1389,
+          "width": 70
+        },
+        {
+          "tag": "TBODY",
+          "classes": "divide-y divide-surface-container",
+          "right": 1389,
+          "width": 1101
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 1389,
+          "width": 1101
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 1389,
+          "width": 70
+        },
+        {
+          "tag": "DIV",
+          "classes": "",
+          "right": 1377,
+          "width": 46
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 1389,
+          "width": 1101
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 1389,
+          "width": 70
+        },
+        {
+          "tag": "DIV",
+          "classes": "",
+          "right": 1377,
+          "width": 46
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 1389,
+          "width": 1101
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 56
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 13,
+          "max": 13,
+          "count": 10
+        },
+        "button": {
+          "min": 11,
+          "max": 12,
+          "count": 73
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 9
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 450
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 350
+        },
+        "h3": {
+          "min": 18,
+          "max": 18,
+          "count": 2
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left font-body-sm text-body-sm whitespace-nowrap",
+          "right": 1133,
+          "width": 1101
+        },
+        {
+          "tag": "THEAD",
+          "classes": "bg-surface-container-low text-on-surface-variant font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 1133,
+          "width": 1101
+        },
+        {
+          "tag": "TR",
+          "classes": "",
+          "right": 1133,
+          "width": 1101
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md w-44",
+          "right": 398,
+          "width": 97
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md",
+          "right": 533,
+          "width": 135
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md text-right",
+          "right": 678,
+          "width": 145
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md",
+          "right": 813,
+          "width": 135
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md",
+          "right": 950,
+          "width": 137
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md",
+          "right": 1062,
+          "width": 113
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md text-center",
+          "right": 1133,
+          "width": 70
+        },
+        {
+          "tag": "TBODY",
+          "classes": "divide-y divide-surface-container",
+          "right": 1133,
+          "width": 1101
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 1133,
+          "width": 1101
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 56
+    }
+  },
+  {
+    "route": "fuel-analytics",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 3
+        },
+        "button": {
+          "min": 11,
+          "max": 12,
+          "count": 15
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 3
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 7
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 7
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 3
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "px-3 py-1.5 rounded-lg bg-transparent hover:bg-surface-container-low text-on-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 1485,
+          "width": 125
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 1
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 3
+        },
+        "button": {
+          "min": 11,
+          "max": 12,
+          "count": 15
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 3
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 7
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 7
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 3
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "px-3 py-1.5 rounded-lg bg-transparent hover:bg-surface-container-low text-on-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 474,
+          "width": 145
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-3 py-1.5 rounded-lg bg-transparent hover:bg-surface-container-low text-on-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 602,
+          "width": 125
+        },
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left border-collapse",
+          "right": 627,
+          "width": 603
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 627,
+          "width": 603
+        },
+        {
+          "tag": "TR",
+          "classes": "bg-surface-container-low text-tertiary font-label-xs text-label-xs uppercase tracking-wider h-10",
+          "right": 627,
+          "width": 603
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2 px-space-md",
+          "right": 472,
+          "width": 90
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2 px-space-md",
+          "right": 572,
+          "width": 100
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2 px-space-md text-right",
+          "right": 627,
+          "width": 54
+        },
+        {
+          "tag": "TBODY",
+          "classes": "divide-y divide-surface-container-low font-body-sm text-body-sm text-on-surface",
+          "right": 627,
+          "width": 603
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 627,
+          "width": 603
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 472,
+          "width": 90
+        },
+        {
+          "tag": "DIV",
+          "classes": "",
+          "right": 460,
+          "width": 66
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 1
+    }
+  },
+  {
+    "route": "fuel-events",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 20,
+          "max": 20,
+          "count": 1
+        },
+        "button": {
+          "min": 10,
+          "max": 11,
+          "count": 11
+        },
+        "label": {
+          "min": 10,
+          "max": 11,
+          "count": 5
+        },
+        "p": {
+          "min": 9,
+          "max": 12,
+          "count": 11
+        },
+        "small": {
+          "min": 9,
+          "max": 10,
+          "count": 6
+        },
+        "h2": {
+          "min": 14,
+          "max": 14,
+          "count": 3
+        }
+      },
+      "svgText": [
+        {
+          "css": 19,
+          "effective": 10.089
+        },
+        {
+          "css": 19,
+          "effective": 10.089
+        },
+        {
+          "css": 19,
+          "effective": 10.089
+        },
+        {
+          "css": 19,
+          "effective": 10.089
+        },
+        {
+          "css": 19,
+          "effective": 10.089
+        },
+        {
+          "css": 19,
+          "effective": 10.089
+        },
+        {
+          "css": 19,
+          "effective": 10.089
+        },
+        {
+          "css": 19,
+          "effective": 10.089
+        },
+        {
+          "css": 19,
+          "effective": 10.089
+        },
+        {
+          "css": 19,
+          "effective": 10.089
+        }
+      ],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "button": {
+          "min": 10,
+          "max": 11,
+          "count": 11
+        },
+        "label": {
+          "min": 10,
+          "max": 11,
+          "count": 5
+        },
+        "p": {
+          "min": 9,
+          "max": 12,
+          "count": 11
+        },
+        "small": {
+          "min": 9,
+          "max": 10,
+          "count": 6
+        },
+        "h2": {
+          "min": 14,
+          "max": 14,
+          "count": 3
+        }
+      },
+      "svgText": [
+        {
+          "css": 19,
+          "effective": 6.9159999999999995
+        },
+        {
+          "css": 19,
+          "effective": 6.9159999999999995
+        },
+        {
+          "css": 19,
+          "effective": 6.9159999999999995
+        },
+        {
+          "css": 19,
+          "effective": 6.9159999999999995
+        },
+        {
+          "css": 19,
+          "effective": 6.9159999999999995
+        },
+        {
+          "css": 19,
+          "effective": 6.9159999999999995
+        },
+        {
+          "css": 19,
+          "effective": 6.9159999999999995
+        },
+        {
+          "css": 19,
+          "effective": 6.9159999999999995
+        },
+        {
+          "css": 19,
+          "effective": 6.9159999999999995
+        },
+        {
+          "css": 19,
+          "effective": 6.9159999999999995
+        }
+      ],
+      "offenders": [
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 581,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 581,
+          "width": 256
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    }
+  },
+  {
+    "route": "gps-quality",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "p": {
+          "min": 13,
+          "max": 13,
+          "count": 2
+        },
+        "button": {
+          "min": 11,
+          "max": 12,
+          "count": 59
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 10
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 500
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 150
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 50
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "p": {
+          "min": 13,
+          "max": 13,
+          "count": 2
+        },
+        "button": {
+          "min": 11,
+          "max": 12,
+          "count": 59
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 10
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 500
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 150
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "DIV",
+          "classes": "flex items-center gap-space-xs",
+          "right": 582,
+          "width": 558
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all flex items-center gap-2",
+          "right": 434,
+          "width": 126
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 394,
+          "width": 47
+        },
+        {
+          "tag": "SPAN",
+          "classes": "font-data-tabular text-[11px] text-tertiary",
+          "right": 422,
+          "width": 21
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all flex items-center gap-2",
+          "right": 582,
+          "width": 143
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px]",
+          "right": 468,
+          "width": 18
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 527,
+          "width": 50
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 rounded bg-inverse-surface text-inverse-on-surface font-data-tabular text-[10px]",
+          "right": 570,
+          "width": 35
+        },
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left border-collapse",
+          "right": 822,
+          "width": 798
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 822,
+          "width": 798
+        },
+        {
+          "tag": "TR",
+          "classes": "bg-surface-container-low text-tertiary font-label-xs text-label-xs uppercase tracking-wider h-9",
+          "right": 822,
+          "width": 798
+        },
+        {
+          "tag": "TH",
+          "classes": "px-space-md font-semibold",
+          "right": 486,
+          "width": 110
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 50
+    }
+  },
+  {
+    "route": "device-connectivity",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 13,
+          "max": 13,
+          "count": 4
+        },
+        "button": {
+          "min": 11,
+          "max": 12,
+          "count": 54
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 2
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 9
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 450
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 100
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 50
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 13,
+          "max": 13,
+          "count": 4
+        },
+        "button": {
+          "min": 11,
+          "max": 12,
+          "count": 54
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 2
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 9
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 450
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 100
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left border-collapse",
+          "right": 820,
+          "width": 804
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 820,
+          "width": 804
+        },
+        {
+          "tag": "TR",
+          "classes": "bg-surface-container-low text-on-surface-variant font-label-xs text-[11px] uppercase tracking-wider h-8",
+          "right": 820,
+          "width": 804
+        },
+        {
+          "tag": "TH",
+          "classes": "px-space-md py-2 font-semibold",
+          "right": 458,
+          "width": 94
+        },
+        {
+          "tag": "TH",
+          "classes": "px-space-md py-2 font-semibold",
+          "right": 537,
+          "width": 78
+        },
+        {
+          "tag": "TH",
+          "classes": "px-space-md py-2 font-semibold",
+          "right": 643,
+          "width": 106
+        },
+        {
+          "tag": "TH",
+          "classes": "px-space-md py-2 font-semibold text-right",
+          "right": 713,
+          "width": 71
+        },
+        {
+          "tag": "TH",
+          "classes": "px-space-md py-2 font-semibold text-center",
+          "right": 820,
+          "width": 106
+        },
+        {
+          "tag": "TBODY",
+          "classes": "font-body-sm text-body-sm text-on-surface",
+          "right": 820,
+          "width": 804
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 820,
+          "width": 804
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 458,
+          "width": 94
+        },
+        {
+          "tag": "DIV",
+          "classes": "",
+          "right": 446,
+          "width": 70
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 50
+    }
+  },
+  {
+    "route": "data-activity",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 59
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 4
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 3
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 9
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 450
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 100
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 54
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 59
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 4
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 3
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 9
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 450
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 100
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "A",
+          "classes": "px-3.5 py-2 rounded-md font-body-sm text-body-sm font-semibold bg-surface-container-lowest text-primary shadow-sm whitespace-nowrap flex items-center gap-2",
+          "right": 495,
+          "width": 172
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 443,
+          "width": 81
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 rounded font-label-xs text-[10px] bg-secondary-fixed text-on-secondary-fixed font-bold",
+          "right": 481,
+          "width": 31
+        },
+        {
+          "tag": "A",
+          "classes": "px-3.5 py-2 rounded-md font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap flex items-center gap-1.5",
+          "right": 664,
+          "width": 164
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[16px]",
+          "right": 529,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 650,
+          "width": 114
+        },
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left border-collapse",
+          "right": 742,
+          "width": 726
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 742,
+          "width": 726
+        },
+        {
+          "tag": "TR",
+          "classes": "h-8 bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 742,
+          "width": 726
+        },
+        {
+          "tag": "TH",
+          "classes": "px-3",
+          "right": 425,
+          "width": 89
+        },
+        {
+          "tag": "TH",
+          "classes": "px-3",
+          "right": 521,
+          "width": 95
+        },
+        {
+          "tag": "TH",
+          "classes": "px-3",
+          "right": 591,
+          "width": 71
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 54
+    }
+  },
+  {
+    "route": "raw-protocol-logs",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 12,
+          "max": 13,
+          "count": 3
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 7
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 452,
+      "overflow": true,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 12,
+          "max": 13,
+          "count": 3
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 57
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "DIV",
+          "classes": "flex items-center gap-1.5 p-1 rounded-xl bg-surface-container-high/60",
+          "right": 567,
+          "width": 555
+        },
+        {
+          "tag": "A",
+          "classes": "px-space-md py-1.5 rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary font-bold shadow-sm flex items-center gap-2",
+          "right": 563,
+          "width": 187
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[16px] text-primary",
+          "right": 404,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 463,
+          "width": 51
+        },
+        {
+          "tag": "SPAN",
+          "classes": "flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-xs text-[9px] uppercase tracking-wider font-extrabold animate-pulse",
+          "right": 551,
+          "width": 81
+        },
+        {
+          "tag": "SPAN",
+          "classes": "w-1.5 h-1.5 rounded-full bg-on-primary",
+          "right": 481,
+          "width": 4
+        },
+        {
+          "tag": "DIV",
+          "classes": "flex items-center gap-1.5",
+          "right": 452,
+          "width": 85
+        },
+        {
+          "tag": "SPAN",
+          "classes": "font-label-xs text-[11px] text-outline uppercase font-semibold",
+          "right": 423,
+          "width": 55
+        },
+        {
+          "tag": "SPAN",
+          "classes": "font-data-tabular text-label-md font-bold text-outline",
+          "right": 452,
+          "width": 23
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    }
+  },
+  {
+    "route": "alert-center",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 7
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 18
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 1516,
+          "width": 215
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1465,
+          "width": 129
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 1504,
+          "width": 33
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 7
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 18
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 631,
+          "width": 246
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[16px] text-error",
+          "right": 413,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 580,
+          "width": 161
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 619,
+          "width": 33
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 821,
+          "width": 186
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[16px] text-secondary",
+          "right": 663,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 769,
+          "width": 100
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 809,
+          "width": 33
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 1041,
+          "width": 216
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[16px] text-tertiary",
+          "right": 853,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 990,
+          "width": 131
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 1029,
+          "width": 33
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    }
+  },
+  {
+    "route": "reports",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 9
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 23
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 3
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 4
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 9
+        },
+        "td": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-space-xs px-4 py-2.5 rounded-t-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-title-sm text-title-sm font-medium transition-colors shrink-0",
+          "right": 1548,
+          "width": 333
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1532,
+          "width": 279
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-space-xs px-4 py-2.5 rounded-t-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-title-sm text-title-sm font-medium transition-colors shrink-0",
+          "right": 1852,
+          "width": 300
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px] text-tertiary",
+          "right": 1586,
+          "width": 18
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1836,
+          "width": 246
+        }
+      ],
+      "unnamedButtons": [
+        "arrow_drop_down"
+      ],
+      "smallTargets": 6
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 9
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 23
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 3
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 4
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 9
+        },
+        "td": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-space-xs px-4 py-2.5 rounded-t-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-title-sm text-title-sm font-medium transition-colors shrink-0",
+          "right": 659,
+          "width": 341
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 592,
+          "width": 236
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 rounded-full bg-error-container text-on-error-container font-label-xs text-label-xs font-bold",
+          "right": 643,
+          "width": 47
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-space-xs px-4 py-2.5 rounded-t-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-title-sm text-title-sm font-medium transition-colors shrink-0",
+          "right": 955,
+          "width": 292
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px] text-secondary",
+          "right": 697,
+          "width": 18
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 939,
+          "width": 238
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-space-xs px-4 py-2.5 rounded-t-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-title-sm text-title-sm font-medium transition-colors shrink-0",
+          "right": 1292,
+          "width": 333
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px] text-secondary",
+          "right": 993,
+          "width": 18
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1276,
+          "width": 279
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-space-xs px-4 py-2.5 rounded-t-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-title-sm text-title-sm font-medium transition-colors shrink-0",
+          "right": 1596,
+          "width": 300
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px] text-tertiary",
+          "right": 1330,
+          "width": 18
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1580,
+          "width": 246
+        }
+      ],
+      "unnamedButtons": [
+        "arrow_drop_down"
+      ],
+      "smallTargets": 6
+    }
+  },
+  {
+    "route": "device-management",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 3
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 19
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 7
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 21
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 12
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 2
+        },
+        "label": {
+          "min": 11,
+          "max": 16,
+          "count": 3
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 9
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 3
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 19
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 7
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 21
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 12
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 2
+        },
+        "label": {
+          "min": 11,
+          "max": 16,
+          "count": 3
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left border-collapse",
+          "right": 698,
+          "width": 674
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 698,
+          "width": 674
+        },
+        {
+          "tag": "TR",
+          "classes": "bg-surface-container text-on-surface-variant font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 698,
+          "width": 674
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md",
+          "right": 424,
+          "width": 96
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md",
+          "right": 512,
+          "width": 89
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md",
+          "right": 601,
+          "width": 88
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md text-right",
+          "right": 698,
+          "width": 97
+        },
+        {
+          "tag": "TBODY",
+          "classes": "divide-y divide-surface-container font-body-sm text-body-sm text-on-surface",
+          "right": 698,
+          "width": 674
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 698,
+          "width": 674
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 424,
+          "width": 96
+        },
+        {
+          "tag": "DIV",
+          "classes": "",
+          "right": 412,
+          "width": 72
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 396,
+          "width": 57
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 6
+    }
+  },
+  {
+    "route": "sensor-management",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 4
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 19
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 4
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 7
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 21
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 6
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 2
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 10
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 4
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 19
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 4
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 7
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 21
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 6
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 2
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left",
+          "right": 694,
+          "width": 670
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 694,
+          "width": 670
+        },
+        {
+          "tag": "TR",
+          "classes": "bg-surface-container-low text-tertiary font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 694,
+          "width": 670
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md font-semibold text-right",
+          "right": 425,
+          "width": 126
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md font-semibold text-right",
+          "right": 520,
+          "width": 95
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md font-semibold text-center",
+          "right": 600,
+          "width": 80
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md font-semibold text-right",
+          "right": 694,
+          "width": 94
+        },
+        {
+          "tag": "TBODY",
+          "classes": "divide-y-0 text-body-sm font-body-sm text-on-surface",
+          "right": 694,
+          "width": 670
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 694,
+          "width": 670
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 425,
+          "width": 126
+        },
+        {
+          "tag": "DIV",
+          "classes": "",
+          "right": 413,
+          "width": 102
+        },
+        {
+          "tag": "SMALL",
+          "classes": "stitch-secondary",
+          "right": 413,
+          "width": 102
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 10
+    }
+  },
+  {
+    "route": "user-management",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 13,
+          "max": 14,
+          "count": 7
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 10
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 13
+        },
+        "td": {
+          "min": 12,
+          "max": 13,
+          "count": 8
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 2
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 2
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 3
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 13,
+          "max": 14,
+          "count": 7
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 10
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 13
+        },
+        "td": {
+          "min": 12,
+          "max": 13,
+          "count": 8
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 2
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 2
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left border-collapse",
+          "right": 574,
+          "width": 550
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 574,
+          "width": 550
+        },
+        {
+          "tag": "TR",
+          "classes": "bg-surface-container-low text-tertiary font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 574,
+          "width": 550
+        },
+        {
+          "tag": "TH",
+          "classes": "py-3 px-space-md font-semibold",
+          "right": 441,
+          "width": 87
+        },
+        {
+          "tag": "TH",
+          "classes": "py-3 px-space-md font-semibold",
+          "right": 518,
+          "width": 77
+        },
+        {
+          "tag": "TH",
+          "classes": "py-3 px-space-md font-semibold text-right",
+          "right": 574,
+          "width": 56
+        },
+        {
+          "tag": "TBODY",
+          "classes": "divide-y-0 text-on-surface font-body-sm text-body-sm",
+          "right": 574,
+          "width": 550
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 574,
+          "width": 550
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 441,
+          "width": 87
+        },
+        {
+          "tag": "DIV",
+          "classes": "",
+          "right": 429,
+          "width": 63
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 423,
+          "width": 58
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 518,
+          "width": 77
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 2
+    }
+  },
+  {
+    "route": "notifications",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 7
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 19
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 1516,
+          "width": 215
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1465,
+          "width": 129
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 1504,
+          "width": 33
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 7
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 19
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 631,
+          "width": 246
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[16px] text-error",
+          "right": 413,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 580,
+          "width": 161
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 619,
+          "width": 33
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 821,
+          "width": 186
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[16px] text-secondary",
+          "right": 663,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 769,
+          "width": 100
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 809,
+          "width": 33
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 1041,
+          "width": 216
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[16px] text-tertiary",
+          "right": 853,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 990,
+          "width": 131
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 1029,
+          "width": 33
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    }
+  },
+  {
+    "route": "audit",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 13,
+          "max": 14,
+          "count": 7
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 58
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 13
+        },
+        "td": {
+          "min": 12,
+          "max": 13,
+          "count": 351
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 100
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 2
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 51
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 13,
+          "max": 14,
+          "count": 7
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 58
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 13
+        },
+        "td": {
+          "min": 12,
+          "max": 13,
+          "count": 351
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 100
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 2
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left border-collapse",
+          "right": 565,
+          "width": 541
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 565,
+          "width": 541
+        },
+        {
+          "tag": "TR",
+          "classes": "bg-surface-container-low text-tertiary font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 565,
+          "width": 541
+        },
+        {
+          "tag": "TH",
+          "classes": "py-3 px-space-md font-semibold",
+          "right": 441,
+          "width": 87
+        },
+        {
+          "tag": "TH",
+          "classes": "py-3 px-space-md font-semibold",
+          "right": 511,
+          "width": 70
+        },
+        {
+          "tag": "TH",
+          "classes": "py-3 px-space-md font-semibold text-right",
+          "right": 565,
+          "width": 54
+        },
+        {
+          "tag": "TBODY",
+          "classes": "divide-y-0 text-on-surface font-body-sm text-body-sm",
+          "right": 565,
+          "width": 541
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 565,
+          "width": 541
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 441,
+          "width": 87
+        },
+        {
+          "tag": "DIV",
+          "classes": "",
+          "right": 429,
+          "width": 63
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 511,
+          "width": 70
+        },
+        {
+          "tag": "DIV",
+          "classes": "",
+          "right": 499,
+          "width": 46
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 50
+    }
+  },
+  {
+    "route": "models",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 3
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 12
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 7
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 7
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 4
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 2
+        },
+        "label": {
+          "min": 11,
+          "max": 16,
+          "count": 3
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 2
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 3
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 12
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 7
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 7
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 4
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 2
+        },
+        "label": {
+          "min": 11,
+          "max": 16,
+          "count": 3
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left border-collapse",
+          "right": 682,
+          "width": 658
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 682,
+          "width": 658
+        },
+        {
+          "tag": "TR",
+          "classes": "bg-surface-container text-on-surface-variant font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 682,
+          "width": 658
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md",
+          "right": 424,
+          "width": 96
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md",
+          "right": 512,
+          "width": 89
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md",
+          "right": 601,
+          "width": 88
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md text-right",
+          "right": 682,
+          "width": 81
+        },
+        {
+          "tag": "TBODY",
+          "classes": "divide-y divide-surface-container font-body-sm text-body-sm text-on-surface",
+          "right": 682,
+          "width": 658
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 682,
+          "width": 658
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 424,
+          "width": 96
+        },
+        {
+          "tag": "DIV",
+          "classes": "",
+          "right": 412,
+          "width": 72
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 512,
+          "width": 89
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 2
+    }
+  },
+  {
+    "route": "tanks",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 4
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 20
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 4
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 7
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 35
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 10
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 2
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 11
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 4
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 20
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 4
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 7
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 35
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 10
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 2
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "TR",
+          "classes": "bg-surface-container-low text-tertiary font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md font-semibold text-right",
+          "right": 466,
+          "width": 95
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md font-semibold text-center",
+          "right": 546,
+          "width": 80
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md font-semibold text-right",
+          "right": 640,
+          "width": 94
+        },
+        {
+          "tag": "TBODY",
+          "classes": "divide-y-0 text-body-sm font-body-sm text-on-surface",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 466,
+          "width": 95
+        },
+        {
+          "tag": "DIV",
+          "classes": "",
+          "right": 454,
+          "width": 71
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 437,
+          "width": 54
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 546,
+          "width": 80
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 11
+    }
+  },
+  {
+    "route": "calibrations",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 8
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 34
+        },
+        "h3": {
+          "min": 15,
+          "max": 15,
+          "count": 1
+        },
+        "th": {
+          "min": 10,
+          "max": 11,
+          "count": 17
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 67
+        },
+        "small": {
+          "min": 10,
+          "max": 10.4,
+          "count": 21
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "DIV",
+          "classes": "flex items-center gap-space-xs min-w-max",
+          "right": 1586,
+          "width": 1298
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-4 py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors",
+          "right": 1400,
+          "width": 202
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant text-[10px] font-data-tabular",
+          "right": 1384,
+          "width": 31
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-4 py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors",
+          "right": 1586,
+          "width": 182
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px]",
+          "right": 1438,
+          "width": 18
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1570,
+          "width": 124
+        },
+        {
+          "tag": "DIV",
+          "classes": "hidden xl:flex items-center gap-2 font-label-xs text-label-xs text-outline font-data-tabular",
+          "right": 1680,
+          "width": 94
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1607,
+          "width": 21
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1621,
+          "width": 6
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1680,
+          "width": 51
+        }
+      ],
+      "unnamedButtons": [
+        "more_vert",
+        "chevron_left",
+        "chevron_right"
+      ],
+      "smallTargets": 0
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 8
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 34
+        },
+        "h3": {
+          "min": 15,
+          "max": 15,
+          "count": 1
+        },
+        "th": {
+          "min": 10,
+          "max": 11,
+          "count": 17
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 67
+        },
+        "small": {
+          "min": 10,
+          "max": 10.4,
+          "count": 21
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "DIV",
+          "classes": "flex items-center gap-space-xs min-w-max",
+          "right": 1330,
+          "width": 1298
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-4 py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors",
+          "right": 602,
+          "width": 207
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px]",
+          "right": 430,
+          "width": 18
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 560,
+          "width": 123
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant text-[10px] font-data-tabular",
+          "right": 586,
+          "width": 18
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-4 py-3 bg-surface-container-lowest text-primary font-label-md text-label-md flex items-center gap-2 border-b-2 border-primary transition-all",
+          "right": 938,
+          "width": 332
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px]",
+          "right": 640,
+          "width": 18
+        },
+        {
+          "tag": "SPAN",
+          "classes": "font-bold",
+          "right": 761,
+          "width": 113
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.5 rounded bg-primary/10 text-primary text-[10px] font-data-tabular font-bold",
+          "right": 908,
+          "width": 139
+        },
+        {
+          "tag": "SPAN",
+          "classes": "w-1.5 h-1.5 rounded-full bg-primary",
+          "right": 922,
+          "width": 6
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-4 py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors",
+          "right": 1144,
+          "width": 202
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px]",
+          "right": 976,
+          "width": 18
+        }
+      ],
+      "unnamedButtons": [
+        "more_vert",
+        "chevron_left",
+        "chevron_right"
+      ],
+      "smallTargets": 0
+    }
+  },
+  {
+    "route": "event-types",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 17
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 24
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 1516,
+          "width": 215
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1465,
+          "width": 129
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 1504,
+          "width": 33
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 17
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 24
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 631,
+          "width": 246
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[16px] text-error",
+          "right": 413,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 580,
+          "width": 161
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 619,
+          "width": 33
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 821,
+          "width": 186
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[16px] text-secondary",
+          "right": 663,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 769,
+          "width": 100
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 809,
+          "width": 33
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 1041,
+          "width": 216
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[16px] text-tertiary",
+          "right": 853,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 990,
+          "width": 131
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 1029,
+          "width": 33
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    }
+  },
+  {
+    "route": "event-severities",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 17
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 24
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 1516,
+          "width": 215
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1465,
+          "width": 129
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 1504,
+          "width": 33
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 17
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 24
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 631,
+          "width": 246
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[16px] text-error",
+          "right": 413,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 580,
+          "width": 161
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 619,
+          "width": 33
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 821,
+          "width": 186
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[16px] text-secondary",
+          "right": 663,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 769,
+          "width": 100
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 809,
+          "width": 33
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md whitespace-nowrap transition-colors",
+          "right": 1041,
+          "width": 216
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[16px] text-tertiary",
+          "right": 853,
+          "width": 16
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 990,
+          "width": 131
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 bg-surface-container-high text-on-surface rounded font-label-xs text-label-xs",
+          "right": 1029,
+          "width": 33
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    }
+  },
+  {
+    "route": "geofence-assignments",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 25
+        },
+        "h3": {
+          "min": 15,
+          "max": 15,
+          "count": 5
+        },
+        "p": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 6
+        },
+        "td": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 4
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 25
+        },
+        "h3": {
+          "min": 15,
+          "max": 15,
+          "count": 5
+        },
+        "p": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 6
+        },
+        "td": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "BUTTON",
+          "classes": "px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-medium shrink-0 transition-colors flex items-center gap-1",
+          "right": 492,
+          "width": 145
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-error font-medium shrink-0 transition-colors flex items-center gap-1",
+          "right": 660,
+          "width": 161
+        },
+        {
+          "tag": "SPAN",
+          "classes": "w-2 h-2 rounded-full bg-error animate-pulse",
+          "right": 518,
+          "width": 8
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 1067,
+          "width": 2048
+        },
+        {
+          "tag": "svg",
+          "classes": "",
+          "right": 400,
+          "width": 410
+        },
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left font-data-tabular text-data-tabular",
+          "right": 451,
+          "width": 415
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 451,
+          "width": 415
+        },
+        {
+          "tag": "TR",
+          "classes": "bg-surface-container text-tertiary font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 451,
+          "width": 415
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2 px-3 rounded-r text-right",
+          "right": 451,
+          "width": 62
+        },
+        {
+          "tag": "TBODY",
+          "classes": "divide-y divide-surface-container/50",
+          "right": 451,
+          "width": 415
+        },
+        {
+          "tag": "TR",
+          "classes": "",
+          "right": 451,
+          "width": 415
+        },
+        {
+          "tag": "TD",
+          "classes": "stitch-empty",
+          "right": 451,
+          "width": 415
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 4
+    }
+  },
+  {
+    "route": "sensor-telemetry",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 4
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 60
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 4
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 7
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 350
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 100
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 2
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 51
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 4
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 60
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 4
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 7
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 350
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 100
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 2
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "TR",
+          "classes": "bg-surface-container-low text-tertiary font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md font-semibold text-right",
+          "right": 466,
+          "width": 95
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md font-semibold text-center",
+          "right": 546,
+          "width": 80
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md font-semibold text-right",
+          "right": 640,
+          "width": 94
+        },
+        {
+          "tag": "TBODY",
+          "classes": "divide-y-0 text-body-sm font-body-sm text-on-surface",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 466,
+          "width": 95
+        },
+        {
+          "tag": "DIV",
+          "classes": "",
+          "right": 454,
+          "width": 71
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 406,
+          "width": 23
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 546,
+          "width": 80
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 51
+    }
+  },
+  {
+    "route": "events",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 4
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 60
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 4
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 7
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 350
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 100
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 2
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 51
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 4
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 60
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 4
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 7
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 350
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 100
+        },
+        "h2": {
+          "min": 18,
+          "max": 18,
+          "count": 2
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "TR",
+          "classes": "bg-surface-container-low text-tertiary font-label-xs text-label-xs uppercase tracking-wider",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md font-semibold text-right",
+          "right": 466,
+          "width": 95
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md font-semibold text-center",
+          "right": 546,
+          "width": 80
+        },
+        {
+          "tag": "TH",
+          "classes": "py-2.5 px-space-md font-semibold text-right",
+          "right": 640,
+          "width": 94
+        },
+        {
+          "tag": "TBODY",
+          "classes": "divide-y-0 text-body-sm font-body-sm text-on-surface",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "TR",
+          "classes": "border-b border-surface-container-low hover:bg-surface-container-low/50 transition-colors",
+          "right": 640,
+          "width": 616
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 466,
+          "width": 95
+        },
+        {
+          "tag": "DIV",
+          "classes": "",
+          "right": 454,
+          "width": 71
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 406,
+          "width": 23
+        },
+        {
+          "tag": "TD",
+          "classes": "px-space-md py-space-md font-body-sm text-body-sm text-on-surface",
+          "right": 546,
+          "width": 80
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 51
+    }
+  },
+  {
+    "route": "vehicles/3/overview",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 13,
+          "max": 13,
+          "count": 6
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 7
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 13,
+          "max": 13,
+          "count": 6
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 7
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "A",
+          "classes": "",
+          "right": 406,
+          "width": 57
+        },
+        {
+          "tag": "A",
+          "classes": "",
+          "right": 499,
+          "width": 74
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 647,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 647,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 903,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 903,
+          "width": 256
+        },
+        {
+          "tag": "svg",
+          "classes": "",
+          "right": 831,
+          "width": 1274
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    }
+  },
+  {
+    "route": "vehicles/3/trips",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "small": {
+          "min": 10,
+          "max": 11,
+          "count": 3
+        },
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 3
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 4
+        },
+        "button": {
+          "min": 12,
+          "max": 13,
+          "count": 4
+        },
+        "h2": {
+          "min": 16,
+          "max": 16,
+          "count": 2
+        },
+        "th": {
+          "min": 12,
+          "max": 12,
+          "count": 7
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "small": {
+          "min": 10,
+          "max": 11,
+          "count": 8
+        },
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 8
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 4
+        },
+        "button": {
+          "min": 12,
+          "max": 13,
+          "count": 5
+        },
+        "h2": {
+          "min": 16,
+          "max": 16,
+          "count": 2
+        },
+        "th": {
+          "min": 12,
+          "max": 12,
+          "count": 7
+        },
+        "td": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 582,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 582,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 582,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 838,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 838,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 838,
+          "width": 256
+        },
+        {
+          "tag": "TABLE",
+          "classes": "",
+          "right": 581,
+          "width": 568
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 581,
+          "width": 568
+        },
+        {
+          "tag": "TR",
+          "classes": "",
+          "right": 581,
+          "width": 568
+        },
+        {
+          "tag": "TH",
+          "classes": "",
+          "right": 469,
+          "width": 118
+        },
+        {
+          "tag": "TH",
+          "classes": "",
+          "right": 531,
+          "width": 62
+        },
+        {
+          "tag": "TH",
+          "classes": "",
+          "right": 581,
+          "width": 50
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    }
+  },
+  {
+    "route": "vehicles/3/fuel",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 4
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 30
+        },
+        "h3": {
+          "min": 15,
+          "max": 15,
+          "count": 1
+        },
+        "th": {
+          "min": 10,
+          "max": 11,
+          "count": 18
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 477
+        },
+        "small": {
+          "min": 10,
+          "max": 10.4,
+          "count": 166
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "DIV",
+          "classes": "flex items-center gap-space-xs min-w-max",
+          "right": 1512,
+          "width": 1224
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-4 py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors",
+          "right": 1512,
+          "width": 182
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1496,
+          "width": 124
+        },
+        {
+          "tag": "DIV",
+          "classes": "hidden xl:flex items-center gap-2 font-label-xs text-label-xs text-outline font-data-tabular",
+          "right": 1607,
+          "width": 94
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1534,
+          "width": 21
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1547,
+          "width": 6
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1607,
+          "width": 51
+        }
+      ],
+      "unnamedButtons": [
+        "more_vert",
+        "chevron_left",
+        "chevron_right"
+      ],
+      "smallTargets": 0
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 4
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 30
+        },
+        "h3": {
+          "min": 15,
+          "max": 15,
+          "count": 1
+        },
+        "th": {
+          "min": 10,
+          "max": 11,
+          "count": 18
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 477
+        },
+        "small": {
+          "min": 10,
+          "max": 10.4,
+          "count": 166
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "DIV",
+          "classes": "flex items-center gap-space-xs min-w-max",
+          "right": 1256,
+          "width": 1224
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-4 py-3 bg-surface-container-lowest text-primary font-label-md text-label-md flex items-center gap-2 border-b-2 border-primary transition-all",
+          "right": 617,
+          "width": 221
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px]",
+          "right": 430,
+          "width": 18
+        },
+        {
+          "tag": "SPAN",
+          "classes": "font-bold",
+          "right": 561,
+          "width": 123
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.5 rounded bg-primary/10 text-primary text-[10px] font-data-tabular font-bold",
+          "right": 587,
+          "width": 18
+        },
+        {
+          "tag": "SPAN",
+          "classes": "w-1.5 h-1.5 rounded-full bg-primary",
+          "right": 601,
+          "width": 6
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-4 py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors",
+          "right": 864,
+          "width": 244
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px]",
+          "right": 655,
+          "width": 18
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 774,
+          "width": 111
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant text-[10px] font-data-tabular",
+          "right": 848,
+          "width": 66
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-4 py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors",
+          "right": 1070,
+          "width": 202
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px]",
+          "right": 902,
+          "width": 18
+        }
+      ],
+      "unnamedButtons": [
+        "more_vert",
+        "chevron_left",
+        "chevron_right"
+      ],
+      "smallTargets": 0
+    }
+  },
+  {
+    "route": "vehicles/3/device",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 17
+        },
+        "h3": {
+          "min": 15,
+          "max": 15,
+          "count": 5
+        },
+        "p": {
+          "min": 13,
+          "max": 13,
+          "count": 1
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 8
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 8
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 4
+        }
+      },
+      "svgText": [],
+      "offenders": [],
+      "unnamedButtons": [
+        "download Export CSV"
+      ],
+      "smallTargets": 3
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 17
+        },
+        "h3": {
+          "min": 15,
+          "max": 15,
+          "count": 5
+        },
+        "p": {
+          "min": 13,
+          "max": 13,
+          "count": 1
+        },
+        "th": {
+          "min": 11,
+          "max": 11,
+          "count": 8
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 8
+        },
+        "small": {
+          "min": 10,
+          "max": 10,
+          "count": 4
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "A",
+          "classes": "py-3 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors shrink-0",
+          "right": 429,
+          "width": 155
+        },
+        {
+          "tag": "SPAN",
+          "classes": "font-data-tabular text-secondary text-[11px] ml-1 font-semibold",
+          "right": 429,
+          "width": 20
+        },
+        {
+          "tag": "A",
+          "classes": "py-3 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors shrink-0",
+          "right": 585,
+          "width": 140
+        },
+        {
+          "tag": "SPAN",
+          "classes": "font-data-tabular text-outline text-[11px] ml-1",
+          "right": 585,
+          "width": 20
+        },
+        {
+          "tag": "A",
+          "classes": "relative py-3 font-body-sm text-body-sm text-primary font-semibold shrink-0 flex items-center gap-1.5",
+          "right": 796,
+          "width": 195
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 672,
+          "width": 71
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 rounded-full bg-primary-container text-on-primary font-label-xs text-[10px]",
+          "right": 796,
+          "width": 118
+        },
+        {
+          "tag": "DIV",
+          "classes": "absolute bottom-0 left-0 right-0 h-0.5 bg-primary",
+          "right": 796,
+          "width": 195
+        },
+        {
+          "tag": "A",
+          "classes": "py-3 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors shrink-0",
+          "right": 951,
+          "width": 139
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant font-label-xs text-[10px]",
+          "right": 951,
+          "width": 30
+        },
+        {
+          "tag": "TABLE",
+          "classes": "w-full text-left font-body-sm text-body-sm border-collapse",
+          "right": 637,
+          "width": 621
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 637,
+          "width": 621
+        }
+      ],
+      "unnamedButtons": [
+        "download Export CSV"
+      ],
+      "smallTargets": 3
+    }
+  },
+  {
+    "route": "vehicles/3/calibration",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 8
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 34
+        },
+        "h3": {
+          "min": 15,
+          "max": 15,
+          "count": 1
+        },
+        "th": {
+          "min": 10,
+          "max": 11,
+          "count": 17
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 67
+        },
+        "small": {
+          "min": 10,
+          "max": 10.4,
+          "count": 21
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "DIV",
+          "classes": "flex items-center gap-space-xs min-w-max",
+          "right": 1586,
+          "width": 1298
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-4 py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors",
+          "right": 1400,
+          "width": 202
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant text-[10px] font-data-tabular",
+          "right": 1384,
+          "width": 31
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-4 py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors",
+          "right": 1586,
+          "width": 182
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px]",
+          "right": 1438,
+          "width": 18
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1570,
+          "width": 124
+        },
+        {
+          "tag": "DIV",
+          "classes": "hidden xl:flex items-center gap-2 font-label-xs text-label-xs text-outline font-data-tabular",
+          "right": 1680,
+          "width": 94
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1607,
+          "width": 21
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1621,
+          "width": 6
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 1680,
+          "width": 51
+        }
+      ],
+      "unnamedButtons": [
+        "more_vert",
+        "chevron_left",
+        "chevron_right"
+      ],
+      "smallTargets": 0
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "h1": {
+          "min": 18,
+          "max": 18,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 8
+        },
+        "button": {
+          "min": 11,
+          "max": 16,
+          "count": 34
+        },
+        "h3": {
+          "min": 15,
+          "max": 15,
+          "count": 1
+        },
+        "th": {
+          "min": 10,
+          "max": 11,
+          "count": 17
+        },
+        "td": {
+          "min": 13,
+          "max": 13,
+          "count": 67
+        },
+        "small": {
+          "min": 10,
+          "max": 10.4,
+          "count": 21
+        },
+        "h2": {
+          "min": 15,
+          "max": 15,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "DIV",
+          "classes": "flex items-center gap-space-xs min-w-max",
+          "right": 1330,
+          "width": 1298
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-4 py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors",
+          "right": 602,
+          "width": 207
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px]",
+          "right": 430,
+          "width": 18
+        },
+        {
+          "tag": "SPAN",
+          "classes": "",
+          "right": 560,
+          "width": 123
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant text-[10px] font-data-tabular",
+          "right": 586,
+          "width": 18
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-4 py-3 bg-surface-container-lowest text-primary font-label-md text-label-md flex items-center gap-2 border-b-2 border-primary transition-all",
+          "right": 938,
+          "width": 332
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px]",
+          "right": 640,
+          "width": 18
+        },
+        {
+          "tag": "SPAN",
+          "classes": "font-bold",
+          "right": 761,
+          "width": 113
+        },
+        {
+          "tag": "SPAN",
+          "classes": "px-1.5 py-0.5 rounded bg-primary/10 text-primary text-[10px] font-data-tabular font-bold",
+          "right": 908,
+          "width": 139
+        },
+        {
+          "tag": "SPAN",
+          "classes": "w-1.5 h-1.5 rounded-full bg-primary",
+          "right": 922,
+          "width": 6
+        },
+        {
+          "tag": "BUTTON",
+          "classes": "px-4 py-3 text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors",
+          "right": 1144,
+          "width": 202
+        },
+        {
+          "tag": "SPAN",
+          "classes": "material-symbols-outlined text-[18px]",
+          "right": 976,
+          "width": 18
+        }
+      ],
+      "unnamedButtons": [
+        "more_vert",
+        "chevron_left",
+        "chevron_right"
+      ],
+      "smallTargets": 0
+    }
+  },
+  {
+    "route": "playback/3",
+    "desktop": {
+      "viewport": 1366,
+      "width": 1366,
+      "overflow": false,
+      "fonts": {
+        "small": {
+          "min": 10,
+          "max": 11,
+          "count": 8
+        },
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 8
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 4
+        },
+        "button": {
+          "min": 12,
+          "max": 13,
+          "count": 5
+        },
+        "h2": {
+          "min": 16,
+          "max": 16,
+          "count": 2
+        },
+        "th": {
+          "min": 12,
+          "max": 12,
+          "count": 7
+        },
+        "td": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 1454,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 1454,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 1454,
+          "width": 256
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 390,
+      "overflow": false,
+      "fonts": {
+        "small": {
+          "min": 10,
+          "max": 11,
+          "count": 8
+        },
+        "h1": {
+          "min": 24,
+          "max": 24,
+          "count": 1
+        },
+        "p": {
+          "min": 11,
+          "max": 13,
+          "count": 8
+        },
+        "label": {
+          "min": 11,
+          "max": 11,
+          "count": 4
+        },
+        "button": {
+          "min": 12,
+          "max": 13,
+          "count": 5
+        },
+        "h2": {
+          "min": 16,
+          "max": 16,
+          "count": 2
+        },
+        "th": {
+          "min": 12,
+          "max": 12,
+          "count": 7
+        },
+        "td": {
+          "min": 12,
+          "max": 12,
+          "count": 1
+        }
+      },
+      "svgText": [],
+      "offenders": [
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 582,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 582,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 582,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 838,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 838,
+          "width": 256
+        },
+        {
+          "tag": "IMG",
+          "classes": "leaflet-tile leaflet-tile-loaded",
+          "right": 838,
+          "width": 256
+        },
+        {
+          "tag": "TABLE",
+          "classes": "",
+          "right": 581,
+          "width": 568
+        },
+        {
+          "tag": "THEAD",
+          "classes": "",
+          "right": 581,
+          "width": 568
+        },
+        {
+          "tag": "TR",
+          "classes": "",
+          "right": 581,
+          "width": 568
+        },
+        {
+          "tag": "TH",
+          "classes": "",
+          "right": 469,
+          "width": 118
+        },
+        {
+          "tag": "TH",
+          "classes": "",
+          "right": 531,
+          "width": 62
+        },
+        {
+          "tag": "TH",
+          "classes": "",
+          "right": 581,
+          "width": 50
+        }
+      ],
+      "unnamedButtons": [],
+      "smallTargets": 0
+    }
+  }
+]
